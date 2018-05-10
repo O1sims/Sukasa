@@ -1,4 +1,4 @@
-"""casa URL Configuration
+"""Kasa URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -15,11 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from rest_framework_swagger.views import get_swagger_view
 
 from api.views.index import IndexView
 
+
+schema_view = get_swagger_view(title='Kasa API')
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+
+    url(r'^swagger$', schema_view),
 
     url(r'^$',
         IndexView.as_view(),
