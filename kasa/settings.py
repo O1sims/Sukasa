@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'casa.urls'
+ROOT_URLCONF = 'kasa.urls'
 
 TEMPLATES = [
     {
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'casa.wsgi.application'
+WSGI_APPLICATION = 'kasa.wsgi.application'
 
 
 # Database

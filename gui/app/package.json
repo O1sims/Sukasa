@@ -1,6 +1,6 @@
 {
-  "name": "Casa",
-  "description": "Web application that analyses current house prices to detect price imperfections",
+  "name": "Kasa",
+  "description": "Web application that analyses current property prices to detect price imperfections",
   "version": "0.1.0",
   "repository": {
     "type": "git",
