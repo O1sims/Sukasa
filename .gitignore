@@ -1,0 +1,7 @@
+# Javascript dependencies
+node_modules/
+
+# Auto-generated JS
+gui/app/*.js
+gui/app/**/*.js
+!gui/app/assets/*.js
