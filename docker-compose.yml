@@ -1,0 +1,10 @@
+ version: '3'
+ services:
+   kasa:
+     restart: unless-stopped
+     image: kasa:latest
+     command: python /Kasa/manage.py runserver
+     ports:
+       - "8200:8200"
+     volumes:
+       - ".:/Kasa/"
