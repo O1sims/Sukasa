@@ -1,0 +1,43 @@
+{
+  "name": "Casa",
+  "description": "Web application that analyses current house prices to detect price imperfections",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/O1sims/casa.git"
+  },
+  "scripts": {
+    "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",
+    "lite": "lite-server",
+    "postinstall": "typings install",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "typings": "typings"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@angular/cdk": "2.0.0-beta.12",
+    "@angular/common": "^4.4.7",
+    "@angular/compiler": "^4.4.7",
+    "@angular/core": "^4.4.7",
+    "@angular/forms": "^4.4.7",
+    "@angular/http": "^4.4.7",
+    "@angular/material": "2.0.0-beta.12",
+    "@angular/platform-browser": "^4.4.7",
+    "@angular/platform-browser-dynamic": "^4.4.7",
+    "@angular/router": "^4.4.7",
+    "@angular/upgrade": "^4.4.7",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^5.0.1",
+    "systemjs": "^0.21.3",
+    "underscore": "^1.8.3",
+    "zone.js": "^0.8.4"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.46",
+    "concurrently": "^2.0.0",
+    "lite-server": "^2.2.0",
+    "typescript": "^2.3.4",
+    "typings": "^1.0.4"
+  }
+}
