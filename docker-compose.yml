@@ -1,10 +1,47 @@
- version: '3'
- services:
-   kasa:
-     restart: unless-stopped
-     image: kasa:latest
-     command: python /Kasa/manage.py runserver
-     ports:
-       - "8200:8200"
-     volumes:
-       - ".:/Kasa/"
+version: '2'
+services:
+  kasa:
+    restart: unless-stopped
+    image: kasa:latest
+    container_name: kasa
+    command: python /Kasa/manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ".:/Kasa/"
+    depends_on:
+      - kibana
+      - elasticsearch
+
+  elasticsearch:
+    restart: unless-stopped
+    image: elasticsearch:latest
+    container_name: elasticsearch
+    ports:
+      - "9200:9200"
+    environment:
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    networks:
+      - docker-elk
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+
+  kibana:
+    restart: unless-stopped
+    image: kibana:latest
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    environment:
+      - "ELASTICSEARCH_URL=http://elasticsearch:9200"
+    networks:
+      - docker-elk
+    depends_on:
+      - elasticsearch
+
+networks:
+  docker-elk:
+    driver: bridge
