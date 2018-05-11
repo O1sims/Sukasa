@@ -1,4 +1,4 @@
-"""casa URL Configuration
+"""Kasa URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.11/topics/http/urls/
@@ -13,15 +13,22 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+
+
 from django.conf.urls import url
-from django.contrib import admin
+
+from rest_framework_swagger.views import get_swagger_view
+from rest_framework.urlpatterns import format_suffix_patterns
 
 from api.views.index import IndexView
 
-urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+
+urlpatterns = format_suffix_patterns([
+    url(r'^swagger/$',
+        get_swagger_view(
+            title='Kasa API')),
 
     url(r'^$',
         IndexView.as_view(),
         name='index')
-]
+])
