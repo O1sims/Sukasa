@@ -27,8 +27,8 @@ RUN pip install -r requirements.txt
 ADD . /Kasa/
 
 # Install Angular packages
-WORKDIR /Kasa/gui/app
-RUN npm install
+# WORKDIR /Kasa/gui/app
+# RUN npm install
 
 # Expose ports
 EXPOSE 8000
