@@ -1,5 +1,7 @@
 # Sukasa
 
+[![Build Status](https://travis-ci.com/O1sims/Kasa.svg?branch=master)](https://travis-ci.com/O1sims/Kasa)
+
 ## Overview
 
 Sukasa is a Python-based web application that analyses current house prices to detect and report price imperfections. This application provides prospective house-buyers a way to investigate whether the houses they are purchasing are incorrectly valued based on social, economic, and geographic characteristics such as current wage levels, the price of similar houses in neighbouring areas, nearby amenities such as schools and shops, and the estate agent selling the house. The aim is to give more information--and therefore sovereignty--to potential consumers, or even just to help current homeowners overcome buyers remorse.
