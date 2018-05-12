@@ -17,14 +17,14 @@ from analytics import config
 
 def get_property_page(area, page_number, property_type, sort_date):
     type_url = 'forSalePath' if property_type == 'sale' else 'forRentPath'
-    url = BASIC_REQUEST['baseURL'] + BASIC_REQUEST[type_url] + area
+    url = config.BASIC_REQUEST['baseURL'] + config.BASIC_REQUEST[type_url] + area
     if sort_date:
         url += '/sort-dateHigh'
     if page_number > 1:
         url += '/page-' + page_number
     request_page = requests.get(
         url=url,
-        headers={'User-Agent': BASIC_REQUEST['userAgent']})
+        headers={'User-Agent': config.BASIC_REQUEST['userAgent']})
     if request_page.status_code == 200:
         return BeautifulSoup(request_page.content, "lxml")
     else:
@@ -169,8 +169,8 @@ def get_property_details(hyperlink):
 
     data = {}
     page_response = requests.get(
-        url=BASIC_REQUEST['baseURL'] + hyperlink,
-        headers={'User-Agent': BASIC_REQUEST['userAgent']})
+        url=config.BASIC_REQUEST['baseURL'] + hyperlink,
+        headers={'User-Agent': config.BASIC_REQUEST['userAgent']})
     if page_response.status_code == 200:
         detail_page = page_response.content
         detail_soup = BeautifulSoup(detail_page, "lxml")
@@ -255,7 +255,7 @@ def get_full_property_dataset(area, property_type, sort_date=True):
     final_page_number = get_final_page_number(
         first_page)
     property_data = property_dataset(first_page)
-    if not DEVELOPMENT:
+    if not config.DEVELOPMENT:
         for page_number in range(2, final_page_number):
             property_page = get_property_page(
                 area=area,
@@ -264,7 +264,3 @@ def get_full_property_dataset(area, property_type, sort_date=True):
                 sort_date=sort_date)
             property_data += property_dataset(property_page)
     return property_data
-
-
-property_info = get_full_property_dataset(area='east-belfast', property_type='sale')
-
