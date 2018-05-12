@@ -17,14 +17,14 @@ from analytics import config
 
 def get_property_page(area, page_number, property_type, sort_date):
     type_url = 'forSalePath' if property_type == 'sale' else 'forRentPath'
-    url = config.BASIC_REQUEST['baseURL'] + config.BASIC_REQUEST[type_url] + area
+    url = BASIC_REQUEST['baseURL'] + BASIC_REQUEST[type_url] + area
     if sort_date:
         url += '/sort-dateHigh'
     if page_number > 1:
         url += '/page-' + page_number
     request_page = requests.get(
         url=url,
-        headers={'User-Agent': config.BASIC_REQUEST['userAgent']})
+        headers={'User-Agent': BASIC_REQUEST['userAgent']})
     if request_page.status_code == 200:
         return BeautifulSoup(request_page.content, "lxml")
     else:
@@ -77,24 +77,35 @@ def get_price(page_soup):
         'minPrice': clean_price(min_price),
         'maxPrice': clean_price(max_price)
     }
+    
 
-
-def get_hyperlink(page_soup, address, town, id_length=10):
-    if town is None or address is None:
-        return None
-
-    html_string = str(page_soup)
-    trans_address = strip_punctuation(address).lower().replace(' ', '-')
-    clean_address = str('/' + trans_address + '-' + town.lower() + '/')
+def get_property_id(html_string, clean_address, id_length=10):
+    property_id = ''
     start_string = html_string.find(clean_address)
-    placement_code = ''
     for i in range(id_length):
         new_char = html_string[start_string + len(clean_address) + i]
         if new_char is not '"':
-            placement_code += html_string[start_string + len(clean_address) + i]
+            property_id += html_string[start_string + len(clean_address) + i]
         else:
             break
-    return clean_address + placement_code
+    return property_id
+
+
+def get_clean_address(address, town):
+    trans_address = strip_punctuation(address).lower().replace(' ', '-')
+    return str('/' + trans_address + '-' + town.lower() + '/')
+
+def get_hyperlink(page_soup, address, town):
+    if town is None or address is None:
+        return None
+
+    clean_address = get_clean_address(
+        address=address,
+        town=town)
+    property_id = get_property_id(
+        html_string=str(page_soup),
+        clean_address=clean_address)
+    return clean_address + property_id
 
 
 def get_address(page_soup):
@@ -158,8 +169,8 @@ def get_property_details(hyperlink):
 
     data = {}
     page_response = requests.get(
-        url=config.BASIC_REQUEST['baseURL'] + hyperlink,
-        headers={'User-Agent': config.BASIC_REQUEST['userAgent']})
+        url=BASIC_REQUEST['baseURL'] + hyperlink,
+        headers={'User-Agent': BASIC_REQUEST['userAgent']})
     if page_response.status_code == 200:
         detail_page = page_response.content
         detail_soup = BeautifulSoup(detail_page, "lxml")
@@ -210,11 +221,18 @@ def property_dataset(page_soup):
                 page_soup=page_soup,
                 address=address,
                 town=town)
+            property_id = get_property_id(
+                html_string=str(page_soup),
+                clean_address=get_clean_address(
+                    address=address,
+                    toen=town))
         else:
             town = None
             postcode = None
             hyperlink = None
+            property_id = None
         dataset.append({
+            'id': property_id,
             'address': address,
             'town': town,
             'postcode': postcode,
@@ -237,7 +255,7 @@ def get_full_property_dataset(area, property_type, sort_date=True):
     final_page_number = get_final_page_number(
         first_page)
     property_data = property_dataset(first_page)
-    if not config.DEVELOPMENT:
+    if not DEVELOPMENT:
         for page_number in range(2, final_page_number):
             property_page = get_property_page(
                 area=area,
@@ -246,3 +264,7 @@ def get_full_property_dataset(area, property_type, sort_date=True):
                 sort_date=sort_date)
             property_data += property_dataset(property_page)
     return property_data
+
+
+property_info = get_full_property_dataset(area='east-belfast', property_type='sale')
+
