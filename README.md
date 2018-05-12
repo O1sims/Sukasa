@@ -10,13 +10,13 @@ Sukasa is a Python-based web application that analyses current house prices to d
 
 The web application uses [Django](https://www.djangoproject.com/) as the backend framework and [Angular](https://angular.io/) as the frontend framework. Documentation of the RESTful API service is handled by [Swagger](https://swagger.io/). Development is done with [Docker](https://www.docker.com/) and run on [Google Kubernetes](https://cloud.google.com/python/django/kubernetes-engine). We use [ElasticSearch](https://www.elastic.co/) as our main database. [`R`](https://www.r-project.org/) is the language of choice for any statistical research.
 
-## Bulding the application
+## Building the application
 
 We use Docker in the development of Sukasa to make it really easy to build, run and share the application. The following instructions show how it's built and run in Docker:
 ```
 git clone https://github.com/O1sims/Sukasa.git
 cd Sukasa
-docker build -t kasa:latest .
+docker build -t sukasa:latest .
 docker-commpose run --service-ports sukasa
 ```
 ## Contact
