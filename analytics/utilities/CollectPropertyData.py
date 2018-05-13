@@ -95,6 +95,7 @@ def get_clean_address(address, town):
     trans_address = strip_punctuation(address).lower().replace(' ', '-')
     return str('/' + trans_address + '-' + town.lower() + '/')
 
+
 def get_hyperlink(page_soup, address, town):
     if town is None or address is None:
         return None
@@ -225,7 +226,7 @@ def property_dataset(page_soup):
                 html_string=str(page_soup),
                 clean_address=get_clean_address(
                     address=address,
-                    toen=town))
+                    town=town))
         else:
             town = None
             postcode = None
