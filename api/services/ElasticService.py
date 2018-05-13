@@ -39,12 +39,17 @@ class ElasticService:
             id=elastic_id)
         return elastic_response['_source']
         
-    def search_database(self, index, query):
+    def search_database(self, index, query_string):
         elastic_response = self.es.search(
-            index='properties',
-            body={"query": {"match_all": {}}})
+            index=index,
+            body={"query": query_string})
         search_results = []
         for hit in elastic_response['hits']['hits']:
-            search_results.append(
-                hit['_source'])
+            search_results.append(hit['_source'])
         return search_results
+    
+    def count_database(self, index, query_string):
+        elastic_response = self.es.count(
+            index=index,
+            body={"query": query_string})
+        return elastic_response['count']

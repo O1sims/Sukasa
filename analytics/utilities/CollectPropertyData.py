@@ -248,7 +248,7 @@ def property_dataset(page_soup):
     return dataset
 
 
-def get_full_property_dataset(area, property_type, sort_date=True):
+def get_property_dataset(area, property_type, update_only, sort_date=True):
     first_page = get_property_page(
         area=area,
         page_number=0,
@@ -257,20 +257,39 @@ def get_full_property_dataset(area, property_type, sort_date=True):
     final_page_number = get_final_page_number(
         first_page)
     property_data = property_dataset(first_page)
-    if not config.DEVELOPMENT:
+    if update_only:
         for page_number in range(2, final_page_number):
             property_page = get_property_page(
                 area=area,
                 page_number=page_number,
                 property_type=property_type,
                 sort_date=sort_date)
-            property_data += property_dataset(property_page)
+            new_property_data = property_dataset(property_page)
+            new_property_ids = []
+            for prop in new_property_data:
+                new_property_ids.append(prop['id'])
+            count = ElasticService().count_database(
+                index='properties',
+                query_string={"ids": {"values": new_property_ids}})
+            if count > 0:
+                break
+            else:
+                property_data += new_property_data
+    else:
+        if not config.DEVELOPMENT:
+            for page_number in range(2, final_page_number):
+                property_page = get_property_page(
+                    area=area,
+                    page_number=page_number,
+                    property_type=property_type,
+                    sort_date=sort_date)
+                property_data += property_dataset(property_page)
     return property_data
 
 
-def send_full_property_dataset(area, property_type, index,
-                               doc_type, sort_date=True):
-    property_data = get_full_property_dataset(
+def send_property_dataset(area, property_type, index,
+                          doc_type, sort_date=True):
+    property_data = get_property_dataset(
         area=area,
         property_type=property_type,
         sort_date=sort_date)
