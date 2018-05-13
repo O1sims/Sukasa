@@ -13,6 +13,7 @@ from string import punctuation
 from bs4 import BeautifulSoup
 
 from analytics import config
+from api.services.ElasticService import ElasticService
 
 
 def get_property_page(area, page_number, property_type, sort_date):
@@ -265,3 +266,15 @@ def get_full_property_dataset(area, property_type, sort_date=True):
                 sort_date=sort_date)
             property_data += property_dataset(property_page)
     return property_data
+
+
+def send_full_property_dataset(area, property_type, index,
+                               doc_type, sort_date=True):
+    property_data = get_full_property_dataset(
+        area=area,
+        property_type=property_type,
+        sort_date=sort_date)
+    ElasticService().save_to_database(
+        index=index,
+        doc_type=doc_type,
+        data=property_data)
