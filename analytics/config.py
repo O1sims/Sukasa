@@ -35,3 +35,8 @@ GEOGRAPHY = {
         }
     }
 }
+
+ELASTICSEARCH_CONFIG = {
+    "propertyIndex": "properties",
+    "propertyDocType": "house"
+}
