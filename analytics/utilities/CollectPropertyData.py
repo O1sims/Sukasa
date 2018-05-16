@@ -8,6 +8,7 @@ Created on Tue May  8 11:06:05 2018
 
 import re
 import requests
+import datetime
 
 from string import punctuation
 from bs4 import BeautifulSoup
@@ -16,13 +17,16 @@ from analytics import config
 from api.services.ElasticService import ElasticService
 
 
-def get_property_page(area, page_number, property_type, sort_date):
+def get_property_page(area, page_number, property_type, sort_by):
     type_url = 'forSalePath' if property_type == 'sale' else 'forRentPath'
-    url = config.BASIC_REQUEST['baseURL'] + config.BASIC_REQUEST[type_url] + area
-    if sort_date:
-        url += '/sort-dateHigh'
+    url = config.BASIC_REQUEST['baseURL'] + config.BASIC_REQUEST[type_url]
+    if area:
+        url += '/{}'.format(area)
+    if sort_by is not None:
+        url += config.BASIC_REQUEST['sortOptions'][sort_by]
     if page_number > 1:
-        url += '/page-' + page_number
+        url += '/page-{}'.format(page_number)
+    print(url)
     request_page = requests.get(
         url=url,
         headers={'User-Agent': config.BASIC_REQUEST['userAgent']})
@@ -35,21 +39,27 @@ def get_property_page(area, page_number, property_type, sort_date):
 
 
 def get_final_page_number(first_page_soup):
-    return int(first_page_soup.find("li", {"class", "paging-last"}).get_text())
+    raw_page_number = first_page_soup.find("li", {"class", "paging-last"}).get_text()
+    clean_page_number = raw_page_number.encode('ascii', 'ignore').strip().replace(',', '')
+    return int(clean_page_number)
 
 
 def get_all_main_images(page_soup):
     property_images = []
     all_images = page_soup.findAll("div", {"class": "propbox-img"})
     for image in all_images:
-        if 'propbox-time' in str(image) or 'openviewing' in str(image):
+        string_image = str(image)
+        if 'is-no-photo' in string_image:
+            property_images.append(None)
+        elif 'propbox-time' in string_image or 'openviewing' in string_image:
             property_images.append(
-                image.find("img").attrs['data-lazy-src'])
+                    image.find("img").attrs['data-lazy-src'])
     return property_images
 
 
 def strip_punctuation(string):
-    return ''.join(char for char in string if char not in punctuation)
+    prep_string = string.replace('-', ' ')
+    return ''.join(char for char in prep_string if char not in punctuation)
 
 
 def clean_price(price):
@@ -65,6 +75,18 @@ def clean_price(price):
     return end_price
 
 
+def get_currency(raw_price):
+    string_price = str(raw_price)
+    if '£' in string_price:
+        return 'pound'
+    elif '€' in string_price:
+        return 'euro'
+    elif '$' in string_price:
+        return 'dollar'
+    else:
+        return 'unknown'
+
+
 def get_price(page_soup):
     offer = page_soup.find("span", {"class": "price-offers"})
     if offer is not None:
@@ -72,11 +94,17 @@ def get_price(page_soup):
     price = page_soup.find("span", {"class": "price-value "})
     min_price = page_soup.find("span", {"class": "price-min"})
     max_price = page_soup.find("span", {"class": "price-max"})
+    currency = 'unknown'
+    if price is not None:
+        currency = get_currency(price)
+    elif min_price is not None:
+        currency = get_currency(price)
     return {
         'offer': offer,
         'price': clean_price(price),
         'minPrice': clean_price(min_price),
-        'maxPrice': clean_price(max_price)
+        'maxPrice': clean_price(max_price),
+        'currency': currency
     }
     
 
@@ -94,7 +122,7 @@ def get_property_id(html_string, clean_address, id_length=10):
 
 def get_clean_address(address, town):
     trans_address = strip_punctuation(address).lower().replace(' ', '-')
-    return str('/' + trans_address + '-' + town.lower() + '/')
+    return str('/{}-{}/'.format(trans_address, town.lower()))
 
 
 def get_hyperlink(page_soup, address, town):
@@ -149,7 +177,6 @@ def get_estate_agent(page_soup):
             agent_data['branch'] = str(agent[agent.find("(") + 1:agent.find(")")])
         else:
             agent_data['name'] = str(agent)
-            agent_data['branch'] = 'unknown'
     return agent_data
 
 
@@ -163,6 +190,14 @@ def property_location(detail_soup):
 
 def garage_present(detail_page):
     return 'garage' in detail_page.lower()
+
+
+def driveway_present(detail_page):
+    return 'driveway' in detail_page.lower()
+
+
+def parking_present(detail_page):
+    return 'parking' in detail_page.lower()
 
 
 def get_property_details(hyperlink):
@@ -194,6 +229,10 @@ def get_property_details(hyperlink):
                     info = str(info)
                 data[row_title] = info
         data['garage'] = garage_present(
+            detail_page=detail_page)
+        data['driveway'] = driveway_present(
+            detail_page=detail_page)
+        data['parking'] = parking_present(
             detail_page=detail_page)
         data['location'] = property_location(
             detail_soup=detail_soup)
@@ -234,6 +273,7 @@ def property_dataset(page_soup):
             hyperlink = None
             property_id = None
         dataset.append({
+            'timestamp': datetime.datetime.now(),
             'id': property_id,
             'address': address,
             'town': town,
@@ -248,13 +288,13 @@ def property_dataset(page_soup):
     return dataset
 
 
-def get_property_dataset(area, property_type, update_only=False, 
-                         sort_date=True):
+def get_property_dataset(area, property_type, sort_by,
+                         update_only=False):
     first_page = get_property_page(
         area=area,
-        page_number=0,
+        page_number=2,
         property_type=property_type,
-        sort_date=sort_date)
+        sort_by=sort_by)
     final_page_number = get_final_page_number(
         first_page)
     property_data = property_dataset(first_page)
@@ -264,7 +304,7 @@ def get_property_dataset(area, property_type, update_only=False,
                 area=area,
                 page_number=page_number,
                 property_type=property_type,
-                sort_date=sort_date)
+                sort_by=sort_by)
             new_property_data = property_dataset(property_page)
             if update_only:
                 new_property_ids = []
@@ -279,11 +319,11 @@ def get_property_dataset(area, property_type, update_only=False,
     return property_data
 
 
-def send_property_dataset(area, property_type, sort_date=True):
+def send_property_dataset(property_type, area=None, sort_by=None):
     property_data = get_property_dataset(
         area=area,
         property_type=property_type,
-        sort_date=sort_date)
+        sort_by=sort_by)
     ElasticService().save_to_database(
         index=config.ELASTICSEARCH_CONFIG['propertyIndex'],
         doc_type=config.ELASTICSEARCH_CONFIG['propertyDocType'],
