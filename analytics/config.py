@@ -16,8 +16,15 @@ GOOGLE_MAPS_CONFIG = {
 
 BASIC_REQUEST = {
     "baseURL": "https://www.propertypal.com",
-    "forSalePath": "/property-for-sale/",
-    "forRentPath": "/property-to-rent/",
+    "forSalePath": "/property-for-sale",
+    "forRentPath": "/property-to-rent",
+    "sortOptions": {
+        "mostPopular": "/sort-hot",
+        "recentlyAdded": "/sort-dateHigh",
+        "recentlyUpdated": "/sort-updatedHigh",
+        "priceLowHigh": "/sort-priceLow",
+        "priceHighLow": "/sort-priceHigh"
+    },
     "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:24.0) Gecko/20100101 Firefox/24.0"
 }
 
