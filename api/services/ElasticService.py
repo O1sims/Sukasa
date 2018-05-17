@@ -6,24 +6,30 @@ Created on Fri May 11 16:44:59 2018
 @author: owen
 """
 
+from api import config
+
 from elasticsearch import Elasticsearch
 
 
 class ElasticService:
     def __init__(self):
-        self.es = Elasticsearch()
+        self.es = Elasticsearch(
+            hosts=[{
+                'host': config.ELASTICSEARCH_CONNECTION['host'],
+                'port': config.ELASTICSEARCH_CONNECTION['port']
+            }])
         
     def save_to_database(self, index, doc_type, data):
         if isinstance(data, list):
-            for d in data:
-                if d['property_id'] is None:
+            for element in data:
+                if element['property_id'] is None:
                     continue
                 else:
                     self.es.index(
                         index=index,
                         doc_type=doc_type,
-                        id=d['property_id'],
-                        body=d)
+                        id=element['property_id'],
+                        body=element)
         else:
             self.es.index(
                 index=index,
