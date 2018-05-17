@@ -8,7 +8,6 @@ RUN apt-get -qq -y install curl
 RUN apt-get update
 RUN apt-get -y install python-pip python-dev build-essential python-software-properties
 RUN apt-get -y install python-tk
-RUN apt-get -y install python-bs4
 
 # Download Node and NPM
 RUN curl -sL https://deb.nodesource.com/setup_7.x | bash -
