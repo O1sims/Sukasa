@@ -12,6 +12,11 @@ services:
     depends_on:
       - kibana
       - elasticsearch
+    environment:
+      - SUKASA_PORT=8000
+      - SUKASA_HOSTNAME=sukasa
+      - ELASTICSEARCH_PORT=9200
+      - ELASTICSEARCH_HOSTNAME=elasticsearch
 
   elasticsearch:
     restart: unless-stopped
