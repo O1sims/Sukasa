@@ -8,20 +8,26 @@ Created on Tue May  8 11:06:05 2018
 
 import re
 import requests
+import datetime
 
 from string import punctuation
 from bs4 import BeautifulSoup
 
 from analytics import config
+from api.services.ElasticService import ElasticService
 
 
-def get_property_page(area, page_number, property_type, sort_date):
+def get_property_page(area, page_number, property_type, sort_by):
     type_url = 'forSalePath' if property_type == 'sale' else 'forRentPath'
-    url = config.BASIC_REQUEST['baseURL'] + config.BASIC_REQUEST[type_url] + area
-    if sort_date:
-        url += '/sort-dateHigh'
+    url = '{}{}'.format(
+        config.BASIC_REQUEST['baseURL'],
+        config.BASIC_REQUEST[type_url])
+    if area:
+        url += '/{}'.format(area)
+    if sort_by is not None:
+        url += config.BASIC_REQUEST['sortOptions'][sort_by]
     if page_number > 1:
-        url += '/page-' + page_number
+        url += '/page-{}'.format(page_number)
     request_page = requests.get(
         url=url,
         headers={'User-Agent': config.BASIC_REQUEST['userAgent']})
@@ -29,26 +35,32 @@ def get_property_page(area, page_number, property_type, sort_date):
         return BeautifulSoup(request_page.content, "lxml")
     else:
         raise ValueError(
-            'Page not found: The request recieved a {} status code'.format(
+            'Page not found: The request received a {} status code'.format(
                 request_page.status_code))
 
 
 def get_final_page_number(first_page_soup):
-    return int(first_page_soup.find("li", {"class", "paging-last"}).get_text())
+    raw_page_number = first_page_soup.find("li", {"class", "paging-last"}).get_text()
+    clean_page_number = raw_page_number.encode('ascii', 'ignore').strip().replace(',', '')
+    return int(clean_page_number)
 
 
 def get_all_main_images(page_soup):
     property_images = []
     all_images = page_soup.findAll("div", {"class": "propbox-img"})
     for image in all_images:
-        if 'propbox-time' in str(image) or 'openviewing' in str(image):
+        string_image = str(image)
+        if 'is-no-photo' in string_image:
+            property_images.append(None)
+        elif 'propbox-time' in string_image or 'openviewing' in string_image:
             property_images.append(
                 image.find("img").attrs['data-lazy-src'])
     return property_images
 
 
 def strip_punctuation(string):
-    return ''.join(char for char in string if char not in punctuation)
+    prep_string = string.replace('-', ' ')
+    return ''.join(char for char in prep_string if char not in punctuation)
 
 
 def clean_price(price):
@@ -64,6 +76,19 @@ def clean_price(price):
     return end_price
 
 
+def get_currency(raw_price):
+    currencies = {
+        '£': 'pound',
+        '€': 'euro',
+        '$': 'dollar'
+    }
+    string_price = str(raw_price)
+    for c, v in currencies.iteritems():
+        if c in string_price:
+            return v
+    return 'unknown'
+
+
 def get_price(page_soup):
     offer = page_soup.find("span", {"class": "price-offers"})
     if offer is not None:
@@ -71,30 +96,50 @@ def get_price(page_soup):
     price = page_soup.find("span", {"class": "price-value "})
     min_price = page_soup.find("span", {"class": "price-min"})
     max_price = page_soup.find("span", {"class": "price-max"})
+    currency = 'unknown'
+    if price is not None:
+        currency = get_currency(price)
+    elif min_price is not None:
+        currency = get_currency(price)
     return {
         'offer': offer,
         'price': clean_price(price),
         'minPrice': clean_price(min_price),
-        'maxPrice': clean_price(max_price)
+        'maxPrice': clean_price(max_price),
+        'currency': currency
     }
+    
 
-
-def get_hyperlink(page_soup, address, town, id_length=10):
-    if town is None or address is None:
-        return None
-
-    html_string = str(page_soup)
-    trans_address = strip_punctuation(address).lower().replace(' ', '-')
-    clean_address = str('/' + trans_address + '-' + town.lower() + '/')
+def get_property_id(html_string, clean_address, id_length=10):
+    property_id = ''
     start_string = html_string.find(clean_address)
-    placement_code = ''
     for i in range(id_length):
         new_char = html_string[start_string + len(clean_address) + i]
         if new_char is not '"':
-            placement_code += html_string[start_string + len(clean_address) + i]
+            property_id += html_string[start_string + len(clean_address) + i]
         else:
             break
-    return clean_address + placement_code
+    return property_id
+
+
+def get_clean_address(address, town):
+    trans_address = strip_punctuation(address).lower().replace(' ', '-')
+    return str('/{}-{}/'.format(
+        trans_address, 
+        town.lower()))
+
+
+def get_hyperlink(page_soup, address, town):
+    if town is None or address is None:
+        return None
+
+    clean_address = get_clean_address(
+        address=address,
+        town=town)
+    property_id = get_property_id(
+        html_string=str(page_soup),
+        clean_address=clean_address)
+    return clean_address + property_id
 
 
 def get_address(page_soup):
@@ -136,7 +181,6 @@ def get_estate_agent(page_soup):
             agent_data['branch'] = str(agent[agent.find("(") + 1:agent.find(")")])
         else:
             agent_data['name'] = str(agent)
-            agent_data['branch'] = 'unknown'
     return agent_data
 
 
@@ -148,8 +192,32 @@ def property_location(detail_soup):
     }
 
 
-def garage_present(detail_page):
-    return 'garage' in detail_page.lower()
+def amenity_present(detail_page, amenity):
+    return amenity in detail_page.lower()
+
+
+def parse_epc_rating(epc_rating_list):
+    parsed_epc_values = []
+    for epc in epc_rating_list:
+        match = re.match(
+            pattern=r"([a-z]+)([0-9]+)",
+            string=epc,
+            flags=re.I)
+        if match:
+            items = match.groups()
+            for item in items:
+                parsed_epc_values.append(item)
+    parsed_epc = {
+        'actual': {
+            'band': parsed_epc_values[0],
+            'score': int(parsed_epc_values[1])
+        },
+        'potential': {
+            'band': parsed_epc_values[2],
+            'score': int(parsed_epc_values[3])
+        }
+    }
+    return parsed_epc
 
 
 def get_property_details(hyperlink):
@@ -158,7 +226,9 @@ def get_property_details(hyperlink):
 
     data = {}
     page_response = requests.get(
-        url=config.BASIC_REQUEST['baseURL'] + hyperlink,
+        url='{}{}'.format(
+            config.BASIC_REQUEST['baseURL'],
+            hyperlink),
         headers={'User-Agent': config.BASIC_REQUEST['userAgent']})
     if page_response.status_code == 200:
         detail_page = page_response.content
@@ -175,18 +245,28 @@ def get_property_details(hyperlink):
                     info = float(info.replace(' pa*', '').replace(',', ''))
                 elif 'epc' in row_title:
                     info = info.split('\n', 1)[0]
+                    info = parse_epc_rating(
+                        epc_rating_list=info.split('/'))
                 elif row_title in ['bathrooms', 'bedrooms', 'receptions']:
                     info = int(info)
                 else:
                     info = str(info)
-                data[row_title] = info
-        data['garage'] = garage_present(
-            detail_page=detail_page)
+                data[to_camel_case(string=row_title)] = info
+        data['amenities'] = {}
+        for amenity in ['garden', 'garage', 'driveway', 'parking', 'bay window']:
+            data['amenities'][to_camel_case(string=amenity)] = amenity_present(
+                detail_page=detail_page,
+                amenity=amenity)
         data['location'] = property_location(
             detail_soup=detail_soup)
         return data
     else:
         return None
+
+
+def to_camel_case(string):
+    humped_camel = ''.join(x for x in string.title() if not x.isspace())
+    return humped_camel[0].lower() + humped_camel[1:]
 
 
 def property_dataset(page_soup):
@@ -210,30 +290,41 @@ def property_dataset(page_soup):
                 page_soup=page_soup,
                 address=address,
                 town=town)
+            property_id = get_property_id(
+                html_string=str(page_soup),
+                clean_address=get_clean_address(
+                    address=address,
+                    town=town))
         else:
             town = None
             postcode = None
             hyperlink = None
+            property_id = None
         dataset.append({
+            'timestamp': datetime.datetime.now(),
+            'property_id': property_id,
             'address': address,
             'town': town,
             'postcode': postcode,
             'priceInfo': get_price(property_details[i]),
             'brief': get_brief(property_details[i]),
             'estateAgent': get_estate_agent(property_details[i]),
-            'hyperlink': hyperlink,
+            'hyperlink': '{}{}'.format(
+                config.BASIC_REQUEST['baseURL'],
+                hyperlink),
             'details': get_property_details(hyperlink),
             'image': property_images[i]
         })
     return dataset
 
 
-def get_full_property_dataset(area, property_type, sort_date=True):
+def get_property_dataset(area, property_type, sort_by,
+                         update_only=False):
     first_page = get_property_page(
         area=area,
         page_number=0,
         property_type=property_type,
-        sort_date=sort_date)
+        sort_by=sort_by)
     final_page_number = get_final_page_number(
         first_page)
     property_data = property_dataset(first_page)
@@ -243,6 +334,35 @@ def get_full_property_dataset(area, property_type, sort_date=True):
                 area=area,
                 page_number=page_number,
                 property_type=property_type,
-                sort_date=sort_date)
-            property_data += property_dataset(property_page)
+                sort_by=sort_by)
+            new_property_data = property_dataset(property_page)
+            if update_only:
+                new_property_ids = []
+                for prop in new_property_data:
+                    new_property_ids.append(prop['id'])
+                count = ElasticService().count_database(
+                        index=config.ELASTICSEARCH_QUERY_INFO['propertyIndex'],
+                        query_string={"ids": {"values": new_property_ids}})
+                if count > 0:
+                    break
+            property_data += new_property_data
     return property_data
+
+
+def send_property_dataset(property_type, area=None, sort_by=None):
+    property_data = get_property_dataset(
+        area=area,
+        property_type=property_type,
+        sort_by=sort_by)
+    ElasticService().save_to_database(
+        index=config.ELASTICSEARCH_QUERY_INFO['propertyIndex'],
+        doc_type=config.ELASTICSEARCH_QUERY_INFO['propertyDocType'],
+        data=property_data)
+
+
+if __name__ == '__main__':
+    properties = get_property_dataset(
+        area='belfast',
+        property_type='sale',
+        sort_by='recentlyAdded')
+    print properties
