@@ -210,11 +210,11 @@ def parse_epc_rating(epc_rating_list):
     parsed_epc = {
         'actual': {
             'band': parsed_epc_values[0],
-            'rating': int(parsed_epc_values[1])
+            'score': int(parsed_epc_values[1])
         },
         'potential': {
             'band': parsed_epc_values[2],
-            'rating': int(parsed_epc_values[3])
+            'score': int(parsed_epc_values[3])
         }
     }
     return parsed_epc

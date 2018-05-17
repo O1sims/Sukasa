@@ -48,9 +48,9 @@ class TestingPropertyCollection(unittest.TestCase):
         epc_rating_list = epc_rating_string.split('/')
         parsed_epc = parse_epc_rating(
             epc_rating_list=epc_rating_list)
-        self.assertEqual(parsed_epc['actual']['rating'], 82)
+        self.assertEqual(parsed_epc['actual']['score'], 82)
         self.assertEqual(parsed_epc['potential']['band'], 'B')
-        self.assertEqual(parsed_epc['potential']['rating'], 84)
+        self.assertEqual(parsed_epc['potential']['score'], 84)
 
 
 if __name__ == '__main__':
