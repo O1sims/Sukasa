@@ -1,3 +1,4 @@
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
@@ -39,6 +40,7 @@ class TestingPropertyCollection(unittest.TestCase):
         self.assertDictEqual(
             d1=price_info,
             d2=ideal_price_info)
+
 
 if __name__ == '__main__':
     unittest.main()
