@@ -16,18 +16,18 @@ RUN apt-get -y install nodejs
 RUN apt-get -y install g++
 
 # Set up Django framework
-RUN mkdir /Kasa
-WORKDIR /Kasa
-ADD requirements.txt /Kasa/
+RUN mkdir /Sukasa
+WORKDIR /Sukasa
+ADD requirements.txt /Sukasa/
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
 RUN pip install -r requirements.txt
 
-# Add the Kasa directory
-ADD . /Kasa/
+# Add the Sukasa directory
+ADD . /Sukasa/
 
 # Install Angular packages
-WORKDIR /Kasa/gui/app
+WORKDIR /Sukasa/gui/app
 RUN npm install
 
 # Expose ports

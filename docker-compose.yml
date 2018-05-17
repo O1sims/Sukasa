@@ -1,14 +1,14 @@
 version: '2'
 services:
-  kasa:
+  sukasa:
     restart: unless-stopped
-    image: kasa:latest
-    container_name: kasa
-    command: python /Kasa/manage.py runserver 0.0.0.0:8000
+    image: sukasa:latest
+    container_name: sukasa
+    command: python /Sukasa/manage.py runserver 0.0.0.0:8000
     ports:
       - "8000:8000"
     volumes:
-      - ".:/Kasa/"
+      - ".:/Sukasa/"
     depends_on:
       - kibana
       - elasticsearch

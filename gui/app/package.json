@@ -1,10 +1,10 @@
 {
-  "name": "Kasa",
+  "name": "Sukasa",
   "description": "Web application that analyses current property prices to detect price imperfections",
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/O1sims/casa.git"
+    "url": "https://github.com/O1sims/Sukasa.git"
   },
   "scripts": {
     "start": "concurrently \"npm run tsc:w\" \"npm run lite\" ",

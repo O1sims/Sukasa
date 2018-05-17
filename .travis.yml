@@ -2,7 +2,7 @@ language: python
 python:
   - 2.7
 before_install:
-  - export DJANGO_SETTINGS_MODULE=kasa.settings
+  - export DJANGO_SETTINGS_MODULE=sukasa.settings
   - export PYTHONPATH=$HOME/builds/O1sims/Sukasa
   - export PIP_USE_MIRRORS=true
 install:
