@@ -26,7 +26,6 @@ def get_property_page(area, page_number, property_type, sort_by):
         url += config.BASIC_REQUEST['sortOptions'][sort_by]
     if page_number > 1:
         url += '/page-{}'.format(page_number)
-    print(url)
     request_page = requests.get(
         url=url,
         headers={'User-Agent': config.BASIC_REQUEST['userAgent']})
@@ -53,7 +52,7 @@ def get_all_main_images(page_soup):
             property_images.append(None)
         elif 'propbox-time' in string_image or 'openviewing' in string_image:
             property_images.append(
-                    image.find("img").attrs['data-lazy-src'])
+                image.find("img").attrs['data-lazy-src'])
     return property_images
 
 
@@ -76,15 +75,16 @@ def clean_price(price):
 
 
 def get_currency(raw_price):
+    currencies = {
+        '£': 'pound',
+        '€': 'euro',
+        '$': 'dollar'
+    }
     string_price = str(raw_price)
-    if '£' in string_price:
-        return 'pound'
-    elif '€' in string_price:
-        return 'euro'
-    elif '$' in string_price:
-        return 'dollar'
-    else:
-        return 'unknown'
+    for c, v in currencies.iteritems():
+        if c in string_price:
+            return v
+    return 'unknown'
 
 
 def get_price(page_soup):
@@ -122,7 +122,9 @@ def get_property_id(html_string, clean_address, id_length=10):
 
 def get_clean_address(address, town):
     trans_address = strip_punctuation(address).lower().replace(' ', '-')
-    return str('/{}-{}/'.format(trans_address, town.lower()))
+    return str('/{}-{}/'.format(
+        trans_address, 
+        town.lower()))
 
 
 def get_hyperlink(page_soup, address, town):
@@ -188,16 +190,8 @@ def property_location(detail_soup):
     }
 
 
-def garage_present(detail_page):
-    return 'garage' in detail_page.lower()
-
-
-def driveway_present(detail_page):
-    return 'driveway' in detail_page.lower()
-
-
-def parking_present(detail_page):
-    return 'parking' in detail_page.lower()
+def amenity_present(detail_page, amenity):
+    return amenity in detail_page.lower()
 
 
 def get_property_details(hyperlink):
@@ -206,7 +200,9 @@ def get_property_details(hyperlink):
 
     data = {}
     page_response = requests.get(
-        url=config.BASIC_REQUEST['baseURL'] + hyperlink,
+        url='{}{}'.format(
+            config.BASIC_REQUEST['baseURL'],
+            hyperlink),
         headers={'User-Agent': config.BASIC_REQUEST['userAgent']})
     if page_response.status_code == 200:
         detail_page = page_response.content
@@ -228,12 +224,11 @@ def get_property_details(hyperlink):
                 else:
                     info = str(info)
                 data[row_title] = info
-        data['garage'] = garage_present(
-            detail_page=detail_page)
-        data['driveway'] = driveway_present(
-            detail_page=detail_page)
-        data['parking'] = parking_present(
-            detail_page=detail_page)
+        data['amenities'] = {}
+        for amenity in ['garden', 'garage', 'driveway', 'parking']:
+            data['amenities'][amenity] = amenity_present(
+                detail_page=detail_page,
+                amenity=amenity)
         data['location'] = property_location(
             detail_soup=detail_soup)
         return data
@@ -274,14 +269,16 @@ def property_dataset(page_soup):
             property_id = None
         dataset.append({
             'timestamp': datetime.datetime.now(),
-            'id': property_id,
+            'property_id': property_id,
             'address': address,
             'town': town,
             'postcode': postcode,
             'priceInfo': get_price(property_details[i]),
             'brief': get_brief(property_details[i]),
             'estateAgent': get_estate_agent(property_details[i]),
-            'hyperlink': hyperlink,
+            'hyperlink': '{}{}'.format(
+                config.BASIC_REQUEST['baseURL'],
+                hyperlink),
             'details': get_property_details(hyperlink),
             'image': property_images[i]
         })
@@ -292,7 +289,7 @@ def get_property_dataset(area, property_type, sort_by,
                          update_only=False):
     first_page = get_property_page(
         area=area,
-        page_number=2,
+        page_number=0,
         property_type=property_type,
         sort_by=sort_by)
     final_page_number = get_final_page_number(
@@ -328,3 +325,11 @@ def send_property_dataset(property_type, area=None, sort_by=None):
         index=config.ELASTICSEARCH_CONFIG['propertyIndex'],
         doc_type=config.ELASTICSEARCH_CONFIG['propertyDocType'],
         data=property_data)
+
+
+if __name__ == '__main__':
+    property_dataset = get_property_dataset(
+        area='belfast',
+        property_type='sale',
+        sort_by='recentlyAdded')
+    print property_dataset
