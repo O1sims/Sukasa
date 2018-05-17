@@ -8,6 +8,7 @@ import unittest
 from analytics.utilities.CollectPropertyData import \
     get_final_page_number, \
     get_all_main_images, \
+    parse_epc_rating, \
     get_price
 
 
@@ -35,11 +36,21 @@ class TestingPropertyCollection(unittest.TestCase):
             'price': 155000,
             'minPrice': None,
             'maxPrice': None,
-            'offer': 'Offers over'
+            'offer': 'Offers over',
+            'currency': 'pound'
         }
         self.assertDictEqual(
             d1=price_info,
             d2=ideal_price_info)
+
+    def test_parse_epc_rating(self):
+        epc_rating_string = 'B82/B84'
+        epc_rating_list = epc_rating_string.split('/')
+        parsed_epc = parse_epc_rating(
+            epc_rating_list=epc_rating_list)
+        self.assertEqual(parsed_epc['actual']['rating'], 82)
+        self.assertEqual(parsed_epc['potential']['band'], 'B')
+        self.assertEqual(parsed_epc['potential']['rating'], 84)
 
 
 if __name__ == '__main__':

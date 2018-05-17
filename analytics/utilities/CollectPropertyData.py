@@ -19,7 +19,9 @@ from api.services.ElasticService import ElasticService
 
 def get_property_page(area, page_number, property_type, sort_by):
     type_url = 'forSalePath' if property_type == 'sale' else 'forRentPath'
-    url = config.BASIC_REQUEST['baseURL'] + config.BASIC_REQUEST[type_url]
+    url = '{}{}'.format(
+        config.BASIC_REQUEST['baseURL'],
+        config.BASIC_REQUEST[type_url])
     if area:
         url += '/{}'.format(area)
     if sort_by is not None:
@@ -33,7 +35,7 @@ def get_property_page(area, page_number, property_type, sort_by):
         return BeautifulSoup(request_page.content, "lxml")
     else:
         raise ValueError(
-            'Page not found: The request recieved a {} status code'.format(
+            'Page not found: The request received a {} status code'.format(
                 request_page.status_code))
 
 
@@ -194,6 +196,30 @@ def amenity_present(detail_page, amenity):
     return amenity in detail_page.lower()
 
 
+def parse_epc_rating(epc_rating_list):
+    parsed_epc_values = []
+    for epc in epc_rating_list:
+        match = re.match(
+            pattern=r"([a-z]+)([0-9]+)",
+            string=epc,
+            flags=re.I)
+        if match:
+            items = match.groups()
+            for item in items:
+                parsed_epc_values.append(item)
+    parsed_epc = {
+        'actual': {
+            'band': parsed_epc_values[0],
+            'rating': int(parsed_epc_values[1])
+        },
+        'potential': {
+            'band': parsed_epc_values[2],
+            'rating': int(parsed_epc_values[3])
+        }
+    }
+    return parsed_epc
+
+
 def get_property_details(hyperlink):
     if hyperlink is None:
         return None
@@ -219,14 +245,16 @@ def get_property_details(hyperlink):
                     info = float(info.replace(' pa*', '').replace(',', ''))
                 elif 'epc' in row_title:
                     info = info.split('\n', 1)[0]
+                    info = parse_epc_rating(
+                        epc_rating_list=info.split('/'))
                 elif row_title in ['bathrooms', 'bedrooms', 'receptions']:
                     info = int(info)
                 else:
                     info = str(info)
-                data[row_title] = info
+                data[to_camel_case(string=row_title)] = info
         data['amenities'] = {}
-        for amenity in ['garden', 'garage', 'driveway', 'parking']:
-            data['amenities'][amenity] = amenity_present(
+        for amenity in ['garden', 'garage', 'driveway', 'parking', 'bay window']:
+            data['amenities'][to_camel_case(string=amenity)] = amenity_present(
                 detail_page=detail_page,
                 amenity=amenity)
         data['location'] = property_location(
@@ -234,6 +262,11 @@ def get_property_details(hyperlink):
         return data
     else:
         return None
+
+
+def to_camel_case(string):
+    humped_camel = ''.join(x for x in string.title() if not x.isspace())
+    return humped_camel[0].lower() + humped_camel[1:]
 
 
 def property_dataset(page_soup):
@@ -308,7 +341,7 @@ def get_property_dataset(area, property_type, sort_by,
                 for prop in new_property_data:
                     new_property_ids.append(prop['id'])
                 count = ElasticService().count_database(
-                        index=config.ELASTICSEARCH_CONFIG['propertyIndex'],
+                        index=config.ELASTICSEARCH_QUERY_INFO['propertyIndex'],
                         query_string={"ids": {"values": new_property_ids}})
                 if count > 0:
                     break
@@ -322,14 +355,14 @@ def send_property_dataset(property_type, area=None, sort_by=None):
         property_type=property_type,
         sort_by=sort_by)
     ElasticService().save_to_database(
-        index=config.ELASTICSEARCH_CONFIG['propertyIndex'],
-        doc_type=config.ELASTICSEARCH_CONFIG['propertyDocType'],
+        index=config.ELASTICSEARCH_QUERY_INFO['propertyIndex'],
+        doc_type=config.ELASTICSEARCH_QUERY_INFO['propertyDocType'],
         data=property_data)
 
 
 if __name__ == '__main__':
-    property_dataset = get_property_dataset(
+    properties = get_property_dataset(
         area='belfast',
         property_type='sale',
         sort_by='recentlyAdded')
-    print property_dataset
+    print properties
