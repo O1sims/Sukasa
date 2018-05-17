@@ -1,10 +1,6 @@
 #!/usr/bin/env python2
 # -*- coding: utf-8 -*-
-"""
-Created on Tue May  8 11:06:05 2018
 
-@author: owen
-"""
 
 DEVELOPMENT = True
 
@@ -43,7 +39,7 @@ GEOGRAPHY = {
     }
 }
 
-ELASTICSEARCH_CONFIG = {
+ELASTICSEARCH_QUERY_INFO = {
     "propertyIndex": "properties",
     "propertyDocType": "house"
 }
