@@ -14,14 +14,19 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
-from django.contrib import admin
 
 from api.views.index import IndexView
+from api.views.collect_property_data import CollectPropertyDataView
 
-urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+from rest_framework.urlpatterns import format_suffix_patterns
+
+
+urlpatterns = format_suffix_patterns([
+
+    url(r'^application/collect_property_data/$',
+        CollectPropertyDataView.as_view()),
 
     url(r'^$',
         IndexView.as_view(),
         name='index')
-]
+])
