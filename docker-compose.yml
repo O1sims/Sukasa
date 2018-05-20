@@ -12,6 +12,8 @@ services:
     depends_on:
       - kibana
       - elasticsearch
+    networks:
+      - docker-elk
     environment:
       - SUKASA_PORT=8000
       - SUKASA_HOSTNAME=sukasa
