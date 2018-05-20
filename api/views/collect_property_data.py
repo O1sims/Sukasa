@@ -7,10 +7,13 @@ from analytics.utilities.CollectPropertyData import send_property_dataset
 
 
 class CollectPropertyDataView(CreateAPIView):
-    renderer_classes = (JSONRenderer,)
+    renderer_classes = (JSONRenderer, )
     serializer_class = CollectPropertyDataModel
 
     def post(self, request, **kwargs):
+        CollectPropertyDataModel(
+            data=request.data).is_valid(
+            raise_exception=True)
         send_property_dataset(
             property_type=request.data['propertyType'],
             area=request.data['area'],

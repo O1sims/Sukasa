@@ -187,8 +187,8 @@ def get_estate_agent(page_soup):
 def property_location(detail_soup):
     map_data = detail_soup.find('div', {'class': 'prop-map-canvas'}).attrs
     return {
-        'latitude': float(map_data['data-lat']),
-        'longitude': float(map_data['data-lng'])
+        'lat': float(map_data['data-lat']),
+        'lon': float(map_data['data-lng'])
     }
 
 
@@ -197,26 +197,31 @@ def amenity_present(detail_page, amenity):
 
 
 def parse_epc_rating(epc_rating_list):
-    parsed_epc_values = []
-    for epc in epc_rating_list:
-        match = re.match(
-            pattern=r"([a-z]+)([0-9]+)",
-            string=epc,
-            flags=re.I)
-        if match:
-            items = match.groups()
-            for item in items:
-                parsed_epc_values.append(item)
     parsed_epc = {
         'actual': {
-            'band': parsed_epc_values[0],
-            'score': int(parsed_epc_values[1])
+            'band': None,
+            'score': None
         },
         'potential': {
-            'band': parsed_epc_values[2],
-            'score': int(parsed_epc_values[3])
+            'band': None,
+            'score': None
         }
     }
+    if len(epc_rating_list) == 2:
+        parsed_epc_values = []
+        for epc in epc_rating_list:
+            match = re.match(
+                pattern=r"([a-z]+)([0-9]+)",
+                string=epc,
+                flags=re.I)
+            if match:
+                items = match.groups()
+                for item in items:
+                    parsed_epc_values.append(item)
+        parsed_epc['actual']['band'] = parsed_epc_values[0]
+        parsed_epc['actual']['score'] = int(parsed_epc_values[1])
+        parsed_epc['potential']['band'] = parsed_epc_values[2]
+        parsed_epc['potential']['score'] = int(parsed_epc_values[3])
     return parsed_epc
 
 
@@ -354,10 +359,12 @@ def send_property_dataset(property_type, area=None, sort_by=None):
         area=area,
         property_type=property_type,
         sort_by=sort_by)
-    ElasticService().save_to_database(
+    print 'Sending {} properties to ES'.format(len(property_data))
+    res = ElasticService().save_to_database(
         index=config.ELASTICSEARCH_QUERY_INFO['propertyIndex'],
         doc_type=config.ELASTICSEARCH_QUERY_INFO['propertyDocType'],
         data=property_data)
+    print(res)
 
 
 if __name__ == '__main__':

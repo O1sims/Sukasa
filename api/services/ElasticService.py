@@ -25,17 +25,18 @@ class ElasticService:
                 if element['property_id'] is None:
                     continue
                 else:
-                    self.es.index(
+                    elastic_response = self.es.index(
                         index=index,
                         doc_type=doc_type,
                         id=element['property_id'],
                         body=element)
         else:
-            self.es.index(
+            elastic_response = self.es.index(
                 index=index,
                 doc_type=doc_type,
                 id=data['property_id'],
                 body=data)
+        return elastic_response
             
     def get_from_database(self, index, doc_type, elastic_id):
         elastic_response = self.es.get(
