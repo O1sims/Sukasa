@@ -1,17 +1,20 @@
 from rest_framework.response import Response
 from rest_framework.renderers import JSONRenderer
-from rest_framework.generics import CreateAPIView, ListCreateAPIView
+from rest_framework.generics import CreateAPIView
 
-from api.models.property_data import CollectPropertyDataModel, GetPropertyDataModel
+from api.services.ElasticService import ElasticService
+from api.models.property_data import GeneratePropertyDataModel, GetPropertyDataModel
+
+import analytics.config as config
 from analytics.utilities.CollectPropertyData import send_property_dataset
 
 
-class CollectPropertyDataView(CreateAPIView):
+class GeneratePropertyDataView(CreateAPIView):
     renderer_classes = (JSONRenderer, )
-    serializer_class = CollectPropertyDataModel
+    serializer_class = GeneratePropertyDataModel
 
     def post(self, request, *args, **kwargs):
-        CollectPropertyDataModel(
+        GeneratePropertyDataModel(
             data=request.data).is_valid(
             raise_exception=True)
         send_property_dataset(
@@ -21,16 +24,17 @@ class CollectPropertyDataView(CreateAPIView):
         return Response(status=201)
 
 
-class GetPropertyDataView(ListCreateAPIView):
+class GetPropertyDataView(CreateAPIView):
     renderer_classes = (JSONRenderer, )
     serializer_class = GetPropertyDataModel
-
-    def get(self, request, *args, **kwargs):
-        address = self.request.GET.get('address', None)
-        return Response(data={'address': address}, status=200)
 
     def post(self, request, *args, **kwargs):
         GetPropertyDataModel(
             data=request.data).is_valid(
             raise_exception=True)
-        return Response(status=200)
+        properties = ElasticService().search_database(
+            index=config.ELASTICSEARCH_QUERY_INFO['propertyIndex'],
+            query_dict=request.data)
+        return Response(
+            data=properties,
+            status=200)
