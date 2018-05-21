@@ -1,6 +1,6 @@
 from rest_framework.response import Response
 from rest_framework.renderers import JSONRenderer
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView, ListCreateAPIView
 
 from api.models.property_data import CollectPropertyDataModel, GetPropertyDataModel
 from analytics.utilities.CollectPropertyData import send_property_dataset
@@ -21,9 +21,13 @@ class CollectPropertyDataView(CreateAPIView):
         return Response(status=201)
 
 
-class GetPropertyDataView(CreateAPIView):
+class GetPropertyDataView(ListCreateAPIView):
     renderer_classes = (JSONRenderer, )
     serializer_class = GetPropertyDataModel
+
+    def get(self, request, *args, **kwargs):
+        address = self.request.GET.get('address', None)
+        return Response(data={'address': address}, status=200)
 
     def post(self, request, *args, **kwargs):
         GetPropertyDataModel(
