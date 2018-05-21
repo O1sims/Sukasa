@@ -1,3 +1,5 @@
+import config
+
 from django.conf.urls import url
 
 from api.views.index import IndexView
@@ -8,10 +10,12 @@ from rest_framework_swagger.views import get_swagger_view
 
 
 urlpatterns = format_suffix_patterns([
-    url(r'^application/properties/(?P<property_type>.+)/$',
+    url(r'^api/v{}/properties/(?P<property_type>.+)/$'.format(
+        config.API_VERSION),
         GetPropertyDataView.as_view()),
 
-    url(r'^application/collect_properties/$',
+    url(r'^api/v{}/collect_properties/$'.format(
+        config.API_VERSION),
         CollectPropertyDataView.as_view()),
 
     url(r'^swagger/$',
