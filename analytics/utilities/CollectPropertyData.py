@@ -359,12 +359,11 @@ def send_property_dataset(property_type, area=None, sort_by=None):
         area=area,
         property_type=property_type,
         sort_by=sort_by)
-    print 'Sending {} properties to ES'.format(len(property_data))
-    res = ElasticService().save_to_database(
+    ElasticService().save_to_database(
         index=config.ELASTICSEARCH_QUERY_INFO['propertyIndex'],
         doc_type=config.ELASTICSEARCH_QUERY_INFO['propertyDocType'],
         data=property_data)
-    print(res)
+    return len(property_data)
 
 
 if __name__ == '__main__':

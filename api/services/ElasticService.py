@@ -78,6 +78,15 @@ class ElasticService:
         for hit in elastic_response['hits']['hits']:
             search_results.append(hit['_source'])
         return search_results
+
+    def drop_database(self, index=None):
+        if index is None:
+            raise ValueError(
+                'Please provide an Elasticserach index')
+        else:
+            self.es.indices.delete(
+                index=index,
+                ignore=[400, 404])
     
     def count_database(self, index, query_string):
         elastic_response = self.es.count(
