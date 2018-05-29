@@ -308,6 +308,8 @@ def property_dataset(page_soup):
         dataset.append({
             'timestamp': datetime.datetime.now(),
             'property_id': property_id,
+            'specification': '{}, {}, {}'.format(
+                address, town, postcode),
             'address': address,
             'town': town,
             'postcode': postcode,
