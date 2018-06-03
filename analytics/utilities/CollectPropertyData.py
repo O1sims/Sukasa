@@ -14,6 +14,7 @@ from string import punctuation
 from bs4 import BeautifulSoup
 
 from analytics import config
+from LocationalDetails import postcode_areas
 from api.services.ElasticService import ElasticService
 
 
@@ -274,6 +275,14 @@ def to_camel_case(string):
     return humped_camel[0].lower() + humped_camel[1:]
 
 
+def generate_tags(taggables):
+    tags = []
+    for tag in taggables:
+        if tag is not None:
+            tags.append(tag)
+    return tags
+
+
 def property_dataset(page_soup):
     dataset = []
     property_details = page_soup.findAll("div", {"class": "propbox-details"})
@@ -291,6 +300,7 @@ def property_dataset(page_soup):
         if len(postcode_split) > 1:
             town = postcode_split[0]
             postcode = postcode_split[1]
+            area = postcode_areas[postcode]
             hyperlink = get_hyperlink(
                 page_soup=page_soup,
                 address=address,
@@ -301,15 +311,13 @@ def property_dataset(page_soup):
                     address=address,
                     town=town))
         else:
-            town = None
-            postcode = None
-            hyperlink = None
-            property_id = None
+            area = town = postcode = hyperlink = property_id = None
+        tags = generate_tags(
+            taggables=[address, town, postcode, area])
         dataset.append({
-            'timestamp': datetime.datetime.now(),
-            'property_id': property_id,
-            'specification': '{}, {}, {}'.format(
-                address, town, postcode),
+            'timeAdded': datetime.datetime.now(),
+            'propertyId': property_id,
+            'tags': tags,
             'address': address,
             'town': town,
             'postcode': postcode,
