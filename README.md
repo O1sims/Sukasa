@@ -18,7 +18,7 @@ We use Docker in the development of Sukasa to make it really easy to build, run 
 git clone https://github.com/O1sims/Sukasa.git
 cd Sukasa
 docker build -t sukasa:latest .
-docker-commpose run --service-ports sukasa
+docker-compose run --service-ports sukasa
 ```
 By default, the main Sukasa application will run on port `8000`, the ElasticSearch database is accessible on port `9200` and Kibana is on port `5601`. The `docker-compose.yml` can be altered to allow these services to run on different ports.
 
