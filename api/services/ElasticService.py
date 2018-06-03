@@ -39,19 +39,19 @@ class ElasticService:
     def save_to_database(self, index, doc_type, data):
         if isinstance(data, list):
             for element in data:
-                if element['property_id'] is None:
+                if element['propertyId'] is None:
                     continue
                 else:
                     elastic_response = self.es.index(
                         index=index,
                         doc_type=doc_type,
-                        id=element['property_id'],
+                        id=element['propertyId'],
                         body=element)
         else:
             elastic_response = self.es.index(
                 index=index,
                 doc_type=doc_type,
-                id=data['property_id'],
+                id=data['propertyId'],
                 body=data)
         return elastic_response
             
