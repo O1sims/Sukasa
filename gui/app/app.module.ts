@@ -5,6 +5,7 @@ import { BrowserModule }             from '@angular/platform-browser';
 import { AppComponent }              from './app.component';
 
 import { HomeComponent }             from './home/home.component';
+import { SearchComponent }           from './search/search.component';
 import { NotFoundComponent }         from './not-found/not-found.component';
 
 import { routing }                   from './app.routing';
@@ -18,6 +19,7 @@ import { routing }                   from './app.routing';
     declarations: [
         AppComponent,
         HomeComponent,
+        SearchComponent,
         NotFoundComponent
     ],
     bootstrap: [
