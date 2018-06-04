@@ -28,6 +28,8 @@ urlpatterns = format_suffix_patterns([
             title='Sukasa API')),
 
     url(r'^$',
-        IndexView.as_view(),
-        name='index')
+        IndexView.as_view()),
+
+    url(r'^(?P<path>.*)/$',
+        IndexView.as_view())
 ])
