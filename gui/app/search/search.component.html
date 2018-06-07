@@ -1,3 +1,7 @@
 <div class="container">
-    <h1>You are searching for: {{searchQuery}}</h1>
+    <h1>Search results</h1>
+</div>
+
+<div class="container" *ngFor="let result of searchResults">
+  {{result.address}}
 </div>

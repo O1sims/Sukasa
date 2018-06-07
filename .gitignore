@@ -15,3 +15,4 @@ node_modules/
 gui/app/*.js
 gui/app/**/*.js
 !gui/app/assets/*.js
+!gui/app/assets/js/*.js
