@@ -1,4 +1,9 @@
 <div class="container">
     <h1>What are you searching for?</h1>
-    <input type="text" placeholder="Property search...">
+    <form>
+      <input type="text" placeholder="Search..." (input)="prepareSearchQuery($event)">
+      <button type="submit" routerLink="search" [queryParams]="{q: searchQuery}">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
 </div>

@@ -5,4 +5,10 @@ import { Component } from '@angular/core';
 })
 
 export class HomeComponent {
+
+  searchQuery:string = "";
+
+  prepareSearchQuery(event) {
+    this.searchQuery = event['target']['value'];
+  };
 }
