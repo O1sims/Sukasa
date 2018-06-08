@@ -6,8 +6,12 @@
   No results found that match your query
 </div>
 
-<div class="container"*ngIf="searchResults.length > 0">
-  <div *ngFor="let result of searchResults">
-    {{result.address}}
+<div class="container" *ngIf="searchResults.length > 0">
+  <div class="col-sm-6" style="padding-bottom: 25px;" *ngFor="let result of searchResults">
+    <img src={{result.image}} width="90%"> <br>
+    <h2>{{result.address}}</h2>
+    <h5>{{result.estateAgent.name}}</h5>
+    <h4>{{result.brief}}</h4>
+    <h4>{{result.priceInfo.price}}</h4>
   </div>
 </div>

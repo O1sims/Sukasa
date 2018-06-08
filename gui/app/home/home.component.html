@@ -2,7 +2,7 @@
     <h1>What are you searching for?</h1>
     <form>
       <input type="text" placeholder="Search..." (input)="prepareSearchQuery($event)">
-      <button type="submit" routerLink="search" [queryParams]="{q: searchQuery}">
+      <button type="submit" [routerLink]="['/search']" [queryParams]="{q: searchQuery}">
         <i class="fa fa-search"></i>
       </button>
     </form>
