@@ -35,7 +35,7 @@ class GetPropertyDataView(ListCreateAPIView):
         search_query = self.request.GET.get('q', None)
         properties = ElasticService().search_database(
             index=config.ELASTICSEARCH_QUERY_INFO['propertyIndex'],
-            query_dict={'tags': search_query})
+            query_dict={'tags': search_query.lower()})
         return Response(
             data=properties,
             status=200)
