@@ -320,6 +320,7 @@ def property_dataset(page_soup):
             'tags': tags,
             'address': address,
             'town': town,
+            'area': area,
             'postcode': postcode,
             'priceInfo': get_price(property_details[i]),
             'brief': get_brief(property_details[i]),
