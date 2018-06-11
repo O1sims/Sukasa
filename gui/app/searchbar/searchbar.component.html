@@ -1,0 +1,11 @@
+<div class="container-fluid"
+  style="background-color:#EEE; border-bottom: 5px solid #E0E0E0;">
+  <div class="container" style="text-align: center;">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3" style="padding: 40 0 40 0;">
+        <input type="text" class="form-control" placeholder={{searchQuery}}
+          (input)="prepareSearchQuery($event)" (keyup.enter)="propertySearch()">
+      </div>
+    </div>
+  </div>
+</div>
