@@ -23,11 +23,11 @@ export class SearchComponent implements OnInit {
     .subscribe(
       params => {
         this.searchQuery = params['q'] || '';
-        this.propertySearch(this.searchQuery);
+        this.propertySearch(this.searchQuery, 2);
       });
   };
 
-  propertySearch(query) {
+  propertySearch(query, groupSize) {
     this.searchService.searchProperties('sale', query)
     .subscribe(
       propertyData => {
@@ -37,8 +37,10 @@ export class SearchComponent implements OnInit {
             priceInfo.currency,
             priceInfo.price)
         };
-        this.searchResults = propertyData;
-        console.log(this.searchResults);
+        console.log(propertyData);
+        this.searchResults = propertyData.map(function(item, index){
+          return index % groupSize === 0 ? propertyData.slice(index, index + groupSize) : null;
+        }).filter(function(item){ return item; });
       });
   };
 

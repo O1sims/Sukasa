@@ -1,7 +1,7 @@
 <searchbar></searchbar>
 
 <div class="container" style="padding-bottom: 35px;">
-    <h2>Searching for "{{searchQuery}}" in properties for sale</h2>
+  <h2>Searching for "{{searchQuery}}" in properties for sale</h2>
 </div>
 
 <div class="container" *ngIf="searchResults.length==0">
@@ -9,12 +9,14 @@
 </div>
 
 <div class="container" *ngIf="searchResults.length > 0">
-  <div class="panel col-sm-6" style="padding-bottom: 35px;"
-    *ngFor="let result of searchResults">
-    <img src={{result.image}} width="90%">
-    <h3 style="text-transform: uppercase;">{{result.address}}</h3>
-    <h5>{{result.estateAgent.name}}</h5>
-    <h4>{{result.brief}}</h4>
-    <h4>{{result.price}}</h4>
+  <div class="row" *ngFor="let resultGroup of searchResults">
+    <div class="panel col-sm-6" style="padding-bottom: 35px;"
+      *ngFor="let result of resultGroup">
+      <img src={{result.image}} width="90%">
+      <h3 style="text-transform: uppercase;">{{result.address}}</h3>
+      <h5>{{result.estateAgent.name}}</h5>
+      <h4>{{result.brief}}</h4>
+      <h4>{{result.price}}</h4>
+    </div>
   </div>
 </div>
