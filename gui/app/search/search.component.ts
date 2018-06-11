@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { SearchService } from './search.service';
 
@@ -10,24 +10,31 @@ import { SearchService } from './search.service';
 })
 
 export class SearchComponent implements OnInit {
+  groupSize:number = 2;
+
   searchQuery:string = "";
   searchResults:object[] = [];
 
+  currencyChart:object = {
+    'pound': '£',
+    'euro': '€',
+    'dollar': '$'
+  };
+
   constructor(
     private searchService: SearchService,
-    private route: ActivatedRoute,
-    private router: Router) {}
+    private route: ActivatedRoute) {};
 
   ngOnInit() {
     this.route.queryParams
     .subscribe(
       params => {
         this.searchQuery = params['q'] || '';
-        this.propertySearch(this.searchQuery, 2);
+        this.propertySearch(this.searchQuery);
       });
   };
 
-  propertySearch(query, groupSize) {
+  propertySearch(query) {
     this.searchService.searchProperties('sale', query)
     .subscribe(
       propertyData => {
@@ -38,20 +45,21 @@ export class SearchComponent implements OnInit {
             priceInfo.price)
         };
         console.log(propertyData);
-        this.searchResults = propertyData.map(function(item, index){
-          return index % groupSize === 0 ? propertyData.slice(index, index + groupSize) : null;
-        }).filter(function(item){ return item; });
+        this.searchResults = this.chuckSearchResults(propertyData)
       });
+  };
+
+  chuckSearchResults(results, groupSize = this.groupSize) {
+    return(
+      results.map(function(item, index) {
+        return index % groupSize === 0 ?
+        results.slice(index, index + groupSize) : null;
+      }).filter(function(item){ return item; }));
   };
 
   cleanPropertyPrice(currency, price) {
     let cleanPrice = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    var currencies = {
-      'pound': '£',
-      'euro': '€',
-      'dollar': '$'
-    };
-    return(currencies[currency] + cleanPrice);
+    return(this.currencyChart[currency] + cleanPrice);
   };
 
 }
