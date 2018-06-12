@@ -10,15 +10,18 @@ export class PropertyService {
   constructor(private http: Http) {
 	};
 
-  searchProperties(propertyType, searchQuery) {
-    let params = new URLSearchParams();
-    params.set('q', searchQuery);
+  getPropertyDetails(propertyType, propertyId) {
+    var headers = new Headers();
+		headers.append("Content-Type", 'application/json');
+
     var requestoptions = new RequestOptions({
-			method: RequestMethod.Get,
-			url: '/api/v1/properties/' + propertyType + '/',
-      params: params
+			method: RequestMethod.Post,
+			url: 'api/v1/properties/' + propertyType + '/',
+      headers: headers,
+      body: JSON.stringify({'_id': propertyId})
 		});
-		return this.http.request(
+
+    return this.http.request(
       new Request(requestoptions))
 		.map(res => res.json());
   };
