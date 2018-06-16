@@ -15,8 +15,10 @@
   <div class="row" *ngFor="let resultGroup of searchResults">
     <div class="panel col-sm-6" style="padding-bottom: 35px;"
       *ngFor="let result of resultGroup">
-      <img src={{result.image}}>
-      <h3 style="text-transform: uppercase;" routerLink="/property/{{result.propertyId}}">{{result.address}}</h3>
+      <img src={{result.image}}
+        routerLink="/property/{{result.propertyId}}">
+      <h3 style="text-transform: uppercase;"
+        routerLink="/property/{{result.propertyId}}">{{result.address}}</h3>
       <h5>{{result.estateAgent.name}}</h5>
       <h4>{{result.brief}}</h4>
       <h4>{{result.price}}</h4>
