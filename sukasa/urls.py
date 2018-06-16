@@ -7,8 +7,20 @@ from api.views.reset import ResetIndexView
 from api.views.property_data import GeneratePropertyDataView, GetPropertyDataView
 
 from rest_framework.urlpatterns import format_suffix_patterns
-from rest_framework_swagger.views import get_swagger_view
 
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title="Sukasa API",
+        default_version=config.API_VERSION,
+        description="Sukasa API documentation"
+    ),
+    validators=['flex', 'ssv'],
+    public=True
+)
 
 urlpatterns = format_suffix_patterns([
     url(r'^api/v{}/properties/(?P<property_type>.+)/$'.format(
@@ -24,8 +36,14 @@ urlpatterns = format_suffix_patterns([
         ResetIndexView.as_view()),
 
     url(r'^swagger/$',
-        get_swagger_view(
-            title='Sukasa API')),
+        schema_view.with_ui(
+            'swagger', cache_timeout=0),
+        name='schema-swagger-ui'),
+
+    url(r'^redoc/$',
+        schema_view.with_ui(
+            'redoc', cache_timeout=0),
+        name='schema-redoc'),
 
     url(r'^$',
         IndexView.as_view()),
