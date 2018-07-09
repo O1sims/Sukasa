@@ -10,7 +10,7 @@ import { PropertyService } from './property.service';
 })
 
 export class PropertyComponent implements OnInit {
-  propertyId:string = "";
+  propertyDetail:object = {};
 
   constructor(
     private propertyService: PropertyService,
@@ -18,11 +18,10 @@ export class PropertyComponent implements OnInit {
 
   ngOnInit() {
     var propertyData = this.route.params.subscribe(params => {
-       this.propertyId = params['id'];
        this.propertyService.getPropertyDetails('sale', params['id'])
        .subscribe(
          propertyDetail => {
-           console.log(propertyDetail[0]);
+           this.propertyDetail = propertyDetail[0];
          });
     });
   };

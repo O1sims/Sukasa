@@ -13,14 +13,16 @@ The web application uses [Django](https://www.djangoproject.com/) as the backend
 
 ## Building the application
 
-We use Docker in the development of Sukasa to make it really easy to build, run and share the application. The following instructions show how it's built and run in Docker:
+We use Docker in the development of Sukasa to make it easy to build, run and share. The following instructions show how it's built and run in Docker:
 ```
 git clone https://github.com/O1sims/Sukasa.git
 cd Sukasa
 docker build -t sukasa:latest .
-docker-compose run --service-ports sukasa
+docker-compose up
 ```
-By default, the main Sukasa application will run on port `8000`, the ElasticSearch database is accessible on port `9200` and Kibana is on port `5601`. The `docker-compose.yml` can be altered to allow these services to run on different ports.
+By default, the main Sukasa application will run on port `8000`, the ElasticSearch database is accessible on port `9200` and Kibana is on port `5601`. The `docker-compose.yml` can be altered to allow these services to run on different ports. Swagger API documentation can be found at `localhost:8000/swagger/`.
+
+Environmental variables for the application can be changed in the `docker-compose.yml` file.
 
 ## Contact
 

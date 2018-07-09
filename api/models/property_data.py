@@ -67,7 +67,7 @@ class PriceInformationModel(serializers.Serializer):
     offer = serializers.CharField(required=False)
 
 
-class GetPropertyDataModel(serializers.Serializer):
+class PropertyDataModel(serializers.Serializer):
     _id = serializers.CharField(required=False)
     timestamp = serializers.DateTimeField(required=False)
     property_id = serializers.CharField(required=False)
