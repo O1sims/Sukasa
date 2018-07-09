@@ -3,7 +3,7 @@ from drf_yasg.utils import swagger_auto_schema
 
 from rest_framework.response import Response
 from rest_framework.renderers import JSONRenderer
-from rest_framework.generics import CreateAPIView, ListCreateAPIView
+from rest_framework.generics import CreateAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
 
 from api.services.ElasticService import ElasticService
 from api.models.property_data import GeneratePropertyDataModel, PropertyDataModel
@@ -39,7 +39,7 @@ class GeneratePropertyDataView(CreateAPIView):
             status=201)
 
 
-class GetPropertyDataView(ListCreateAPIView):
+class PropertyDataView(ListCreateAPIView):
     renderer_classes = (JSONRenderer, )
     serializer_class = PropertyDataModel
 
@@ -68,3 +68,23 @@ class GetPropertyDataView(ListCreateAPIView):
         return Response(
             data=properties,
             status=200)
+
+
+class PropertyIdView(RetrieveUpdateDestroyAPIView):
+    renderer_classes = (JSONRenderer, )
+    serializer_class = PropertyDataModel
+
+    def get(self, request, *args, **kwargs):
+        properties = ElasticService().search_database(
+            index=config.ELASTICSEARCH_QUERY_INFO['propertyIndex'],
+            query_dict={'_id': self.kwargs['property_id']})
+        return Response(
+            data=properties,
+            status=200)
+
+    def delete(self, request, *args, **kwargs):
+        delete_property = ElasticService().delete_document(
+            index=config.ELASTICSEARCH_QUERY_INFO['propertyIndex'],
+            doc_type=config.ELASTICSEARCH_QUERY_INFO['propertyDocType'],
+            elastic_id=self.kwargs['property_id'])
+        return Response(status=204)

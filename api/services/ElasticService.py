@@ -71,6 +71,13 @@ class ElasticService:
             doc_type=doc_type, 
             id=elastic_id)
         return elastic_response['_source']
+
+    def delete_document(self, index, doc_type, elastic_id):
+        elastic_response = self.es.delete(
+            index=index,
+            doc_type=doc_type,
+            id=elastic_id)
+        return elastic_response
         
     def search_database(self, index, query_dict):
         if not query_dict:

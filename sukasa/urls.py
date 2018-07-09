@@ -4,7 +4,7 @@ from django.conf.urls import url
 
 from api.views.index import IndexView
 from api.views.reset import ResetView, ResetIndexView
-from api.views.property_data import GeneratePropertyDataView, GetPropertyDataView
+from api.views.property_data import GeneratePropertyDataView, PropertyDataView, PropertyIdView
 
 from rest_framework.urlpatterns import format_suffix_patterns
 
@@ -23,10 +23,17 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = format_suffix_patterns([
+    # Bulk properties
     url(r'^api/v{}/properties/(?P<property_type>.+)/$'.format(
         config.API_VERSION),
-        GetPropertyDataView.as_view()),
+        PropertyDataView.as_view()),
 
+    # Property by ID
+    url(r'^api/v{}/property/(?P<property_type>.+)/(?P<property_id>.+)/$'.format(
+        config.API_VERSION),
+        PropertyIdView.as_view()),
+
+    # Generate property data
     url(r'^api/v{}/generate_dataset/$'.format(
         config.API_VERSION),
         GeneratePropertyDataView.as_view()),
