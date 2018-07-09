@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { SearchService } from './search.service';
+import { SharedService } from '../shared/shared.service';
 
 
 @Component({
   templateUrl: 'app/search/search.component.html',
-  providers: [SearchService]
+  providers: [SearchService, SharedService]
 })
 
 export class SearchComponent implements OnInit {
@@ -15,15 +16,10 @@ export class SearchComponent implements OnInit {
   searchQuery:string = "";
   searchResults:object[] = [];
 
-  currencyChart:object = {
-    'pound': '£',
-    'euro': '€',
-    'dollar': '$'
-  };
-
   constructor(
     private searchService: SearchService,
-    private route: ActivatedRoute) {};
+    private route: ActivatedRoute,
+    private sharedService: SharedService) {};
 
   ngOnInit() {
     this.route.queryParams
@@ -40,7 +36,7 @@ export class SearchComponent implements OnInit {
       propertyData => {
         for (let i = 0; i < propertyData.length; i++) {
           let priceInfo = propertyData[i].priceInfo;
-          propertyData[i].price = this.cleanPropertyPrice(
+          propertyData[i].price = this.sharedService.cleanPropertyPrice(
             priceInfo.currency,
             priceInfo.price)
         };
@@ -55,11 +51,6 @@ export class SearchComponent implements OnInit {
         return index % groupSize === 0 ?
         results.slice(index, index + groupSize) : null;
       }).filter(function(item){ return item; }));
-  };
-
-  cleanPropertyPrice(currency, price) {
-    let cleanPrice = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    return(this.currencyChart[currency] + cleanPrice);
   };
 
 }
