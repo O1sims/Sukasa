@@ -2,8 +2,8 @@ from rest_framework import serializers
 
 
 SORTING_CHOICES = (
-    "mostPopular",
     "recentlyAdded",
+    "mostPopular",
     "recentlyUpdated",
     "priceLowHigh",
     "priceHighLow"

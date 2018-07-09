@@ -19,6 +19,7 @@ services:
       - SUKASA_HOSTNAME=sukasa
       - ELASTICSEARCH_PORT=9200
       - ELASTICSEARCH_HOSTNAME=elasticsearch
+      - DEVELOPMENT=True
 
   elasticsearch:
     restart: unless-stopped
