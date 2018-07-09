@@ -1,11 +1,59 @@
 <div class="container-fluid"
   style="background-color:#EEE; border-bottom: 5px solid #E0E0E0;">
   <div class="container">
-    <searchbar></searchbar>
+    <h2 style="text-transform: uppercase; padding: 25px 0px 25px 0px;">
+      {{propertyDetail.address}}
+    </h2>
   </div>
 </div>
 
-<div class="container">
-  <h3>{{propertyDetail.address}}</h3>
-  <h3>{{propertyDetail.area}}</h3>
+<div class="container" style="padding-top: 30px;">
+  <div class="panel col-sm-6">
+    <img class="img-thumbnail"
+      src={{propertyDetail.image}}>
+  </div>
+  <div class="panel col-sm-6">
+    <h3>Key information</h3>
+    <table class="table">
+      <tbody>
+        <tr *ngIf="propertyDetail.details.status != undefined">
+          <th>Status</th>
+          <td>{{propertyDetail.details.status}}</td>
+        </tr>
+        <tr>
+          <th>Price</th>
+          <td>{{propertyDetail.price}}</td>
+        </tr>
+        <tr *ngIf="propertyDetail.details.style != undefined">
+          <th>Style</th>
+          <td>{{propertyDetail.details.style}}</td>
+        </tr>
+        <tr *ngIf="propertyDetail.details.bedrooms != undefined">
+          <th>Bedrooms</th>
+          <td>{{propertyDetail.details.bedrooms}}</td>
+        </tr>
+        <tr *ngIf="propertyDetail.details.bathrooms != undefined">
+          <th>Bathrooms</th>
+          <td>{{propertyDetail.details.bathrooms}}</td>
+        </tr>
+        <tr *ngIf="propertyDetail.details.receptions != undefined">
+          <th>Bathrooms</th>
+          <td>{{propertyDetail.details.receptions}}</td>
+        </tr>
+        <tr *ngIf="propertyDetail.details.epcRating != undefined">
+          <th>EPC rating</th>
+          <td>
+            {{propertyDetail.details.epcRating.actual.band}}{{propertyDetail.details.epcRating.actual.score}} /
+            {{propertyDetail.details.epcRating.potential.band}}{{propertyDetail.details.epcRating.potential.score}}
+          </td>
+        </tr>
+        <tr *ngIf="propertyDetail.details.rates != undefined">
+          <th>Yearly rates</th>
+          <td>
+            £{{propertyDetail.details.rates}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
