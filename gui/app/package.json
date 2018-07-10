@@ -16,13 +16,11 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@angular/cdk": "2.0.0-beta.12",
     "@angular/common": "^4.4.7",
     "@angular/compiler": "^4.4.7",
     "@angular/core": "^4.4.7",
     "@angular/forms": "^4.4.7",
     "@angular/http": "^4.4.7",
-    "@angular/material": "2.0.0-beta.12",
     "@angular/platform-browser": "^4.4.7",
     "@angular/platform-browser-dynamic": "^4.4.7",
     "@angular/router": "^4.4.7",

@@ -7,10 +7,17 @@ Created on Fri May 11 16:44:59 2018
 """
 
 from api import config
-
+from elasticsearch import Elasticsearch
 from pandas.io.json.normalize import nested_to_record
 
-from elasticsearch import Elasticsearch
+
+COMMON_PROPERTY_WORDS = ['road', 'street', 'park']
+
+
+def remove_common_words(query_value):
+    for common_word in COMMON_PROPERTY_WORDS:
+        query_value = query_value.replace(' ' + common_word, '')
+    return query_value
 
 
 def construct_search_query(query, match_all=False):
@@ -25,6 +32,9 @@ def construct_search_query(query, match_all=False):
     :return:
     """
     matching_criteria = 'match_phrase' if match_all else 'match'
+    for key, value in query.iteritems():
+        query[key] = remove_common_words(
+            query_value=value)
     return {matching_criteria: query}
 
 
@@ -61,6 +71,13 @@ class ElasticService:
             doc_type=doc_type, 
             id=elastic_id)
         return elastic_response['_source']
+
+    def delete_document(self, index, doc_type, elastic_id):
+        elastic_response = self.es.delete(
+            index=index,
+            doc_type=doc_type,
+            id=elastic_id)
+        return elastic_response
         
     def search_database(self, index, query_dict):
         if not query_dict:
