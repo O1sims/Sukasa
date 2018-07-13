@@ -1,3 +1,0 @@
-#!/usr/bin/env python
-
-# Write some API tests here...
