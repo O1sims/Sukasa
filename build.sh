@@ -21,6 +21,6 @@ EOF
         ;;
     all)
         docker build -t sukasa:latest src/backend/.
-        docker build -t sukasa-gui:latest src/gui/.
+        docker build -t sukasa-gui:latest src/webserver/.
         ;;
 esac

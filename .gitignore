@@ -12,7 +12,7 @@ venv/
 node_modules/
 
 # Auto-generated JS
-src/gui/app/*.js
-src/gui/app/**/*.js
-!src/gui/app/assets/*.js
-!src/gui/app/assets/js/*.js
+src/webserver/gui/*.js
+src/webserver/gui/**/*.js
+!src/webserver/gui/assets/*.js
+!src/webserver/gui/assets/js/*.js
