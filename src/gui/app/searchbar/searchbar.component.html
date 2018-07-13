@@ -1,0 +1,6 @@
+<div class="row" style="text-align: center;">
+  <div style="padding: 25 0 25 0;">
+    <input type="text" class="form-control input-lg" placeholder={{searchQuery}}
+      (input)="prepareSearchQuery($event)" (keyup.enter)="propertySearch()" autofocus>
+  </div>
+</div>

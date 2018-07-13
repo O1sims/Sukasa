@@ -1,0 +1,70 @@
+version: '2'
+services:
+  sukasa:
+    restart: unless-stopped
+    image: sukasa:latest
+    container_name: sukasa
+    command: python /sukasa/manage.py runserver 0.0.0.0:5000
+    ports:
+      - "5000:5000"
+    volumes:
+      - "./backend/:/sukasa/"
+    depends_on:
+      - kibana
+      - elasticsearch
+    networks:
+      - docker-elk
+    environment:
+      - SUKASA_PORT=5000
+      - SUKASA_HOSTNAME=sukasa
+      - SUKASA_GUI_PORT=3000
+      - SUKASA_GUI_HOSTNAME=localhost
+      - ELASTICSEARCH_PORT=9200
+      - ELASTICSEARCH_HOSTNAME=elasticsearch
+      - DEVELOPMENT=True
+
+  sukasa-gui:
+    restart: unless-stopped
+    image: sukasa-gui:latest
+    container_name: sukasa-gui
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./gui/:/gui/"
+    depends_on:
+      - sukasa
+    networks:
+      - docker-elk
+
+  elasticsearch:
+    restart: unless-stopped
+    image: elasticsearch:latest
+    container_name: elasticsearch
+    ports:
+      - "9200:9200"
+    environment:
+      - bootstrap.memory_lock=true
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    networks:
+      - docker-elk
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+
+  kibana:
+    restart: unless-stopped
+    image: kibana:latest
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    environment:
+      - "ELASTICSEARCH_URL=http://elasticsearch:9200"
+    networks:
+      - docker-elk
+    depends_on:
+      - elasticsearch
+
+networks:
+  docker-elk:
+    driver: bridge
