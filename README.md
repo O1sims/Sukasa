@@ -9,7 +9,7 @@ Sukasa is a Python-based web application that analyses current house prices to d
 
 ## Technology stack
 
-The web application uses [Django](https://www.djangoproject.com/) as the backend framework and [Angular](https://angular.io/) as the frontend framework. Documentation of the RESTful API service is handled by [Swagger](https://swagger.io/). Development is done with [Docker](https://www.docker.com/) and run on [Google Kubernetes](https://cloud.google.com/python/django/kubernetes-engine). We use [ElasticSearch](https://www.elastic.co/) as our main database and [Kibana](https://www.elastic.co/products/kibana) as the data visualisation GUI. [`R`](https://www.r-project.org/) is the language of choice for any statistical research.
+The web application uses [Django](https://www.djangoproject.com/) as the backend framework and [Angular](https://angular.io/) as the frontend framework. Documentation of the RESTful API service is handled by [Swagger](https://swagger.io/). Development is done within a [Docker](https://www.docker.com/) environment and run on [Google Kubernetes](https://cloud.google.com/python/django/kubernetes-engine). We use [ElasticSearch](https://www.elastic.co/) as our main database and [Kibana](https://www.elastic.co/products/kibana) as the database visualisation GUI. We use [Redis](https://redis.io/) as the in-memory data store to reduce strain on the main database. [`R`](https://www.r-project.org/) is the language of choice for any statistical research.
 
 ## Building the application
 
@@ -28,7 +28,7 @@ bash build.sh up
 ```
 Likewise, the application can be brought down with `bash build.sh down`.
 
-By default, the main Sukasa application will run on port `3000`, the API and backend components are on port `5000`, the ElasticSearch database is accessible on port `9200` and Kibana is on port `5601`. The `docker-compose.yml` can be altered to allow these services to run on different ports. Swagger API documentation can be found at `localhost:5000/swagger/`.
+By default, the main Sukasa application is accessible on port `3000`, the API and backend components are on port `5000`, the ElasticSearch database is run on port `9200`, Kibana is on port `5601` and Redis is run on port `6379`. The `docker-compose.yml` can be altered to allow these services to run on different ports. Swagger API documentation can be found at `localhost:5000/swagger/`.
 
 Environmental variables for the application can be changed in the `docker-compose.yml` file.
 
