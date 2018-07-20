@@ -16,3 +16,6 @@ src/webserver/gui/*.js
 src/webserver/gui/**/*.js
 !src/webserver/gui/assets/*.js
 !src/webserver/gui/assets/js/*.js
+
+# R
+.Rhistory
