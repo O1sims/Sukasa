@@ -9,7 +9,7 @@ Sukasa is a Python-based web application that analyses current house prices to d
 
 ## Technology stack
 
-The web application uses [Django](https://www.djangoproject.com/) as the backend framework and [Angular](https://angular.io/) as the frontend framework. Documentation of the RESTful API service is handled by [Swagger](https://swagger.io/). Development is done within a [Docker](https://www.docker.com/) environment and run on [Google Kubernetes](https://cloud.google.com/python/django/kubernetes-engine). We use [ElasticSearch](https://www.elastic.co/) as our main database and [Kibana](https://www.elastic.co/products/kibana) as the database visualisation GUI. We use [Redis](https://redis.io/) as the in-memory data store to reduce strain on the main database. [`R`](https://www.r-project.org/) is the language of choice for any statistical research.
+The Python web application uses [Django](https://www.djangoproject.com/) as the backend framework and [Angular](https://angular.io/) as the frontend framework. Documentation of the RESTful API service is handled by [Swagger](https://swagger.io/). Development is done within a [Docker](https://www.docker.com/) environment and run on [Google Kubernetes](https://cloud.google.com/python/django/kubernetes-engine). We use [ElasticSearch](https://www.elastic.co/) as our main database and [Kibana](https://www.elastic.co/products/kibana) as the database visualisation GUI. We use [Redis](https://redis.io/) as the in-memory data store to reduce strain on the main database. [`R`](https://www.r-project.org/) is the language of choice for any statistical research.
 
 ## Building the application
 
