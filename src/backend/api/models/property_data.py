@@ -49,8 +49,12 @@ class PropertyDetailModel(serializers.Serializer):
     status = serializers.CharField(required=False)
     bedrooms = serializers.IntegerField(required=False)
     bathrooms = serializers.IntegerField(required=False)
+    receptions = serializers.IntegerField(required=False)
+    rates = serializers.FloatField(required=False)
     location = PropertyLocationModel(required=False)
     amenities = PropertyAmenitiesModel(required=False)
+    heating = serializers.CharField(required=False)
+    keyInformation = serializers.CharField(required=False)
     epcChart = EPCChartModel(required=False)
 
 
