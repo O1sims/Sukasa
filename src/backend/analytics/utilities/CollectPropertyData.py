@@ -19,6 +19,9 @@ from LocationalDetails import postcode_areas
 from api.services.ElasticService import ElasticService
 
 
+AMENITIES_LIST = ['garden', 'garage', 'driveway', 'parking', 'bay window']
+
+
 def get_property_page(area, page_number, property_type, sort_by):
     type_url = 'forSalePath' if property_type == 'sale' else 'forRentPath'
     url = '{}{}'.format(
@@ -187,7 +190,7 @@ def get_estate_agent(page_soup):
 
 
 def property_location(detail_soup):
-    map_data = detail_soup.find('a', {'class': 'do-show-map mediabox-btn mediabox-btn-map'}).attrs
+    map_data = detail_soup.find('a', {'class': 'Mediabox-miniBoxMap'}).attrs
     if map_data is None:
         return {
             'lat': float(0),
@@ -266,15 +269,21 @@ def get_property_details(hyperlink):
                     info = str(info)
                 data[to_camel_case(string=row_title)] = info
         data['amenities'] = {}
-        for amenity in ['garden', 'garage', 'driveway', 'parking', 'bay window']:
+        for amenity in AMENITIES_LIST:
             data['amenities'][to_camel_case(string=amenity)] = amenity_present(
                 detail_page=detail_page,
                 amenity=amenity)
         data['location'] = property_location(
             detail_soup=detail_soup)
+        data['keyInformation'] = key_information(
+            detail_soup=detail_soup)
         return data
     else:
         return None
+
+
+def key_information(detail_soup):
+    return detail_soup.find("div", {"class": "prop-descr-text"}).get_text()
 
 
 def to_camel_case(string):
@@ -336,7 +345,7 @@ def property_dataset(page_soup):
                 config.BASIC_REQUEST['baseURL'],
                 hyperlink),
             'details': get_property_details(hyperlink),
-            'image': property_images[i]
+            'mainImage': property_images[i]
         })
     return dataset
 
@@ -389,4 +398,3 @@ if __name__ == '__main__':
         area='belfast',
         property_type='sale',
         sort_by='recentlyAdded')
-    print properties
