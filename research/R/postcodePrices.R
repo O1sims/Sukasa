@@ -5,20 +5,21 @@ library(magrittr)
 
 
 postcodePrices <- function(consolidateStyles = TRUE, removeAnomalies = FALSE) {
-  propertyData <- getwd() %>%
-    paste0("/research/data/propertyData.json") %>%
+  property.data <- getwd() %>%
+    paste0("/research/data/property/NIPropertyData.json") %>%
     jsonlite::fromJSON()
   
-  propertyData %<>% subset(!(priceInfo$price %in% c(NA, "POA"))) %>%
+  property.data %<>% 
+    subset(!(priceInfo$price %in% c(NA, "POA"))) %>%
     subset(!(postcode %>% is.na())) %>%
     subset(!(postcode %in% (
-      propertyData$postcode %>%
+      property.data$postcode %>%
         table() %>%
         as.data.frame() %>% 
         subset(Freq <= 10) %$% .))) %>%
     subset(!(details$style %>% is.na())) %>%
     subset(!(details$style %in% (
-      propertyData$details$style %>%
+      property.data$details$style %>%
         table() %>%
         as.data.frame() %>% 
         subset(Freq <= 10) %$% .)))
@@ -36,9 +37,9 @@ postcodePrices <- function(consolidateStyles = TRUE, removeAnomalies = FALSE) {
     for (key in hashKeys) {
       getValues <- grepl(
         pattern = key,
-        x = propertyData$details$style, 
+        x = property.data$details$style, 
         ignore.case = FALSE)
-      propertyData$details$style[getValues] <- consolidatedStyles[[key]]
+      property.data$details$style[getValues] <- consolidatedStyles[[key]]
     }
   }
   
@@ -47,11 +48,11 @@ postcodePrices <- function(consolidateStyles = TRUE, removeAnomalies = FALSE) {
     # Let's define an anomalous data point as some point that is a standard deviation
     # away from the mean.
     adjustedPropertyList <- list()
-    for (postCode in propertyData$postcode %>% unique()) {
-      subsetPropertyData <- propertyData %>% 
+    for (postCode in property.data$postcode %>% unique()) {
+      subsetProperty.data <- property.data %>% 
         subset(postcode == postCode)
-      for (style in subsetPropertyData$details$style %>% unique()) {
-        subsetStyle <- subsetPropertyData %>%
+      for (style in subsetProperty.data$details$style %>% unique()) {
+        subsetStyle <- subsetProperty.data %>%
           subset(details$style == style)
         meanStylePrice <- subsetStyle$priceInfo$price %>%
           as.integer() %>%
@@ -59,14 +60,14 @@ postcodePrices <- function(consolidateStyles = TRUE, removeAnomalies = FALSE) {
         stdDeviationPrice <- subsetStyle$priceInfo$price %>%
           as.integer() %>%
           sd()
-        normalPropertydata <- subsetStyle %>%
+        normalProperty.data <- subsetStyle %>%
           subset(
             priceInfo$price %>% as.integer() <= meanStylePrice + stdDeviationPrice)
         adjustedPropertyList %<>% 
-          rbind(normalPropertydata %>% as.list())
+          rbind(normalProperty.data %>% as.list())
       }
     }
-    adjustedPropertyData <- adjustedPropertyList %>% as.data.frame(stringsAsFactors = FALSE)
+    adjustedProperty.data <- adjustedPropertyList %>% as.data.frame(stringsAsFactors = FALSE)
   }
   
   postCodePlot <- ggplot(

@@ -36,12 +36,33 @@ for (agent in estateAgents) {
 
 df <- data.frame(
   name = estateAgents,
-  num = numValue,
+  num = num,
   total = totalValue,
   average = avgValue,
   stringsAsFactors = FALSE)
 
-qplot(x = df$name, y = df$total)
+
+dfHigh <- df %>% 
+  subset(total >= 10000000)
+
+
+plot <- ggplot(
+  data = dfHigh,
+  aes(x = name,
+      y = total,
+      colour = name)) +
+  geom_violin() + 
+  geom_jitter(
+    height = 0, 
+    width = 0.1) +
+  ylab("Total market price (£)") +
+  xlab("Estate agent") +
+  theme_minimal() + 
+  theme(
+    legend.position = "none",
+    axis.text.x = element_text(
+      angle = 45, 
+      hjust = 1))
 
 
 
