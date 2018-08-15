@@ -227,7 +227,7 @@ def scrape_ireland_dataset(area, property_type, sort_by,
     if first_only:
         final_page_number = 20
     elif page_limit:
-        final_page_number = 300
+        final_page_number = 3000
     else:
         final_page_number = get_number_of_properties(
             first_page=first_page)
