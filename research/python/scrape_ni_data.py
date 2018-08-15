@@ -441,7 +441,7 @@ def property_dataset(page_soup):
 
 
 def scrape_ni_dataset(area, property_type, sort_by,
-                         page_limit=False, first_only=False):
+                      page_limit=False, first_only=False):
     first_page = get_property_page(
         area=area,
         page_number=0,
