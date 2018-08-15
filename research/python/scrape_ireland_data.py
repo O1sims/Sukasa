@@ -29,6 +29,15 @@ BASIC_REQUEST = {
     "userAgent": "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:24.0) Gecko/20100101 Firefox/24.0"
 }
     
+    
+UNUSED_DETAIL_KEYS = [
+    'ad_id',
+    'ad_ids',
+    'platform',
+    'no_of_photos',
+    'page_name'
+]
+    
 
 IRELAND_COUNTIES = [
     'Antrim',
@@ -63,8 +72,14 @@ IRELAND_COUNTIES = [
     'Wexford',
     'Wicklow'
 ]
-    
-    
+
+
+def snake_to_camel_case(snake_string):
+    components = snake_string.split('_')
+    humped_camel = components[0] + ''.join(x.title() for x in components[1:])
+    return humped_camel
+
+
 def get_number_of_properties(first_page):
     section_text = first_page.find('div', {'class': 'section'}).get_text()
     clean_section_text = re.sub(',', '', section_text)
@@ -142,6 +157,33 @@ def get_hyperlink(search_result):
     return hyperlink
 
 
+def get_property_details(hyperlink):
+    url = '{}{}'.format(
+        BASIC_REQUEST['baseURL'],
+        hyperlink)
+    request_page = requests.get(
+        url=url,
+        headers={'User-Agent': BASIC_REQUEST['userAgent']})
+    if request_page.status_code == 200:
+        details_soup = BeautifulSoup(request_page.content, "lxml")
+    else:
+        return None
+    script_list  = details_soup.find_all("script")
+    for script in script_list:
+        script_string = str(script)
+        if 'var trackingParam =' in script_string:
+            p = re.search('var trackingParam =(.*);', script_string)
+            details = json.loads(p.group(1))
+            for k in UNUSED_DETAIL_KEYS:
+                if k in details.keys():
+                    del details[k]
+            if 'facility' in details.keys():
+                details['facility'] = details['facility'].split(',')
+            details =  {snake_to_camel_case(k): v for k, v in details.items()}
+            return details
+    return None
+
+
 def property_dataset(page_soup):
     dataset = []
     property_list = page_soup.findAll("div", {"class": "box"})
@@ -156,8 +198,6 @@ def property_dataset(page_soup):
     for i in range(number_of_properties):
         address = get_address(
             search_result=property_list[i])
-        county = get_county(
-            address=address)
         hyperlink = get_hyperlink(
             search_result=property_list[i])
         property_id = get_property_id(
@@ -165,11 +205,14 @@ def property_dataset(page_soup):
         dataset.append({
             'timeAdded': datetime.datetime.now(),
             'propertyId': property_id,
-            'hyperlink': BASIC_REQUEST['baseURL'] + hyperlink,
+            'hyperlink': '{}{}'.format(
+                    BASIC_REQUEST['baseURL'], 
+                    hyperlink),
             'address': address,
             'price': get_price(
                 search_result=property_list[i]),
-            'county': county
+            'details': get_property_details(
+                hyperlink=hyperlink)
         })
     return dataset
     
@@ -188,7 +231,7 @@ def scrape_ireland_dataset(area, property_type, sort_by,
     else:
         final_page_number = get_number_of_properties(
             first_page=first_page)
-    print('Parsing page 1 of {}...'.format(final_page_number/20))
+    print('Parsing page 0 of {}...'.format(final_page_number/20))
     property_data = property_dataset(first_page)
     for offset in range(20, final_page_number, 20):
         try:
@@ -209,8 +252,12 @@ def scrape_ireland_dataset(area, property_type, sort_by,
 property_data = scrape_ireland_dataset(
         area='',
         property_type='sale',
-        sort_by='recentlyAdded')
-properties_json = json.dumps(property_data, default=json_util.default)
-json_file = open(DIR_PATH + '/IrishPropertyData.json', 'w')
+        sort_by='recentlyAdded',
+        page_limit=True)
+properties_json = json.dumps(
+    obj=property_data,
+    default=json_util.default)
+json_file = open('{}/IrishPropertyData.json'.format(
+        DIR_PATH), 'w')
 json_file.write(properties_json)
 json_file.close()
