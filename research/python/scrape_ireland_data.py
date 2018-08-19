@@ -17,7 +17,7 @@ from bs4 import BeautifulSoup
 
 SEARCH_AREA = ""
 
-DIR_PATH = '/home/owen/Code/PropertyData/src/data'
+DIR_PATH = '/home/owen/Code/Sukasa/research/data/property'
 
 BASIC_REQUEST = {
     "baseURL": "https://www.daft.ie",
@@ -109,6 +109,26 @@ def get_property_page(area, offset, property_type, sort_by):
                 request_page.status_code))
 
 
+def property_overview(details_soup):
+    descriptions_list = details_soup.find_all("div", {"class": "description_block"})
+    for desc in descriptions_list:
+        d = desc.get_text().lower()
+        if 'floor area' in d:
+            floor_area = float(d.split(": ", 1)[1].split(" sq. met")[0])
+    
+    raw_features = details_soup.find("div", {"id": "features"}).get_text().strip()
+    
+    overview = {}
+    overview['description'] = details_soup.find("div", {"id": "description"}).get_text()
+    overview['features'] = re.sub("Features:", "", raw_features).split("\n")
+    return overview
+
+
+def get_price_history(details_soup):
+    
+    return prices
+    
+
 def get_all_search_images(page_soup):
     property_images = []
     all_images = page_soup.findAll("img", {"class": "main_photo"})
@@ -179,7 +199,7 @@ def get_property_details(hyperlink):
                     del details[k]
             if 'facility' in details.keys():
                 details['facility'] = details['facility'].split(',')
-            details =  {snake_to_camel_case(k): v for k, v in details.items()}
+            details = {snake_to_camel_case(k): v for k, v in details.items()}
             return details
     return None
 
@@ -257,7 +277,7 @@ property_data = scrape_ireland_dataset(
 properties_json = json.dumps(
     obj=property_data,
     default=json_util.default)
-json_file = open('{}/IrishPropertyData.json'.format(
+json_file = open('{}/IrishPropertyData-3000.json'.format(
         DIR_PATH), 'w')
 json_file.write(properties_json)
 json_file.close()
