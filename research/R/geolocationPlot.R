@@ -24,6 +24,7 @@ geolocationPlot <- function() {
     lat = property.data$details$latitude,
     lon = property.data$details$longitude,
     agentType = property.data$details$sellerType,
+    propertyType = property.data$details$propertyType,
     stringsAsFactors = FALSE)
   subscr <- subscr[complete.cases(subscr), ]
   
@@ -33,10 +34,11 @@ geolocationPlot <- function() {
       aes(
         x = lon, 
         y = lat,
-        colour = agentType)) + 
+        colour = propertyType, 
+        alpha = 0.2)) + 
     scale_color_ptol() +
     theme_minimal() +
-    labs(color='Seller type') +
+    labs(color="Property type") +
     theme(
       axis.line = element_blank(), 
       axis.text.x = element_blank(),
