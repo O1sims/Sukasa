@@ -16,12 +16,17 @@ prepData <- data.frame(
   style = propertyData$details$style,
   heating = propertyData$details$heating,
   garage = propertyData$details$amenities$garage,
+  driveway = propertyData$details$amenities$driveway,
   stringsAsFactors = FALSE)
 
 prepData <- prepData[complete.cases(prepData), ]
 
+qplot(prepData$driveway,
+    prepData$garage)
+
 linearMod <- lm(
-  formula = price ~ bedrooms + style + heating + garage, 
+  formula = price ~ bedrooms + style + 
+    heating + garage + driveway, 
   data = prepData) %>% 
   summary()
 
