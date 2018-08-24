@@ -87,9 +87,9 @@ qplot(
   x = 1:nrow(prepData), 
   y = prepData$residuals)
 
-prepData$overValued <- ifelse(
-  prepData$residuals >= prepData$price + sd(prepData$residuals), 'overvalued', NA)
-
-
-
+prepData$overValued <- NA
+for (i in 1:nrow(prepData)) {
+  stDev <- sd(prepData$residuals)
+  if (prepData$residuals[i] >= prepData$price + stDev) prepData$overValued[i] <- 'overvalued'
+}
 
