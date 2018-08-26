@@ -350,7 +350,9 @@ def get_property_details(hyperlink):
         data['keyInformation'] = key_information(
             detail_soup=detail_soup)
         data['phoneNumber'] = enquiry_phone_number(
-                detail_soup=detail_soup)
+            detail_soup=detail_soup)
+        data['propertyImages'] = property_images(
+            detail_soup=detail_soup)
         return data
     else:
         return None
@@ -360,9 +362,22 @@ def key_information(detail_soup):
     return detail_soup.find("div", {"class": "prop-descr-text"}).get_text()
 
 
+def property_images(detail_soup):
+    photos = []
+    photo_list = detail_soup.find("div", {"class": "Slideshow"})
+    if len(photo_list) > 0:
+        photo_details = photo_list.findAll("a")
+        for photo in photo_details:
+            photos.append(photo.attrs['href'])
+    return photos
+
+
 def enquiry_phone_number(detail_soup):
     enquiry_object = detail_soup.find("a", {"class": "tel-reveal enquiry-tel btn btn-red"})
-    phone_number = enquiry_object.attrs['data-office-phone']
+    if enquiry_object:
+        phone_number = enquiry_object.attrs['data-office-phone']
+    else:
+        phone_number = None
     return phone_number
 
 
@@ -477,7 +492,3 @@ properties = scrape_ni_dataset(
     property_type='sale',
     sort_by='recentlyAdded',
     first_only=True)
-properties_json = json.dumps(properties, default=json_util.default)
-json_file = open(DIR_PATH + '/NIPropertyData.json', 'w')
-json_file.write(properties_json)
-json_file.close()
