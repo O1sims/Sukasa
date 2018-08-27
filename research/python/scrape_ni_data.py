@@ -356,10 +356,21 @@ def get_property_details(hyperlink):
         return data
     else:
         return None
+    
+    
+def multiple_replace(pattern_dict, text):
+    regex = re.compile("(%s)" % "|".join(map(re.escape, pattern_dict.keys())))
+    return regex.sub(lambda mo: pattern_dict[mo.string[mo.start():mo.end()]], text) 
 
 
 def key_information(detail_soup):
-    return detail_soup.find("div", {"class": "prop-descr-text"}).get_text()
+    key_info = detail_soup.find("div", {"class": "prop-descr-text"}).get_text()
+    encoded_key_info = key_info.encode('ascii', 'ignore')
+    patterns = { "\n": " ", "\t": " " }
+    cleaned_key_info = multiple_replace(
+        pattern_dict=patterns, 
+        text=encoded_key_info)
+    return re.sub(' +', ' ', str(cleaned_key_info))
 
 
 def property_images(detail_soup):
