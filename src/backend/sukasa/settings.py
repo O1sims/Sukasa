@@ -130,4 +130,8 @@ STATICFILES_DIRS = [
 
 # Load default NI property data
 if os.getenv('DEVELOPMENT', False):
-    save_default_property_data()
+    saved_items = save_default_property_data()
+    print "Added {} NI properties to the '{}' index!".format(
+        saved_items[0], saved_items[1])
+
+
