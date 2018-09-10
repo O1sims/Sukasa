@@ -65,7 +65,7 @@ DEFAULT_NI_PROPERTY_DATA = [
     "priceInfo": {
       "currency": "unknown",
       "price": None,
-      "minPrice": "POA",
+      "minPrice": 0,
       "maxPrice": None,
       "offer": None
     },
@@ -2231,7 +2231,7 @@ DEFAULT_NI_PROPERTY_DATA = [
     },
     "priceInfo": {
       "currency": "unknown",
-      "price": "POA",
+      "price": 0,
       "minPrice": None,
       "maxPrice": None,
       "offer": ""
@@ -24135,7 +24135,7 @@ DEFAULT_NI_PROPERTY_DATA = [
     },
     "priceInfo": {
       "currency": "unknown",
-      "price": "POA",
+      "price": 0,
       "minPrice": None,
       "maxPrice": None,
       "offer": ""
@@ -28290,7 +28290,7 @@ DEFAULT_NI_PROPERTY_DATA = [
     },
     "priceInfo": {
       "currency": "unknown",
-      "price": "POA",
+      "price": 0,
       "minPrice": None,
       "maxPrice": None,
       "offer": ""
@@ -56324,7 +56324,7 @@ DEFAULT_NI_PROPERTY_DATA = [
     },
     "priceInfo": {
       "currency": "unknown",
-      "price": "POA",
+      "price": 0,
       "minPrice": None,
       "maxPrice": None,
       "offer": ""
@@ -61527,7 +61527,7 @@ DEFAULT_NI_PROPERTY_DATA = [
     },
     "priceInfo": {
       "currency": "unknown",
-      "price": "POA",
+      "price": 0,
       "minPrice": None,
       "maxPrice": None,
       "offer": ""
@@ -61575,7 +61575,7 @@ DEFAULT_NI_PROPERTY_DATA = [
     },
     "priceInfo": {
       "currency": "unknown",
-      "price": "POA",
+      "price": 0,
       "minPrice": None,
       "maxPrice": None,
       "offer": ""
@@ -61624,7 +61624,7 @@ DEFAULT_NI_PROPERTY_DATA = [
     },
     "priceInfo": {
       "currency": "unknown",
-      "price": "POA",
+      "price": 0,
       "minPrice": None,
       "maxPrice": None,
       "offer": ""
