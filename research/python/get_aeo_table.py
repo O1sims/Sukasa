@@ -7,13 +7,12 @@ Created on Tue Aug 21 15:43:31 2018
 """
 
 
-
+import ast
 import json
 import requests
 
 from bson import json_util
 from bs4 import BeautifulSoup
-
 
 
 
@@ -43,34 +42,33 @@ json_file.write(properties_json)
 json_file.close()
 
     
+# Fiddle around with R
+
+# Load JSON back up
+
+json_file = open('/home/owen/Desktop/AEO-GB.json', 'r')
+b = ast.literal_eval(json_file.read())
+
+business_info_url = "https://www.nibusinessinfo.co.uk/ni-resources/company-data-search?field_description_value=&title={}&field_town_value=&field_postcode_value="
+
+results = []
+for company in b:
+    holder = b["holder"]
+    first_word = holder.partition(" ")[0]
+    
+    # Make URL request
+    page_url = business_info_url.format(first_word)
+    request_page = requests.get(
+        url=page_url,
+        headers={'User-Agent': "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.79 Safari/537.36"})
+    page_soup = BeautifulSoup(request_page.content, "lxml")
+    table = page_soup.find("table", {"class", "views-table cols-3"})
+    rows = table.find_all("tr")
+    results.append({"company": holder, "number": len(rows) - 1})
+    
+
     
     
-import csv
-
-with open('/home/owen/Desktop/AEO-GB.csv', 'wb') as f:  # Just use 'w' mode in 3.x
-    w = csv.writer(f, t.keys())
-    w.writeheader()
-    w.writerow(t)
-    
-
-import csv
-
-from collections import namedtuple
-Submission = namedtuple('Submission', ['holder', 'issuingCompany', 'competentCustomsAuthority', 'authorisationType', 'effDate'])
-
-with open('/home/owen/Desktop/AEO-GB.csv', 'w') as f:
-    w = csv.writer(f)
-    w.writerow(['holder', 'issuingCompany', 'competentCustomsAuthority', 'authorisationType', 'effDate']) # we are being naughty here and using a private attribute
-    w.writerows(t)
-
-    
-    
-properties_json = json.dumps(
-    obj=t,
-    default=json_util.default)
-json_file = open('/home/owen/Desktop/AEO-GB.json', 'w')
-json_file.write(properties_json)
-json_file.close()
 
 
 
