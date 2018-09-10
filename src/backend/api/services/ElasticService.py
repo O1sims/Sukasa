@@ -110,3 +110,11 @@ class ElasticService:
             index=index,
             body={"query": query_string})
         return elastic_response['count']
+
+    def index_check(self, index):
+        return self.es.indices.exists(
+            index=index)
+
+    def create_index(self, index):
+        self.es.indices.create(
+            index=index)
