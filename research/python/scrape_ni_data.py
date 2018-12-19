@@ -9,6 +9,8 @@ import json
 import requests
 import datetime
 
+import pymongo as pm
+
 from bson import json_util
 from bs4 import BeautifulSoup
 from string import punctuation
@@ -466,6 +468,10 @@ def property_dataset(page_soup):
     return dataset
 
 
+def store_in_mongo(property_data):
+    
+
+
 def scrape_ni_dataset(area, property_type, sort_by,
                       page_limit=False, first_only=False):
     first_page = get_property_page(
@@ -496,6 +502,9 @@ def scrape_ni_dataset(area, property_type, sort_by,
             print("Oops! Some parsing went wrong in search page {}".format(
                     page_number))
     return property_data
+
+
+
 
 
 properties = scrape_ni_dataset(
