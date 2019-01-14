@@ -9,6 +9,7 @@ import json
 import requests
 import datetime
 
+from bson import json_util
 from bs4 import BeautifulSoup
 from string import punctuation
 
@@ -302,8 +303,9 @@ def parse_epc_rating(epc_rating_list):
                     parsed_epc_values.append(item)
         parsed_epc['actual']['band'] = parsed_epc_values[0]
         parsed_epc['actual']['score'] = int(parsed_epc_values[1])
-        parsed_epc['potential']['band'] = parsed_epc_values[2]
-        parsed_epc['potential']['score'] = int(parsed_epc_values[3])
+        if len(parsed_epc_values) > 2:
+            parsed_epc['potential']['band'] = parsed_epc_values[2]
+            parsed_epc['potential']['score'] = int(parsed_epc_values[3])
     return parsed_epc
 
 
@@ -498,8 +500,17 @@ def scrape_ni_dataset(area, property_type, sort_by,
     return property_data
 
 
+def save_to_file(property_data):
+    properties_json = json.dumps(property_data, default=json_util.default)
+    json_file = open('{}/property/property-data-{}.json'.format(
+            DIR_PATH, datetime.date.today()), 'w')
+    json_file.write(properties_json)
+    json_file.close()
+
+
 properties = scrape_ni_dataset(
     area=SEARCH_AREA,
     property_type='sale',
-    sort_by='recentlyAdded',
-    first_only=True)
+    sort_by='recentlyAdded')
+
+save_to_file(properties)
