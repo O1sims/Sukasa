@@ -1,5 +1,16 @@
 version: '2'
 services:
+  nginx:
+    restart: unless-stopped
+    container_name: nginx
+    image: nginx:1.13
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/:/etc/nginx/
+
   sukasa:
     restart: unless-stopped
     image: sukasa:latest
@@ -13,6 +24,7 @@ services:
       - kibana
       - elasticsearch
       - redis
+      - nginx
     networks:
       - docker-elk
     environment:
