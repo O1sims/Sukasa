@@ -9,7 +9,6 @@ import json
 import requests
 import datetime
 
-from bson import json_util
 from bs4 import BeautifulSoup
 from string import punctuation
 
@@ -353,6 +352,7 @@ def get_property_details(hyperlink):
             detail_soup=detail_soup)
         data['propertyImages'] = property_images(
             detail_soup=detail_soup)
+        data['htmlPage'] = str(detail_soup)
         return data
     else:
         return None
