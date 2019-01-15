@@ -3,11 +3,20 @@
 
 import os
 
-ELASTICSEARCH_CONNECTION = {
+
+BASE_PATH = '/sukasa/'
+
+API_VERSION = "1.0.0"
+
+MONGO_CONNECTION = {
     "host": os.environ.get(
-        key='ELASTICSEARCH_HOSTNAME',
-        failobj='elasticsearch'),
+        key='MONGO_HOSTNAME',
+        failobj='mongo'),
     "port": os.environ.get(
-        key='ELASTICSEARCH_PORT',
-        failobj=9200)
+        key='MONGO_PORT',
+        failobj=27017)
+}
+
+MONGO_DB_INFO = {
+    "propertyCollection": "properties"
 }
