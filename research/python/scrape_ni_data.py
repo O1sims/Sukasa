@@ -354,7 +354,7 @@ def get_property_details(hyperlink):
             detail_soup=detail_soup)
         data['propertyImages'] = property_images(
             detail_soup=detail_soup)
-        data['htmlPage'] = str(detail_soup)
+        # data['htmlPage'] = str(detail_soup)
         return data
     else:
         return None
@@ -502,7 +502,7 @@ def scrape_ni_dataset(area, property_type, sort_by,
 
 def save_to_file(property_data):
     properties_json = json.dumps(property_data, default=json_util.default)
-    json_file = open('{}/property/property-data-{}.json'.format(
+    json_file = open('{}/property/ni-property-data-{}.json'.format(
             DIR_PATH, datetime.date.today()), 'w')
     json_file.write(properties_json)
     json_file.close()
