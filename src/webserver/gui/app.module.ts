@@ -12,6 +12,7 @@ import { HomeComponent }             from './home/home.component';
 import { SearchComponent }           from './search/search.component';
 import { PropertyComponent }         from './property/property.component';
 import { NotFoundComponent }         from './not-found/not-found.component';
+import { ValuationComponent }        from './valuation/valuation.component';
 
 import { routing }                   from './app.routing';
 
@@ -29,7 +30,8 @@ import { routing }                   from './app.routing';
       NavBarComponent,
       PropertyComponent,
       NotFoundComponent,
-      SearchBarComponent
+      SearchBarComponent,
+      ValuationComponent
     ],
     bootstrap: [
       AppComponent
