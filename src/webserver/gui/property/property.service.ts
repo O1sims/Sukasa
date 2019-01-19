@@ -16,7 +16,19 @@ export class PropertyService {
   getPropertyDetails(propertyId) {
     var requestoptions = new RequestOptions({
 			method: RequestMethod.Get,
-      url: this.api + '/property/' + propertyId + '/'
+      url: this.api + '/properties/' + propertyId + '/'
+		});
+
+    return this.http.request(
+      new Request(requestoptions))
+		.map(res => res.json());
+  };
+
+  priceImperfection(propertyData) {
+    var requestoptions = new RequestOptions({
+			method: RequestMethod.Post,
+      url: this.api + '/property_valuation/differential/',
+      body: propertyData
 		});
 
     return this.http.request(
