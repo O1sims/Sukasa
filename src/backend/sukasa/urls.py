@@ -29,7 +29,7 @@ urlpatterns = format_suffix_patterns([
         PropertyDataView.as_view()),
 
     # Property by ID
-    url(r'^api/v{}/property/(?P<propertyId>.+)/$'.format(
+    url(r'^api/v{}/properties/(?P<propertyId>.+)/$'.format(
         API_VERSION),
         PropertyDataIdView.as_view()),
 
