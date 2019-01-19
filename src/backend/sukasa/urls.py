@@ -38,12 +38,12 @@ urlpatterns = format_suffix_patterns([
         ResetDatabase.as_view()),
 
     # Swagger
-    url(r'^swagger/$',
+    url(r'^api/swagger/$',
         schema_view.with_ui(
             'swagger', cache_timeout=0),
         name='schema-swagger-ui'),
 
-    url(r'^redoc/$',
+    url(r'^api/redoc/$',
         schema_view.with_ui(
             'redoc', cache_timeout=0),
         name='schema-redoc')

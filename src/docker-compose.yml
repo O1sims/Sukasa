@@ -1,5 +1,15 @@
 version: '3'
 services:
+  nginx:
+    restart: unless-stopped
+    image: nginx:1.13
+    container_name: nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/:/etc/nginx/
+
   sukasa:
     restart: unless-stopped
     image: sukasa:latest
