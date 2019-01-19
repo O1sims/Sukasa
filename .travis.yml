@@ -6,5 +6,3 @@ before_install:
   - export PIP_USE_MIRRORS=true
 install:
   - pip install -r src/backend/requirements.txt
-script:
-  - python src/backend/manage.py test
