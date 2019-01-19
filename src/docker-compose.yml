@@ -21,6 +21,15 @@ services:
       - MONGO_HOSTNAME=sukasa-db
       - DEVELOPMENT=True
 
+  sukasa-gui:
+    restart: unless-stopped
+    image: sukasa-gui:latest
+    container_name: sukasa-gui
+    ports:
+      - "3000:3000"
+    depends_on:
+      - sukasa
+
   sukasa-db:
     restart: unless-stopped
     image: mongo:latest
