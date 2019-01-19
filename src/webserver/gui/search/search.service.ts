@@ -7,9 +7,8 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class SearchService {
-  api:string = environment.API_HOST + ":" +
-  environment.API_PORT + "/api/v" +
-  environment.API_VERSION;
+  api:string = environment.API_HOST + "/api/v" +
+    environment.API_VERSION;
 
   constructor(
     private http: Http) {
