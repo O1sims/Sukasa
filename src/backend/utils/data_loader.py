@@ -1,11 +1,11 @@
 import json
 
-from api.config import BASE_PATH, MONGO_DB_INFO
+from sukasa.config import BASE_PATH, MONGO_DB_INFO
 from api.services.MongoService import MongoService
 
 
 def insert_default_property_data():
-    json_data = open(BASE_PATH + 'utils/data/belfast_property_data.json')
+    json_data = open(BASE_PATH + 'utils/data/belfastPropertyData.json')
     belfast_properties = json.load(json_data)
     if MongoService().check_collection(
             collection_name=MONGO_DB_INFO['propertyCollection']):
