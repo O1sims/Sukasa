@@ -1,11 +1,5 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
 import os
 
-
-DEVELOPMENT = os.environ.get(
-    key='DEVELOPMENT',
-    failobj=True)
 
 GOOGLE_MAPS_CONFIG = {
     "apiKey": "AIzaSyD9u_sCT0qvnGSHGlIHQIiv-sXesIH4b_8",
