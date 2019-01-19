@@ -14,10 +14,10 @@ export class PropertyService {
   constructor(private http: Http) {
 	};
 
-  getPropertyDetails(propertyType, propertyId) {
+  getPropertyDetails(propertyId) {
     var requestoptions = new RequestOptions({
 			method: RequestMethod.Get,
-      url: this.api + '/property/' + propertyType + '/' + propertyId + '/'
+      url: this.api + '/property/' + propertyId + '/'
 		});
 
     return this.http.request(

@@ -30,7 +30,7 @@ export class PropertyComponent implements OnInit {
 
   ngOnInit() {
     var propertyData = this.route.params.subscribe(params => {
-       this.propertyService.getPropertyDetails('sale', params['id'])
+       this.propertyService.getPropertyDetails(params['id'])
        .subscribe(
          propertyDetail => {
            propertyDetail[0].price = this.sharedService.cleanPropertyPrice(

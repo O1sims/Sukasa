@@ -15,12 +15,12 @@ export class SearchService {
     private http: Http) {
 	};
 
-  searchProperties(propertyType, searchQuery) {
+  searchProperties(searchQuery) {
     let params = new URLSearchParams();
     params.set('q', searchQuery);
     var requestoptions = new RequestOptions({
 			method: RequestMethod.Get,
-			url: this.api + '/properties/' + propertyType + '/',
+			url: this.api + '/properties/',
       params: params
 		});
 		return this.http.request(
