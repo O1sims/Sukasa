@@ -1,7 +1,7 @@
 {
   "name": "Sukasa",
-  "description": "Web application that analyses current property prices to detect price imperfections",
-  "version": "0.1.0",
+  "description": "Web application that allows users to value their own properties",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/O1sims/Sukasa.git"
