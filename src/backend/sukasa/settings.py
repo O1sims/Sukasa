@@ -6,6 +6,7 @@ import os
 
 from config import DEVELOPMENT
 from utils.data_loader import insert_default_property_data
+from analytics.property_valuation_estimator import create_property_estimation_model
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -109,3 +110,7 @@ STATICFILES_DIRS = [
 
 # Insert default Belfast property data
 property_data = insert_default_property_data()
+
+# Generate property valuation model
+create_property_estimation_model(
+    property_data=property_data)

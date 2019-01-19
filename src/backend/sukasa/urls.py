@@ -9,6 +9,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 
 from api.views.reset import ResetDatabase
 from api.views.property_data import PropertyDataView, PropertyDataIdView
+from api.views.property_valuation import PropertyValuationEstimationView, PropertyValuationDifferentialView
 
 
 schema_view = get_schema_view(
@@ -28,9 +29,18 @@ urlpatterns = format_suffix_patterns([
         PropertyDataView.as_view()),
 
     # Property by ID
-    url(r'^api/v{}/property/(?P<property_id>.+)/$'.format(
+    url(r'^api/v{}/property/(?P<propertyId>.+)/$'.format(
         API_VERSION),
         PropertyDataIdView.as_view()),
+
+    # Property valuation
+    url(r'^api/v{}/property_valuation/estimation/$'.format(
+        API_VERSION),
+        PropertyValuationEstimationView.as_view()),
+
+    url(r'^api/v{}/property_valuation/differential/$'.format(
+        API_VERSION),
+        PropertyValuationDifferentialView.as_view()),
 
     # Reset
     url(r'^api/v{}/reset/all/$'.format(
