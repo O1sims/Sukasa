@@ -15,10 +15,10 @@ export class NavBarComponent implements OnInit {
 
   getPathname() {
     this.pathName = window.location.pathname;
-    if (this.pathName == '/' || this.pathName == '/sale') {
-      this.selectedTab = 'sale';
-    } else if (this.pathName == '/rent' || this.pathName == '/rent/') {
-      this.selectedTab = 'rent';
+    if (this.pathName == '' ||
+          this.pathName == '/' ||
+          this.pathName == '/search') {
+      this.selectedTab = 'search';
     };
   };
 

@@ -1,20 +1,17 @@
-from analytics import config
-from api.services.ElasticService import ElasticService
-from utils.data.ni_property_data import DEFAULT_NI_PROPERTY_DATA
+import json
+
+from sukasa.config import BASE_PATH, MONGO_DB_INFO
+from api.services.MongoService import MongoService
 
 
-def save_default_property_data():
-    if ElasticService().index_check(
-            index=config.ELASTICSEARCH_QUERY_INFO['propertyIndex']):
-        ElasticService().drop_database(
-            index=config.ELASTICSEARCH_QUERY_INFO['propertyIndex'])
-    else:
-        ElasticService().create_index(
-            index=config.ELASTICSEARCH_QUERY_INFO['propertyIndex'])
-    ElasticService().save_to_database(
-        index=config.ELASTICSEARCH_QUERY_INFO['propertyIndex'],
-        doc_type=config.ELASTICSEARCH_QUERY_INFO['propertyDocType'],
-        data=DEFAULT_NI_PROPERTY_DATA[0])
-    return (len(DEFAULT_NI_PROPERTY_DATA),
-            config.ELASTICSEARCH_QUERY_INFO['propertyIndex'],)
-
+def insert_default_property_data():
+    json_data = open(BASE_PATH + 'utils/data/belfastPropertyData.json')
+    belfast_properties = json.load(json_data)
+    if MongoService().check_collection(
+            collection_name=MONGO_DB_INFO['propertyCollection']):
+        MongoService().drop_database(
+            collection_name=MONGO_DB_INFO['propertyCollection'])
+    MongoService().insert_to_collection(
+        collection_name=MONGO_DB_INFO['propertyCollection'],
+        data=belfast_properties)
+    return belfast_properties

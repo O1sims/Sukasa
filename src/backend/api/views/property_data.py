@@ -5,11 +5,10 @@ from rest_framework.response import Response
 from rest_framework.renderers import JSONRenderer
 from rest_framework.generics import CreateAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
 
-from api.services.ElasticService import ElasticService
+from api.services.MongoService import MongoService
 from api.models.property_data import GeneratePropertyDataModel, PropertyDataModel
 
-import analytics.config as config
-from analytics.utilities.CollectPropertyData import send_property_dataset
+from sukasa.config import MONGO_DB_INFO
 
 
 SEARCH_Q = openapi.Parameter(
@@ -19,25 +18,18 @@ SEARCH_Q = openapi.Parameter(
     type=openapi.TYPE_STRING,
     required=True)
 
+def generate_brief(property_data):
+    return "{} bed {} for sale".format(
+        property_data['details']['bedrooms'],
+        property_data['details']['style']
+    )
 
-class GeneratePropertyDataView(CreateAPIView):
-    renderer_classes = (JSONRenderer, )
-    serializer_class = GeneratePropertyDataModel
-
-    @swagger_auto_schema(responses={201: "Created"})
-    def post(self, request, *args, **kwargs):
-        GeneratePropertyDataModel(
-            data=request.data).is_valid(
-            raise_exception=True)
-        sent_properties = send_property_dataset(
-            property_type=request.data['propertyType'],
-            area=request.data['area'],
-            sort_by=request.data['sortBy'])
-        return Response(
-            data={'report': 'Created {} properties'.format(
-                sent_properties)},
-            status=201)
-
+def generate_tags(property_data):
+    return [
+        property_data['address'].lower(),
+        property_data['postcode'].lower(),
+        property_data['town'].lower()
+    ]
 
 class PropertyDataView(ListCreateAPIView):
     renderer_classes = (JSONRenderer, )
@@ -49,9 +41,9 @@ class PropertyDataView(ListCreateAPIView):
         if search_query is None:
             raise ValueError(
                 'Please provide some search query with the `q` query parameter')
-        properties = ElasticService().search_database(
-            index=config.ELASTICSEARCH_QUERY_INFO['propertyIndex'],
-            query_dict={'tags': search_query.lower()})
+        properties = MongoService().search_collection(
+            collection_name=MONGO_DB_INFO['propertyCollection'],
+            search_string=search_query.lower())
         return Response(
             data=properties,
             status=200)
@@ -61,30 +53,28 @@ class PropertyDataView(ListCreateAPIView):
         PropertyDataModel(
             data=request.data).is_valid(
             raise_exception=True)
-        properties = ElasticService().save_to_database(
-            index=config.ELASTICSEARCH_QUERY_INFO['propertyIndex'],
-            doc_type=config.ELASTICSEARCH_QUERY_INFO['propertyDocType'],
+        request.data['brief'] = generate_brief(
+            property_data=request.data)
+        request.data['tags'] = generate_tags(
+            property_data=request.data)
+        MongoService().insert_to_collection(
+            collection_name=MONGO_DB_INFO['propertyCollection'],
             data=request.data)
-        return Response(
-            data=properties,
-            status=200)
+        return Response(status=201)
 
 
-class PropertyIdView(RetrieveUpdateDestroyAPIView):
+class PropertyDataIdView(RetrieveUpdateDestroyAPIView):
     renderer_classes = (JSONRenderer, )
     serializer_class = PropertyDataModel
 
     def get(self, request, *args, **kwargs):
-        properties = ElasticService().search_database(
-            index=config.ELASTICSEARCH_QUERY_INFO['propertyIndex'],
-            query_dict={'_id': self.kwargs['property_id']})
+        property = MongoService().get_from_collection(
+            collection_name=MONGO_DB_INFO['propertyCollection'],
+            property_id=self.kwargs['propertyId'])
         return Response(
-            data=properties,
+            data=property,
             status=200)
 
+    # TODO: Add delete property by ID
     def delete(self, request, *args, **kwargs):
-        delete_property = ElasticService().delete_document(
-            index=config.ELASTICSEARCH_QUERY_INFO['propertyIndex'],
-            doc_type=config.ELASTICSEARCH_QUERY_INFO['propertyDocType'],
-            elastic_id=self.kwargs['property_id'])
         return Response(status=204)

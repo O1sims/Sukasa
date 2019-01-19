@@ -31,7 +31,7 @@ export class SearchComponent implements OnInit {
   };
 
   propertySearch(query) {
-    this.searchService.searchProperties('sale', query)
+    this.searchService.searchProperties(query)
     .subscribe(
       propertyData => {
         for (let i = 0; i < propertyData.length; i++) {
@@ -40,7 +40,6 @@ export class SearchComponent implements OnInit {
             priceInfo.currency,
             priceInfo.price)
         };
-        console.log(propertyData);
         this.searchResults = this.chuckSearchResults(propertyData)
       });
   };

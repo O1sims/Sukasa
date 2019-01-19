@@ -1,0 +1,149 @@
+<div class="container">
+  <h1>Property valuation</h1>
+</div>
+
+<div class="container" style="padding-top:25px;">
+  <h3>Fill out the form below to estimate the value of your property...</h3>
+  <div class="jumbotron">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label class="control-label col-sm-2">Postcode</label>
+        <div class="col-sm-10">
+          <select class="form-control" style="text-transform:uppercase;"
+          (input)="setFeature($event, 'postcode')">
+          <option *ngFor="let postcode of postcodeChoices">{{postcode}}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2">Heating</label>
+      <div class="col-sm-10">
+        <select class="form-control" style="text-transform:capitalize;"
+        (input)="setFeature($event, 'heating')">
+        <option *ngFor="let heating of heatingChoices">{{heating}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-sm-2">Property style</label>
+    <div class="col-sm-10">
+      <select class="form-control" style="text-transform:capitalize;"
+      (input)="setFeature($event, 'propertyStyle')">
+      <option *ngFor="let style of propertyStyleChoices">{{style}}</option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-sm-2">Bedrooms</label>
+  <div class="col-sm-10">
+    <input type="number" class="form-control" min=1 max=25 value=1
+    (input)="setFeature($event, 'bedrooms')">
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-sm-2">Garden</label>
+  <div class="col-sm-1">
+    <input type="checkbox" (click)="setAmenityBool('garden');">
+  </div>
+
+  <label class="control-label col-sm-2">Garage</label>
+  <div class="col-sm-1">
+    <input type="checkbox" (click)="setAmenityBool('garage');">
+  </div>
+
+  <label class="control-label col-sm-2">Driveway</label>
+  <div class="col-sm-1">
+    <input type="checkbox" (click)="setAmenityBool('driveway');">
+  </div>
+
+  <label class="control-label col-sm-2">Bay window</label>
+  <div class="col-sm-1">
+    <input type="checkbox" (click)="setAmenityBool('bayWindow');">
+  </div>
+</div>
+</form>
+<div style="padding-top: 25px; padding-bottom: 10px;">
+  <button class="btn btn-success outline pull-right" (click)="estimatePropertyValue()">
+    <strong>ESTIMATE VALUE</strong>
+  </button>
+</div>
+</div>
+</div>
+
+<div class="container" style="padding-top:25px;"
+  *ngIf="estimatedValue!=undefined">
+  <div class="jumbotron-green" style="text-align: center;">
+    <h2>We have estimated the value of the property to be <b>{{estimatedValue}}</b></h2>
+  </div>
+  <div>
+    <button class="btn btn-success outline pull-right" (click)="estimatePropertyValue()"
+      data-toggle="modal" data-target="#addProperty">
+      <strong>ADD PROPERTY</strong>
+    </button>
+  </div>
+</div>
+
+<!-- Add new property modal -->
+<div id="addProperty" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #EEE; border-bottom: 1px solid #ccc; font-size:18px;">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        Add a new property
+      </div>
+      <div class="modal-body">
+        <div class = "panel panel-default" style="border-width:0px; box-shadow: 0px 0px 0px 0px;">
+          <div class = "panel-body" *ngIf="!propertySubmitted">
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label class="control-label col-sm-2">Address</label>
+                <div class="col-sm-10">
+                  <input type="text" (input)="setFeature($event, 'address');">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2">Town</label>
+                <div class="col-sm-10">
+                <select class="form-control" style="text-transform:capitalize;"
+                  (input)="setFeature($event, 'town')">
+                  <option *ngFor="let town of towns">{{town}}</option>
+                </select>
+              </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2">Price (£)</label>
+                <div class="col-sm-10">
+                  <input type="text" value={{rawEstimation}} disabled>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="button" class="btn btn-default pull-right"
+                    (click)="submitProperty()">SUBMIT</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class = "panel-body" *ngIf="propertySubmitted">
+            <div class="col-md-6">
+              <img src="./assets/images/form-sent.gif" alt="Form submitted" width="400px">
+            </div>
+            <div class="col-md-6" style="margin-top: 10%;">
+              <h3 style="color:#6bb251;">Successfully added property!</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success outline" data-dismiss="modal"
+          (click)="propertySubmitted=false">
+          CLOSE
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

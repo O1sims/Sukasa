@@ -7,17 +7,28 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class PropertyService {
-  api:string = environment.API_HOST + ":" +
-  environment.API_PORT + "/api/v" +
-  environment.API_VERSION;
+  api:string = environment.API_HOST + "/api/v" +
+    environment.API_VERSION;
 
   constructor(private http: Http) {
 	};
 
-  getPropertyDetails(propertyType, propertyId) {
+  getPropertyDetails(propertyId) {
     var requestoptions = new RequestOptions({
 			method: RequestMethod.Get,
-      url: this.api + '/property/' + propertyType + '/' + propertyId + '/'
+      url: this.api + '/properties/' + propertyId + '/'
+		});
+
+    return this.http.request(
+      new Request(requestoptions))
+		.map(res => res.json());
+  };
+
+  priceImperfection(propertyData) {
+    var requestoptions = new RequestOptions({
+			method: RequestMethod.Post,
+      url: this.api + '/property_valuation/differential/',
+      body: propertyData
 		});
 
     return this.http.request(

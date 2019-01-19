@@ -7,20 +7,20 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" routerLink="">
+      <a class="navbar-brand" routerLink="" (click)="assignSelectedTab('search')">
         <strong>Sukasa</strong>
       </a>
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav" style="padding-right:150px;">
-        <li [ngClass]="{'active': selectedTab=='sale'}" style="border-radius: 4px;">
-          <a routerLink="" (click)="assignSelectedTab('riskNetwork')">
-            <strong>Sale</strong>
+        <li [ngClass]="{'active': selectedTab=='search'}" style="border-radius: 4px;">
+          <a routerLink="" (click)="assignSelectedTab('search')">
+            <strong>Property search</strong>
           </a>
         </li>
-        <li [ngClass]="{'active': selectedTab=='rent'}" style="border-radius: 4px;">
-          <a routerLink="" (click)="assignSelectedTab('riskNetwork')">
-            <strong>Rent</strong>
+        <li [ngClass]="{'active': selectedTab=='valuation'}" style="border-radius: 4px;">
+          <a routerLink="valuation" (click)="assignSelectedTab('valuation')">
+            <strong>Valuation</strong>
           </a>
         </li>
       </ul>

@@ -1,21 +1,21 @@
 <div class="container-fluid"
-  style="background-color:#EEE; border-bottom: 5px solid #E0E0E0;">
-  <div class="container">
-    <h2 style="text-transform: uppercase; padding: 25px 0px 25px 0px;">
-      {{propertyDetail.address}}
-    </h2>
-  </div>
+style="background-color:#EEE; border-bottom: 5px solid #E0E0E0;">
+<div class="container">
+  <h2 style="text-transform: uppercase; padding: 25px 0px 25px 0px;">
+    {{propertyDetail.address}}
+  </h2>
+</div>
 </div>
 
 <div class="container" style="padding-top: 30px;">
   <div class="panel col-sm-6">
     <img class="img-thumbnail"
-      src={{propertyDetail.image}}>
+    src={{propertyDetail.image}}>
   </div>
   <div class="panel col-sm-6">
     <h3>Key information</h3>
     <table class="table">
-      <tbody>
+      <tbody style="text-transform:capitalize;">
         <tr *ngIf="propertyDetail.details.status != undefined">
           <th>Status</th>
           <td>{{propertyDetail.details.status}}</td>
@@ -55,5 +55,13 @@
         </tr>
       </tbody>
     </table>
+  </div>
+</div>
+
+<div class="container">
+  <div class={{differentialClass}}>
+    <h2 style="text-align: center;">
+      This property is <b>{{valuationLabel}}</b>{{differential}}
+    </h2>
   </div>
 </div>

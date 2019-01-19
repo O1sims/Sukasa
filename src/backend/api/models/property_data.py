@@ -72,9 +72,8 @@ class PriceInformationModel(serializers.Serializer):
 
 
 class PropertyDataModel(serializers.Serializer):
-    _id = serializers.CharField(required=False)
     timestamp = serializers.DateTimeField(required=False)
-    property_id = serializers.CharField(required=False)
+    propertyId = serializers.CharField(required=False)
     brief = serializers.CharField(required=False)
     address = serializers.CharField(required=False)
     town = serializers.CharField(required=False)
