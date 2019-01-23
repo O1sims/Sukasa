@@ -29,6 +29,8 @@ services:
       - DB_NAME=Sukasa
       - MONGO_PORT=8210
       - MONGO_HOSTNAME=sukasa-db
+      - REDIS_PORT=6379
+      - REDIS_HOSTNAME=sukasa-redis
       - DEVELOPMENT=True
 
   sukasa-gui:
@@ -47,3 +49,10 @@ services:
     command: mongod --port 8210
     ports:
       - "8210:8210"
+
+  sukasa-redis:
+    restart: unless-stopped
+    image: redis:latest
+    container_name: sukasa-redis
+    ports:
+      - "6379:6379"
