@@ -21,6 +21,7 @@ services:
       - "./backend/:/sukasa/"
     depends_on:
       - sukasa-db
+      - sukasa-redis
     environment:
       - SUKASA_PORT=5000
       - SUKASA_HOSTNAME=sukasa
