@@ -1,30 +1,16 @@
+import config as cf
 import pandas as pd
 
 from sklearn import linear_model
-from utils.pickler import load_data_pickle, save_data_pickle
-
-
-DEPENDENT_VARIABLES = [
-    'priceInfo.price'
-]
-
-INDEPENDENT_VARIABLES = [
-    'postcode',
-    'details.bedrooms',
-    'details.style',
-    'details.heating',
-    'details.amenities.bayWindow',
-    'details.amenities.driveway',
-    'details.amenities.garage',
-    'details.amenities.garden'
-]
+from sukasa.config import REDIS_KEYS
+from api.services.RedisService import RedisService
 
 
 def predict_property_price(property_data):
-    property_estimation_model = load_data_pickle(
-        file_name='property_estimation_model')
-    indy_df = load_data_pickle(
-        file_name='independent_variables_df')
+    property_estimation_model = RedisService().get_skl_model(
+        redis_key=REDIS_KEYS['propertyValuationModel'])
+    indy_df = RedisService().get_dataframe(
+        redis_key=REDIS_KEYS['independentVariables'])
     flat_property_data = pd.io.json.json_normalize(
         data=[property_data])
     indy_df = indy_df.append(flat_property_data)[indy_df.columns.tolist()]
@@ -40,20 +26,20 @@ def create_property_estimation_model(property_data):
         data=property_data)
     complete_df = pd.DataFrame(
         data=property_df,
-        columns=INDEPENDENT_VARIABLES + DEPENDENT_VARIABLES).dropna()
+        columns=cf.INDEPENDENT_VARIABLES + cf.DEPENDENT_VARIABLES).dropna()
     indy_df = pd.DataFrame(
         data=complete_df,
-        columns=INDEPENDENT_VARIABLES)
-    save_data_pickle(
-        data=indy_df,
-        file_name='independent_variables_df')
+        columns=cf.INDEPENDENT_VARIABLES)
+    RedisService().set_dataframe(
+        dataframe=indy_df,
+        redis_key=REDIS_KEYS['independentVariables'])
     depy_df = pd.DataFrame(
         data=complete_df,
-        columns=DEPENDENT_VARIABLES)
+        columns=cf.DEPENDENT_VARIABLES)
     lm = linear_model.LinearRegression()
     property_estimation_model = lm.fit(
         X=pd.get_dummies(indy_df),
-        y=depy_df[DEPENDENT_VARIABLES[0]])
-    save_data_pickle(
-        data=property_estimation_model,
-        file_name='property_estimation_model')
+        y=depy_df[cf.DEPENDENT_VARIABLES[0]])
+    RedisService().set_skl_model(
+        model=property_estimation_model,
+        redis_key=REDIS_KEYS['propertyValuationModel'])
