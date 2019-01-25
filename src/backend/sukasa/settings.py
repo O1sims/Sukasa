@@ -4,7 +4,7 @@ Django settings for the Sukasa project.
 
 import os
 
-from config import DEVELOPMENT
+from sukasa.config import DEVELOPMENT
 from utils.data_loader import insert_default_property_data
 from analytics.property_valuation_estimator import create_property_estimation_model
 
