@@ -40,3 +40,18 @@ ELASTICSEARCH_QUERY_INFO = {
     "propertyIndex": "properties",
     "propertyDocType": "house"
 }
+
+DEPENDENT_VARIABLES = [
+    'priceInfo.price'
+]
+
+INDEPENDENT_VARIABLES = [
+    'postcode',
+    'details.bedrooms',
+    'details.style',
+    'details.heating',
+    'details.amenities.bayWindow',
+    'details.amenities.driveway',
+    'details.amenities.garage',
+    'details.amenities.garden'
+]

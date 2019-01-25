@@ -21,3 +21,8 @@ MONGO_CONNECTION = {
 MONGO_DB_INFO = {
     "propertyCollection": "properties"
 }
+
+REDIS_KEYS = {
+    "independentVariables": "independentVariables",
+    "propertyValuationModel": "propertyValuationModel"
+}
