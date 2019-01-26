@@ -9,8 +9,6 @@ import json
 import requests
 import datetime
 
-import pymongo as pm
-
 from bson import json_util
 from bs4 import BeautifulSoup
 from string import punctuation
@@ -468,10 +466,6 @@ def property_dataset(page_soup):
             'mainImage': property_images[i]
         })
     return dataset
-
-
-def store_in_mongo(property_data):
-    
 
 
 def scrape_ni_dataset(area, property_type, sort_by,
