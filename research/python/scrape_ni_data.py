@@ -514,3 +514,18 @@ properties = scrape_ni_dataset(
     sort_by='recentlyAdded')
 
 save_to_file(properties)
+
+
+def merge_with_master(master_dataset, all_property_ids, property_dataset):
+    for property in property_dataset:
+        if property['propertyId'] in all_property_ids:
+            return {
+                'masterDataset': master_dataset,
+                'shouldContinue': False
+            }
+        else:
+            master_dataset.append(property)
+    return {
+        'masterDataset': master_dataset,
+        'shouldContinue': True
+    }
