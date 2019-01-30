@@ -1,15 +1,8 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
-"""
-@author: owen
-"""
-
 import re
 import json
 import requests
 import datetime
 
-from bson import json_util
 from bs4 import BeautifulSoup
 from string import punctuation
 
@@ -118,7 +111,8 @@ def get_property_page(area, page_number, property_type, sort_by):
 
 def get_final_page_number(first_page_soup):
     raw_page_number = first_page_soup.find("li", {"class", "paging-last"}).get_text()
-    clean_page_number = raw_page_number.encode('ascii', 'ignore').strip().replace(',', '')
+    print(raw_page_number)
+    clean_page_number = raw_page_number.strip().replace(',', '')
     return int(clean_page_number)
 
 
@@ -142,15 +136,11 @@ def strip_punctuation(string):
 
 def clean_price(price):
     if price is None:
-        end_price = price
+        return price
     else:
         raw_price = price.get_text()
-        cleaned_price = raw_price.encode('ascii', 'ignore').strip().replace(',', '')
-        try:
-            end_price = int(cleaned_price)
-        except ValueError:
-            end_price = cleaned_price
-    return end_price
+        cleaned_price = raw_price.strip().replace(',', '')
+    return float(re.sub(r'[^0-9.]', '', str(cleaned_price)))
 
 
 def get_currency(raw_price):
@@ -160,7 +150,7 @@ def get_currency(raw_price):
         '$': 'dollar'
     }
     string_price = str(raw_price)
-    for c, v in currencies.iteritems():
+    for c, v in currencies.items():
         if c in string_price:
             return v
     return 'unknown'
@@ -170,7 +160,7 @@ def get_price(page_soup):
     offer = page_soup.find("span", {"class": "price-offers"})
     if offer is not None:
         offer = offer.get_text().strip()
-    price = page_soup.find("span", {"class": "price-value "})
+    price = page_soup.find("span", {"class": "price-value"})
     min_price = page_soup.find("span", {"class": "price-min"})
     max_price = page_soup.find("span", {"class": "price-max"})
     currency = 'unknown'
@@ -248,7 +238,7 @@ def get_estate_agent(page_soup):
             'Marketed by ': '',
             'Developed by ': ''
         }
-        rep = dict((re.escape(k), v) for k, v in rep.iteritems())
+        rep = dict((re.escape(k), v) for k, v in rep.items())
         pattern = re.compile("|".join(rep.keys()))
         agent = pattern.sub(
             lambda m: rep[re.escape(m.group(0))],
@@ -276,7 +266,7 @@ def property_location(detail_soup):
 
 
 def amenity_present(detail_page, amenity):
-    return amenity in detail_page.lower()
+    return amenity in detail_page.decode().lower()
 
 
 def parse_epc_rating(epc_rating_list):
@@ -329,7 +319,7 @@ def get_property_details(hyperlink):
             if row_title != 'stamp duty' and row_title != 'price':
                 cols = row.findAll('td')
                 cols = [ele.text.strip() for ele in cols]
-                info = [ele for ele in cols if ele][0].encode('ascii', 'ignore').strip()
+                info = [ele for ele in cols if ele][0].encode('ascii', 'ignore').strip().decode()
                 if row_title == 'rates':
                     info = float(info.replace(' pa*', '').replace(',', ''))
                 elif 'epc' in row_title:
@@ -367,7 +357,7 @@ def multiple_replace(pattern_dict, text):
 
 def key_information(detail_soup):
     key_info = detail_soup.find("div", {"class": "prop-descr-text"}).get_text()
-    encoded_key_info = key_info.encode('ascii', 'ignore')
+    encoded_key_info = key_info.encode('ascii', 'ignore').decode()
     patterns = { "\n": " ", "\t": " " }
     cleaned_key_info = multiple_replace(
         pattern_dict=patterns, 
@@ -408,7 +398,7 @@ def generate_tags(taggables):
 
 
 def find_county(postcode):
-    for k, v in COUNTY_POSTCODE.iteritems():
+    for k, v in COUNTY_POSTCODE.items():
         if postcode in v:
             return k
     return 'Unknown'
@@ -501,7 +491,7 @@ def scrape_ni_dataset(area, property_type, sort_by,
 
 
 def save_to_file(property_data):
-    properties_json = json.dumps(property_data, default=json_util.default)
+    properties_json = json.dumps(property_data)
     json_file = open('{}/property/ni-property-data-{}.json'.format(
             DIR_PATH, datetime.date.today()), 'w')
     json_file.write(properties_json)
@@ -511,7 +501,8 @@ def save_to_file(property_data):
 properties = scrape_ni_dataset(
     area=SEARCH_AREA,
     property_type='sale',
-    sort_by='recentlyAdded')
+    sort_by='recentlyAdded',
+    first_only=True)
 
 save_to_file(properties)
 
