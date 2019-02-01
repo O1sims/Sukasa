@@ -48,12 +48,12 @@ CORS_ORIGIN_ALLOW_ALL = False
 
 CORS_ORIGIN_WHITELIST = (
     '{}:{}'.format(
-        os.environ.get(
+        os.getenv(
             key='SUKASA_GUI_HOSTNAME',
-            failobj='localhost'),
-        os.environ.get(
+            default='localhost'),
+        os.getenv(
             key='SUKASA_GUI_PORT',
-            failobj=3000))
+            default=3000))
 )
 
 ROOT_URLCONF = 'sukasa.urls'

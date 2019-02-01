@@ -1,5 +1,5 @@
-import config as cf
 import pandas as pd
+import analytics.config as cf
 
 from sklearn import linear_model
 from sukasa.config import REDIS_KEYS

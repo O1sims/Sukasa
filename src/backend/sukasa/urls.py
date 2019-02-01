@@ -1,4 +1,4 @@
-from config import API_VERSION
+from sukasa.config import API_VERSION
 
 from django.conf.urls import url
 
