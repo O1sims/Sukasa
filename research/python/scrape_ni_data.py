@@ -3,6 +3,7 @@ import json
 import requests
 import datetime
 
+from bson import json_util
 from bs4 import BeautifulSoup
 from string import punctuation
 
@@ -111,7 +112,6 @@ def get_property_page(area, page_number, property_type, sort_by):
 
 def get_final_page_number(first_page_soup):
     raw_page_number = first_page_soup.find("li", {"class", "paging-last"}).get_text()
-    print(raw_page_number)
     clean_page_number = raw_page_number.strip().replace(',', '')
     return int(clean_page_number)
 
@@ -344,6 +344,8 @@ def get_property_details(hyperlink):
             detail_soup=detail_soup)
         data['propertyImages'] = property_images(
             detail_soup=detail_soup)
+        data['longPostcode'] = detail_soup.find(
+            "span", {"class": "text-ib"}).get_text()
         # data['htmlPage'] = str(detail_soup)
         return data
     else:
@@ -491,7 +493,7 @@ def scrape_ni_dataset(area, property_type, sort_by,
 
 
 def save_to_file(property_data):
-    properties_json = json.dumps(property_data)
+    properties_json = json.dumps(property_data, default=json_util.default)
     json_file = open('{}/property/ni-property-data-{}.json'.format(
             DIR_PATH, datetime.date.today()), 'w')
     json_file.write(properties_json)
@@ -501,8 +503,7 @@ def save_to_file(property_data):
 properties = scrape_ni_dataset(
     area=SEARCH_AREA,
     property_type='sale',
-    sort_by='recentlyAdded',
-    first_only=True)
+    sort_by='recentlyAdded')
 
 save_to_file(properties)
 
