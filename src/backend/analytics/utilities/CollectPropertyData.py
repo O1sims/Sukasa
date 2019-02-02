@@ -1,8 +1,4 @@
-#!/usr/bin/env python2
-# -*- coding: utf-8 -*-
 """
-Created on Tue May  8 11:06:05 2018
-
 @author: owen
 """
 
@@ -16,7 +12,6 @@ from bs4 import BeautifulSoup
 
 from analytics import config
 from LocationalDetails import postcode_areas
-from api.services.ElasticService import ElasticService
 
 
 AMENITIES_LIST = ['garden', 'garage', 'driveway', 'parking', 'bay window']
@@ -88,7 +83,7 @@ def get_currency(raw_price):
         '$': 'dollar'
     }
     string_price = str(raw_price)
-    for c, v in currencies.iteritems():
+    for c, v in currencies.items():
         if c in string_price:
             return v
     return 'unknown'
@@ -176,7 +171,7 @@ def get_estate_agent(page_soup):
             'Marketed by ': '',
             'Developed by ': ''
         }
-        rep = dict((re.escape(k), v) for k, v in rep.iteritems())
+        rep = dict((re.escape(k), v) for k, v in rep.items())
         pattern = re.compile("|".join(rep.keys()))
         agent = pattern.sub(
             lambda m: rep[re.escape(m.group(0))],
