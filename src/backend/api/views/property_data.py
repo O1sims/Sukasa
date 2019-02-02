@@ -1,6 +1,9 @@
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 
+from django.forms.models import model_to_dict
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+
 from rest_framework.response import Response
 from rest_framework.renderers import JSONRenderer
 from rest_framework.generics import CreateAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
@@ -9,6 +12,7 @@ from api.services.MongoService import MongoService
 from api.models.property_data import GeneratePropertyDataModel, PropertyDataModel
 
 from sukasa.config import MONGO_DB_INFO
+from analytics.property_valuation_estimator import create_property_estimation_model
 
 
 SEARCH_Q = openapi.Parameter(
@@ -38,14 +42,23 @@ class PropertyDataView(ListCreateAPIView):
     @swagger_auto_schema(manual_parameters=[SEARCH_Q])
     def get(self, request, *args, **kwargs):
         search_query = self.request.GET.get('q', None)
+        page = self.request.GET.get('page', 1)
         if search_query is None:
             raise ValueError(
                 'Please provide some search query with the `q` query parameter')
         properties = MongoService().search_collection(
             collection_name=MONGO_DB_INFO['propertyCollection'],
             search_string=search_query.lower())
+        paginator = Paginator(properties, 10)
+        try:
+            properties = paginator.page(page)
+        except PageNotAnInteger:
+            properties = paginator.page(1)
+        except EmptyPage:
+            properties = paginator.page(paginator.num_pages)
+        properties = paginator.page(page)
         return Response(
-            data=properties,
+            data=properties.object_list,
             status=200)
 
     @swagger_auto_schema(responses={201: "Created"})
@@ -60,6 +73,10 @@ class PropertyDataView(ListCreateAPIView):
         MongoService().insert_to_collection(
             collection_name=MONGO_DB_INFO['propertyCollection'],
             data=request.data)
+        all_property_data = MongoService().get_from_collection(
+            collection_name=MONGO_DB_INFO['propertyCollection'])
+        create_property_estimation_model(
+            property_data=all_property_data)
         return Response(status=201)
 
 
