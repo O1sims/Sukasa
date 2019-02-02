@@ -23,7 +23,7 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = format_suffix_patterns([
-    # Bulk properties
+    # Search bulk properties
     url(r'^api/v{}/properties/$'.format(
         API_VERSION),
         PropertyDataView.as_view()),

@@ -36,5 +36,6 @@ REDIS_CONNECTION = {
 
 REDIS_KEYS = {
     "independentVariables": "independentVariables",
-    "propertyValuationModel": "propertyValuationModel"
+    "propertyValuationModel": "propertyValuationModel",
+    "standardDeviation": "standardDeviation"
 }
