@@ -17,7 +17,7 @@ class RedisService:
             value=dataframe.to_msgpack(
                 compress='zlib'))
         if setter_output:
-            print("Successfully set dataframe into the {} key".format(
+            print("Successfully set dataframe into the `{}` key".format(
                 redis_key))
 
     def get_dataframe(self, redis_key):
@@ -29,9 +29,17 @@ class RedisService:
             name=redis_key,
             value=pk.dumps(model))
         if setter_output:
-            print("Successfully set model into the {} key".format(
+            print("Successfully set model into the `{}` key".format(
                 redis_key))
 
     def get_skl_model(self, redis_key):
         skl_model = pk.loads(self.redis_connection.get(redis_key))
         return skl_model
+
+    def getter(self, redis_key):
+        return self.redis_connection.get(redis_key)
+
+    def setter(self, value, redis_key):
+        self.redis_connection.set(
+            name=redis_key, 
+            value=value)
