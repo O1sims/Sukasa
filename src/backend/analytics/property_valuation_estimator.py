@@ -1,9 +1,20 @@
+import statistics
+
 import pandas as pd
 import analytics.config as cf
 
 from sklearn import linear_model
 from sukasa.config import REDIS_KEYS
 from api.services.RedisService import RedisService
+
+
+def generate_stadard_deviation(property_data):
+    price_list = []
+    for property in property_data:
+        if property['priceInfo']['price'] is not None:
+            price_list.append(property['priceInfo']['price'])
+    standard_dev = statistics.stdev(price_list)
+    return int(standard_dev)
 
 
 def predict_property_price(property_data):
@@ -13,7 +24,9 @@ def predict_property_price(property_data):
         redis_key=REDIS_KEYS['independentVariables'])
     flat_property_data = pd.io.json.json_normalize(
         data=[property_data])
-    indy_df = indy_df.append(flat_property_data)[indy_df.columns.tolist()]
+    indy_df = indy_df.append(
+        flat_property_data, 
+        sort=True)[indy_df.columns.tolist()]
     indy_dummies = pd.get_dummies(indy_df)
     data_len = len(indy_dummies)
     price_prediction = property_estimation_model.predict(
@@ -22,6 +35,8 @@ def predict_property_price(property_data):
 
 
 def create_property_estimation_model(property_data):
+    standard_dev = generate_stadard_deviation(
+        property_data=property_data)
     property_df = pd.io.json.json_normalize(
         data=property_data)
     complete_df = pd.DataFrame(
@@ -33,6 +48,9 @@ def create_property_estimation_model(property_data):
     RedisService().set_dataframe(
         dataframe=indy_df,
         redis_key=REDIS_KEYS['independentVariables'])
+    RedisService().setter(
+        value=standard_dev,
+        redis_key=REDIS_KEYS['standardDeviation'])
     depy_df = pd.DataFrame(
         data=complete_df,
         columns=cf.DEPENDENT_VARIABLES)

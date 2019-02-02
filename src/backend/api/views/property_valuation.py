@@ -4,15 +4,19 @@ from rest_framework.response import Response
 from rest_framework.renderers import JSONRenderer
 from rest_framework.generics import CreateAPIView
 
+from sukasa.config import REDIS_KEYS
+from api.services.RedisService import RedisService
 from analytics.property_valuation_estimator import predict_property_price
 from api.models.property_valuation import PropertyValuationEstimationModel, PropertyValuationDifferentialModel
 
 
 def myopic_differential(given_price, estimation):
-    difference = given_price - estimation
-    if difference > 5:
+    standard_deviation = int(RedisService().getter(
+        redis_key=REDIS_KEYS['standardDeviation']))
+    difference = int(given_price - estimation)
+    if difference > standard_deviation:
         label = "overvalued"
-    elif difference < -5:
+    elif difference < -standard_deviation:
         label = "undervalued"
     else:
         label = "correctly valued"
