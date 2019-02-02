@@ -10,7 +10,7 @@ RUN apt-get install -qq -y build-essential libffi-dev python-dev
 RUN mkdir /sukasa
 WORKDIR /sukasa
 ADD requirements.txt /sukasa/
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 
 # Expose ports
 EXPOSE 5000
