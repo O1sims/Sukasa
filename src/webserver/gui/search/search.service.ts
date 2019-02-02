@@ -14,9 +14,10 @@ export class SearchService {
     private http: Http) {
 	};
 
-  searchProperties(searchQuery) {
+  searchProperties(searchQuery, searchPage) {
     let params = new URLSearchParams();
     params.set('q', searchQuery);
+    params.set('page', searchPage);
     var requestoptions = new RequestOptions({
 			method: RequestMethod.Get,
 			url: this.api + '/properties/',

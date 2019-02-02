@@ -13,8 +13,9 @@ import { SharedService } from '../shared/shared.service';
 export class SearchComponent implements OnInit {
   groupSize:number = 2;
 
-  searchQuery:string = "";
-  searchResults:object[] = [];
+  searchPage:number;
+  searchQuery:string;
+  searchResults:object[];
 
   constructor(
     private searchService: SearchService,
@@ -26,12 +27,13 @@ export class SearchComponent implements OnInit {
     .subscribe(
       params => {
         this.searchQuery = params['q'] || '';
-        this.propertySearch(this.searchQuery);
+        this.searchPage = params['page'] || 1;
+        this.propertySearch(this.searchQuery, this.searchPage);
       });
   };
 
-  propertySearch(query) {
-    this.searchService.searchProperties(query)
+  propertySearch(query:string, page:number) {
+    this.searchService.searchProperties(query, page)
     .subscribe(
       propertyData => {
         for (let i = 0; i < propertyData.length; i++) {
@@ -44,12 +46,12 @@ export class SearchComponent implements OnInit {
       });
   };
 
-  chuckSearchResults(results, groupSize = this.groupSize) {
+  chuckSearchResults(results:any, groupSize = this.groupSize) {
     return(
       results.map(function(item, index) {
         return index % groupSize === 0 ?
         results.slice(index, index + groupSize) : null;
-      }).filter(function(item){ return item; }));
+      }).filter(function(item:any){ return item; }));
   };
 
 }
