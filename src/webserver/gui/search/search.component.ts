@@ -17,6 +17,8 @@ export class SearchComponent implements OnInit {
   searchQuery:string;
   searchResults:object[];
 
+  allPropertiesFound:number;
+
   constructor(
     private searchService: SearchService,
     private route: ActivatedRoute,
@@ -35,7 +37,9 @@ export class SearchComponent implements OnInit {
   propertySearch(query:string, page:number) {
     this.searchService.searchProperties(query, page)
     .subscribe(
-      propertyData => {
+      propertyRequest => {
+        this.allPropertiesFound = propertyRequest['propertiesLength']
+        var propertyData = propertyRequest['data']
         for (let i = 0; i < propertyData.length; i++) {
           let priceInfo = propertyData[i].priceInfo;
           propertyData[i].price = this.sharedService.cleanPropertyPrice(

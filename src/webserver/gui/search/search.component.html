@@ -19,8 +19,7 @@
 </div>
 
 <div class="container" *ngIf="searchResults.length > 0">
-  <h2>Found {{((searchResults.length-1)*groupSize)+searchResults[(searchResults.length-1)].length}}
-    results for "{{searchQuery}}" in properties for sale</h2>
+  <h2>Found {{allPropertiesFound}} results for "{{searchQuery}}" in properties for sale</h2>
   <div class="row" style="padding-bottom: 35px;" *ngFor="let resultGroup of searchResults">
     <div class="panel col-sm-6" *ngFor="let result of resultGroup">
       <img class="img-thumbnail"
@@ -34,3 +33,5 @@
     </div>
   </div>
 </div>
+
+<a> Next > <a routerLink="/search/q={{searchQuery}}&page={{searchPage+1}}"
