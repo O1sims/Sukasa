@@ -83,3 +83,7 @@ class PropertyDataModel(serializers.Serializer):
     hyperlink = serializers.CharField(required=False)
     details = PropertyDetailModel(required=False)
     estateAgent = EstateAgentModel(required=False)
+
+
+class PropertyImageModel(serializers.Serializer):
+    propertyImage = serializers.ImageField(required=False)

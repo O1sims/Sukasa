@@ -57,6 +57,7 @@ export class ValuationComponent {
   town:string = this.towns[0];
 
   propertySubmitted:boolean = false;
+  propertyImage:any;
 
   constructor(
     private sharedService: SharedService,
@@ -78,6 +79,10 @@ export class ValuationComponent {
     };
   };
 
+  setImage(event) {
+    this.propertyImage = event.target.files[0];
+  };
+
   setAmenityBool(amenity) {
     if (amenity=="garage") {
       this.garage = !this.garage;
@@ -93,6 +98,7 @@ export class ValuationComponent {
   constructPropertyData(forSubmission=false) {
     var propertyData = {
       "postcode": this.postcode,
+      "propertyImage": this.propertyImage,
       "details": {
         "bedrooms": Number(this.bedrooms),
         "style": this.propertyStyle,

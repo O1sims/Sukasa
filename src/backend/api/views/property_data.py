@@ -1,7 +1,6 @@
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 
-from django.forms.models import model_to_dict
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 from rest_framework.response import Response
@@ -51,14 +50,16 @@ class PropertyDataView(ListCreateAPIView):
             search_string=search_query.lower())
         paginator = Paginator(properties, 10)
         try:
-            properties = paginator.page(page)
+            paginated_properties = paginator.page(page)
         except PageNotAnInteger:
-            properties = paginator.page(1)
+            paginated_properties = paginator.page(1)
         except EmptyPage:
-            properties = paginator.page(paginator.num_pages)
-        properties = paginator.page(page)
+            paginated_properties = paginator.page(paginator.num_pages)
         return Response(
-            data=properties.object_list,
+            data={
+                'propertiesLength': len(properties),
+                'data': paginated_properties.object_list
+            },
             status=200)
 
     @swagger_auto_schema(responses={201: "Created"})
