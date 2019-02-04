@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { SearchService } from './search.service';
 import { SharedService } from '../shared/shared.service';
 
 
 @Component({
+  selector: 'search',
   templateUrl: './search/search.component.html',
   providers: [SearchService, SharedService]
 })
@@ -20,8 +21,9 @@ export class SearchComponent implements OnInit {
   allPropertiesFound:number;
 
   constructor(
-    private searchService: SearchService,
     private route: ActivatedRoute,
+    private router: Router,
+    private searchService: SearchService,
     private sharedService: SharedService) {};
 
   ngOnInit() {
@@ -58,4 +60,13 @@ export class SearchComponent implements OnInit {
       }).filter(function(item:any){ return item; }));
   };
 
+  nextSearchPage() {
+    this.router.navigate(['/search'],
+    { queryParams: { 
+      q: this.searchQuery,
+      page: Number(this.searchPage) + Number(1) } 
+    });
+    window.scrollTo(0, 0);
+  };
+  
 }
