@@ -54,6 +54,7 @@ export class ValuationComponent {
   propertyStyle:string = this.propertyStyleChoices[0];
 
   address:string;
+  longPostcode:string;
   town:string = this.towns[0];
 
   propertySubmitted:boolean = false;
@@ -76,7 +77,20 @@ export class ValuationComponent {
       this.address = event['target']['value'];
     } else if (feature=="town") {
       this.town = event['target']['value'];
+    } else if (feature=="postcode") {
+      this.longPostcode = this.extractPostcode(
+        event['target']['value']);
     };
+  };
+
+  extractPostcode(postcode:string) {
+    var clean_postcode = postcode.replace(/ /g, '');
+    if (clean_postcode.length < 7) {
+      var region_code = clean_postcode.substring(1, 3);
+    } else {
+      var region_code = clean_postcode.substring(1, 4);
+    };
+    return region_code;
   };
 
   setImage(event) {

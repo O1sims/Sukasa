@@ -9,12 +9,10 @@
   <div class="jumbotron">
     <form class="form-horizontal">
       <div class="form-group">
-        <label class="control-label col-sm-2">Postcode</label>
+        <label class="control-label col-sm-2">Address</label>
         <div class="col-sm-10">
-          <select class="form-control" style="text-transform:uppercase;"
-          (input)="setFeature($event, 'postcode')">
-          <option *ngFor="let postcode of postcodeChoices">{{postcode}}</option>
-        </select>
+          <input type="text" (input)="setFeature($event, 'postcode');">
+        </div>
       </div>
     </div>
 
