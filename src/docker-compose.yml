@@ -38,6 +38,8 @@ services:
     restart: unless-stopped
     image: sukasa-gui:latest
     container_name: sukasa-gui
+    volumes:
+      - "./webserver/gui/:/gui/"
     ports:
       - "3000:3000"
     depends_on:
