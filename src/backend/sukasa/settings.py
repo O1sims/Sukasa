@@ -105,9 +105,10 @@ STATICFILES_DIRS = [
     '../../backend/gui/app',
 ]
 
-# Insert default Belfast property data
-property_data = insert_default_property_data()
+if DEVELOPMENT:
+    # Insert default Belfast property data
+    property_data = insert_default_property_data()
 
-# Generate property valuation model
-create_property_estimation_model(
-    property_data=property_data)
+    # Generate property valuation model
+    create_property_estimation_model(
+        property_data=property_data)
