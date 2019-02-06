@@ -14,6 +14,7 @@ import { SharedService } from '../shared/shared.service';
 export class SearchComponent implements OnInit {
   groupSize:number = 2;
 
+  maxPage:number;
   searchPage:number;
   searchQuery:string;
   searchResults:object[];
@@ -40,7 +41,8 @@ export class SearchComponent implements OnInit {
     this.searchService.searchProperties(query, page)
     .subscribe(
       propertyRequest => {
-        this.allPropertiesFound = propertyRequest['propertiesLength']
+        this.allPropertiesFound = propertyRequest['propertiesLength'];
+        this.maxPage = Math.ceil(this.allPropertiesFound/10);
         var propertyData = propertyRequest['data']
         for (let i = 0; i < propertyData.length; i++) {
           let priceInfo = propertyData[i].priceInfo;
@@ -48,23 +50,28 @@ export class SearchComponent implements OnInit {
             priceInfo.currency,
             priceInfo.price)
         };
-        this.searchResults = this.chuckSearchResults(propertyData)
+        this.searchResults = this.chuckSearchResults(propertyData);
       });
   };
 
   chuckSearchResults(results:any, groupSize = this.groupSize) {
     return(
-      results.map(function(item, index) {
+      results.map(function(item:any, index) {
         return index % groupSize === 0 ?
         results.slice(index, index + groupSize) : null;
       }).filter(function(item:any){ return item; }));
   };
 
-  nextSearchPage() {
+  traverseSearchPage(trav:string) {
+    if (trav=='next') {
+      var traversePage = Number(this.searchPage) + 1;
+    } else if (trav=='previous') {
+      var traversePage = Number(this.searchPage) - 1;
+    };
     this.router.navigate(['/search'],
     { queryParams: { 
       q: this.searchQuery,
-      page: Number(this.searchPage) + Number(1) } 
+      page: traversePage } 
     });
     window.scrollTo(0, 0);
   };
