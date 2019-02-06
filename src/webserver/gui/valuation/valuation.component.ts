@@ -32,14 +32,6 @@ export class ValuationComponent {
     "townhouse"
   ]
 
-  postcodeChoices:string[] = [
-    "BT1", "BT2", "BT3", "BT4", "BT5",
-    "BT6", "BT7", "BT8", "BT9", "BT10",
-    "BT11", "BT12", "BT13", "BT14",
-    "BT15", "BT16", "BT17", "BT18",
-    "BT28", "BT36", "BT37"
-  ]
-
   bedrooms:number = 1;
   estimatedValue:number;
   rawEstimation:number;
@@ -50,11 +42,10 @@ export class ValuationComponent {
   bayWindow:boolean = false;
 
   heating:string = this.heatingChoices[0];
-  postcode:string = this.postcodeChoices[0];
   propertyStyle:string = this.propertyStyleChoices[0];
 
   address:string;
-  longPostcode:string;
+  postcode:string;
   town:string = this.towns[0];
 
   propertySubmitted:boolean = false;
@@ -70,19 +61,19 @@ export class ValuationComponent {
     } else if (feature=="propertyStyle") {
       this.propertyStyle = event['target']['value'];
     } else if (feature=="postcode") {
-      this.postcode = event['target']['value'];
+      this.postcode = this.extractPostcode(
+        event['target']['value']);
+      console.log(this.postcode);
     } else if (feature=="bedrooms") {
       this.bedrooms = event['target']['value'];
     } else if (feature=="address") {
       this.address = event['target']['value'];
     } else if (feature=="town") {
       this.town = event['target']['value'];
-    } else if (feature=="postcode") {
-      this.longPostcode = this.extractPostcode(
-        event['target']['value']);
     };
   };
 
+  
   extractPostcode(postcode:string) {
     var clean_postcode = postcode.replace(/ /g, '');
     if (clean_postcode.length < 7) {
