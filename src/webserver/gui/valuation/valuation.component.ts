@@ -63,7 +63,6 @@ export class ValuationComponent {
     } else if (feature=="postcode") {
       this.postcode = this.extractPostcode(
         event['target']['value']);
-      console.log(this.postcode);
     } else if (feature=="bedrooms") {
       this.bedrooms = event['target']['value'];
     } else if (feature=="address") {
@@ -77,9 +76,9 @@ export class ValuationComponent {
   extractPostcode(postcode:string) {
     var clean_postcode = postcode.replace(/ /g, '');
     if (clean_postcode.length < 7) {
-      var region_code = clean_postcode.substring(1, 3);
+      var region_code = clean_postcode.substring(0, 2);
     } else {
-      var region_code = clean_postcode.substring(1, 4);
+      var region_code = clean_postcode.substring(0, 3);
     };
     return region_code;
   };
