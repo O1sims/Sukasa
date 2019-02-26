@@ -319,18 +319,19 @@ def get_property_details(hyperlink):
             if row_title != 'stamp duty' and row_title != 'price':
                 cols = row.findAll('td')
                 cols = [ele.text.strip() for ele in cols]
-                info = [ele for ele in cols if ele][0].encode('ascii', 'ignore').strip().decode()
-                if row_title == 'rates':
-                    info = float(info.replace(' pa*', '').replace(',', ''))
-                elif 'epc' in row_title:
-                    info = info.split('\n', 1)[0]
-                    info = parse_epc_rating(
-                        epc_rating_list=info.split('/'))
-                elif row_title in ['bathrooms', 'bedrooms', 'receptions']:
-                    info = int(info)
-                else:
-                    info = str(info)
-                data[to_camel_case(string=row_title)] = info
+                if cols[0] != "":
+                    info = [ele for ele in cols if ele][0].encode('ascii', 'ignore').strip().decode()
+                    if row_title == 'rates':
+                        info = float(info.replace(' pa*', '').replace(',', ''))
+                    elif 'epc' in row_title:
+                        info = info.split('\n', 1)[0]
+                        info = parse_epc_rating(
+                            epc_rating_list=info.split('/'))
+                    elif row_title in ['bathrooms', 'bedrooms', 'receptions']:
+                        info = int(info)
+                    else:
+                        info = str(info)
+                    data[to_camel_case(string=row_title)] = info
         data['amenities'] = {}
         for amenity in AMENITIES_LIST:
             data['amenities'][to_camel_case(string=amenity)] = amenity_present(
