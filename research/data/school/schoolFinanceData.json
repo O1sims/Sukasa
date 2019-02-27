@@ -1,0 +1,6590 @@
+[
+    {
+      "referenceCode": "142-0022",
+      "schoolType": "VGS",
+      "schoolName": "Methodist College,  Belfast",
+      "amount": 7829169
+    },
+    {
+      "referenceCode": "223-0301",
+      "schoolType": "secondary",
+      "schoolName": "Holy Cross College",
+      "amount": 6641176
+    },
+    {
+      "referenceCode": "123-0053",
+      "schoolType": "secondary",
+      "schoolName": "St Louise's Comprehensive College",
+      "amount": 6633090
+    },
+    {
+      "referenceCode": "523-0157",
+      "schoolType": "secondary",
+      "schoolName": "St Paul's High,  Bessbrook",
+      "amount": 6501451
+    },
+    {
+      "referenceCode": "542-0314",
+      "schoolType": "VGS",
+      "schoolName": "St Ronan's College",
+      "amount": 6439320
+    },
+    {
+      "referenceCode": "142-0028",
+      "schoolType": "VGS",
+      "schoolName": "Belfast Royal Academy",
+      "amount": 6429368
+    },
+    {
+      "referenceCode": "421-0296",
+      "schoolType": "secondary",
+      "schoolName": "Bangor Academy and 6th Form College",
+      "amount": 6343681
+    },
+    {
+      "referenceCode": "242-0054",
+      "schoolType": "VGS",
+      "schoolName": "St Columb's College,  Londonderry",
+      "amount": 6177771
+    },
+    {
+      "referenceCode": "242-0052",
+      "schoolType": "VGS",
+      "schoolName": "Thornhill College,  Londonderry",
+      "amount": 5972824
+    },
+    {
+      "referenceCode": "123-0321",
+      "schoolType": "secondary",
+      "schoolName": "Blessed Trinity College",
+      "amount": 5900359
+    },
+    {
+      "referenceCode": "542-0304",
+      "schoolType": "VGS",
+      "schoolName": "St Patrick's   Academy,  Dungannon",
+      "amount": 5752837
+    },
+    {
+      "referenceCode": "441-0063",
+      "schoolType": "grammar",
+      "schoolName": "Regent House Grammar School",
+      "amount": 5740944
+    },
+    {
+      "referenceCode": "426-0255",
+      "schoolType": "integrated",
+      "schoolName": "Lagan Integrated College",
+      "amount": 5656814
+    },
+    {
+      "referenceCode": "342-0317",
+      "schoolType": "VGS",
+      "schoolName": "Coleraine Grammar",
+      "amount": 5543046
+    },
+    {
+      "referenceCode": "442-0259",
+      "schoolType": "VGS",
+      "schoolName": "Our Lady and St Patrick's College Belfast",
+      "amount": 5502502
+    },
+    {
+      "referenceCode": "142-0095",
+      "schoolType": "VGS",
+      "schoolName": "Rathmore Grammar,  Belfast",
+      "amount": 5461067
+    },
+    {
+      "referenceCode": "323-0234",
+      "schoolType": "secondary",
+      "schoolName": "St Patrick's College Maghera",
+      "amount": 5322297
+    },
+    {
+      "referenceCode": "541-0013",
+      "schoolType": "grammar",
+      "schoolName": "Banbridge Academy",
+      "amount": 5247845
+    },
+    {
+      "referenceCode": "342-0011",
+      "schoolType": "VGS",
+      "schoolName": "Ballymena  Academy",
+      "amount": 5165479
+    },
+    {
+      "referenceCode": "142-0021",
+      "schoolType": "VGS",
+      "schoolName": "St Mary's  Christian Brothers' Grammar,  Belfast",
+      "amount": 5150610
+    },
+    {
+      "referenceCode": "442-0051",
+      "schoolType": "VGS",
+      "schoolName": "Wallace High School,  Lisburn",
+      "amount": 4996120
+    },
+    {
+      "referenceCode": "341-0008",
+      "schoolType": "grammar",
+      "schoolName": "Ballyclare  High",
+      "amount": 4888210
+    },
+    {
+      "referenceCode": "523-0213",
+      "schoolType": "secondary",
+      "schoolName": "Lismore Comprehensive",
+      "amount": 4860207
+    },
+    {
+      "referenceCode": "523-0218",
+      "schoolType": "secondary",
+      "schoolName": "St Catherine's  College",
+      "amount": 4830675
+    },
+    {
+      "referenceCode": "142-0030",
+      "schoolType": "VGS",
+      "schoolName": "St Malachy's  College,  Belfast",
+      "amount": 4800511
+    },
+    {
+      "referenceCode": "442-0044",
+      "schoolType": "VGS",
+      "schoolName": "Sullivan Upper School,  Holywood",
+      "amount": 4793746
+    },
+    {
+      "referenceCode": "342-0010",
+      "schoolType": "VGS",
+      "schoolName": "St Louis Grammar,  Ballymena",
+      "amount": 4775396
+    },
+    {
+      "referenceCode": "342-0080",
+      "schoolType": "VGS",
+      "schoolName": "St Mary's  Grammar,  Magherafelt",
+      "amount": 4751297
+    },
+    {
+      "referenceCode": "126-0269",
+      "schoolType": "integrated",
+      "schoolName": "Hazelwood Integrated College",
+      "amount": 4625860
+    },
+    {
+      "referenceCode": "123-0155",
+      "schoolType": "secondary",
+      "schoolName": "St Genevieve's  High School",
+      "amount": 4614812
+    },
+    {
+      "referenceCode": "121-0022",
+      "schoolType": "secondary",
+      "schoolName": "Belfast Boys' Model School",
+      "amount": 4561694
+    },
+    {
+      "referenceCode": "142-0027",
+      "schoolType": "VGS",
+      "schoolName": "The Royal Belfast Academical  Institution",
+      "amount": 4495038
+    },
+    {
+      "referenceCode": "523-0278",
+      "schoolType": "secondary",
+      "schoolName": "Holy Trinity College",
+      "amount": 4444669
+    },
+    {
+      "referenceCode": "142-0029",
+      "schoolType": "VGS",
+      "schoolName": "St Dominic's High School,  Belfast",
+      "amount": 4418697
+    },
+    {
+      "referenceCode": "442-0050",
+      "schoolType": "VGS",
+      "schoolName": "Friends' School,  Lisburn",
+      "amount": 4388747
+    },
+    {
+      "referenceCode": "121-0021",
+      "schoolType": "secondary",
+      "schoolName": "Belfast Model School For Girls",
+      "amount": 4376334
+    },
+    {
+      "referenceCode": "142-0082",
+      "schoolType": "VGS",
+      "schoolName": "Dominican College,  Belfast",
+      "amount": 4372779
+    },
+    {
+      "referenceCode": "141-0079",
+      "schoolType": "grammar",
+      "schoolName": "Grosvenor Grammar School",
+      "amount": 4371396
+    },
+    {
+      "referenceCode": "523-0187",
+      "schoolType": "secondary",
+      "schoolName": "St Patrick's High,  Keady",
+      "amount": 4332906
+    },
+    {
+      "referenceCode": "123-0182",
+      "schoolType": "secondary",
+      "schoolName": "De La Salle College",
+      "amount": 4314457
+    },
+    {
+      "referenceCode": "242-0320",
+      "schoolType": "VGS",
+      "schoolName": "Enniskillen Royal Grammar",
+      "amount": 4283639
+    },
+    {
+      "referenceCode": "542-0268",
+      "schoolType": "VGS",
+      "schoolName": "St Patrick's Grammar,  Armagh",
+      "amount": 4254810
+    },
+    {
+      "referenceCode": "321-0134",
+      "schoolType": "secondary",
+      "schoolName": "Ballyclare  Secondary School",
+      "amount": 4251342
+    },
+    {
+      "referenceCode": "242-0064",
+      "schoolType": "VGS",
+      "schoolName": "Christian Brothers' Grammar,  Omagh",
+      "amount": 4183195
+    },
+    {
+      "referenceCode": "441-0097",
+      "schoolType": "grammar",
+      "schoolName": "Glenlola Collegiate",
+      "amount": 4173938
+    },
+    {
+      "referenceCode": "142-0020",
+      "schoolType": "VGS",
+      "schoolName": "Campbell College,  Belfast",
+      "amount": 4170757
+    },
+    {
+      "referenceCode": "423-0211",
+      "schoolType": "secondary",
+      "schoolName": "St Malachy's  High School",
+      "amount": 4022308
+    },
+    {
+      "referenceCode": "142-0264",
+      "schoolType": "VGS",
+      "schoolName": "Victoria College,  Belfast",
+      "amount": 4011271
+    },
+    {
+      "referenceCode": "342-0077",
+      "schoolType": "VGS",
+      "schoolName": "Belfast High School",
+      "amount": 4006492
+    },
+    {
+      "referenceCode": "223-0081",
+      "schoolType": "secondary",
+      "schoolName": "St Mary's  College,  Londonderry",
+      "amount": 3940038
+    },
+    {
+      "referenceCode": "521-0064",
+      "schoolType": "secondary",
+      "schoolName": "Dromore High",
+      "amount": 3935672
+    },
+    {
+      "referenceCode": "542-0062",
+      "schoolType": "VGS",
+      "schoolName": "St Colman's College,  Newry",
+      "amount": 3918737
+    },
+    {
+      "referenceCode": "542-0059",
+      "schoolType": "VGS",
+      "schoolName": "Abbey Christian Brothers Grammar,  Newry",
+      "amount": 3856797
+    },
+    {
+      "referenceCode": "242-0065",
+      "schoolType": "VGS",
+      "schoolName": "Loreto Grammar,  Omagh",
+      "amount": 3844651
+    },
+    {
+      "referenceCode": "323-0168",
+      "schoolType": "secondary",
+      "schoolName": "St Pius X College",
+      "amount": 3820511
+    },
+    {
+      "referenceCode": "441-0085",
+      "schoolType": "grammar",
+      "schoolName": "Down High School",
+      "amount": 3777838
+    },
+    {
+      "referenceCode": "442-0015",
+      "schoolType": "VGS",
+      "schoolName": "Bangor Grammar School",
+      "amount": 3758585
+    },
+    {
+      "referenceCode": "342-0012",
+      "schoolType": "VGS",
+      "schoolName": "Dalriada  School,  Ballymoney",
+      "amount": 3733490
+    },
+    {
+      "referenceCode": "242-0287",
+      "schoolType": "VGS",
+      "schoolName": "Lumen Christi College,  Londonderry",
+      "amount": 3730614
+    },
+    {
+      "referenceCode": "442-0086",
+      "schoolType": "VGS",
+      "schoolName": "Assumption Grammar,  Ballynahinch",
+      "amount": 3703319
+    },
+    {
+      "referenceCode": "342-0034",
+      "schoolType": "VGS",
+      "schoolName": "Loreto College,  Coleraine",
+      "amount": 3700550
+    },
+    {
+      "referenceCode": "223-0188",
+      "schoolType": "secondary",
+      "schoolName": "St Cecilia's  College",
+      "amount": 3677907
+    },
+    {
+      "referenceCode": "542-0076",
+      "schoolType": "VGS",
+      "schoolName": "Sacred Heart Grammar,  Newry",
+      "amount": 3659984
+    },
+    {
+      "referenceCode": "542-0060",
+      "schoolType": "VGS",
+      "schoolName": "Our Lady's Grammar,  Newry",
+      "amount": 3650250
+    },
+    {
+      "referenceCode": "341-0297",
+      "schoolType": "grammar",
+      "schoolName": "Cambridge House Grammar",
+      "amount": 3647273
+    },
+    {
+      "referenceCode": "242-0229",
+      "schoolType": "VGS",
+      "schoolName": "Foyle College,  Londonderry",
+      "amount": 3613180
+    },
+    {
+      "referenceCode": "421-0316",
+      "schoolType": "secondary",
+      "schoolName": "Breda Academy",
+      "amount": 3583144
+    },
+    {
+      "referenceCode": "241-0048",
+      "schoolType": "grammar",
+      "schoolName": "Limavady  Grammar School",
+      "amount": 3559849
+    },
+    {
+      "referenceCode": "226-0276",
+      "schoolType": "integrated",
+      "schoolName": "Oakgrove Integrated College",
+      "amount": 3552165
+    },
+    {
+      "referenceCode": "321-0208",
+      "schoolType": "secondary",
+      "schoolName": "Dunclug College",
+      "amount": 3537084
+    },
+    {
+      "referenceCode": "142-0277",
+      "schoolType": "VGS",
+      "schoolName": "Aquinas Diocesan Grammar,  Belfast",
+      "amount": 3536029
+    },
+    {
+      "referenceCode": "425-0072",
+      "schoolType": "secondary",
+      "schoolName": "Fort Hill Integrated College",
+      "amount": 3530294
+    },
+    {
+      "referenceCode": "242-0041",
+      "schoolType": "VGS",
+      "schoolName": "Mount Lourdes Grammar,  Enniskillen",
+      "amount": 3506952
+    },
+    {
+      "referenceCode": "142-0089",
+      "schoolType": "VGS",
+      "schoolName": "Strathearn School,  Belfast",
+      "amount": 3485184
+    },
+    {
+      "referenceCode": "523-0135",
+      "schoolType": "secondary",
+      "schoolName": "St Mark's High,  Warrenpoint",
+      "amount": 3461715
+    },
+    {
+      "referenceCode": "326-0289",
+      "schoolType": "integrated",
+      "schoolName": "Slemish Integrated College",
+      "amount": 3397699
+    },
+    {
+      "referenceCode": "223-0131",
+      "schoolType": "secondary",
+      "schoolName": "St Joseph's Secondary,  Londonderry",
+      "amount": 3376900
+    },
+    {
+      "referenceCode": "223-0298",
+      "schoolType": "secondary",
+      "schoolName": "Sacred Heart College,  Omagh",
+      "amount": 3371962
+    },
+    {
+      "referenceCode": "323-0310",
+      "schoolType": "secondary",
+      "schoolName": "St Killian's College",
+      "amount": 3329457
+    },
+    {
+      "referenceCode": "523-0152",
+      "schoolType": "secondary",
+      "schoolName": "St Ciaran's  High",
+      "amount": 3311213
+    },
+    {
+      "referenceCode": "541-0067",
+      "schoolType": "SHS",
+      "schoolName": "Portadown College",
+      "amount": 3307355
+    },
+    {
+      "referenceCode": "121-0015",
+      "schoolType": "secondary",
+      "schoolName": "Ashfield Boys' High School",
+      "amount": 3260966
+    },
+    {
+      "referenceCode": "342-0058",
+      "schoolType": "VGS",
+      "schoolName": "Rainey Endowed School,  Magherafelt",
+      "amount": 3247722
+    },
+    {
+      "referenceCode": "342-0046",
+      "schoolType": "VGS",
+      "schoolName": "Larne Grammar School",
+      "amount": 3246681
+    },
+    {
+      "referenceCode": "124-0291",
+      "schoolType": "secondary",
+      "schoolName": "Colaiste Feirste",
+      "amount": 3225598
+    },
+    {
+      "referenceCode": "521-0230",
+      "schoolType": "secondary",
+      "schoolName": "Cookstown High",
+      "amount": 3207555
+    },
+    {
+      "referenceCode": "542-0263",
+      "schoolType": "VGS",
+      "schoolName": "The Royal School,  Armagh",
+      "amount": 3178612
+    },
+    {
+      "referenceCode": "321-0091",
+      "schoolType": "secondary",
+      "schoolName": "Carrickfergus College",
+      "amount": 3168364
+    },
+    {
+      "referenceCode": "221-0302",
+      "schoolType": "secondary",
+      "schoolName": "Limavady  High School",
+      "amount": 3160963
+    },
+    {
+      "referenceCode": "341-0098",
+      "schoolType": "grammar",
+      "schoolName": "Carrickfergus Grammar",
+      "amount": 3160364
+    },
+    {
+      "referenceCode": "325-0207",
+      "schoolType": "secondary",
+      "schoolName": "Parkhall Integrated College",
+      "amount": 3157035
+    },
+    {
+      "referenceCode": "542-0073",
+      "schoolType": "VGS",
+      "schoolName": "St Joseph's Convent Grammar,  Donaghmore",
+      "amount": 3146764
+    },
+    {
+      "referenceCode": "142-0265",
+      "schoolType": "VGS",
+      "schoolName": "Hunterhouse College,  Belfast",
+      "amount": 3103344
+    },
+    {
+      "referenceCode": "323-0227",
+      "schoolType": "secondary",
+      "schoolName": "Cross and Passion College",
+      "amount": 3069520
+    },
+    {
+      "referenceCode": "223-0225",
+      "schoolType": "secondary",
+      "schoolName": "St Brigid's College,  Carnhill",
+      "amount": 3059974
+    },
+    {
+      "referenceCode": "321-0202",
+      "schoolType": "secondary",
+      "schoolName": "Glengormley High School",
+      "amount": 3050718
+    },
+    {
+      "referenceCode": "121-0014",
+      "schoolType": "secondary",
+      "schoolName": "Ashfield Girls' High School",
+      "amount": 3047259
+    },
+    {
+      "referenceCode": "141-0270",
+      "schoolType": "grammar",
+      "schoolName": "Wellington College",
+      "amount": 3006780
+    },
+    {
+      "referenceCode": "426-0295",
+      "schoolType": "integrated",
+      "schoolName": "Strangford Integrated College",
+      "amount": 2993957
+    },
+    {
+      "referenceCode": "242-0043",
+      "schoolType": "VGS",
+      "schoolName": "St Michael's College,  Enniskillen",
+      "amount": 2981492
+    },
+    {
+      "referenceCode": "442-0088",
+      "schoolType": "VGS",
+      "schoolName": "St Patrick's Grammar,  Downpatrick",
+      "amount": 2977121
+    },
+    {
+      "referenceCode": "123-0275",
+      "schoolType": "secondary",
+      "schoolName": "St Joseph's College,  Belfast",
+      "amount": 2975004
+    },
+    {
+      "referenceCode": "341-0209",
+      "schoolType": "grammar",
+      "schoolName": "Antrim Grammar",
+      "amount": 2943625
+    },
+    {
+      "referenceCode": "503-6504",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Dungannon",
+      "amount": 2872494
+    },
+    {
+      "referenceCode": "226-0283",
+      "schoolType": "integrated",
+      "schoolName": "Drumragh Integrated College",
+      "amount": 2870891
+    },
+    {
+      "referenceCode": "141-0315",
+      "schoolType": "grammar",
+      "schoolName": "Bloomfield Collegiate,  Belfast",
+      "amount": 2862347
+    },
+    {
+      "referenceCode": "521-0271",
+      "schoolType": "secondary",
+      "schoolName": "Lurgan Junior High",
+      "amount": 2824691
+    },
+    {
+      "referenceCode": "423-0107",
+      "schoolType": "secondary",
+      "schoolName": "St Columbanus' College",
+      "amount": 2808764
+    },
+    {
+      "referenceCode": "241-0066",
+      "schoolType": "grammar",
+      "schoolName": "Omagh Academy",
+      "amount": 2762955
+    },
+    {
+      "referenceCode": "426-0281",
+      "schoolType": "integrated",
+      "schoolName": "Shimna Integrated College",
+      "amount": 2750973
+    },
+    {
+      "referenceCode": "326-0299",
+      "schoolType": "integrated",
+      "schoolName": "Ulidia Integrated College",
+      "amount": 2743543
+    },
+    {
+      "referenceCode": "421-0201",
+      "schoolType": "secondary",
+      "schoolName": "Laurelhill Community College",
+      "amount": 2713242
+    },
+    {
+      "referenceCode": "321-0172",
+      "schoolType": "secondary",
+      "schoolName": "Cullybackey  High School",
+      "amount": 2702222
+    },
+    {
+      "referenceCode": "526-0286",
+      "schoolType": "integrated",
+      "schoolName": "Dungannon Integrated College",
+      "amount": 2701178
+    },
+    {
+      "referenceCode": "521-0016",
+      "schoolType": "secondary",
+      "schoolName": "Kilkeel High",
+      "amount": 2693823
+    },
+    {
+      "referenceCode": "221-0306",
+      "schoolType": "secondary",
+      "schoolName": "Lisneal College",
+      "amount": 2679339
+    },
+    {
+      "referenceCode": "126-0294",
+      "schoolType": "integrated",
+      "schoolName": "Malone Integrated College",
+      "amount": 2677308
+    },
+    {
+      "referenceCode": "526-0285",
+      "schoolType": "integrated",
+      "schoolName": "New-Bridge  Integrated College",
+      "amount": 2656357
+    },
+    {
+      "referenceCode": "523-0167",
+      "schoolType": "secondary",
+      "schoolName": "St Joseph's High,  Crossmaglen",
+      "amount": 2655042
+    },
+    {
+      "referenceCode": "323-0203",
+      "schoolType": "secondary",
+      "schoolName": "Edmund Rice College",
+      "amount": 2644679
+    },
+    {
+      "referenceCode": "542-0260",
+      "schoolType": "VGS",
+      "schoolName": "The Royal School,  Dungannon",
+      "amount": 2626356
+    },
+    {
+      "referenceCode": "321-0313",
+      "schoolType": "secondary",
+      "schoolName": "Abbey Community College",
+      "amount": 2622121
+    },
+    {
+      "referenceCode": "521-0282",
+      "schoolType": "SHS",
+      "schoolName": "Craigavon Senior High",
+      "amount": 2608934
+    },
+    {
+      "referenceCode": "523-0293",
+      "schoolType": "secondary",
+      "schoolName": "St Patrick's College,  Dungannon",
+      "amount": 2568426
+    },
+    {
+      "referenceCode": "223-0322",
+      "schoolType": "secondary",
+      "schoolName": "St Kevin's College",
+      "amount": 2561950
+    },
+    {
+      "referenceCode": "123-0146",
+      "schoolType": "secondary",
+      "schoolName": "Christian Brothers Secondary,  Belfast",
+      "amount": 2526097
+    },
+    {
+      "referenceCode": "523-0108",
+      "schoolType": "secondary",
+      "schoolName": "St Mary's  High,  Newry",
+      "amount": 2520336
+    },
+    {
+      "referenceCode": "321-0038",
+      "schoolType": "secondary",
+      "schoolName": "Larne High School",
+      "amount": 2517036
+    },
+    {
+      "referenceCode": "521-0043",
+      "schoolType": "secondary",
+      "schoolName": "Clounagh Junior High",
+      "amount": 2502116
+    },
+    {
+      "referenceCode": "421-0046",
+      "schoolType": "secondary",
+      "schoolName": "Glastry College",
+      "amount": 2500181
+    },
+    {
+      "referenceCode": "542-0045",
+      "schoolType": "VGS",
+      "schoolName": "St Louis Grammar,  Kilkeel",
+      "amount": 2485506
+    },
+    {
+      "referenceCode": "425-0024",
+      "schoolType": "secondary",
+      "schoolName": "Priory Integrated College",
+      "amount": 2481090
+    },
+    {
+      "referenceCode": "223-0077",
+      "schoolType": "secondary",
+      "schoolName": "St Mary's  High School,  Limavady",
+      "amount": 2477867
+    },
+    {
+      "referenceCode": "323-0084",
+      "schoolType": "secondary",
+      "schoolName": "St Patrick's College Ballymena",
+      "amount": 2421951
+    },
+    {
+      "referenceCode": "321-0133",
+      "schoolType": "secondary",
+      "schoolName": "Ballymoney High School",
+      "amount": 2418252
+    },
+    {
+      "referenceCode": "101-0252",
+      "schoolType": "primary",
+      "schoolName": "Strandtown Primary",
+      "amount": 2375147
+    },
+    {
+      "referenceCode": "103-6075",
+      "schoolType": "primary",
+      "schoolName": "St Bride's Primary",
+      "amount": 2371007
+    },
+    {
+      "referenceCode": "241-0311",
+      "schoolType": "grammar",
+      "schoolName": "Strabane Academy",
+      "amount": 2355776
+    },
+    {
+      "referenceCode": "203-6581",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Pennyburn",
+      "amount": 2351629
+    },
+    {
+      "referenceCode": "342-0068",
+      "schoolType": "VGS",
+      "schoolName": "Dominican College,  Portstewart",
+      "amount": 2346858
+    },
+    {
+      "referenceCode": "421-0051",
+      "schoolType": "secondary",
+      "schoolName": "Lisnagarvey  High School",
+      "amount": 2339415
+    },
+    {
+      "referenceCode": "103-0868",
+      "schoolType": "primary",
+      "schoolName": "St Anne's Primary,  Belfast",
+      "amount": 2337435
+    },
+    {
+      "referenceCode": "326-0303",
+      "schoolType": "integrated",
+      "schoolName": "Sperrin Integrated College",
+      "amount": 2311970
+    },
+    {
+      "referenceCode": "503-6633",
+      "schoolType": "primary",
+      "schoolName": "St Francis' Primary,  Lurgan",
+      "amount": 2291972
+    },
+    {
+      "referenceCode": "321-0035",
+      "schoolType": "secondary",
+      "schoolName": "Magherafelt  High School",
+      "amount": 2244988
+    },
+    {
+      "referenceCode": "101-0255",
+      "schoolType": "primary",
+      "schoolName": "Elmgrove Primary",
+      "amount": 2212296
+    },
+    {
+      "referenceCode": "326-0290",
+      "schoolType": "integrated",
+      "schoolName": "North Coast Integrated College",
+      "amount": 2196428
+    },
+    {
+      "referenceCode": "123-0104",
+      "schoolType": "secondary",
+      "schoolName": "Mercy College",
+      "amount": 2183361
+    },
+    {
+      "referenceCode": "221-0312",
+      "schoolType": "secondary",
+      "schoolName": "Devenish College",
+      "amount": 2150903
+    },
+    {
+      "referenceCode": "521-0054",
+      "schoolType": "secondary",
+      "schoolName": "Killicomaine Junior High",
+      "amount": 2135204
+    },
+    {
+      "referenceCode": "401-1587",
+      "schoolType": "primary",
+      "schoolName": "Dundonald Primary",
+      "amount": 2121877
+    },
+    {
+      "referenceCode": "223-0138",
+      "schoolType": "secondary",
+      "schoolName": "Dean Brian Maguirc College",
+      "amount": 2101097
+    },
+    {
+      "referenceCode": "103-6623",
+      "schoolType": "primary",
+      "schoolName": "Holy Trinity Primary,  Belfast",
+      "amount": 2099151
+    },
+    {
+      "referenceCode": "541-0057",
+      "schoolType": "SHS",
+      "schoolName": "Lurgan College",
+      "amount": 2096029
+    },
+    {
+      "referenceCode": "521-0083",
+      "schoolType": "secondary",
+      "schoolName": "Markethill High",
+      "amount": 2065087
+    },
+    {
+      "referenceCode": "203-6696",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Strabane",
+      "amount": 2056943
+    },
+    {
+      "referenceCode": "503-6567",
+      "schoolType": "primary",
+      "schoolName": "Holy Trinity Primary,  Cookstown",
+      "amount": 2050288
+    },
+    {
+      "referenceCode": "103-6602",
+      "schoolType": "primary",
+      "schoolName": "St Oliver Plunkett Primary,  Belfast",
+      "amount": 2041976
+    },
+    {
+      "referenceCode": "223-0122",
+      "schoolType": "secondary",
+      "schoolName": "St Patricks & St Brigids High College",
+      "amount": 2041697
+    },
+    {
+      "referenceCode": "521-0047",
+      "schoolType": "secondary",
+      "schoolName": "Banbridge High",
+      "amount": 2037010
+    },
+    {
+      "referenceCode": "501-1124",
+      "schoolType": "primary",
+      "schoolName": "Kings Park Primary,  Lurgan",
+      "amount": 2020743
+    },
+    {
+      "referenceCode": "423-0161",
+      "schoolType": "secondary",
+      "schoolName": "St Colman's High School",
+      "amount": 1994355
+    },
+    {
+      "referenceCode": "503-1184",
+      "schoolType": "primary",
+      "schoolName": "St Anthony's Primary,  Craigavon",
+      "amount": 1991120
+    },
+    {
+      "referenceCode": "403-6618",
+      "schoolType": "primary",
+      "schoolName": "Christ the Redeemer Primary",
+      "amount": 1989906
+    },
+    {
+      "referenceCode": "226-0280",
+      "schoolType": "integrated",
+      "schoolName": "Erne Integrated College",
+      "amount": 1964813
+    },
+    {
+      "referenceCode": "423-0223",
+      "schoolType": "secondary",
+      "schoolName": "St Colm's High School,  Belfast",
+      "amount": 1957447
+    },
+    {
+      "referenceCode": "321-0232",
+      "schoolType": "secondary",
+      "schoolName": "Downshire School",
+      "amount": 1952213
+    },
+    {
+      "referenceCode": "203-6632",
+      "schoolType": "primary",
+      "schoolName": "Holy Trinity Primary,  Enniskillen",
+      "amount": 1945626
+    },
+    {
+      "referenceCode": "521-0186",
+      "schoolType": "secondary",
+      "schoolName": "Newry High",
+      "amount": 1941609
+    },
+    {
+      "referenceCode": "323-0132",
+      "schoolType": "secondary",
+      "schoolName": "St Colm's High School,  Magherafelt",
+      "amount": 1916944
+    },
+    {
+      "referenceCode": "103-6565",
+      "schoolType": "primary",
+      "schoolName": "St Kevin's Primary",
+      "amount": 1897525
+    },
+    {
+      "referenceCode": "501-6007",
+      "schoolType": "primary",
+      "schoolName": "Millington Primary",
+      "amount": 1880202
+    },
+    {
+      "referenceCode": "421-0262",
+      "schoolType": "secondary",
+      "schoolName": "Dundonald High School",
+      "amount": 1862150
+    },
+    {
+      "referenceCode": "403-6702",
+      "schoolType": "primary",
+      "schoolName": "Holy Evangelist Primary",
+      "amount": 1854856
+    },
+    {
+      "referenceCode": "423-0165",
+      "schoolType": "secondary",
+      "schoolName": "St Patrick's Academy,  Lisburn",
+      "amount": 1828798
+    },
+    {
+      "referenceCode": "423-0023",
+      "schoolType": "secondary",
+      "schoolName": "St Mary's  High School,  Downpatrick",
+      "amount": 1826062
+    },
+    {
+      "referenceCode": "501-1575",
+      "schoolType": "primary",
+      "schoolName": "Dromore Central Primary,  Dromore",
+      "amount": 1817304
+    },
+    {
+      "referenceCode": "221-0125",
+      "schoolType": "secondary",
+      "schoolName": "Omagh High School",
+      "amount": 1813557
+    },
+    {
+      "referenceCode": "221-0065",
+      "schoolType": "secondary",
+      "schoolName": "Castlederg High School",
+      "amount": 1802830
+    },
+    {
+      "referenceCode": "321-0124",
+      "schoolType": "secondary",
+      "schoolName": "Ballycastle  High School",
+      "amount": 1761442
+    },
+    {
+      "referenceCode": "421-0045",
+      "schoolType": "secondary",
+      "schoolName": "Nendrum College",
+      "amount": 1760123
+    },
+    {
+      "referenceCode": "103-6576",
+      "schoolType": "primary",
+      "schoolName": "Holy Child Primary,  Belfast",
+      "amount": 1751430
+    },
+    {
+      "referenceCode": "103-6698",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary",
+      "amount": 1721940
+    },
+    {
+      "referenceCode": "203-6032",
+      "schoolType": "primary",
+      "schoolName": "St John's Primary,  Bligh's Lane",
+      "amount": 1711540
+    },
+    {
+      "referenceCode": "523-0192",
+      "schoolType": "secondary",
+      "schoolName": "St Joseph's College,  Coalisland",
+      "amount": 1706414
+    },
+    {
+      "referenceCode": "401-3305",
+      "schoolType": "primary",
+      "schoolName": "Harmony Hill Primary",
+      "amount": 1682515
+    },
+    {
+      "referenceCode": "523-0076",
+      "schoolType": "secondary",
+      "schoolName": "St Patrick's College,  Banbridge",
+      "amount": 1678204
+    },
+    {
+      "referenceCode": "405-1680",
+      "schoolType": "primary",
+      "schoolName": "Bangor Central Integrated Primary",
+      "amount": 1677619
+    },
+    {
+      "referenceCode": "523-0056",
+      "schoolType": "secondary",
+      "schoolName": "St Joseph's Boys' High,  Newry",
+      "amount": 1666693
+    },
+    {
+      "referenceCode": "101-6485",
+      "schoolType": "primary",
+      "schoolName": "Glenwood Primary",
+      "amount": 1666615
+    },
+    {
+      "referenceCode": "401-6192",
+      "schoolType": "primary",
+      "schoolName": "Kilmaine Primary",
+      "amount": 1656453
+    },
+    {
+      "referenceCode": "201-6203",
+      "schoolType": "primary",
+      "schoolName": "Lisnagelvin Primary",
+      "amount": 1653338
+    },
+    {
+      "referenceCode": "323-0308",
+      "schoolType": "secondary",
+      "schoolName": "St Benedict's College",
+      "amount": 1652967
+    },
+    {
+      "referenceCode": "303-6562",
+      "schoolType": "primary",
+      "schoolName": "Holy Family Primary,  Magherafelt",
+      "amount": 1652481
+    },
+    {
+      "referenceCode": "303-3313",
+      "schoolType": "primary",
+      "schoolName": "St Bernard's Primary,  Newtownabbey",
+      "amount": 1649796
+    },
+    {
+      "referenceCode": "303-6026",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary,  Crumlin",
+      "amount": 1649687
+    },
+    {
+      "referenceCode": "503-1103",
+      "schoolType": "primary",
+      "schoolName": "Tannaghmore Primary",
+      "amount": 1645635
+    },
+    {
+      "referenceCode": "423-0224",
+      "schoolType": "secondary",
+      "schoolName": "De La Salle Secondary School",
+      "amount": 1623418
+    },
+    {
+      "referenceCode": "401-6401",
+      "schoolType": "primary",
+      "schoolName": "Pond Park Primary",
+      "amount": 1622914
+    },
+    {
+      "referenceCode": "521-0121",
+      "schoolType": "secondary",
+      "schoolName": "City of Armagh High",
+      "amount": 1619788
+    },
+    {
+      "referenceCode": "103-0327",
+      "schoolType": "primary",
+      "schoolName": "Holy Rosary Primary",
+      "amount": 1613401
+    },
+    {
+      "referenceCode": "503-6590",
+      "schoolType": "primary",
+      "schoolName": "Primate Dixon Memorial Primary",
+      "amount": 1608922
+    },
+    {
+      "referenceCode": "403-6642",
+      "schoolType": "primary",
+      "schoolName": "St Ita's Primary",
+      "amount": 1603746
+    },
+    {
+      "referenceCode": "103-0313",
+      "schoolType": "primary",
+      "schoolName": "Our Lady of Lourdes Primary,  Belfast",
+      "amount": 1588361
+    },
+    {
+      "referenceCode": "401-6067",
+      "schoolType": "primary",
+      "schoolName": "Rathmore Primary",
+      "amount": 1587833
+    },
+    {
+      "referenceCode": "521-0097",
+      "schoolType": "secondary",
+      "schoolName": "Fivemiletown High",
+      "amount": 1584115
+    },
+    {
+      "referenceCode": "203-6472",
+      "schoolType": "primary",
+      "schoolName": "Holy Family Primary,  Ballymagroarty",
+      "amount": 1582346
+    },
+    {
+      "referenceCode": "301-6015",
+      "schoolType": "primary",
+      "schoolName": "Mossley Primary",
+      "amount": 1573721
+    },
+    {
+      "referenceCode": "421-0063",
+      "schoolType": "secondary",
+      "schoolName": "Saintfield High School",
+      "amount": 1559932
+    },
+    {
+      "referenceCode": "401-6649",
+      "schoolType": "primary",
+      "schoolName": "Downshire Primary,  Hillsborough",
+      "amount": 1555797
+    },
+    {
+      "referenceCode": "401-1650",
+      "schoolType": "primary",
+      "schoolName": "Ballyholme Primary",
+      "amount": 1537664
+    },
+    {
+      "referenceCode": "401-6399",
+      "schoolType": "primary",
+      "schoolName": "Abbey Primary",
+      "amount": 1531759
+    },
+    {
+      "referenceCode": "301-0829",
+      "schoolType": "primary",
+      "schoolName": "Antrim Primary",
+      "amount": 1525071
+    },
+    {
+      "referenceCode": "303-0832",
+      "schoolType": "primary",
+      "schoolName": "St Comgall's Primary,  Antrim",
+      "amount": 1524574
+    },
+    {
+      "referenceCode": "401-1646",
+      "schoolType": "primary",
+      "schoolName": "Victoria Primary (Newtownards)",
+      "amount": 1523310
+    },
+    {
+      "referenceCode": "103-6566",
+      "schoolType": "primary",
+      "schoolName": "Holy Family Primary,  Belfast",
+      "amount": 1517154
+    },
+    {
+      "referenceCode": "503-1110",
+      "schoolType": "primary",
+      "schoolName": "Armagh Christian Brothers'",
+      "amount": 1504863
+    },
+    {
+      "referenceCode": "401-3024",
+      "schoolType": "primary",
+      "schoolName": "Cairnshill Primary",
+      "amount": 1503687
+    },
+    {
+      "referenceCode": "203-6703",
+      "schoolType": "primary",
+      "schoolName": "St Catherine's Primary",
+      "amount": 1494076
+    },
+    {
+      "referenceCode": "401-6503",
+      "schoolType": "primary",
+      "schoolName": "Brooklands Primary",
+      "amount": 1486839
+    },
+    {
+      "referenceCode": "106-6531",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Hazelwood Integrated Primary",
+      "amount": 1486120
+    },
+    {
+      "referenceCode": "503-1340",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Convent Primary,  Newry",
+      "amount": 1480536
+    },
+    {
+      "referenceCode": "103-6630",
+      "schoolType": "primary",
+      "schoolName": "St Clare's Primary,  Belfast",
+      "amount": 1475018
+    },
+    {
+      "referenceCode": "503-6634",
+      "schoolType": "primary",
+      "schoolName": "St Clare's Abbey Primary",
+      "amount": 1471525
+    },
+    {
+      "referenceCode": "103-6589",
+      "schoolType": "primary",
+      "schoolName": "St Teresa's Primary,  Belfast",
+      "amount": 1471398
+    },
+    {
+      "referenceCode": "521-0231",
+      "schoolType": "secondary",
+      "schoolName": "Drumglass High",
+      "amount": 1457545
+    },
+    {
+      "referenceCode": "501-1127",
+      "schoolType": "primary",
+      "schoolName": "Carrick Primary,  Lurgan",
+      "amount": 1457327
+    },
+    {
+      "referenceCode": "203-6069",
+      "schoolType": "primary",
+      "schoolName": "St Anne's Primary Derry",
+      "amount": 1448658
+    },
+    {
+      "referenceCode": "501-1115",
+      "schoolType": "primary",
+      "schoolName": "The Armstrong Primary",
+      "amount": 1443426
+    },
+    {
+      "referenceCode": "223-0099",
+      "schoolType": "secondary",
+      "schoolName": "St Fanchea's  College",
+      "amount": 1437384
+    },
+    {
+      "referenceCode": "503-6043",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Banbridge",
+      "amount": 1436837
+    },
+    {
+      "referenceCode": "503-1183",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Armagh",
+      "amount": 1414538
+    },
+    {
+      "referenceCode": "501-2726",
+      "schoolType": "primary",
+      "schoolName": "Cookstown Primary",
+      "amount": 1404193
+    },
+    {
+      "referenceCode": "123-0262",
+      "schoolType": "secondary",
+      "schoolName": "Corpus Christi College",
+      "amount": 1403170
+    },
+    {
+      "referenceCode": "525-0216",
+      "schoolType": "secondary",
+      "schoolName": "Brownlow Integrated College",
+      "amount": 1401041
+    },
+    {
+      "referenceCode": "301-0631",
+      "schoolType": "primary",
+      "schoolName": "Ballyclare Primary",
+      "amount": 1399510
+    },
+    {
+      "referenceCode": "123-0130",
+      "schoolType": "secondary",
+      "schoolName": "St Rose's High School",
+      "amount": 1397527
+    },
+    {
+      "referenceCode": "103-6624",
+      "schoolType": "primary",
+      "schoolName": "St Paul's Primary,  Belfast",
+      "amount": 1394701
+    },
+    {
+      "referenceCode": "403-6480",
+      "schoolType": "primary",
+      "schoolName": "St Kieran's Primary",
+      "amount": 1380239
+    },
+    {
+      "referenceCode": "103-0194",
+      "schoolType": "primary",
+      "schoolName": "Holy Cross Boys' Primary,  Belfast",
+      "amount": 1373674
+    },
+    {
+      "referenceCode": "403-6693",
+      "schoolType": "primary",
+      "schoolName": "Our Lady & St Patrick Primary",
+      "amount": 1372485
+    },
+    {
+      "referenceCode": "321-0222",
+      "schoolType": "secondary",
+      "schoolName": "Dunluce School",
+      "amount": 1371051
+    },
+    {
+      "referenceCode": "403-3306",
+      "schoolType": "primary",
+      "schoolName": "St Aloysius Primary",
+      "amount": 1370835
+    },
+    {
+      "referenceCode": "101-0266",
+      "schoolType": "primary",
+      "schoolName": "Seaview Primary,  Belfast",
+      "amount": 1366799
+    },
+    {
+      "referenceCode": "503-6583",
+      "schoolType": "primary",
+      "schoolName": "St Dallan's Primary,  Warrenpoint",
+      "amount": 1366260
+    },
+    {
+      "referenceCode": "503-1158",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Newry",
+      "amount": 1358996
+    },
+    {
+      "referenceCode": "521-0127",
+      "schoolType": "secondary",
+      "schoolName": "Rathfriland  High",
+      "amount": 1333650
+    },
+    {
+      "referenceCode": "503-6173",
+      "schoolType": "primary",
+      "schoolName": "St John the Baptist Primary,  Portadown",
+      "amount": 1331590
+    },
+    {
+      "referenceCode": "503-6101",
+      "schoolType": "primary",
+      "schoolName": "St Brendan's Primary",
+      "amount": 1318045
+    },
+    {
+      "referenceCode": "301-0827",
+      "schoolType": "primary",
+      "schoolName": "Whitehouse Primary",
+      "amount": 1314536
+    },
+    {
+      "referenceCode": "323-0142",
+      "schoolType": "secondary",
+      "schoolName": "St Mary's  College,  Ballymena",
+      "amount": 1312887
+    },
+    {
+      "referenceCode": "203-2287",
+      "schoolType": "primary",
+      "schoolName": "Termoncanice Primary",
+      "amount": 1312642
+    },
+    {
+      "referenceCode": "206-6558",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Oakgrove Integrated Primary",
+      "amount": 1311898
+    },
+    {
+      "referenceCode": "501-1129",
+      "schoolType": "primary",
+      "schoolName": "Hart Memorial Primary",
+      "amount": 1301807
+    },
+    {
+      "referenceCode": "503-1148",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Crossmaglen",
+      "amount": 1297047
+    },
+    {
+      "referenceCode": "301-3315",
+      "schoolType": "primary",
+      "schoolName": "Ballykeel Primary",
+      "amount": 1295606
+    },
+    {
+      "referenceCode": "301-6414",
+      "schoolType": "primary",
+      "schoolName": "Fairview Primary",
+      "amount": 1294888
+    },
+    {
+      "referenceCode": "101-0267",
+      "schoolType": "primary",
+      "schoolName": "Nettlefield Primary",
+      "amount": 1288249
+    },
+    {
+      "referenceCode": "303-6679",
+      "schoolType": "primary",
+      "schoolName": "St Brigid's Primary,  Ballymena",
+      "amount": 1273744
+    },
+    {
+      "referenceCode": "223-0144",
+      "schoolType": "secondary",
+      "schoolName": "St Patrick's College,  Dungiven",
+      "amount": 1262331
+    },
+    {
+      "referenceCode": "201-0382",
+      "schoolType": "primary",
+      "schoolName": "Ebrington Primary",
+      "amount": 1261994
+    },
+    {
+      "referenceCode": "401-3023",
+      "schoolType": "primary",
+      "schoolName": "Bloomfield Primary",
+      "amount": 1260876
+    },
+    {
+      "referenceCode": "103-6466",
+      "schoolType": "primary",
+      "schoolName": "St Malachy's Primary,  Belfast",
+      "amount": 1255220
+    },
+    {
+      "referenceCode": "503-1130",
+      "schoolType": "primary",
+      "schoolName": "Cloghogue Primary",
+      "amount": 1253509
+    },
+    {
+      "referenceCode": "401-1631",
+      "schoolType": "primary",
+      "schoolName": "Holywood Primary",
+      "amount": 1243266
+    },
+    {
+      "referenceCode": "501-1649",
+      "schoolType": "primary",
+      "schoolName": "Kilkeel Primary",
+      "amount": 1241066
+    },
+    {
+      "referenceCode": "521-0143",
+      "schoolType": "secondary",
+      "schoolName": "Tandragee Junior High",
+      "amount": 1238567
+    },
+    {
+      "referenceCode": "401-1683",
+      "schoolType": "primary",
+      "schoolName": "Braniel Primary",
+      "amount": 1237256
+    },
+    {
+      "referenceCode": "203-6288",
+      "schoolType": "primary",
+      "schoolName": "Good Shepherd Primary,  Dungiven Road",
+      "amount": 1236129
+    },
+    {
+      "referenceCode": "406-6579",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Lough View Integrated Primary",
+      "amount": 1232511
+    },
+    {
+      "referenceCode": "101-0146",
+      "schoolType": "primary",
+      "schoolName": "Euston Street Primary",
+      "amount": 1227496
+    },
+    {
+      "referenceCode": "203-6142",
+      "schoolType": "primary",
+      "schoolName": "St Brigid's Primary,  Carnhill",
+      "amount": 1225055
+    },
+    {
+      "referenceCode": "401-6145",
+      "schoolType": "primary",
+      "schoolName": "Killowen Primary,  Lisburn",
+      "amount": 1217531
+    },
+    {
+      "referenceCode": "203-6116",
+      "schoolType": "primary",
+      "schoolName": "St Conor's Primary,  Omagh",
+      "amount": 1215174
+    },
+    {
+      "referenceCode": "101-6655",
+      "schoolType": "primary",
+      "schoolName": "Victoria Park Primary",
+      "amount": 1213011
+    },
+    {
+      "referenceCode": "323-0151",
+      "schoolType": "secondary",
+      "schoolName": "St Paul's College",
+      "amount": 1212465
+    },
+    {
+      "referenceCode": "101-0273",
+      "schoolType": "primary",
+      "schoolName": "Orangefield Primary",
+      "amount": 1209506
+    },
+    {
+      "referenceCode": "506-6540",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Bridge Integrated Primary",
+      "amount": 1193128
+    },
+    {
+      "referenceCode": "201-6152",
+      "schoolType": "primary",
+      "schoolName": "Enniskillen Model Primary",
+      "amount": 1192235
+    },
+    {
+      "referenceCode": "301-0883",
+      "schoolType": "primary",
+      "schoolName": "Linn Primary",
+      "amount": 1189605
+    },
+    {
+      "referenceCode": "101-0324",
+      "schoolType": "primary",
+      "schoolName": "Stranmillis Primary",
+      "amount": 1186095
+    },
+    {
+      "referenceCode": "321-0300",
+      "schoolType": "secondary",
+      "schoolName": "Coleraine College",
+      "amount": 1186037
+    },
+    {
+      "referenceCode": "203-6084",
+      "schoolType": "primary",
+      "schoolName": "Steelstown Primary",
+      "amount": 1183643
+    },
+    {
+      "referenceCode": "403-1660",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary Carryduff",
+      "amount": 1179404
+    },
+    {
+      "referenceCode": "403-6148",
+      "schoolType": "primary",
+      "schoolName": "St Malachy's Primary Bangor",
+      "amount": 1175675
+    },
+    {
+      "referenceCode": "223-0100",
+      "schoolType": "secondary",
+      "schoolName": "St Joseph's College,  Enniskillen",
+      "amount": 1173724
+    },
+    {
+      "referenceCode": "103-0326",
+      "schoolType": "primary",
+      "schoolName": "Our Lady's Primary,  Belfast",
+      "amount": 1172829
+    },
+    {
+      "referenceCode": "203-6461",
+      "schoolType": "primary",
+      "schoolName": "St Therese's Primary,  Lenamore",
+      "amount": 1169176
+    },
+    {
+      "referenceCode": "201-6426",
+      "schoolType": "primary",
+      "schoolName": "Limavady  Central Primary",
+      "amount": 1165462
+    },
+    {
+      "referenceCode": "103-6132",
+      "schoolType": "primary",
+      "schoolName": "St Therese of Lisieux Primary",
+      "amount": 1160559
+    },
+    {
+      "referenceCode": "403-1676",
+      "schoolType": "primary",
+      "schoolName": "St Bernard's Primary,  Belfast",
+      "amount": 1143430
+    },
+    {
+      "referenceCode": "105-6483",
+      "schoolType": "primary",
+      "schoolName": "Cliftonville Integrated Primary",
+      "amount": 1142793
+    },
+    {
+      "referenceCode": "101-0806",
+      "schoolType": "primary",
+      "schoolName": "Finaghy Primary",
+      "amount": 1142141
+    },
+    {
+      "referenceCode": "303-0688",
+      "schoolType": "primary",
+      "schoolName": "Mount St Michael's Primary",
+      "amount": 1139782
+    },
+    {
+      "referenceCode": "426-0309",
+      "schoolType": "integrated",
+      "schoolName": "Blackwater Integrated College",
+      "amount": 1137483
+    },
+    {
+      "referenceCode": "403-6635",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary Newcastle",
+      "amount": 1132870
+    },
+    {
+      "referenceCode": "101-0282",
+      "schoolType": "primary",
+      "schoolName": "Carr's Glen Primary",
+      "amount": 1125960
+    },
+    {
+      "referenceCode": "203-6259",
+      "schoolType": "primary",
+      "schoolName": "Sacred Heart Primary,  Trench Road",
+      "amount": 1123620
+    },
+    {
+      "referenceCode": "401-6201",
+      "schoolType": "primary",
+      "schoolName": "Academy Primary",
+      "amount": 1120971
+    },
+    {
+      "referenceCode": "103-6688",
+      "schoolType": "primary",
+      "schoolName": "St John The Baptist Primary",
+      "amount": 1120290
+    },
+    {
+      "referenceCode": "401-6441",
+      "schoolType": "primary",
+      "schoolName": "Ballymacash Primary",
+      "amount": 1118047
+    },
+    {
+      "referenceCode": "501-6080",
+      "schoolType": "primary",
+      "schoolName": "Drumgor Primary",
+      "amount": 1111803
+    },
+    {
+      "referenceCode": "103-6505",
+      "schoolType": "primary",
+      "schoolName": "St Matthew's Primary,  Belfast",
+      "amount": 1110011
+    },
+    {
+      "referenceCode": "401-1345",
+      "schoolType": "primary",
+      "schoolName": "Newtownards Model Primary",
+      "amount": 1109701
+    },
+    {
+      "referenceCode": "203-6473",
+      "schoolType": "primary",
+      "schoolName": "St Eithne's Primary,  Ballymagroarty",
+      "amount": 1108658
+    },
+    {
+      "referenceCode": "203-2278",
+      "schoolType": "primary",
+      "schoolName": "Broadbridge Primary",
+      "amount": 1107635
+    },
+    {
+      "referenceCode": "301-6014",
+      "schoolType": "primary",
+      "schoolName": "Templepatrick Primary",
+      "amount": 1107434
+    },
+    {
+      "referenceCode": "401-1654",
+      "schoolType": "primary",
+      "schoolName": "Donaghadee Primary",
+      "amount": 1105423
+    },
+    {
+      "referenceCode": "301-0874",
+      "schoolType": "primary",
+      "schoolName": "Whitehead Primary",
+      "amount": 1103260
+    },
+    {
+      "referenceCode": "323-0075",
+      "schoolType": "secondary",
+      "schoolName": "Our Lady of Lourdes High School",
+      "amount": 1102866
+    },
+    {
+      "referenceCode": "301-3330",
+      "schoolType": "primary",
+      "schoolName": "Victoria Primary,  Carrickfergus",
+      "amount": 1102521
+    },
+    {
+      "referenceCode": "423-0102",
+      "schoolType": "secondary",
+      "schoolName": "St Colmcille's High School,  Crossgar",
+      "amount": 1094899
+    },
+    {
+      "referenceCode": "501-3019",
+      "schoolType": "primary",
+      "schoolName": "Edenderry Primary,  Banbridge",
+      "amount": 1091978
+    },
+    {
+      "referenceCode": "203-6533",
+      "schoolType": "primary",
+      "schoolName": "Hollybush Primary",
+      "amount": 1091189
+    },
+    {
+      "referenceCode": "301-3322",
+      "schoolType": "primary",
+      "schoolName": "Camphill Primary",
+      "amount": 1088214
+    },
+    {
+      "referenceCode": "203-6674",
+      "schoolType": "primary",
+      "schoolName": "Holy Family Primary,  Omagh",
+      "amount": 1085594
+    },
+    {
+      "referenceCode": "103-6620",
+      "schoolType": "primary",
+      "schoolName": "St Peter's Primary,  Belfast",
+      "amount": 1085368
+    },
+    {
+      "referenceCode": "501-1189",
+      "schoolType": "primary",
+      "schoolName": "Edenderry Primary,  Portadown",
+      "amount": 1079912
+    },
+    {
+      "referenceCode": "403-6454",
+      "schoolType": "primary",
+      "schoolName": "St Malachy's Primary Castlewellan",
+      "amount": 1079190
+    },
+    {
+      "referenceCode": "101-0831",
+      "schoolType": "primary",
+      "schoolName": "Cavehill Primary",
+      "amount": 1076942
+    },
+    {
+      "referenceCode": "401-6004",
+      "schoolType": "primary",
+      "schoolName": "Londonderry Primary",
+      "amount": 1076913
+    },
+    {
+      "referenceCode": "501-1112",
+      "schoolType": "primary",
+      "schoolName": "Hardy Memorial Primary",
+      "amount": 1076523
+    },
+    {
+      "referenceCode": "103-6140",
+      "schoolType": "primary",
+      "schoolName": "St Michael's Primary,  Belfast",
+      "amount": 1075774
+    },
+    {
+      "referenceCode": "301-0870",
+      "schoolType": "primary",
+      "schoolName": "Moyle Primary",
+      "amount": 1073910
+    },
+    {
+      "referenceCode": "401-6430",
+      "schoolType": "primary",
+      "schoolName": "Ballymagee Primary",
+      "amount": 1073623
+    },
+    {
+      "referenceCode": "301-2264",
+      "schoolType": "primary",
+      "schoolName": "Millburn Primary",
+      "amount": 1068927
+    },
+    {
+      "referenceCode": "503-6110",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary,  Bessbrook",
+      "amount": 1066404
+    },
+    {
+      "referenceCode": "401-6111",
+      "schoolType": "primary",
+      "schoolName": "Towerview Primary",
+      "amount": 1065577
+    },
+    {
+      "referenceCode": "501-1598",
+      "schoolType": "primary",
+      "schoolName": "Waringstown Primary",
+      "amount": 1064359
+    },
+    {
+      "referenceCode": "301-0794",
+      "schoolType": "primary",
+      "schoolName": "Gracehill Primary",
+      "amount": 1063135
+    },
+    {
+      "referenceCode": "301-2284",
+      "schoolType": "primary",
+      "schoolName": "D.  H.  Christie Memorial Primary",
+      "amount": 1061690
+    },
+    {
+      "referenceCode": "503-6409",
+      "schoolType": "primary",
+      "schoolName": "St Ronan's Primary,  Newry",
+      "amount": 1061169
+    },
+    {
+      "referenceCode": "506-6553",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Portadown Integrated Primary",
+      "amount": 1056731
+    },
+    {
+      "referenceCode": "303-6666",
+      "schoolType": "primary",
+      "schoolName": "St Colmcille's Primary,  Ballymena",
+      "amount": 1056598
+    },
+    {
+      "referenceCode": "101-0323",
+      "schoolType": "primary",
+      "schoolName": "Edenbrooke Primary",
+      "amount": 1051614
+    },
+    {
+      "referenceCode": "301-3301",
+      "schoolType": "primary",
+      "schoolName": "Carnmoney Primary",
+      "amount": 1042486
+    },
+    {
+      "referenceCode": "301-0553",
+      "schoolType": "primary",
+      "schoolName": "Carrickfergus Model Primary",
+      "amount": 1037903
+    },
+    {
+      "referenceCode": "101-6205",
+      "schoolType": "primary",
+      "schoolName": "Fane Street Primary",
+      "amount": 1032682
+    },
+    {
+      "referenceCode": "401-1606",
+      "schoolType": "primary",
+      "schoolName": "Gilnahirk Primary",
+      "amount": 1030191
+    },
+    {
+      "referenceCode": "503-6433",
+      "schoolType": "primary",
+      "schoolName": "St Malachy's Primary,  Carnagat",
+      "amount": 1029197
+    },
+    {
+      "referenceCode": "403-0823",
+      "schoolType": "primary",
+      "schoolName": "Ballymacrickett Primary",
+      "amount": 1028508
+    },
+    {
+      "referenceCode": "203-1901",
+      "schoolType": "primary",
+      "schoolName": "St Ronan's Primary,  Lisnaskea",
+      "amount": 1023581
+    },
+    {
+      "referenceCode": "103-6697",
+      "schoolType": "primary",
+      "schoolName": "John Paul II Primary",
+      "amount": 1022621
+    },
+    {
+      "referenceCode": "303-6559",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's & St Brigid's Primary",
+      "amount": 1022203
+    },
+    {
+      "referenceCode": "401-3045",
+      "schoolType": "primary",
+      "schoolName": "Grange Park Primary",
+      "amount": 1021105
+    },
+    {
+      "referenceCode": "523-0321",
+      "schoolType": "secondary",
+      "schoolName": "St.  John the Baptist College",
+      "amount": 1020642
+    },
+    {
+      "referenceCode": "203-0364",
+      "schoolType": "primary",
+      "schoolName": "Rosemount Primary",
+      "amount": 1020161
+    },
+    {
+      "referenceCode": "104-6501",
+      "schoolType": "primary",
+      "schoolName": "Bunscoil Phobal Feirste",
+      "amount": 1018113
+    },
+    {
+      "referenceCode": "305-0866",
+      "schoolType": "primary",
+      "schoolName": "Ballymoney Model Controlled Integrated Primary",
+      "amount": 1017955
+    },
+    {
+      "referenceCode": "501-1594",
+      "schoolType": "primary",
+      "schoolName": "Abercorn Primary",
+      "amount": 1015518
+    },
+    {
+      "referenceCode": "403-6285",
+      "schoolType": "primary",
+      "schoolName": "Good Shepherd Primary,  Belfast",
+      "amount": 1012762
+    },
+    {
+      "referenceCode": "401-6104",
+      "schoolType": "primary",
+      "schoolName": "Moira Primary",
+      "amount": 1011979
+    },
+    {
+      "referenceCode": "301-0846",
+      "schoolType": "primary",
+      "schoolName": "Whiteabbey Primary",
+      "amount": 1010646
+    },
+    {
+      "referenceCode": "421-0012",
+      "schoolType": "secondary",
+      "schoolName": "Movilla High School",
+      "amount": 1010603
+    },
+    {
+      "referenceCode": "105-6535",
+      "schoolType": "primary",
+      "schoolName": "Forge Integrated Primary",
+      "amount": 1009240
+    },
+    {
+      "referenceCode": "323-0110",
+      "schoolType": "secondary",
+      "schoolName": "St Joseph's College,  Coleraine",
+      "amount": 1005692
+    },
+    {
+      "referenceCode": "206-6549",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Enniskillen Integrated Primary",
+      "amount": 1005583
+    },
+    {
+      "referenceCode": "403-3307",
+      "schoolType": "primary",
+      "schoolName": "St Colman's Primary Lisburn",
+      "amount": 1004499
+    },
+    {
+      "referenceCode": "301-0817",
+      "schoolType": "primary",
+      "schoolName": "Greenisland Primary",
+      "amount": 1004158
+    },
+    {
+      "referenceCode": "403-6591",
+      "schoolType": "primary",
+      "schoolName": "Our Lady Queen of Peace Primary",
+      "amount": 1003461
+    },
+    {
+      "referenceCode": "503-6586",
+      "schoolType": "primary",
+      "schoolName": "Presentation Primary",
+      "amount": 1002339
+    },
+    {
+      "referenceCode": "503-1176",
+      "schoolType": "primary",
+      "schoolName": "St Peter's Primary,  Cloughreagh",
+      "amount": 998697
+    },
+    {
+      "referenceCode": "203-2607",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Killyclogher",
+      "amount": 998348
+    },
+    {
+      "referenceCode": "223-0166",
+      "schoolType": "secondary",
+      "schoolName": "St Aidan's High School",
+      "amount": 997694
+    },
+    {
+      "referenceCode": "503-1609",
+      "schoolType": "primary",
+      "schoolName": "Carrick Primary,  Warenpoint",
+      "amount": 991775
+    },
+    {
+      "referenceCode": "303-6046",
+      "schoolType": "primary",
+      "schoolName": "St Mary's-on-The-Hill Primary",
+      "amount": 990735
+    },
+    {
+      "referenceCode": "403-0897",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary Lisburn",
+      "amount": 989931
+    },
+    {
+      "referenceCode": "401-1670",
+      "schoolType": "primary",
+      "schoolName": "Clandeboye Primary",
+      "amount": 989791
+    },
+    {
+      "referenceCode": "301-0880",
+      "schoolType": "primary",
+      "schoolName": "Kings Park Primary,  Newtownabbey",
+      "amount": 986183
+    },
+    {
+      "referenceCode": "303-6050",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary,  Antrim",
+      "amount": 985934
+    },
+    {
+      "referenceCode": "406-6644",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Millennium Integrated Primary",
+      "amount": 978513
+    },
+    {
+      "referenceCode": "201-6071",
+      "schoolType": "primary",
+      "schoolName": "Greenhaw Primary",
+      "amount": 978231
+    },
+    {
+      "referenceCode": "203-2737",
+      "schoolType": "primary",
+      "schoolName": "St Columbkille's Primary Carrickmore",
+      "amount": 977731
+    },
+    {
+      "referenceCode": "503-1697",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Mayobridge",
+      "amount": 971646
+    },
+    {
+      "referenceCode": "401-1588",
+      "schoolType": "primary",
+      "schoolName": "Comber Primary",
+      "amount": 970253
+    },
+    {
+      "referenceCode": "301-0862",
+      "schoolType": "primary",
+      "schoolName": "Abbots Cross Primary",
+      "amount": 965934
+    },
+    {
+      "referenceCode": "501-6117",
+      "schoolType": "primary",
+      "schoolName": "Ballyoran Primary",
+      "amount": 965656
+    },
+    {
+      "referenceCode": "103-6246",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary (Holland Dr)",
+      "amount": 965583
+    },
+    {
+      "referenceCode": "206-6552",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Omagh Integrated Primary",
+      "amount": 950847
+    },
+    {
+      "referenceCode": "103-6042",
+      "schoolType": "primary",
+      "schoolName": "St Vincent De Paul Primary",
+      "amount": 944967
+    },
+    {
+      "referenceCode": "201-2691",
+      "schoolType": "primary",
+      "schoolName": "Omagh County Primary",
+      "amount": 942495
+    },
+    {
+      "referenceCode": "201-2298",
+      "schoolType": "primary",
+      "schoolName": "Ballykelly Primary",
+      "amount": 937996
+    },
+    {
+      "referenceCode": "504-6137",
+      "schoolType": "primary",
+      "schoolName": "Seagoe Primary",
+      "amount": 936100
+    },
+    {
+      "referenceCode": "305-0791",
+      "schoolType": "primary",
+      "schoolName": "Glengormley Integrated Primary",
+      "amount": 929884
+    },
+    {
+      "referenceCode": "301-0875",
+      "schoolType": "primary",
+      "schoolName": "Ballymena Primary",
+      "amount": 928661
+    },
+    {
+      "referenceCode": "203-6475",
+      "schoolType": "primary",
+      "schoolName": "Longtower Primary",
+      "amount": 920208
+    },
+    {
+      "referenceCode": "401-1657",
+      "schoolType": "primary",
+      "schoolName": "Lisnasharragh Primary",
+      "amount": 918789
+    },
+    {
+      "referenceCode": "101-6242",
+      "schoolType": "IS",
+      "schoolName": "Dundela Infants' Primary",
+      "amount": 918055
+    },
+    {
+      "referenceCode": "501-1116",
+      "schoolType": "primary",
+      "schoolName": "Tandragee Primary",
+      "amount": 914544
+    },
+    {
+      "referenceCode": "103-6621",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary (Slate Street)",
+      "amount": 913556
+    },
+    {
+      "referenceCode": "501-6138",
+      "schoolType": "primary",
+      "schoolName": "Bocombra Primary",
+      "amount": 906021
+    },
+    {
+      "referenceCode": "101-6604",
+      "schoolType": "primary",
+      "schoolName": "Harmony Primary",
+      "amount": 896362
+    },
+    {
+      "referenceCode": "306-6551",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Braidside Integrated Primary",
+      "amount": 896001
+    },
+    {
+      "referenceCode": "201-6089",
+      "schoolType": "primary",
+      "schoolName": "Gibson Primary",
+      "amount": 895645
+    },
+    {
+      "referenceCode": "303-6100",
+      "schoolType": "primary",
+      "schoolName": "St James' Primary,  Newtownabbey",
+      "amount": 895503
+    },
+    {
+      "referenceCode": "203-0381",
+      "schoolType": "primary",
+      "schoolName": "Holy Child Primary,  Londonderry",
+      "amount": 895322
+    },
+    {
+      "referenceCode": "301-6244",
+      "schoolType": "primary",
+      "schoolName": "Ashgrove Primary",
+      "amount": 895280
+    },
+    {
+      "referenceCode": "521-0025",
+      "schoolType": "secondary",
+      "schoolName": "Newtownhamilton  High",
+      "amount": 893203
+    },
+    {
+      "referenceCode": "423-0067",
+      "schoolType": "secondary",
+      "schoolName": "St Columba's High School",
+      "amount": 892525
+    },
+    {
+      "referenceCode": "201-6029",
+      "schoolType": "primary",
+      "schoolName": "Drumachose Primary",
+      "amount": 889541
+    },
+    {
+      "referenceCode": "203-6045",
+      "schoolType": "primary",
+      "schoolName": "St Canice's Primary,  Dungiven",
+      "amount": 885825
+    },
+    {
+      "referenceCode": "223-0148",
+      "schoolType": "secondary",
+      "schoolName": "St John's College",
+      "amount": 884451
+    },
+    {
+      "referenceCode": "501-2720",
+      "schoolType": "primary",
+      "schoolName": "Dungannon Primary",
+      "amount": 882987
+    },
+    {
+      "referenceCode": "201-0380",
+      "schoolType": "primary",
+      "schoolName": "Londonderry Model Primary",
+      "amount": 878284
+    },
+    {
+      "referenceCode": "501-1617",
+      "schoolType": "primary",
+      "schoolName": "Ballydown Primary",
+      "amount": 877252
+    },
+    {
+      "referenceCode": "503-2585",
+      "schoolType": "primary",
+      "schoolName": "Edendork Primary",
+      "amount": 877196
+    },
+    {
+      "referenceCode": "503-1126",
+      "schoolType": "primary",
+      "schoolName": "Mount St Catherine's Primary",
+      "amount": 874706
+    },
+    {
+      "referenceCode": "401-6396",
+      "schoolType": "primary",
+      "schoolName": "Killinchy Primary",
+      "amount": 872408
+    },
+    {
+      "referenceCode": "421-0029",
+      "schoolType": "secondary",
+      "schoolName": "The High School Ballynahinch",
+      "amount": 871761
+    },
+    {
+      "referenceCode": "101-0301",
+      "schoolType": "primary",
+      "schoolName": "Taughmonagh Primary",
+      "amount": 866269
+    },
+    {
+      "referenceCode": "301-3310",
+      "schoolType": "primary",
+      "schoolName": "Broughshane Primary",
+      "amount": 865137
+    },
+    {
+      "referenceCode": "101-3018",
+      "schoolType": "primary",
+      "schoolName": "Knocknagoney Primary",
+      "amount": 863240
+    },
+    {
+      "referenceCode": "301-6257",
+      "schoolType": "primary",
+      "schoolName": "Oakfield Primary",
+      "amount": 862432
+    },
+    {
+      "referenceCode": "501-6436",
+      "schoolType": "primary",
+      "schoolName": "Markethill Primary",
+      "amount": 861490
+    },
+    {
+      "referenceCode": "101-6499",
+      "schoolType": "primary",
+      "schoolName": "Botanic Primary",
+      "amount": 861292
+    },
+    {
+      "referenceCode": "101-6060",
+      "schoolType": "primary",
+      "schoolName": "Donegall Road Primary",
+      "amount": 860480
+    },
+    {
+      "referenceCode": "503-6064",
+      "schoolType": "primary",
+      "schoolName": "St Malachy's Primary,  C'croppan",
+      "amount": 856722
+    },
+    {
+      "referenceCode": "301-6252",
+      "schoolType": "primary",
+      "schoolName": "Ballysally Primary",
+      "amount": 856379
+    },
+    {
+      "referenceCode": "401-6126",
+      "schoolType": "primary",
+      "schoolName": "Andrews Memorial Primary",
+      "amount": 853253
+    },
+    {
+      "referenceCode": "503-3025",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Ballymaghery",
+      "amount": 850784
+    },
+    {
+      "referenceCode": "203-6094",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Castlederg",
+      "amount": 849518
+    },
+    {
+      "referenceCode": "401-3013",
+      "schoolType": "primary",
+      "schoolName": "Belvoir Park Primary",
+      "amount": 848374
+    },
+    {
+      "referenceCode": "501-2646",
+      "schoolType": "primary",
+      "schoolName": "Howard Primary",
+      "amount": 847797
+    },
+    {
+      "referenceCode": "501-6599",
+      "schoolType": "primary",
+      "schoolName": "Fair Hill Primary",
+      "amount": 845353
+    },
+    {
+      "referenceCode": "523-0059",
+      "schoolType": "secondary",
+      "schoolName": "St Columban's  College",
+      "amount": 843218
+    },
+    {
+      "referenceCode": "506-6554",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Windmill Integrated Primary",
+      "amount": 837603
+    },
+    {
+      "referenceCode": "301-3325",
+      "schoolType": "primary",
+      "schoolName": "Leaney Primary",
+      "amount": 832198
+    },
+    {
+      "referenceCode": "403-6146",
+      "schoolType": "primary",
+      "schoolName": "St Comgall's Primary,  Bangor",
+      "amount": 828581
+    },
+    {
+      "referenceCode": "201-2227",
+      "schoolType": "primary",
+      "schoolName": "Drumahoe Primary",
+      "amount": 828111
+    },
+    {
+      "referenceCode": "306-6544",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Mill Strand Integrated Primary",
+      "amount": 820797
+    },
+    {
+      "referenceCode": "521-0153",
+      "schoolType": "secondary",
+      "schoolName": "Aughnacloy College",
+      "amount": 817471
+    },
+    {
+      "referenceCode": "101-0157",
+      "schoolType": "primary",
+      "schoolName": "Rosetta Primary",
+      "amount": 817126
+    },
+    {
+      "referenceCode": "303-6243",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary,  Dunloy",
+      "amount": 804406
+    },
+    {
+      "referenceCode": "305-6248",
+      "schoolType": "primary",
+      "schoolName": "Round Tower Integrated Primary",
+      "amount": 803946
+    },
+    {
+      "referenceCode": "101-0304",
+      "schoolType": "IS",
+      "schoolName": "Greenwood Infants' Primary",
+      "amount": 800690
+    },
+    {
+      "referenceCode": "503-6087",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Mullaghbawn",
+      "amount": 799047
+    },
+    {
+      "referenceCode": "506-6578",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Saints & Scholars Integrated Primary",
+      "amount": 781811
+    },
+    {
+      "referenceCode": "203-0373",
+      "schoolType": "primary",
+      "schoolName": "Nazareth House Primary",
+      "amount": 779831
+    },
+    {
+      "referenceCode": "501-6451",
+      "schoolType": "primary",
+      "schoolName": "Windsor Hill Primary",
+      "amount": 779558
+    },
+    {
+      "referenceCode": "501-1687",
+      "schoolType": "primary",
+      "schoolName": "Maralin Village Primary",
+      "amount": 778266
+    },
+    {
+      "referenceCode": "301-0714",
+      "schoolType": "primary",
+      "schoolName": "Buick Memorial Primary",
+      "amount": 776733
+    },
+    {
+      "referenceCode": "403-1665",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary Ballynahinch",
+      "amount": 775721
+    },
+    {
+      "referenceCode": "203-6449",
+      "schoolType": "primary",
+      "schoolName": "Christ The King Primary,  Omagh",
+      "amount": 775614
+    },
+    {
+      "referenceCode": "101-6537",
+      "schoolType": "primary",
+      "schoolName": "Lowwood Primary",
+      "amount": 775407
+    },
+    {
+      "referenceCode": "403-1628",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary Holywood",
+      "amount": 774513
+    },
+    {
+      "referenceCode": "403-3040",
+      "schoolType": "primary",
+      "schoolName": "St Brigid's Primary,  Downpatrick",
+      "amount": 774359
+    },
+    {
+      "referenceCode": "201-2708",
+      "schoolType": "primary",
+      "schoolName": "Strabane Primary",
+      "amount": 772061
+    },
+    {
+      "referenceCode": "203-2684",
+      "schoolType": "primary",
+      "schoolName": "St Lawrence's Primary,  Fintona",
+      "amount": 771497
+    },
+    {
+      "referenceCode": "301-2250",
+      "schoolType": "primary",
+      "schoolName": "Portstewart Primary",
+      "amount": 766911
+    },
+    {
+      "referenceCode": "403-6182",
+      "schoolType": "primary",
+      "schoolName": "St Colmcille's Primary,  Downpatrick",
+      "amount": 765259
+    },
+    {
+      "referenceCode": "103-6041",
+      "schoolType": "primary",
+      "schoolName": "Mercy Primary",
+      "amount": 765035
+    },
+    {
+      "referenceCode": "201-6442",
+      "schoolType": "primary",
+      "schoolName": "Sion Mills Primary",
+      "amount": 760802
+    },
+    {
+      "referenceCode": "501-1611",
+      "schoolType": "primary",
+      "schoolName": "Iveagh Primary",
+      "amount": 759440
+    },
+    {
+      "referenceCode": "301-0891",
+      "schoolType": "primary",
+      "schoolName": "Fourtowns Primary",
+      "amount": 755800
+    },
+    {
+      "referenceCode": "301-3323",
+      "schoolType": "primary",
+      "schoolName": "Mossgrove Primary",
+      "amount": 754780
+    },
+    {
+      "referenceCode": "401-6636",
+      "schoolType": "primary",
+      "schoolName": "Meadow Bridge Primary",
+      "amount": 753110
+    },
+    {
+      "referenceCode": "501-1190",
+      "schoolType": "primary",
+      "schoolName": "Tullygally Primary",
+      "amount": 752319
+    },
+    {
+      "referenceCode": "405-3308",
+      "schoolType": "primary",
+      "schoolName": "Fort Hill Integrated Primary",
+      "amount": 749487
+    },
+    {
+      "referenceCode": "503-6099",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Cullyhanna",
+      "amount": 740114
+    },
+    {
+      "referenceCode": "501-0992",
+      "schoolType": "primary",
+      "schoolName": "Lurgan Model Primary",
+      "amount": 735542
+    },
+    {
+      "referenceCode": "301-6052",
+      "schoolType": "primary",
+      "schoolName": "Harpur's Hill Primary",
+      "amount": 734571
+    },
+    {
+      "referenceCode": "401-0882",
+      "schoolType": "primary",
+      "schoolName": "Seymour Hill Primary",
+      "amount": 732262
+    },
+    {
+      "referenceCode": "301-6225",
+      "schoolType": "primary",
+      "schoolName": "Woodlawn Primary",
+      "amount": 730040
+    },
+    {
+      "referenceCode": "301-6129",
+      "schoolType": "primary",
+      "schoolName": "Carniny Primary",
+      "amount": 724295
+    },
+    {
+      "referenceCode": "401-1462",
+      "schoolType": "primary",
+      "schoolName": "Castle Gardens Primary",
+      "amount": 720394
+    },
+    {
+      "referenceCode": "203-6082",
+      "schoolType": "primary",
+      "schoolName": "St Colmcilles Primary,  Claudy",
+      "amount": 719134
+    },
+    {
+      "referenceCode": "301-6264",
+      "schoolType": "primary",
+      "schoolName": "The Irish Society's Primary",
+      "amount": 718028
+    },
+    {
+      "referenceCode": "106-6580",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Cranmore Integrated Primary",
+      "amount": 717676
+    },
+    {
+      "referenceCode": "401-6083",
+      "schoolType": "primary",
+      "schoolName": "Westwinds Primary",
+      "amount": 715534
+    },
+    {
+      "referenceCode": "203-6143",
+      "schoolType": "primary",
+      "schoolName": "St Oliver Plunkett Primary Strathfoyle",
+      "amount": 713450
+    },
+    {
+      "referenceCode": "303-6147",
+      "schoolType": "primary",
+      "schoolName": "St Columba's Primary,  Kilrea",
+      "amount": 712344
+    },
+    {
+      "referenceCode": "406-6682",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Rowandale Integrated Primary",
+      "amount": 710602
+    },
+    {
+      "referenceCode": "301-6249",
+      "schoolType": "primary",
+      "schoolName": "Earlview Primary",
+      "amount": 707816
+    },
+    {
+      "referenceCode": "401-6417",
+      "schoolType": "primary",
+      "schoolName": "Maghaberry Primary",
+      "amount": 707134
+    },
+    {
+      "referenceCode": "325-0149",
+      "schoolType": "secondary",
+      "schoolName": "Crumlin Integrated College",
+      "amount": 704825
+    },
+    {
+      "referenceCode": "501-6065",
+      "schoolType": "primary",
+      "schoolName": "Dickson Primary",
+      "amount": 703681
+    },
+    {
+      "referenceCode": "301-2267",
+      "schoolType": "primary",
+      "schoolName": "Magherafelt Primary",
+      "amount": 702296
+    },
+    {
+      "referenceCode": "401-0807",
+      "schoolType": "primary",
+      "schoolName": "Lisburn Central Primary",
+      "amount": 701618
+    },
+    {
+      "referenceCode": "303-3320",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Rasharkin",
+      "amount": 699094
+    },
+    {
+      "referenceCode": "103-0331",
+      "schoolType": "primary",
+      "schoolName": "Holy Cross Girls' Primary,  Belfast",
+      "amount": 697753
+    },
+    {
+      "referenceCode": "303-6039",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Glenview",
+      "amount": 697171
+    },
+    {
+      "referenceCode": "104-6593",
+      "schoolType": "primary",
+      "schoolName": "Bunscoil an Tsleibhe Dhuibh",
+      "amount": 696494
+    },
+    {
+      "referenceCode": "303-2018",
+      "schoolType": "primary",
+      "schoolName": "St Brigid's Primary,  Tirkane",
+      "amount": 691266
+    },
+    {
+      "referenceCode": "401-6202",
+      "schoolType": "primary",
+      "schoolName": "Ballinderry Primary,  Lisburn",
+      "amount": 689844
+    },
+    {
+      "referenceCode": "101-0012",
+      "schoolType": "IS",
+      "schoolName": "Belmont Primary",
+      "amount": 689668
+    },
+    {
+      "referenceCode": "201-2638",
+      "schoolType": "primary",
+      "schoolName": "Edwards Primary",
+      "amount": 688630
+    },
+    {
+      "referenceCode": "503-6545",
+      "schoolType": "primary",
+      "schoolName": "St Colmans' Primary,  Kilkeel",
+      "amount": 685053
+    },
+    {
+      "referenceCode": "506-6657",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Phoenix Integrated Primary",
+      "amount": 684448
+    },
+    {
+      "referenceCode": "103-6388",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary (St Pauls Cavan.)",
+      "amount": 684020
+    },
+    {
+      "referenceCode": "401-0885",
+      "schoolType": "primary",
+      "schoolName": "Tonagh Primary",
+      "amount": 681516
+    },
+    {
+      "referenceCode": "223-0109",
+      "schoolType": "secondary",
+      "schoolName": "St Mary's  Secondary School,  Irvinestown",
+      "amount": 680636
+    },
+    {
+      "referenceCode": "203-1898",
+      "schoolType": "primary",
+      "schoolName": "St Paul's Primary,  Irvinestown",
+      "amount": 676616
+    },
+    {
+      "referenceCode": "401-1681",
+      "schoolType": "primary",
+      "schoolName": "Millisle Primary",
+      "amount": 671773
+    },
+    {
+      "referenceCode": "501-6178",
+      "schoolType": "primary",
+      "schoolName": "Donacloney Primary",
+      "amount": 668504
+    },
+    {
+      "referenceCode": "303-6103",
+      "schoolType": "primary",
+      "schoolName": "St Brigid's Primary,  Knockloughrim",
+      "amount": 667624
+    },
+    {
+      "referenceCode": "301-6058",
+      "schoolType": "primary",
+      "schoolName": "Parkhall Primary",
+      "amount": 667268
+    },
+    {
+      "referenceCode": "401-6235",
+      "schoolType": "primary",
+      "schoolName": "Downpatrick Primary",
+      "amount": 664942
+    },
+    {
+      "referenceCode": "306-6568",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Acorn Integrated Primary",
+      "amount": 664332
+    },
+    {
+      "referenceCode": "501-6616",
+      "schoolType": "primary",
+      "schoolName": "Drumadonnell Primary",
+      "amount": 664182
+    },
+    {
+      "referenceCode": "301-2229",
+      "schoolType": "primary",
+      "schoolName": "Hezlett Primary",
+      "amount": 654809
+    },
+    {
+      "referenceCode": "101-0232",
+      "schoolType": "primary",
+      "schoolName": "Harding Memorial Primary",
+      "amount": 653982
+    },
+    {
+      "referenceCode": "501-2280",
+      "schoolType": "primary",
+      "schoolName": "Moneymore Primary",
+      "amount": 651796
+    },
+    {
+      "referenceCode": "503-1133",
+      "schoolType": "primary",
+      "schoolName": "St Malachy's Primary,  Armagh",
+      "amount": 651666
+    },
+    {
+      "referenceCode": "101-6076",
+      "schoolType": "primary",
+      "schoolName": "Ballysillan Primary",
+      "amount": 651412
+    },
+    {
+      "referenceCode": "401-6002",
+      "schoolType": "primary",
+      "schoolName": "Kilcooley Primary",
+      "amount": 648542
+    },
+    {
+      "referenceCode": "104-6571",
+      "schoolType": "primary",
+      "schoolName": "Gaelscoil na Bhfal",
+      "amount": 647882
+    },
+    {
+      "referenceCode": "401-1507",
+      "schoolType": "primary",
+      "schoolName": "Portavogie Primary",
+      "amount": 647606
+    },
+    {
+      "referenceCode": "101-0063",
+      "schoolType": "primary",
+      "schoolName": "Currie Primary",
+      "amount": 646818
+    },
+    {
+      "referenceCode": "406-6588",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Cedar Integrated Primary",
+      "amount": 645875
+    },
+    {
+      "referenceCode": "503-1168",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Aghacommon",
+      "amount": 644715
+    },
+    {
+      "referenceCode": "303-2297",
+      "schoolType": "primary",
+      "schoolName": "St Malachy's Primary,  Coleraine",
+      "amount": 644284
+    },
+    {
+      "referenceCode": "401-1567",
+      "schoolType": "primary",
+      "schoolName": "Ballynahinch Primary",
+      "amount": 637014
+    },
+    {
+      "referenceCode": "503-2717",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Mullinahoe",
+      "amount": 636621
+    },
+    {
+      "referenceCode": "201-1787",
+      "schoolType": "primary",
+      "schoolName": "Kesh Primary",
+      "amount": 636586
+    },
+    {
+      "referenceCode": "303-0621",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Portglenone",
+      "amount": 636556
+    },
+    {
+      "referenceCode": "203-6465",
+      "schoolType": "primary",
+      "schoolName": "Chapel Road Primary",
+      "amount": 636442
+    },
+    {
+      "referenceCode": "203-6227",
+      "schoolType": "primary",
+      "schoolName": "St Paul's Primary,  Slievemore",
+      "amount": 636342
+    },
+    {
+      "referenceCode": "303-3303",
+      "schoolType": "primary",
+      "schoolName": "St Oliver Plunkett Primary,  Antrim",
+      "amount": 635168
+    },
+    {
+      "referenceCode": "303-6704",
+      "schoolType": "primary",
+      "schoolName": "Mary Queen of Peace Primary",
+      "amount": 634158
+    },
+    {
+      "referenceCode": "101-0205",
+      "schoolType": "primary",
+      "schoolName": "Forth River Primary",
+      "amount": 633305
+    },
+    {
+      "referenceCode": "301-2237",
+      "schoolType": "primary",
+      "schoolName": "Killowen Primary,  Coleraine",
+      "amount": 625622
+    },
+    {
+      "referenceCode": "101-6059",
+      "schoolType": "primary",
+      "schoolName": "Black Mountain Primary",
+      "amount": 621626
+    },
+    {
+      "referenceCode": "301-0860",
+      "schoolType": "primary",
+      "schoolName": "Sunnylands Primary",
+      "amount": 621457
+    },
+    {
+      "referenceCode": "306-6613",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Spires Integrated Primary",
+      "amount": 617996
+    },
+    {
+      "referenceCode": "401-3334",
+      "schoolType": "primary",
+      "schoolName": "Knockmore Primary",
+      "amount": 616138
+    },
+    {
+      "referenceCode": "303-6575",
+      "schoolType": "primary",
+      "schoolName": "St Macnissi's Primary,  Larne",
+      "amount": 614457
+    },
+    {
+      "referenceCode": "503-6047",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Annaghmore",
+      "amount": 608980
+    },
+    {
+      "referenceCode": "103-6471",
+      "schoolType": "primary",
+      "schoolName": "Sacred Heart Primary,  Belfast",
+      "amount": 606541
+    },
+    {
+      "referenceCode": "503-6033",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary,  Galbally",
+      "amount": 606448
+    },
+    {
+      "referenceCode": "501-6391",
+      "schoolType": "primary",
+      "schoolName": "Bush Primary",
+      "amount": 606178
+    },
+    {
+      "referenceCode": "401-1699",
+      "schoolType": "primary",
+      "schoolName": "Moneyrea Primary",
+      "amount": 606014
+    },
+    {
+      "referenceCode": "503-2715",
+      "schoolType": "primary",
+      "schoolName": "St John's Primary,  Moy",
+      "amount": 605659
+    },
+    {
+      "referenceCode": "401-0788",
+      "schoolType": "primary",
+      "schoolName": "Dunmurry Primary",
+      "amount": 603758
+    },
+    {
+      "referenceCode": "501-6221",
+      "schoolType": "primary",
+      "schoolName": "Orritor Primary",
+      "amount": 603207
+    },
+    {
+      "referenceCode": "503-2678",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Donaghmore",
+      "amount": 602756
+    },
+    {
+      "referenceCode": "301-0785",
+      "schoolType": "primary",
+      "schoolName": "Eden Primary,  Carrickfergus",
+      "amount": 601153
+    },
+    {
+      "referenceCode": "405-6541",
+      "schoolType": "primary",
+      "schoolName": "All Children's Integrated Primary",
+      "amount": 600191
+    },
+    {
+      "referenceCode": "201-2261",
+      "schoolType": "primary",
+      "schoolName": "Newbuildings Primary",
+      "amount": 599808
+    },
+    {
+      "referenceCode": "406-6668",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Drumlins Integrated Primary",
+      "amount": 599345
+    },
+    {
+      "referenceCode": "401-1632",
+      "schoolType": "primary",
+      "schoolName": "Cregagh Primary",
+      "amount": 597510
+    },
+    {
+      "referenceCode": "201-6218",
+      "schoolType": "primary",
+      "schoolName": "Lisbellaw Primary",
+      "amount": 597113
+    },
+    {
+      "referenceCode": "305-3333",
+      "schoolType": "primary",
+      "schoolName": "Ballycastle Integrated Primary",
+      "amount": 596343
+    },
+    {
+      "referenceCode": "503-1558",
+      "schoolType": "primary",
+      "schoolName": "Ballyholland Primary",
+      "amount": 595964
+    },
+    {
+      "referenceCode": "104-6641",
+      "schoolType": "primary",
+      "schoolName": "Scoil an Droichid",
+      "amount": 595300
+    },
+    {
+      "referenceCode": "503-2734",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Cabra",
+      "amount": 594151
+    },
+    {
+      "referenceCode": "401-0762",
+      "schoolType": "primary",
+      "schoolName": "Brownlee Primary",
+      "amount": 592133
+    },
+    {
+      "referenceCode": "303-2274",
+      "schoolType": "primary",
+      "schoolName": "St John's Primary,  Swatragh",
+      "amount": 590458
+    },
+    {
+      "referenceCode": "201-6003",
+      "schoolType": "primary",
+      "schoolName": "Jones Memorial Primary",
+      "amount": 590152
+    },
+    {
+      "referenceCode": "503-1188",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary,  Meigh",
+      "amount": 590119
+    },
+    {
+      "referenceCode": "301-0847",
+      "schoolType": "primary",
+      "schoolName": "Portrush Primary",
+      "amount": 590064
+    },
+    {
+      "referenceCode": "206-6665",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Roe Valley Integrated Primary",
+      "amount": 589774
+    },
+    {
+      "referenceCode": "406-6611",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Oakwood Integrated Primary",
+      "amount": 588237
+    },
+    {
+      "referenceCode": "304-6685",
+      "schoolType": "primary",
+      "schoolName": "Gaelscoil �anna",
+      "amount": 588165
+    },
+    {
+      "referenceCode": "405-3020",
+      "schoolType": "primary",
+      "schoolName": "Glencraig Integrated Primary",
+      "amount": 587898
+    },
+    {
+      "referenceCode": "504-6637",
+      "schoolType": "primary",
+      "schoolName": "Gaelscoil Ui Neill",
+      "amount": 587800
+    },
+    {
+      "referenceCode": "303-2273",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Draperstown",
+      "amount": 587637
+    },
+    {
+      "referenceCode": "503-6610",
+      "schoolType": "primary",
+      "schoolName": "St Francis' of  Assisi Primary",
+      "amount": 582845
+    },
+    {
+      "referenceCode": "301-6037",
+      "schoolType": "primary",
+      "schoolName": "Greystone Primary",
+      "amount": 582398
+    },
+    {
+      "referenceCode": "401-0743",
+      "schoolType": "primary",
+      "schoolName": "Largymore Primary",
+      "amount": 582231
+    },
+    {
+      "referenceCode": "401-1645",
+      "schoolType": "primary",
+      "schoolName": "Crawfordsburn Primary",
+      "amount": 581734
+    },
+    {
+      "referenceCode": "503-1163",
+      "schoolType": "primary",
+      "schoolName": "St Brigid's Primary,  G'drummond",
+      "amount": 580683
+    },
+    {
+      "referenceCode": "503-6061",
+      "schoolType": "primary",
+      "schoolName": "St Colman's Primary,  Annaclone",
+      "amount": 580169
+    },
+    {
+      "referenceCode": "301-0486",
+      "schoolType": "primary",
+      "schoolName": "Larne & Inver Primary",
+      "amount": 579938
+    },
+    {
+      "referenceCode": "303-2281",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Bellaghy",
+      "amount": 579647
+    },
+    {
+      "referenceCode": "503-1172",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Granemore",
+      "amount": 578541
+    },
+    {
+      "referenceCode": "503-6622",
+      "schoolType": "primary",
+      "schoolName": "St John's Primary,  Middletown",
+      "amount": 576359
+    },
+    {
+      "referenceCode": "204-6646",
+      "schoolType": "primary",
+      "schoolName": "Gaelscoil Eadain Mhoir",
+      "amount": 575701
+    },
+    {
+      "referenceCode": "401-6650",
+      "schoolType": "primary",
+      "schoolName": "Cumran Primary",
+      "amount": 575676
+    },
+    {
+      "referenceCode": "503-1160",
+      "schoolType": "primary",
+      "schoolName": "St Teresa's Primary,  Lurgan",
+      "amount": 574436
+    },
+    {
+      "referenceCode": "101-6532",
+      "schoolType": "primary",
+      "schoolName": "Wheatfield Primary",
+      "amount": 572540
+    },
+    {
+      "referenceCode": "203-6186",
+      "schoolType": "primary",
+      "schoolName": "St Dympna's Primary,  Dromore,",
+      "amount": 572206
+    },
+    {
+      "referenceCode": "501-6088",
+      "schoolType": "primary",
+      "schoolName": "Fivemiletown Primary",
+      "amount": 570433
+    },
+    {
+      "referenceCode": "401-1674",
+      "schoolType": "primary",
+      "schoolName": "Knockbreda Primary",
+      "amount": 566723
+    },
+    {
+      "referenceCode": "104-6596",
+      "schoolType": "primary",
+      "schoolName": "Bunscoil Bheann Mhadagain",
+      "amount": 566662
+    },
+    {
+      "referenceCode": "203-6555",
+      "schoolType": "primary",
+      "schoolName": "St Eugene's Primary Londonderry",
+      "amount": 566055
+    },
+    {
+      "referenceCode": "503-2703",
+      "schoolType": "primary",
+      "schoolName": "St Peters' Primary,  Moortown",
+      "amount": 565569
+    },
+    {
+      "referenceCode": "401-6615",
+      "schoolType": "primary",
+      "schoolName": "Riverdale Primary",
+      "amount": 562248
+    },
+    {
+      "referenceCode": "204-6638",
+      "schoolType": "primary",
+      "schoolName": "Gaelscoil U� Dhochartaigh",
+      "amount": 560985
+    },
+    {
+      "referenceCode": "101-0221",
+      "schoolType": "primary",
+      "schoolName": "Springfield Primary",
+      "amount": 560637
+    },
+    {
+      "referenceCode": "301-3700",
+      "schoolType": "primary",
+      "schoolName": "Macosquin Primary",
+      "amount": 558593
+    },
+    {
+      "referenceCode": "301-0781",
+      "schoolType": "primary",
+      "schoolName": "Harryville Primary",
+      "amount": 558254
+    },
+    {
+      "referenceCode": "503-6572",
+      "schoolType": "primary",
+      "schoolName": "St Colman's Primary,  Saval",
+      "amount": 555928
+    },
+    {
+      "referenceCode": "503-6673",
+      "schoolType": "primary",
+      "schoolName": "St Bronagh's Primary,  Rostrevor",
+      "amount": 554603
+    },
+    {
+      "referenceCode": "301-2225",
+      "schoolType": "primary",
+      "schoolName": "Damhead Primary",
+      "amount": 554524
+    },
+    {
+      "referenceCode": "403-3012",
+      "schoolType": "primary",
+      "schoolName": "Holy Family Primary,  Downpatrick",
+      "amount": 554416
+    },
+    {
+      "referenceCode": "503-6118",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Pomeroy",
+      "amount": 552726
+    },
+    {
+      "referenceCode": "303-3326",
+      "schoolType": "primary",
+      "schoolName": "St Brigid's Primary,  Ballymoney",
+      "amount": 552300
+    },
+    {
+      "referenceCode": "405-1569",
+      "schoolType": "primary",
+      "schoolName": "Kircubbin Integrated Primary",
+      "amount": 551953
+    },
+    {
+      "referenceCode": "101-0325",
+      "schoolType": "primary",
+      "schoolName": "Ligoniel Primary",
+      "amount": 551107
+    },
+    {
+      "referenceCode": "203-1828",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Mullanaskea",
+      "amount": 550375
+    },
+    {
+      "referenceCode": "403-6530",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Portaferry",
+      "amount": 549961
+    },
+    {
+      "referenceCode": "501-6612",
+      "schoolType": "primary",
+      "schoolName": "Bronte Primary",
+      "amount": 549000
+    },
+    {
+      "referenceCode": "301-0745",
+      "schoolType": "primary",
+      "schoolName": "Loanends Primary",
+      "amount": 548894
+    },
+    {
+      "referenceCode": "503-1086",
+      "schoolType": "primary",
+      "schoolName": "Clonalig Primary",
+      "amount": 548380
+    },
+    {
+      "referenceCode": "401-3044",
+      "schoolType": "primary",
+      "schoolName": "Carryduff Primary",
+      "amount": 548030
+    },
+    {
+      "referenceCode": "503-1088",
+      "schoolType": "primary",
+      "schoolName": "Dromintee Primary",
+      "amount": 546125
+    },
+    {
+      "referenceCode": "303-2275",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Greenlough",
+      "amount": 546076
+    },
+    {
+      "referenceCode": "201-2245",
+      "schoolType": "primary",
+      "schoolName": "Eglinton Primary",
+      "amount": 545439
+    },
+    {
+      "referenceCode": "401-6144",
+      "schoolType": "primary",
+      "schoolName": "Old Warren Primary",
+      "amount": 543484
+    },
+    {
+      "referenceCode": "203-1869",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Newtownbutler",
+      "amount": 542846
+    },
+    {
+      "referenceCode": "204-6677",
+      "schoolType": "primary",
+      "schoolName": "Gaelscoil na gCrann",
+      "amount": 541908
+    },
+    {
+      "referenceCode": "301-0895",
+      "schoolType": "primary",
+      "schoolName": "Rathcoole Primary",
+      "amount": 538937
+    },
+    {
+      "referenceCode": "503-2699",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Dunamore",
+      "amount": 536915
+    },
+    {
+      "referenceCode": "501-6543",
+      "schoolType": "primary",
+      "schoolName": "Moyallon Primary",
+      "amount": 536617
+    },
+    {
+      "referenceCode": "301-0835",
+      "schoolType": "primary",
+      "schoolName": "Kells & Connor Primary",
+      "amount": 536597
+    },
+    {
+      "referenceCode": "203-6095",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Cloughcor",
+      "amount": 535818
+    },
+    {
+      "referenceCode": "203-3706",
+      "schoolType": "primary",
+      "schoolName": "Faughanvale Primary",
+      "amount": 534824
+    },
+    {
+      "referenceCode": "303-6563",
+      "schoolType": "primary",
+      "schoolName": "St Nicholas' Primary,  Carrickfergus",
+      "amount": 531909
+    },
+    {
+      "referenceCode": "303-6154",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Loughgiel",
+      "amount": 531441
+    },
+    {
+      "referenceCode": "403-3007",
+      "schoolType": "primary",
+      "schoolName": "St Macartan's Primary,  Downpatrick",
+      "amount": 530848
+    },
+    {
+      "referenceCode": "103-6048",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Star of the Sea Primary",
+      "amount": 526144
+    },
+    {
+      "referenceCode": "301-6170",
+      "schoolType": "primary",
+      "schoolName": "Ballyhenry Primary",
+      "amount": 526103
+    },
+    {
+      "referenceCode": "101-0307",
+      "schoolType": "primary",
+      "schoolName": "Springhill Primary",
+      "amount": 525891
+    },
+    {
+      "referenceCode": "403-1526",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary Saul",
+      "amount": 525743
+    },
+    {
+      "referenceCode": "403-1663",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary Carnacaville",
+      "amount": 524421
+    },
+    {
+      "referenceCode": "223-0085",
+      "schoolType": "secondary",
+      "schoolName": "St Mary's High School,  Brollagh",
+      "amount": 524131
+    },
+    {
+      "referenceCode": "401-0720",
+      "schoolType": "primary",
+      "schoolName": "Ballycarrickmaddy Primary",
+      "amount": 524042
+    },
+    {
+      "referenceCode": "305-0859",
+      "schoolType": "primary",
+      "schoolName": "Crumlin Integrated Primary",
+      "amount": 522521
+    },
+    {
+      "referenceCode": "303-6139",
+      "schoolType": "primary",
+      "schoolName": "St Macnissi's Primary N'Abbey",
+      "amount": 521947
+    },
+    {
+      "referenceCode": "303-2257",
+      "schoolType": "primary",
+      "schoolName": "Anahorish Primary",
+      "amount": 520345
+    },
+    {
+      "referenceCode": "503-6121",
+      "schoolType": "primary",
+      "schoolName": "St Jarlath's Primary",
+      "amount": 518936
+    },
+    {
+      "referenceCode": "401-1566",
+      "schoolType": "primary",
+      "schoolName": "Ballywalter Primary",
+      "amount": 518884
+    },
+    {
+      "referenceCode": "303-2109",
+      "schoolType": "primary",
+      "schoolName": "New Row Primary",
+      "amount": 518876
+    },
+    {
+      "referenceCode": "401-1698",
+      "schoolType": "primary",
+      "schoolName": "Newcastle Primary",
+      "amount": 518496
+    },
+    {
+      "referenceCode": "401-1619",
+      "schoolType": "primary",
+      "schoolName": "Dromara Primary",
+      "amount": 518482
+    },
+    {
+      "referenceCode": "501-6658",
+      "schoolType": "primary",
+      "schoolName": "Orchard County Primary",
+      "amount": 516836
+    },
+    {
+      "referenceCode": "301-6005",
+      "schoolType": "primary",
+      "schoolName": "Silverstream Primary",
+      "amount": 515537
+    },
+    {
+      "referenceCode": "224-0319",
+      "schoolType": "secondary",
+      "schoolName": "Gaelcholaiste Dhoire",
+      "amount": 515036
+    },
+    {
+      "referenceCode": "301-0696",
+      "schoolType": "primary",
+      "schoolName": "Woodburn Primary",
+      "amount": 514158
+    },
+    {
+      "referenceCode": "303-2268",
+      "schoolType": "primary",
+      "schoolName": "St Columba's Primary Straw",
+      "amount": 514099
+    },
+    {
+      "referenceCode": "503-6639",
+      "schoolType": "primary",
+      "schoolName": "Our Lady's and St Mochua's D'noose",
+      "amount": 513662
+    },
+    {
+      "referenceCode": "303-3709",
+      "schoolType": "primary",
+      "schoolName": "St John's Primary,  Coleraine",
+      "amount": 512379
+    },
+    {
+      "referenceCode": "306-6561",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Corran Integrated Primary",
+      "amount": 512040
+    },
+    {
+      "referenceCode": "303-6292",
+      "schoolType": "primary",
+      "schoolName": "Glen Primary",
+      "amount": 510389
+    },
+    {
+      "referenceCode": "401-6123",
+      "schoolType": "primary",
+      "schoolName": "Spa Primary",
+      "amount": 509949
+    },
+    {
+      "referenceCode": "501-3702",
+      "schoolType": "primary",
+      "schoolName": "Woods Primary",
+      "amount": 506192
+    },
+    {
+      "referenceCode": "401-6020",
+      "schoolType": "primary",
+      "schoolName": "Carrowdore Primary",
+      "amount": 505603
+    },
+    {
+      "referenceCode": "301-0818",
+      "schoolType": "primary",
+      "schoolName": "Moorfields Primary",
+      "amount": 505503
+    },
+    {
+      "referenceCode": "501-1174",
+      "schoolType": "primary",
+      "schoolName": "Birches Primary",
+      "amount": 503311
+    },
+    {
+      "referenceCode": "301-6038",
+      "schoolType": "primary",
+      "schoolName": "Hollybank Primary",
+      "amount": 501782
+    },
+    {
+      "referenceCode": "503-6598",
+      "schoolType": "primary",
+      "schoolName": "Our Lady's Primary,  Tullysaran",
+      "amount": 500214
+    },
+    {
+      "referenceCode": "403-6036",
+      "schoolType": "primary",
+      "schoolName": "St Malachy's Primary Kilcoo",
+      "amount": 499817
+    },
+    {
+      "referenceCode": "301-0816",
+      "schoolType": "primary",
+      "schoolName": "Randalstown Central Primary",
+      "amount": 497526
+    },
+    {
+      "referenceCode": "503-2713",
+      "schoolType": "primary",
+      "schoolName": "Derrychrin Primary",
+      "amount": 497458
+    },
+    {
+      "referenceCode": "203-2212",
+      "schoolType": "primary",
+      "schoolName": "Glendermott Primary",
+      "amount": 496265
+    },
+    {
+      "referenceCode": "501-1684",
+      "schoolType": "primary",
+      "schoolName": "Annalong Primary",
+      "amount": 495845
+    },
+    {
+      "referenceCode": "101-6207",
+      "schoolType": "primary",
+      "schoolName": "Blythefield Primary",
+      "amount": 494710
+    },
+    {
+      "referenceCode": "403-6113",
+      "schoolType": "primary",
+      "schoolName": "St Nicholas' Primary,  Ardglass",
+      "amount": 493789
+    },
+    {
+      "referenceCode": "403-3017",
+      "schoolType": "primary",
+      "schoolName": "St Finian's Primary",
+      "amount": 493697
+    },
+    {
+      "referenceCode": "301-0779",
+      "schoolType": "primary",
+      "schoolName": "The Thompson Primary",
+      "amount": 492998
+    },
+    {
+      "referenceCode": "303-2231",
+      "schoolType": "primary",
+      "schoolName": "St Colum's Primary,  Portstewart",
+      "amount": 489300
+    },
+    {
+      "referenceCode": "301-2049",
+      "schoolType": "primary",
+      "schoolName": "Carnalridge Primary",
+      "amount": 488393
+    },
+    {
+      "referenceCode": "501-6680",
+      "schoolType": "primary",
+      "schoolName": "Killyman Primary",
+      "amount": 487687
+    },
+    {
+      "referenceCode": "404-6600",
+      "schoolType": "primary",
+      "schoolName": "Scoil na Fuiseoige",
+      "amount": 487366
+    },
+    {
+      "referenceCode": "503-2729",
+      "schoolType": "primary",
+      "schoolName": "St John's Primary,  Kingisland",
+      "amount": 483997
+    },
+    {
+      "referenceCode": "303-0894",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Cushendall",
+      "amount": 483820
+    },
+    {
+      "referenceCode": "503-6457",
+      "schoolType": "primary",
+      "schoolName": "St Francis' Primary,  Aghaderg",
+      "amount": 482430
+    },
+    {
+      "referenceCode": "303-2285",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's & St Joseph's Fed. Primary",
+      "amount": 480345
+    },
+    {
+      "referenceCode": "505-6013",
+      "schoolType": "primary",
+      "schoolName": "Kilbroney Integrated Primary",
+      "amount": 480229
+    },
+    {
+      "referenceCode": "401-3043",
+      "schoolType": "primary",
+      "schoolName": "Leadhill Primary",
+      "amount": 479668
+    },
+    {
+      "referenceCode": "503-6031",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Loup",
+      "amount": 478511
+    },
+    {
+      "referenceCode": "201-6151",
+      "schoolType": "primary",
+      "schoolName": "Irvinestown Primary",
+      "amount": 477962
+    },
+    {
+      "referenceCode": "203-2294",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Altinure",
+      "amount": 468700
+    },
+    {
+      "referenceCode": "501-6098",
+      "schoolType": "primary",
+      "schoolName": "Brackenagh West Primary",
+      "amount": 467144
+    },
+    {
+      "referenceCode": "104-6671",
+      "schoolType": "primary",
+      "schoolName": "Gaelscoil na Mona",
+      "amount": 465319
+    },
+    {
+      "referenceCode": "201-6068",
+      "schoolType": "primary",
+      "schoolName": "Artigarvan Primary",
+      "amount": 464802
+    },
+    {
+      "referenceCode": "303-3317",
+      "schoolType": "primary",
+      "schoolName": "St John's Primary,  Carnlough",
+      "amount": 463485
+    },
+    {
+      "referenceCode": "203-2731",
+      "schoolType": "primary",
+      "schoolName": "St Teresa's Primary,  Loughmacrory",
+      "amount": 461865
+    },
+    {
+      "referenceCode": "301-0834",
+      "schoolType": "primary",
+      "schoolName": "Clough Primary",
+      "amount": 461326
+    },
+    {
+      "referenceCode": "301-6594",
+      "schoolType": "primary",
+      "schoolName": "Bushvalley Primary",
+      "amount": 457395
+    },
+    {
+      "referenceCode": "503-6595",
+      "schoolType": "primary",
+      "schoolName": "St Peter's Primary,  Collegelands",
+      "amount": 457195
+    },
+    {
+      "referenceCode": "401-0512",
+      "schoolType": "primary",
+      "schoolName": "McKinney Primary",
+      "amount": 457058
+    },
+    {
+      "referenceCode": "503-0972",
+      "schoolType": "primary",
+      "schoolName": "St Oliver Plunkett's Primary,  Forkhill",
+      "amount": 452918
+    },
+    {
+      "referenceCode": "305-6231",
+      "schoolType": "primary",
+      "schoolName": "Six Mile Integrated Primary",
+      "amount": 452735
+    },
+    {
+      "referenceCode": "403-3002",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Aughlisnafin",
+      "amount": 450727
+    },
+    {
+      "referenceCode": "503-6006",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Derrymore",
+      "amount": 450676
+    },
+    {
+      "referenceCode": "301-0646",
+      "schoolType": "primary",
+      "schoolName": "Olderfleet Primary",
+      "amount": 450190
+    },
+    {
+      "referenceCode": "203-6070",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary,  Ederney",
+      "amount": 447734
+    },
+    {
+      "referenceCode": "301-3331",
+      "schoolType": "primary",
+      "schoolName": "Ballycraigy Primary",
+      "amount": 447109
+    },
+    {
+      "referenceCode": "101-6498",
+      "schoolType": "primary",
+      "schoolName": "Malvern Primary",
+      "amount": 446153
+    },
+    {
+      "referenceCode": "503-1138",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary,  Madden",
+      "amount": 446092
+    },
+    {
+      "referenceCode": "301-0873",
+      "schoolType": "primary",
+      "schoolName": "Bushmills Primary",
+      "amount": 445830
+    },
+    {
+      "referenceCode": "403-6455",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Legamaddy",
+      "amount": 445211
+    },
+    {
+      "referenceCode": "203-6008",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Newtownstewart",
+      "amount": 444744
+    },
+    {
+      "referenceCode": "401-1488",
+      "schoolType": "primary",
+      "schoolName": "Victoria Primary,  Ballyhalbert",
+      "amount": 443305
+    },
+    {
+      "referenceCode": "201-1893",
+      "schoolType": "primary",
+      "schoolName": "Ballinamallard Primary",
+      "amount": 441235
+    },
+    {
+      "referenceCode": "203-6187",
+      "schoolType": "primary",
+      "schoolName": "St John's Primary,  Dernaflaw",
+      "amount": 440862
+    },
+    {
+      "referenceCode": "501-1602",
+      "schoolType": "primary",
+      "schoolName": "Bleary Primary",
+      "amount": 439097
+    },
+    {
+      "referenceCode": "201-6372",
+      "schoolType": "primary",
+      "schoolName": "Cumber Claudy Primary",
+      "amount": 434895
+    },
+    {
+      "referenceCode": "403-6428",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Kircubbin",
+      "amount": 429916
+    },
+    {
+      "referenceCode": "203-1880",
+      "schoolType": "primary",
+      "schoolName": "St Ninnidh's Primary,  Derrylin",
+      "amount": 429630
+    },
+    {
+      "referenceCode": "501-1095",
+      "schoolType": "primary",
+      "schoolName": "Mullavilly Primary",
+      "amount": 425167
+    },
+    {
+      "referenceCode": "201-6656",
+      "schoolType": "primary",
+      "schoolName": "Drumrane Primary",
+      "amount": 424018
+    },
+    {
+      "referenceCode": "503-1695",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Barr",
+      "amount": 422708
+    },
+    {
+      "referenceCode": "301-0802",
+      "schoolType": "primary",
+      "schoolName": "Ballynure Primary",
+      "amount": 421556
+    },
+    {
+      "referenceCode": "304-6691",
+      "schoolType": "primary",
+      "schoolName": "Gaelscoil an tSeanchai",
+      "amount": 419195
+    },
+    {
+      "referenceCode": "203-1890",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Mullymesker",
+      "amount": 417388
+    },
+    {
+      "referenceCode": "503-2735",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Ballygawley",
+      "amount": 417230
+    },
+    {
+      "referenceCode": "501-1142",
+      "schoolType": "primary",
+      "schoolName": "Clare Primary",
+      "amount": 417069
+    },
+    {
+      "referenceCode": "203-6574",
+      "schoolType": "primary",
+      "schoolName": "Bunscoil Cholmcille Primary",
+      "amount": 415859
+    },
+    {
+      "referenceCode": "503-1667",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Maralin",
+      "amount": 414634
+    },
+    {
+      "referenceCode": "503-6675",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's and St James' Primary",
+      "amount": 413123
+    },
+    {
+      "referenceCode": "401-1608",
+      "schoolType": "primary",
+      "schoolName": "Anahilt Primary",
+      "amount": 412306
+    },
+    {
+      "referenceCode": "306-6652",
+      "schoolType": "integratedPrimary",
+      "schoolName": "Maine Integrated Primary",
+      "amount": 411929
+    },
+    {
+      "referenceCode": "504-6695",
+      "schoolType": "primary",
+      "schoolName": "Gaelscoil Aodha Rua",
+      "amount": 410112
+    },
+    {
+      "referenceCode": "501-2621",
+      "schoolType": "primary",
+      "schoolName": "Aughnacloy Regional Primary",
+      "amount": 409096
+    },
+    {
+      "referenceCode": "501-1165",
+      "schoolType": "primary",
+      "schoolName": "Richmount Primary",
+      "amount": 407326
+    },
+    {
+      "referenceCode": "203-2730",
+      "schoolType": "primary",
+      "schoolName": "St Columba's Primary,  Clady",
+      "amount": 406467
+    },
+    {
+      "referenceCode": "501-1179",
+      "schoolType": "primary",
+      "schoolName": "Bessbrook Primary",
+      "amount": 405822
+    },
+    {
+      "referenceCode": "201-6564",
+      "schoolType": "primary",
+      "schoolName": "Fountain Primary",
+      "amount": 404410
+    },
+    {
+      "referenceCode": "301-0826",
+      "schoolType": "primary",
+      "schoolName": "The Diamond Primary",
+      "amount": 404039
+    },
+    {
+      "referenceCode": "405-6709",
+      "schoolType": "primary",
+      "schoolName": "Killyleagh Integrated Primary",
+      "amount": 402501
+    },
+    {
+      "referenceCode": "201-6663",
+      "schoolType": "primary",
+      "schoolName": "Cooley Primary",
+      "amount": 400525
+    },
+    {
+      "referenceCode": "304-6653",
+      "schoolType": "primary",
+      "schoolName": "Gaelscoil an Chastil",
+      "amount": 400503
+    },
+    {
+      "referenceCode": "503-2262",
+      "schoolType": "primary",
+      "schoolName": "Lissan Primary",
+      "amount": 400092
+    },
+    {
+      "referenceCode": "503-2591",
+      "schoolType": "primary",
+      "schoolName": "Roan St Patrick's Primary",
+      "amount": 399695
+    },
+    {
+      "referenceCode": "503-3004",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Rathfriland",
+      "amount": 398509
+    },
+    {
+      "referenceCode": "201-1881",
+      "schoolType": "primary",
+      "schoolName": "Florencecourt Primary",
+      "amount": 398068
+    },
+    {
+      "referenceCode": "203-2700",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary,  Drumquin",
+      "amount": 398024
+    },
+    {
+      "referenceCode": "503-2698",
+      "schoolType": "primary",
+      "schoolName": "St Brigid's Primary,  Mountjoy",
+      "amount": 397359
+    },
+    {
+      "referenceCode": "303-0438",
+      "schoolType": "primary",
+      "schoolName": "Millquarter Primary",
+      "amount": 397310
+    },
+    {
+      "referenceCode": "503-6400",
+      "schoolType": "primary",
+      "schoolName": "St Colman's Primary,  Bann",
+      "amount": 396746
+    },
+    {
+      "referenceCode": "301-0828",
+      "schoolType": "primary",
+      "schoolName": "Kilbride Central Primary",
+      "amount": 396526
+    },
+    {
+      "referenceCode": "201-6645",
+      "schoolType": "primary",
+      "schoolName": "Bready Jubilee Primary",
+      "amount": 395967
+    },
+    {
+      "referenceCode": "201-6127",
+      "schoolType": "primary",
+      "schoolName": "Maguiresbridge Primary",
+      "amount": 395781
+    },
+    {
+      "referenceCode": "301-0822",
+      "schoolType": "primary",
+      "schoolName": "Groggan Primary",
+      "amount": 393587
+    },
+    {
+      "referenceCode": "203-6356",
+      "schoolType": "primary",
+      "schoolName": "St Mary's,  Tempo No 2 Primary",
+      "amount": 391024
+    },
+    {
+      "referenceCode": "503-1154",
+      "schoolType": "primary",
+      "schoolName": "Killean Primary",
+      "amount": 390535
+    },
+    {
+      "referenceCode": "203-1874",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Derrygonnelly",
+      "amount": 389773
+    },
+    {
+      "referenceCode": "503-1669",
+      "schoolType": "primary",
+      "schoolName": "St John's Primary,  Gilford",
+      "amount": 388805
+    },
+    {
+      "referenceCode": "203-6153",
+      "schoolType": "primary",
+      "schoolName": "St Scire's Primary,  Trillick",
+      "amount": 386929
+    },
+    {
+      "referenceCode": "301-2234",
+      "schoolType": "primary",
+      "schoolName": "Ampertaine Primary",
+      "amount": 386460
+    },
+    {
+      "referenceCode": "203-2263",
+      "schoolType": "primary",
+      "schoolName": "St Canice's Primary,  Feeny",
+      "amount": 386064
+    },
+    {
+      "referenceCode": "303-2271",
+      "schoolType": "primary",
+      "schoolName": "St Eoghan's Primary",
+      "amount": 385674
+    },
+    {
+      "referenceCode": "203-6659",
+      "schoolType": "primary",
+      "schoolName": "St Macartan's Primary,  Roslea",
+      "amount": 384686
+    },
+    {
+      "referenceCode": "303-2185",
+      "schoolType": "primary",
+      "schoolName": "St Trea's Primary",
+      "amount": 384449
+    },
+    {
+      "referenceCode": "203-1868",
+      "schoolType": "primary",
+      "schoolName": "St Tierney's Primary,  Roslea",
+      "amount": 384230
+    },
+    {
+      "referenceCode": "303-0900",
+      "schoolType": "primary",
+      "schoolName": "St Anthony's Primary",
+      "amount": 383927
+    },
+    {
+      "referenceCode": "101-6647",
+      "schoolType": "primary",
+      "schoolName": "Bunscoil Mhic Reachtain",
+      "amount": 383584
+    },
+    {
+      "referenceCode": "203-6557",
+      "schoolType": "primary",
+      "schoolName": "All Saints Primary,  Tattysallagh",
+      "amount": 381759
+    },
+    {
+      "referenceCode": "203-6415",
+      "schoolType": "primary",
+      "schoolName": "Our Lady of Lourdes Primary,  Omagh",
+      "amount": 379828
+    },
+    {
+      "referenceCode": "201-1789",
+      "schoolType": "primary",
+      "schoolName": "Moat Primary",
+      "amount": 379488
+    },
+    {
+      "referenceCode": "503-6108",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary,  Killeenan",
+      "amount": 379378
+    },
+    {
+      "referenceCode": "501-6643",
+      "schoolType": "primary",
+      "schoolName": "Richmond Primary",
+      "amount": 379188
+    },
+    {
+      "referenceCode": "501-6078",
+      "schoolType": "primary",
+      "schoolName": "Poyntzpass Primary",
+      "amount": 376489
+    },
+    {
+      "referenceCode": "303-0434",
+      "schoolType": "primary",
+      "schoolName": "Creggan Primary",
+      "amount": 373609
+    },
+    {
+      "referenceCode": "303-2218",
+      "schoolType": "primary",
+      "schoolName": "Crossroads Primary",
+      "amount": 371793
+    },
+    {
+      "referenceCode": "501-6179",
+      "schoolType": "primary",
+      "schoolName": "Hamiltonsbawn Primary",
+      "amount": 370158
+    },
+    {
+      "referenceCode": "401-1265",
+      "schoolType": "primary",
+      "schoolName": "Ballyvester Primary",
+      "amount": 367824
+    },
+    {
+      "referenceCode": "301-0787",
+      "schoolType": "primary",
+      "schoolName": "Lislagan Primary",
+      "amount": 367378
+    },
+    {
+      "referenceCode": "503-6180",
+      "schoolType": "primary",
+      "schoolName": "St Oliver Plunkett's Primary,  Ballyhegan",
+      "amount": 367247
+    },
+    {
+      "referenceCode": "203-6459",
+      "schoolType": "primary",
+      "schoolName": "St Theresa's Primary,  Glebe",
+      "amount": 366800
+    },
+    {
+      "referenceCode": "301-6705",
+      "schoolType": "primary",
+      "schoolName": "Islandmagee Primary",
+      "amount": 362779
+    },
+    {
+      "referenceCode": "201-6700",
+      "schoolType": "primary",
+      "schoolName": "Gaelscoil Neachtain",
+      "amount": 362555
+    },
+    {
+      "referenceCode": "503-1169",
+      "schoolType": "primary",
+      "schoolName": "St Brigid's Primary,  Drumilly",
+      "amount": 362201
+    },
+    {
+      "referenceCode": "301-6440",
+      "schoolType": "primary",
+      "schoolName": "Portglenone Primary",
+      "amount": 362005
+    },
+    {
+      "referenceCode": "503-6136",
+      "schoolType": "primary",
+      "schoolName": "Sacred Heart Primary,  Rock",
+      "amount": 361992
+    },
+    {
+      "referenceCode": "503-6363",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Aughnacloy",
+      "amount": 361224
+    },
+    {
+      "referenceCode": "203-6258",
+      "schoolType": "primary",
+      "schoolName": "St Davog's Primary,  Belleek",
+      "amount": 361097
+    },
+    {
+      "referenceCode": "301-6444",
+      "schoolType": "primary",
+      "schoolName": "Hazelbank Primary",
+      "amount": 360835
+    },
+    {
+      "referenceCode": "203-6291",
+      "schoolType": "primary",
+      "schoolName": "St Oliver Plunkett Primary,  Beragh",
+      "amount": 359761
+    },
+    {
+      "referenceCode": "503-2463",
+      "schoolType": "primary",
+      "schoolName": "Blessed Patrick O'Loughran  Pr",
+      "amount": 358018
+    },
+    {
+      "referenceCode": "303-2246",
+      "schoolType": "primary",
+      "schoolName": "St John Bosco Primary , Ballynease",
+      "amount": 357608
+    },
+    {
+      "referenceCode": "503-6122",
+      "schoolType": "primary",
+      "schoolName": "Jonesborough Primary",
+      "amount": 357571
+    },
+    {
+      "referenceCode": "503-1108",
+      "schoolType": "primary",
+      "schoolName": "Clea Primary",
+      "amount": 355069
+    },
+    {
+      "referenceCode": "201-2641",
+      "schoolType": "primary",
+      "schoolName": "Killen Primary",
+      "amount": 354953
+    },
+    {
+      "referenceCode": "403-1328",
+      "schoolType": "primary",
+      "schoolName": "Christ The King Primary,  Ballynahinch",
+      "amount": 354573
+    },
+    {
+      "referenceCode": "404-6648",
+      "schoolType": "primary",
+      "schoolName": "Bunscoil Bheanna Boirche",
+      "amount": 353721
+    },
+    {
+      "referenceCode": "201-2711",
+      "schoolType": "primary",
+      "schoolName": "Donemana Primary",
+      "amount": 353704
+    },
+    {
+      "referenceCode": "503-6009",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Derrytrasna",
+      "amount": 351385
+    },
+    {
+      "referenceCode": "301-0825",
+      "schoolType": "primary",
+      "schoolName": "Carnaghts Primary",
+      "amount": 348904
+    },
+    {
+      "referenceCode": "301-0842",
+      "schoolType": "primary",
+      "schoolName": "William Pinkerton Memorial Primary",
+      "amount": 348400
+    },
+    {
+      "referenceCode": "501-1153",
+      "schoolType": "primary",
+      "schoolName": "Lisnadill Primary",
+      "amount": 348264
+    },
+    {
+      "referenceCode": "203-6213",
+      "schoolType": "primary",
+      "schoolName": "St Columban's Primary,  Belcoo",
+      "amount": 347159
+    },
+    {
+      "referenceCode": "503-1589",
+      "schoolType": "primary",
+      "schoolName": "Grange Primary",
+      "amount": 345920
+    },
+    {
+      "referenceCode": "501-1520",
+      "schoolType": "primary",
+      "schoolName": "Dromore Road Primary,  Warrenpoint",
+      "amount": 345524
+    },
+    {
+      "referenceCode": "203-1895",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Maguiresbridge",
+      "amount": 345359
+    },
+    {
+      "referenceCode": "301-6283",
+      "schoolType": "primary",
+      "schoolName": "Knockloughrim Primary",
+      "amount": 345072
+    },
+    {
+      "referenceCode": "504-6699",
+      "schoolType": "primary",
+      "schoolName": "Gaelscoil Eoghain",
+      "amount": 344548
+    },
+    {
+      "referenceCode": "501-1596",
+      "schoolType": "primary",
+      "schoolName": "Craigavon Primary",
+      "amount": 343576
+    },
+    {
+      "referenceCode": "503-2558",
+      "schoolType": "primary",
+      "schoolName": "Laghey Primary",
+      "amount": 343470
+    },
+    {
+      "referenceCode": "504-6597",
+      "schoolType": "primary",
+      "schoolName": "Bunscoil an Iuir",
+      "amount": 342765
+    },
+    {
+      "referenceCode": "301-2288",
+      "schoolType": "primary",
+      "schoolName": "Castleroe Primary",
+      "amount": 340676
+    },
+    {
+      "referenceCode": "203-6107",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary,  Lisnaskea",
+      "amount": 339952
+    },
+    {
+      "referenceCode": "203-2694",
+      "schoolType": "primary",
+      "schoolName": "St Caireall's Primary,  Castlederg",
+      "amount": 339921
+    },
+    {
+      "referenceCode": "503-1070",
+      "schoolType": "primary",
+      "schoolName": "St Michael's Primary,  N'hamilton",
+      "amount": 338498
+    },
+    {
+      "referenceCode": "303-6131",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Glenariffe",
+      "amount": 337930
+    },
+    {
+      "referenceCode": "503-6120",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Moneymore",
+      "amount": 337417
+    },
+    {
+      "referenceCode": "401-6681",
+      "schoolType": "primary",
+      "schoolName": "Glasswater Primary",
+      "amount": 337414
+    },
+    {
+      "referenceCode": "503-1694",
+      "schoolType": "primary",
+      "schoolName": "Holy Cross Primary,  Kilkeel",
+      "amount": 336836
+    },
+    {
+      "referenceCode": "203-6090",
+      "schoolType": "primary",
+      "schoolName": "St Naile's Primary,  Kinawley",
+      "amount": 336510
+    },
+    {
+      "referenceCode": "203-6181",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Teemore",
+      "amount": 335250
+    },
+    {
+      "referenceCode": "503-2692",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Stewartstown",
+      "amount": 334195
+    },
+    {
+      "referenceCode": "201-6124",
+      "schoolType": "primary",
+      "schoolName": "Ashlea Primary",
+      "amount": 334064
+    },
+    {
+      "referenceCode": "311-6167",
+      "schoolType": "nursery",
+      "schoolName": "Steeple Nursery",
+      "amount": 332757
+    },
+    {
+      "referenceCode": "401-3046",
+      "schoolType": "primary",
+      "schoolName": "Alexander Dickson Primary",
+      "amount": 332067
+    },
+    {
+      "referenceCode": "403-3028",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary Portaferry",
+      "amount": 331424
+    },
+    {
+      "referenceCode": "201-6102",
+      "schoolType": "primary",
+      "schoolName": "Tempo No 1 Primary",
+      "amount": 330805
+    },
+    {
+      "referenceCode": "301-6040",
+      "schoolType": "primary",
+      "schoolName": "Armoy Primary",
+      "amount": 330522
+    },
+    {
+      "referenceCode": "301-6269",
+      "schoolType": "primary",
+      "schoolName": "Cairncastle Primary",
+      "amount": 330422
+    },
+    {
+      "referenceCode": "301-0804",
+      "schoolType": "primary",
+      "schoolName": "Straidbilly Primary",
+      "amount": 328564
+    },
+    {
+      "referenceCode": "301-2291",
+      "schoolType": "primary",
+      "schoolName": "Maghera Primary",
+      "amount": 328443
+    },
+    {
+      "referenceCode": "501-6079",
+      "schoolType": "primary",
+      "schoolName": "The Cope Primary",
+      "amount": 326901
+    },
+    {
+      "referenceCode": "301-0726",
+      "schoolType": "primary",
+      "schoolName": "Dunseverick Primary",
+      "amount": 326826
+    },
+    {
+      "referenceCode": "301-3332",
+      "schoolType": "primary",
+      "schoolName": "Toreagh Primary",
+      "amount": 323602
+    },
+    {
+      "referenceCode": "501-2719",
+      "schoolType": "primary",
+      "schoolName": "Newmills Primary",
+      "amount": 323077
+    },
+    {
+      "referenceCode": "303-2202",
+      "schoolType": "primary",
+      "schoolName": "St Columba's Primary,  Garvagh",
+      "amount": 322479
+    },
+    {
+      "referenceCode": "301-6447",
+      "schoolType": "primary",
+      "schoolName": "Balnamore Primary",
+      "amount": 321680
+    },
+    {
+      "referenceCode": "203-6105",
+      "schoolType": "primary",
+      "schoolName": "St Martin's Primary,  Garrison",
+      "amount": 321060
+    },
+    {
+      "referenceCode": "503-3324",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Derrynaseer",
+      "amount": 320073
+    },
+    {
+      "referenceCode": "501-2649",
+      "schoolType": "primary",
+      "schoolName": "Coagh Primary",
+      "amount": 317803
+    },
+    {
+      "referenceCode": "503-6000",
+      "schoolType": "primary",
+      "schoolName": "St Colman's Primary,  Dromore",
+      "amount": 316896
+    },
+    {
+      "referenceCode": "503-6605",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Drumgreenagh",
+      "amount": 316757
+    },
+    {
+      "referenceCode": "203-2704",
+      "schoolType": "primary",
+      "schoolName": "Recarson Primary",
+      "amount": 316702
+    },
+    {
+      "referenceCode": "311-6220",
+      "schoolType": "nursery",
+      "schoolName": "Ballyclare  Nursery",
+      "amount": 315131
+    },
+    {
+      "referenceCode": "204-6689",
+      "schoolType": "primary",
+      "schoolName": "Gaelscoil L�im an Mhadaidh",
+      "amount": 315000
+    },
+    {
+      "referenceCode": "203-2705",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Eskra",
+      "amount": 313942
+    },
+    {
+      "referenceCode": "501-1161",
+      "schoolType": "primary",
+      "schoolName": "Mountnorris Primary",
+      "amount": 313467
+    },
+    {
+      "referenceCode": "401-1310",
+      "schoolType": "primary",
+      "schoolName": "Carrickmannon Primary",
+      "amount": 313283
+    },
+    {
+      "referenceCode": "301-0841",
+      "schoolType": "primary",
+      "schoolName": "Carrickfergus Central Primay",
+      "amount": 312788
+    },
+    {
+      "referenceCode": "403-3036",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Killyleagh",
+      "amount": 312421
+    },
+    {
+      "referenceCode": "301-0893",
+      "schoolType": "primary",
+      "schoolName": "Knockahollet Primary",
+      "amount": 312237
+    },
+    {
+      "referenceCode": "301-2269",
+      "schoolType": "primary",
+      "schoolName": "Kilrea Primary",
+      "amount": 310986
+    },
+    {
+      "referenceCode": "301-2065",
+      "schoolType": "primary",
+      "schoolName": "Culcrow Primary",
+      "amount": 310726
+    },
+    {
+      "referenceCode": "503-2387",
+      "schoolType": "primary",
+      "schoolName": "Derrylatinee Primary",
+      "amount": 310371
+    },
+    {
+      "referenceCode": "503-2624",
+      "schoolType": "primary",
+      "schoolName": "St Mac Carten's Convent Primary",
+      "amount": 308599
+    },
+    {
+      "referenceCode": "403-1531",
+      "schoolType": "primary",
+      "schoolName": "St Francis' Primary,  Drumaroad",
+      "amount": 308142
+    },
+    {
+      "referenceCode": "501-6027",
+      "schoolType": "primary",
+      "schoolName": "Drumhillery Primary",
+      "amount": 307689
+    },
+    {
+      "referenceCode": "301-3704",
+      "schoolType": "primary",
+      "schoolName": "Castledawson Primary",
+      "amount": 307611
+    },
+    {
+      "referenceCode": "203-3707",
+      "schoolType": "primary",
+      "schoolName": "Mullabuoy Primary",
+      "amount": 306495
+    },
+    {
+      "referenceCode": "311-6177",
+      "schoolType": "nursery",
+      "schoolName": "Magherafelt  Nursery",
+      "amount": 306385
+    },
+    {
+      "referenceCode": "201-1894",
+      "schoolType": "primary",
+      "schoolName": "Brookeborough Primary",
+      "amount": 304881
+    },
+    {
+      "referenceCode": "403-1550",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary Crossgar",
+      "amount": 304016
+    },
+    {
+      "referenceCode": "201-2344",
+      "schoolType": "primary",
+      "schoolName": "McClintock Primary",
+      "amount": 303775
+    },
+    {
+      "referenceCode": "503-1325",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary,  Ballymartin",
+      "amount": 303618
+    },
+    {
+      "referenceCode": "501-6224",
+      "schoolType": "primary",
+      "schoolName": "Donaghey Primary",
+      "amount": 301515
+    },
+    {
+      "referenceCode": "501-1157",
+      "schoolType": "primary",
+      "schoolName": "Derryhale Primary",
+      "amount": 300894
+    },
+    {
+      "referenceCode": "301-0754",
+      "schoolType": "primary",
+      "schoolName": "Doagh Primary",
+      "amount": 298358
+    },
+    {
+      "referenceCode": "403-1673",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Ardglass",
+      "amount": 298144
+    },
+    {
+      "referenceCode": "501-1019",
+      "schoolType": "primary",
+      "schoolName": "Mullaglass Primary",
+      "amount": 298099
+    },
+    {
+      "referenceCode": "501-1664",
+      "schoolType": "primary",
+      "schoolName": "Scarva Primary",
+      "amount": 297927
+    },
+    {
+      "referenceCode": "501-1175",
+      "schoolType": "primary",
+      "schoolName": "Cortamlet Primary",
+      "amount": 297596
+    },
+    {
+      "referenceCode": "511-6189",
+      "schoolType": "nursery",
+      "schoolName": "Millington Nursery",
+      "amount": 294113
+    },
+    {
+      "referenceCode": "301-6063",
+      "schoolType": "primary",
+      "schoolName": "Dunclug Primary",
+      "amount": 293056
+    },
+    {
+      "referenceCode": "203-6149",
+      "schoolType": "primary",
+      "schoolName": "St Finlough's Primary,  Sistrakeel",
+      "amount": 292863
+    },
+    {
+      "referenceCode": "203-2286",
+      "schoolType": "primary",
+      "schoolName": "St Matthew's Primary,  Limavady",
+      "amount": 291952
+    },
+    {
+      "referenceCode": "201-6701",
+      "schoolType": "primary",
+      "schoolName": "Ardstraw Jubilee Primary",
+      "amount": 291132
+    },
+    {
+      "referenceCode": "303-2205",
+      "schoolType": "primary",
+      "schoolName": "St Columb's Primary,  Magherafelt",
+      "amount": 291079
+    },
+    {
+      "referenceCode": "303-0719",
+      "schoolType": "primary",
+      "schoolName": "St Olcan's Primary",
+      "amount": 290979
+    },
+    {
+      "referenceCode": "501-1119",
+      "schoolType": "primary",
+      "schoolName": "Darkley Primary",
+      "amount": 290237
+    },
+    {
+      "referenceCode": "513-6631",
+      "schoolType": "nursery",
+      "schoolName": "Drumnamoe Nursery",
+      "amount": 289965
+    },
+    {
+      "referenceCode": "203-2676",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Gortin",
+      "amount": 289910
+    },
+    {
+      "referenceCode": "301-6055",
+      "schoolType": "primary",
+      "schoolName": "Gorran Primary",
+      "amount": 288277
+    },
+    {
+      "referenceCode": "403-3037",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary Tyrella",
+      "amount": 287701
+    },
+    {
+      "referenceCode": "501-2538",
+      "schoolType": "primary",
+      "schoolName": "Churchill Primary",
+      "amount": 287543
+    },
+    {
+      "referenceCode": "503-3003",
+      "schoolType": "primary",
+      "schoolName": "St Paul's Primary,  Cabra",
+      "amount": 286653
+    },
+    {
+      "referenceCode": "503-2592",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Lisbuoy",
+      "amount": 286326
+    },
+    {
+      "referenceCode": "503-1653",
+      "schoolType": "primary",
+      "schoolName": "St Matthew's Primary,  Magheramayo",
+      "amount": 285923
+    },
+    {
+      "referenceCode": "401-1300",
+      "schoolType": "primary",
+      "schoolName": "Greyabbey Primary",
+      "amount": 285132
+    },
+    {
+      "referenceCode": "203-1884",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Killesher",
+      "amount": 284666
+    },
+    {
+      "referenceCode": "104-6672",
+      "schoolType": "primary",
+      "schoolName": "Gaelscoil an Lonnain",
+      "amount": 283836
+    },
+    {
+      "referenceCode": "303-0547",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary Portrush",
+      "amount": 283510
+    },
+    {
+      "referenceCode": "301-6260",
+      "schoolType": "primary",
+      "schoolName": "Cloughmills Primary",
+      "amount": 282133
+    },
+    {
+      "referenceCode": "203-1863",
+      "schoolType": "primary",
+      "schoolName": "Tattygar Primary",
+      "amount": 281952
+    },
+    {
+      "referenceCode": "403-1662",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Comber",
+      "amount": 280670
+    },
+    {
+      "referenceCode": "301-0878",
+      "schoolType": "primary",
+      "schoolName": "Kilmoyle Primary",
+      "amount": 280652
+    },
+    {
+      "referenceCode": "301-0404",
+      "schoolType": "primary",
+      "schoolName": "Tildarg Primary",
+      "amount": 279504
+    },
+    {
+      "referenceCode": "503-2697",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Aughadarragh",
+      "amount": 279281
+    },
+    {
+      "referenceCode": "301-0808",
+      "schoolType": "primary",
+      "schoolName": "Glynn Primary",
+      "amount": 278711
+    },
+    {
+      "referenceCode": "304-6684",
+      "schoolType": "primary",
+      "schoolName": "Gaelscoil Ghleann Darach",
+      "amount": 277003
+    },
+    {
+      "referenceCode": "301-0892",
+      "schoolType": "primary",
+      "schoolName": "Ballytober Primary",
+      "amount": 275475
+    },
+    {
+      "referenceCode": "301-6119",
+      "schoolType": "primary",
+      "schoolName": "Garvagh Primary",
+      "amount": 275342
+    },
+    {
+      "referenceCode": "503-3011",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Dechomet",
+      "amount": 274679
+    },
+    {
+      "referenceCode": "501-2635",
+      "schoolType": "primary",
+      "schoolName": "Augher Central Primary",
+      "amount": 273746
+    },
+    {
+      "referenceCode": "503-3006",
+      "schoolType": "primary",
+      "schoolName": "St Michael's Primary,  Finnis",
+      "amount": 273405
+    },
+    {
+      "referenceCode": "203-1897",
+      "schoolType": "primary",
+      "schoolName": "Killyhommon Primary",
+      "amount": 272736
+    },
+    {
+      "referenceCode": "203-2721",
+      "schoolType": "primary",
+      "schoolName": "Sacred Heart Primary,  Tattyreagh",
+      "amount": 272521
+    },
+    {
+      "referenceCode": "501-2615",
+      "schoolType": "primary",
+      "schoolName": "Ballytrea Primary",
+      "amount": 272489
+    },
+    {
+      "referenceCode": "501-2696",
+      "schoolType": "primary",
+      "schoolName": "Carntall Primary",
+      "amount": 272084
+    },
+    {
+      "referenceCode": "301-0572",
+      "schoolType": "primary",
+      "schoolName": "Carrowreagh Primary",
+      "amount": 271513
+    },
+    {
+      "referenceCode": "203-2723",
+      "schoolType": "primary",
+      "schoolName": "Roscavey Primary",
+      "amount": 271153
+    },
+    {
+      "referenceCode": "501-2636",
+      "schoolType": "primary",
+      "schoolName": "Moy Regional Primary",
+      "amount": 270704
+    },
+    {
+      "referenceCode": "203-6097",
+      "schoolType": "primary",
+      "schoolName": "St Peter's Primary,  Plumbridge",
+      "amount": 267192
+    },
+    {
+      "referenceCode": "203-6247",
+      "schoolType": "primary",
+      "schoolName": "St Columba's Primary Newbuildings",
+      "amount": 266969
+    },
+    {
+      "referenceCode": "201-2095",
+      "schoolType": "primary",
+      "schoolName": "Ballougry Primary",
+      "amount": 266837
+    },
+    {
+      "referenceCode": "301-0594",
+      "schoolType": "primary",
+      "schoolName": "Garryduff Primary",
+      "amount": 266770
+    },
+    {
+      "referenceCode": "301-0741",
+      "schoolType": "primary",
+      "schoolName": "Creavery Primary",
+      "amount": 265821
+    },
+    {
+      "referenceCode": "405-1601",
+      "schoolType": "primary",
+      "schoolName": "Portaferry Integrated Primary",
+      "amount": 265608
+    },
+    {
+      "referenceCode": "403-0573",
+      "schoolType": "primary",
+      "schoolName": "Ballymacward Primary",
+      "amount": 264425
+    },
+    {
+      "referenceCode": "403-1485",
+      "schoolType": "primary",
+      "schoolName": "St Caolan's Primary",
+      "amount": 263365
+    },
+    {
+      "referenceCode": "503-1318",
+      "schoolType": "primary",
+      "schoolName": "Killowen Primary,  Rostrevor",
+      "amount": 262262
+    },
+    {
+      "referenceCode": "503-1516",
+      "schoolType": "primary",
+      "schoolName": "Moneydarragh Primary",
+      "amount": 261798
+    },
+    {
+      "referenceCode": "503-0975",
+      "schoolType": "primary",
+      "schoolName": "St Malachy's Primary,  Ballymoyer",
+      "amount": 261592
+    },
+    {
+      "referenceCode": "401-1373",
+      "schoolType": "primary",
+      "schoolName": "Kirkistown Primary",
+      "amount": 261570
+    },
+    {
+      "referenceCode": "513-6629",
+      "schoolType": "nursery",
+      "schoolName": "Seaview Nursery",
+      "amount": 260678
+    },
+    {
+      "referenceCode": "405-6710",
+      "schoolType": "primary",
+      "schoolName": "Loughries Integrated Primary",
+      "amount": 259769
+    },
+    {
+      "referenceCode": "301-6125",
+      "schoolType": "primary",
+      "schoolName": "Rasharkin Primary",
+      "amount": 258878
+    },
+    {
+      "referenceCode": "303-2197",
+      "schoolType": "primary",
+      "schoolName": "Knocknagin Primary",
+      "amount": 258658
+    },
+    {
+      "referenceCode": "301-0809",
+      "schoolType": "primary",
+      "schoolName": "Ballycarry Primary",
+      "amount": 257547
+    },
+    {
+      "referenceCode": "301-0642",
+      "schoolType": "primary",
+      "schoolName": "Parkgate Primary",
+      "amount": 257315
+    },
+    {
+      "referenceCode": "503-2208",
+      "schoolType": "primary",
+      "schoolName": "Ballylifford Primary",
+      "amount": 256149
+    },
+    {
+      "referenceCode": "403-1671",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary Castlewellan",
+      "amount": 255803
+    },
+    {
+      "referenceCode": "504-6692",
+      "schoolType": "primary",
+      "schoolName": "Gaelscoil na mBeann",
+      "amount": 255767
+    },
+    {
+      "referenceCode": "403-6133",
+      "schoolType": "primary",
+      "schoolName": "Sacred Heart Primary,  Dundrum",
+      "amount": 255767
+    },
+    {
+      "referenceCode": "201-2660",
+      "schoolType": "primary",
+      "schoolName": "Denamona Primary",
+      "amount": 255750
+    },
+    {
+      "referenceCode": "503-2714",
+      "schoolType": "primary",
+      "schoolName": "Holy Family Primary,  Aughamullan",
+      "amount": 254992
+    },
+    {
+      "referenceCode": "203-3708",
+      "schoolType": "primary",
+      "schoolName": "St Aidan's Primary,  Magilligan",
+      "amount": 254774
+    },
+    {
+      "referenceCode": "503-6130",
+      "schoolType": "primary",
+      "schoolName": "St Laurence's Primary,  Beleeks",
+      "amount": 254578
+    },
+    {
+      "referenceCode": "204-6687",
+      "schoolType": "primary",
+      "schoolName": "Gaelscoil na Dar�ige",
+      "amount": 254400
+    },
+    {
+      "referenceCode": "501-1651",
+      "schoolType": "primary",
+      "schoolName": "Milltown Primary",
+      "amount": 254328
+    },
+    {
+      "referenceCode": "201-1899",
+      "schoolType": "primary",
+      "schoolName": "Derrygonnelly Primary",
+      "amount": 253818
+    },
+    {
+      "referenceCode": "303-0708",
+      "schoolType": "primary",
+      "schoolName": "Glenann Primary",
+      "amount": 253082
+    },
+    {
+      "referenceCode": "203-6458",
+      "schoolType": "primary",
+      "schoolName": "St Mary�s Primary,  Gortnaghey",
+      "amount": 253016
+    },
+    {
+      "referenceCode": "501-0909",
+      "schoolType": "primary",
+      "schoolName": "Foley Primary",
+      "amount": 252649
+    },
+    {
+      "referenceCode": "403-1350",
+      "schoolType": "primary",
+      "schoolName": "St Malachy's Primary Kilclief",
+      "amount": 252232
+    },
+    {
+      "referenceCode": "503-1164",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Maghery",
+      "amount": 251284
+    },
+    {
+      "referenceCode": "303-0898",
+      "schoolType": "primary",
+      "schoolName": "St Anne's Primary",
+      "amount": 249604
+    },
+    {
+      "referenceCode": "203-2628",
+      "schoolType": "primary",
+      "schoolName": "Knocknagor Primary",
+      "amount": 249219
+    },
+    {
+      "referenceCode": "305-2071",
+      "schoolType": "primary",
+      "schoolName": "Carhill Integrated Primary",
+      "amount": 249144
+    },
+    {
+      "referenceCode": "503-2306",
+      "schoolType": "primary",
+      "schoolName": "St Malachy's Primary,  Glencull",
+      "amount": 247406
+    },
+    {
+      "referenceCode": "401-1578",
+      "schoolType": "primary",
+      "schoolName": "Derryboy Primary",
+      "amount": 246548
+    },
+    {
+      "referenceCode": "401-1584",
+      "schoolType": "primary",
+      "schoolName": "Carr Primary",
+      "amount": 245112
+    },
+    {
+      "referenceCode": "501-1137",
+      "schoolType": "primary",
+      "schoolName": "Newtownhamilton Primary",
+      "amount": 243300
+    },
+    {
+      "referenceCode": "201-6262",
+      "schoolType": "primary",
+      "schoolName": "Newtownstewart Model Primary",
+      "amount": 242233
+    },
+    {
+      "referenceCode": "301-0795",
+      "schoolType": "primary",
+      "schoolName": "Landhead Primary",
+      "amount": 239161
+    },
+    {
+      "referenceCode": "303-6683",
+      "schoolType": "primary",
+      "schoolName": "St Paul's Primary,  Ahoghill",
+      "amount": 237019
+    },
+    {
+      "referenceCode": "201-2052",
+      "schoolType": "primary",
+      "schoolName": "Culmore Primary",
+      "amount": 236866
+    },
+    {
+      "referenceCode": "503-1166",
+      "schoolType": "primary",
+      "schoolName": "St Michael's Primary,  Clady",
+      "amount": 236215
+    },
+    {
+      "referenceCode": "501-2632",
+      "schoolType": "primary",
+      "schoolName": "Donaghmore Primary",
+      "amount": 234275
+    },
+    {
+      "referenceCode": "203-1876",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Brookeborough",
+      "amount": 233782
+    },
+    {
+      "referenceCode": "501-2657",
+      "schoolType": "primary",
+      "schoolName": "Walker Memorial Primary",
+      "amount": 232095
+    },
+    {
+      "referenceCode": "403-3005",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary Strangford",
+      "amount": 231513
+    },
+    {
+      "referenceCode": "301-0796",
+      "schoolType": "primary",
+      "schoolName": "Eden Primary,  Ballymoney",
+      "amount": 230394
+    },
+    {
+      "referenceCode": "203-2573",
+      "schoolType": "primary",
+      "schoolName": "St Brigid's Primary,  Altamuskin",
+      "amount": 227778
+    },
+    {
+      "referenceCode": "201-6184",
+      "schoolType": "primary",
+      "schoolName": "Lack Primary",
+      "amount": 227540
+    },
+    {
+      "referenceCode": "301-0879",
+      "schoolType": "primary",
+      "schoolName": "Straidhavern Primary",
+      "amount": 226907
+    },
+    {
+      "referenceCode": "311-6215",
+      "schoolType": "nursery",
+      "schoolName": "Kylemore Nursery",
+      "amount": 224708
+    },
+    {
+      "referenceCode": "311-6034",
+      "schoolType": "nursery",
+      "schoolName": "Ballymoney Nursery",
+      "amount": 224169
+    },
+    {
+      "referenceCode": "501-1132",
+      "schoolType": "primary",
+      "schoolName": "Killylea Primary",
+      "amount": 223450
+    },
+    {
+      "referenceCode": "304-6678",
+      "schoolType": "primary",
+      "schoolName": "Gaelscoil na Speirini",
+      "amount": 222542
+    },
+    {
+      "referenceCode": "403-6016",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary Killough",
+      "amount": 221188
+    },
+    {
+      "referenceCode": "503-1135",
+      "schoolType": "primary",
+      "schoolName": "St Olivers' Primary,  Carrickravaddy",
+      "amount": 220418
+    },
+    {
+      "referenceCode": "301-2233",
+      "schoolType": "primary",
+      "schoolName": "Tobermore Primary",
+      "amount": 220305
+    },
+    {
+      "referenceCode": "111-0003",
+      "schoolType": "nursery",
+      "schoolName": "Edenderry Nursery,  Belfast",
+      "amount": 219687
+    },
+    {
+      "referenceCode": "111-0036",
+      "schoolType": "nursery",
+      "schoolName": "New Lodge Nursery",
+      "amount": 217942
+    },
+    {
+      "referenceCode": "301-2290",
+      "schoolType": "primary",
+      "schoolName": "Bellaghy Primary",
+      "amount": 217196
+    },
+    {
+      "referenceCode": "313-6183",
+      "schoolType": "nursery",
+      "schoolName": "St Joseph's Nursery",
+      "amount": 217096
+    },
+    {
+      "referenceCode": "303-0815",
+      "schoolType": "primary",
+      "schoolName": "Moneynick Primary",
+      "amount": 216773
+    },
+    {
+      "referenceCode": "113-6603",
+      "schoolType": "nursery",
+      "schoolName": "The Cathedral Nursery",
+      "amount": 216405
+    },
+    {
+      "referenceCode": "311-6150",
+      "schoolType": "nursery",
+      "schoolName": "Sunnylands Nursery",
+      "amount": 216351
+    },
+    {
+      "referenceCode": "311-0037",
+      "schoolType": "nursery",
+      "schoolName": "Ballymena  Nursery",
+      "amount": 216192
+    },
+    {
+      "referenceCode": "303-0890",
+      "schoolType": "primary",
+      "schoolName": "St Brigid's Primary,  Cloughmills",
+      "amount": 215939
+    },
+    {
+      "referenceCode": "211-6608",
+      "schoolType": "nursery",
+      "schoolName": "Enniskillen Nursery",
+      "amount": 215745
+    },
+    {
+      "referenceCode": "211-6336",
+      "schoolType": "nursery",
+      "schoolName": "Galliagh Nursery",
+      "amount": 214649
+    },
+    {
+      "referenceCode": "503-6057",
+      "schoolType": "primary",
+      "schoolName": "St Malachy's Primary,  Drumullan",
+      "amount": 214283
+    },
+    {
+      "referenceCode": "203-2682",
+      "schoolType": "primary",
+      "schoolName": "St Eugene's Primary,  Victoria Bridge",
+      "amount": 213397
+    },
+    {
+      "referenceCode": "211-6345",
+      "schoolType": "nursery",
+      "schoolName": "Belmont Nursery",
+      "amount": 212968
+    },
+    {
+      "referenceCode": "401-1599",
+      "schoolType": "primary",
+      "schoolName": "Castlewellan Primary",
+      "amount": 212487
+    },
+    {
+      "referenceCode": "113-6228",
+      "schoolType": "nursery",
+      "schoolName": "St Bernadette's  Nursery",
+      "amount": 211532
+    },
+    {
+      "referenceCode": "403-1672",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary Saintfield",
+      "amount": 211346
+    },
+    {
+      "referenceCode": "403-1231",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary Ballycruttle",
+      "amount": 208605
+    },
+    {
+      "referenceCode": "211-6233",
+      "schoolType": "nursery",
+      "schoolName": "Lisnagevlin Nursery",
+      "amount": 208090
+    },
+    {
+      "referenceCode": "211-6265",
+      "schoolType": "nursery",
+      "schoolName": "Omagh North Nursery",
+      "amount": 208020
+    },
+    {
+      "referenceCode": "111-0001",
+      "schoolType": "nursery",
+      "schoolName": "Arellian Nursery",
+      "amount": 207761
+    },
+    {
+      "referenceCode": "511-6197",
+      "schoolType": "nursery",
+      "schoolName": "Kilkeel Nursery",
+      "amount": 207112
+    },
+    {
+      "referenceCode": "311-6165",
+      "schoolType": "nursery",
+      "schoolName": "Dunclug Nursery",
+      "amount": 206906
+    },
+    {
+      "referenceCode": "111-0025",
+      "schoolType": "nursery",
+      "schoolName": "Tudor Lodge Nursery",
+      "amount": 206525
+    },
+    {
+      "referenceCode": "413-6286",
+      "schoolType": "nursery",
+      "schoolName": "Good Shepherd Nursery",
+      "amount": 206427
+    },
+    {
+      "referenceCode": "511-6236",
+      "schoolType": "nursery",
+      "schoolName": "Dungannon Nursery",
+      "amount": 206366
+    },
+    {
+      "referenceCode": "403-3008",
+      "schoolType": "primary",
+      "schoolName": "St Anne's Primary,  Donaghadee",
+      "amount": 206314
+    },
+    {
+      "referenceCode": "204-6669",
+      "schoolType": "primary",
+      "schoolName": "Gaelscoil an Traonaigh",
+      "amount": 206224
+    },
+    {
+      "referenceCode": "113-6251",
+      "schoolType": "nursery",
+      "schoolName": "Our Lady's Nursery",
+      "amount": 205821
+    },
+    {
+      "referenceCode": "203-1887",
+      "schoolType": "primary",
+      "schoolName": "St John the Baptist Primary,  Enniskillen",
+      "amount": 205810
+    },
+    {
+      "referenceCode": "201-1879",
+      "schoolType": "primary",
+      "schoolName": "Newtownbutler No 2 Primary",
+      "amount": 205148
+    },
+    {
+      "referenceCode": "203-2662",
+      "schoolType": "primary",
+      "schoolName": "St Brigid's Primary,  Mountfield",
+      "amount": 204960
+    },
+    {
+      "referenceCode": "411-0029",
+      "schoolType": "nursery",
+      "schoolName": "Bangor Nursery",
+      "amount": 204219
+    },
+    {
+      "referenceCode": "511-6625",
+      "schoolType": "nursery",
+      "schoolName": "Dromore Nursery",
+      "amount": 203995
+    },
+    {
+      "referenceCode": "201-2707",
+      "schoolType": "primary",
+      "schoolName": "Dromore Primary,  Omagh",
+      "amount": 203884
+    },
+    {
+      "referenceCode": "113-6106",
+      "schoolType": "nursery",
+      "schoolName": "St Martin's Nursery",
+      "amount": 202886
+    },
+    {
+      "referenceCode": "303-6268",
+      "schoolType": "primary",
+      "schoolName": "St Ciaran's Primary",
+      "amount": 202532
+    },
+    {
+      "referenceCode": "201-6395",
+      "schoolType": "primary",
+      "schoolName": "Gortin Primary",
+      "amount": 202397
+    },
+    {
+      "referenceCode": "411-6418",
+      "schoolType": "nursery",
+      "schoolName": "Pond Park Nursery",
+      "amount": 202290
+    },
+    {
+      "referenceCode": "503-0958",
+      "schoolType": "primary",
+      "schoolName": "St John's Primary,  Eglish",
+      "amount": 202011
+    },
+    {
+      "referenceCode": "211-6266",
+      "schoolType": "nursery",
+      "schoolName": "Bligh's Lane Nursery",
+      "amount": 201928
+    },
+    {
+      "referenceCode": "413-6481",
+      "schoolType": "nursery",
+      "schoolName": "St Kieran's Nursery",
+      "amount": 201129
+    },
+    {
+      "referenceCode": "203-2677",
+      "schoolType": "primary",
+      "schoolName": "Drumlish Primary",
+      "amount": 200059
+    },
+    {
+      "referenceCode": "511-6640",
+      "schoolType": "nursery",
+      "schoolName": "Tandragee Nursery",
+      "amount": 199208
+    },
+    {
+      "referenceCode": "211-6023",
+      "schoolType": "nursery",
+      "schoolName": "The Academy Nursery",
+      "amount": 199051
+    },
+    {
+      "referenceCode": "113-6340",
+      "schoolType": "nursery",
+      "schoolName": "St Peter's Nursery",
+      "amount": 198915
+    },
+    {
+      "referenceCode": "113-6360",
+      "schoolType": "nursery",
+      "schoolName": "Holy Cross Nursery",
+      "amount": 198738
+    },
+    {
+      "referenceCode": "311-6214",
+      "schoolType": "nursery",
+      "schoolName": "Ashgrove Nursery,  Newtownabbey",
+      "amount": 198585
+    },
+    {
+      "referenceCode": "113-6349",
+      "schoolType": "nursery",
+      "schoolName": "Matt Talbot Nursery",
+      "amount": 197587
+    },
+    {
+      "referenceCode": "511-0021",
+      "schoolType": "nursery",
+      "schoolName": "Edenderry Nursery,  Portadown",
+      "amount": 197484
+    },
+    {
+      "referenceCode": "303-0899",
+      "schoolType": "primary",
+      "schoolName": "Seaview Primary,  Glenarm",
+      "amount": 197124
+    },
+    {
+      "referenceCode": "211-6628",
+      "schoolType": "nursery",
+      "schoolName": "Limavady  Nursery",
+      "amount": 196729
+    },
+    {
+      "referenceCode": "303-2104",
+      "schoolType": "primary",
+      "schoolName": "Ballyhackett Primary",
+      "amount": 196674
+    },
+    {
+      "referenceCode": "201-1873",
+      "schoolType": "primary",
+      "schoolName": "Aghadrumsee Primary",
+      "amount": 195786
+    },
+    {
+      "referenceCode": "113-6383",
+      "schoolType": "nursery",
+      "schoolName": "St Oliver Plunkett Nursery",
+      "amount": 195165
+    },
+    {
+      "referenceCode": "203-2639",
+      "schoolType": "primary",
+      "schoolName": "Drumduff Primary",
+      "amount": 194656
+    },
+    {
+      "referenceCode": "413-6606",
+      "schoolType": "nursery",
+      "schoolName": "St Therese's Nursery",
+      "amount": 193271
+    },
+    {
+      "referenceCode": "113-6353",
+      "schoolType": "nursery",
+      "schoolName": "St Maria Goretti Nursery",
+      "amount": 193209
+    },
+    {
+      "referenceCode": "311-6162",
+      "schoolType": "nursery",
+      "schoolName": "Mossley Nursery",
+      "amount": 192958
+    },
+    {
+      "referenceCode": "113-6289",
+      "schoolType": "nursery",
+      "schoolName": "Holy Rosary Nursery",
+      "amount": 192944
+    },
+    {
+      "referenceCode": "111-6157",
+      "schoolType": "nursery",
+      "schoolName": "Stanhope Nursery",
+      "amount": 192118
+    },
+    {
+      "referenceCode": "301-0850",
+      "schoolType": "primary",
+      "schoolName": "Upper Ballyboley Primary",
+      "amount": 191676
+    },
+    {
+      "referenceCode": "111-6159",
+      "schoolType": "nursery",
+      "schoolName": "Oldpark Nursery",
+      "amount": 191661
+    },
+    {
+      "referenceCode": "113-6229",
+      "schoolType": "nursery",
+      "schoolName": "St Mary's  Nursery",
+      "amount": 191357
+    },
+    {
+      "referenceCode": "111-6158",
+      "schoolType": "nursery",
+      "schoolName": "Ravenscroft Nursery",
+      "amount": 191062
+    },
+    {
+      "referenceCode": "503-1107",
+      "schoolType": "primary",
+      "schoolName": "St Teresa's Primary,  Tullyherron",
+      "amount": 190209
+    },
+    {
+      "referenceCode": "201-2617",
+      "schoolType": "primary",
+      "schoolName": "Erganagh Primary",
+      "amount": 189990
+    },
+    {
+      "referenceCode": "413-6211",
+      "schoolType": "nursery",
+      "schoolName": "St Colmcille's Nursery",
+      "amount": 189177
+    },
+    {
+      "referenceCode": "501-2643",
+      "schoolType": "primary",
+      "schoolName": "Stewartstown Primary",
+      "amount": 189014
+    },
+    {
+      "referenceCode": "311-6219",
+      "schoolType": "nursery",
+      "schoolName": "Monkstown Nursery",
+      "amount": 188569
+    },
+    {
+      "referenceCode": "203-6085",
+      "schoolType": "primary",
+      "schoolName": "St Peter's & St Paul's Primary",
+      "amount": 187177
+    },
+    {
+      "referenceCode": "211-6348",
+      "schoolType": "nursery",
+      "schoolName": "Trench Road Nursery",
+      "amount": 187041
+    },
+    {
+      "referenceCode": "513-6342",
+      "schoolType": "nursery",
+      "schoolName": "St Malachy's  Nursery",
+      "amount": 185871
+    },
+    {
+      "referenceCode": "411-6018",
+      "schoolType": "nursery",
+      "schoolName": "Barbour Nursery",
+      "amount": 185576
+    },
+    {
+      "referenceCode": "111-0038",
+      "schoolType": "nursery",
+      "schoolName": "Shaftesbury Nursery",
+      "amount": 185297
+    },
+    {
+      "referenceCode": "113-6314",
+      "schoolType": "nursery",
+      "schoolName": "St Teresa's  Nursery",
+      "amount": 185131
+    },
+    {
+      "referenceCode": "503-6463",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary,  Caledon",
+      "amount": 184983
+    },
+    {
+      "referenceCode": "111-6155",
+      "schoolType": "nursery",
+      "schoolName": "Hope Nursery",
+      "amount": 184767
+    },
+    {
+      "referenceCode": "303-0800",
+      "schoolType": "primary",
+      "schoolName": "Barnish Primary",
+      "amount": 184519
+    },
+    {
+      "referenceCode": "511-6223",
+      "schoolType": "nursery",
+      "schoolName": "Grove Nursery",
+      "amount": 184330
+    },
+    {
+      "referenceCode": "201-2669",
+      "schoolType": "primary",
+      "schoolName": "Queen Elizabeth II Primary,  Omagh",
+      "amount": 184312
+    },
+    {
+      "referenceCode": "411-6175",
+      "schoolType": "nursery",
+      "schoolName": "Trinity Nursery",
+      "amount": 183091
+    },
+    {
+      "referenceCode": "301-0570",
+      "schoolType": "primary",
+      "schoolName": "Straid Primary",
+      "amount": 182763
+    },
+    {
+      "referenceCode": "511-6237",
+      "schoolType": "nursery",
+      "schoolName": "Cookstown Nursery",
+      "amount": 182395
+    },
+    {
+      "referenceCode": "513-6217",
+      "schoolType": "nursery",
+      "schoolName": "St John the Baptist Nursery",
+      "amount": 182226
+    },
+    {
+      "referenceCode": "111-0002",
+      "schoolType": "nursery",
+      "schoolName": "McArthur Nursery",
+      "amount": 181708
+    },
+    {
+      "referenceCode": "311-6263",
+      "schoolType": "nursery",
+      "schoolName": "Ballysally  Nursery",
+      "amount": 180124
+    },
+    {
+      "referenceCode": "413-6212",
+      "schoolType": "nursery",
+      "schoolName": "Convent of Mercy Nursery",
+      "amount": 179988
+    },
+    {
+      "referenceCode": "411-0035",
+      "schoolType": "nursery",
+      "schoolName": "Newtownards Nursery",
+      "amount": 178737
+    },
+    {
+      "referenceCode": "511-6256",
+      "schoolType": "nursery",
+      "schoolName": "Downshire Nursery",
+      "amount": 178517
+    },
+    {
+      "referenceCode": "511-6190",
+      "schoolType": "nursery",
+      "schoolName": "Harrison Nursery",
+      "amount": 177823
+    },
+    {
+      "referenceCode": "203-2603",
+      "schoolType": "primary",
+      "schoolName": "Tummery Primary",
+      "amount": 177278
+    },
+    {
+      "referenceCode": "111-6160",
+      "schoolType": "nursery",
+      "schoolName": "Sandbrook Nursery",
+      "amount": 176884
+    },
+    {
+      "referenceCode": "301-0780",
+      "schoolType": "primary",
+      "schoolName": "Kirkinriola Primary",
+      "amount": 176351
+    },
+    {
+      "referenceCode": "205-2035",
+      "schoolType": "primary",
+      "schoolName": "Groarty Integrated Primary",
+      "amount": 176045
+    },
+    {
+      "referenceCode": "513-6607",
+      "schoolType": "nursery",
+      "schoolName": "College Farm Nursery",
+      "amount": 175224
+    },
+    {
+      "referenceCode": "513-6627",
+      "schoolType": "nursery",
+      "schoolName": "Little Flower Nursery",
+      "amount": 175109
+    },
+    {
+      "referenceCode": "411-6216",
+      "schoolType": "nursery",
+      "schoolName": "King's Road Nursery",
+      "amount": 174577
+    },
+    {
+      "referenceCode": "203-2683",
+      "schoolType": "primary",
+      "schoolName": "St Joseph's Primary,  Glenmornan",
+      "amount": 173425
+    },
+    {
+      "referenceCode": "313-6332",
+      "schoolType": "nursery",
+      "schoolName": "St Anthony's Nursery",
+      "amount": 172371
+    },
+    {
+      "referenceCode": "411-6307",
+      "schoolType": "nursery",
+      "schoolName": "Glenbrook Nursery",
+      "amount": 171791
+    },
+    {
+      "referenceCode": "501-1152",
+      "schoolType": "primary",
+      "schoolName": "Kingsmills Primary",
+      "amount": 171696
+    },
+    {
+      "referenceCode": "211-6232",
+      "schoolType": "nursery",
+      "schoolName": "Strathfoyle Nursery",
+      "amount": 171580
+    },
+    {
+      "referenceCode": "211-6267",
+      "schoolType": "nursery",
+      "schoolName": "Carnhill Nursery",
+      "amount": 171509
+    },
+    {
+      "referenceCode": "113-6315",
+      "schoolType": "nursery",
+      "schoolName": "St Michael's Nursery",
+      "amount": 171149
+    },
+    {
+      "referenceCode": "311-6166",
+      "schoolType": "nursery",
+      "schoolName": "Ballyhenry Nursery",
+      "amount": 171108
+    },
+    {
+      "referenceCode": "501-6200",
+      "schoolType": "primary",
+      "schoolName": "Queen Elizabeth II Primary,  Pomeroy",
+      "amount": 170950
+    },
+    {
+      "referenceCode": "413-6368",
+      "schoolType": "nursery",
+      "schoolName": "St Luke's Nursery",
+      "amount": 170921
+    },
+    {
+      "referenceCode": "301-3703",
+      "schoolType": "primary",
+      "schoolName": "Kilross Primary",
+      "amount": 170454
+    },
+    {
+      "referenceCode": "203-6387",
+      "schoolType": "primary",
+      "schoolName": "St Patrick's Primary,  Donemana",
+      "amount": 170126
+    },
+    {
+      "referenceCode": "301-0466",
+      "schoolType": "primary",
+      "schoolName": "Longstone Primary",
+      "amount": 169435
+    },
+    {
+      "referenceCode": "113-6316",
+      "schoolType": "nursery",
+      "schoolName": "Holy Child Nursery",
+      "amount": 167414
+    },
+    {
+      "referenceCode": "413-6317",
+      "schoolType": "nursery",
+      "schoolName": "Holy Trinity Nursery",
+      "amount": 167319
+    },
+    {
+      "referenceCode": "503-1080",
+      "schoolType": "primary",
+      "schoolName": "Clintyclay Primary",
+      "amount": 166764
+    },
+    {
+      "referenceCode": "511-6238",
+      "schoolType": "nursery",
+      "schoolName": "Banbridge Nursery",
+      "amount": 166407
+    },
+    {
+      "referenceCode": "503-6001",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Glassdrumman",
+      "amount": 166194
+    },
+    {
+      "referenceCode": "113-0027",
+      "schoolType": "nursery",
+      "schoolName": "Bethlehem Nursery",
+      "amount": 165487
+    },
+    {
+      "referenceCode": "411-6240",
+      "schoolType": "nursery",
+      "schoolName": "Castlereagh  Nursery",
+      "amount": 165280
+    },
+    {
+      "referenceCode": "411-6239",
+      "schoolType": "nursery",
+      "schoolName": "Knockbreda Nursery",
+      "amount": 164553
+    },
+    {
+      "referenceCode": "203-2724",
+      "schoolType": "primary",
+      "schoolName": "Loughash Primary",
+      "amount": 163634
+    },
+    {
+      "referenceCode": "305-6708",
+      "schoolType": "primary",
+      "schoolName": "Mallusk Integrated Primary",
+      "amount": 160883
+    },
+    {
+      "referenceCode": "201-2378",
+      "schoolType": "primary",
+      "schoolName": "Dunmullan Primary",
+      "amount": 160262
+    },
+    {
+      "referenceCode": "305-0519",
+      "schoolType": "primary",
+      "schoolName": "Carnlough Integrated Primary",
+      "amount": 160097
+    },
+    {
+      "referenceCode": "405-3009",
+      "schoolType": "primary",
+      "schoolName": "Annsborough Integrated Primary",
+      "amount": 159746
+    },
+    {
+      "referenceCode": "504-6241",
+      "schoolType": "primary",
+      "schoolName": "The Drelincourt Primary",
+      "amount": 158766
+    },
+    {
+      "referenceCode": "411-0030",
+      "schoolType": "nursery",
+      "schoolName": "Holywood Nursery",
+      "amount": 158066
+    },
+    {
+      "referenceCode": "503-2736",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Fivemiletown",
+      "amount": 153056
+    },
+    {
+      "referenceCode": "303-0848",
+      "schoolType": "primary",
+      "schoolName": "St Macnissius' Primary",
+      "amount": 152865
+    },
+    {
+      "referenceCode": "301-0558",
+      "schoolType": "primary",
+      "schoolName": "Duneane Primary",
+      "amount": 151854
+    },
+    {
+      "referenceCode": "201-1860",
+      "schoolType": "primary",
+      "schoolName": "Belleek No 2 Primary",
+      "amount": 149372
+    },
+    {
+      "referenceCode": "301-0470",
+      "schoolType": "primary",
+      "schoolName": "Carnalbanagh Primary",
+      "amount": 149080
+    },
+    {
+      "referenceCode": "201-2671",
+      "schoolType": "primary",
+      "schoolName": "Langfield Primary",
+      "amount": 147633
+    },
+    {
+      "referenceCode": "303-3304",
+      "schoolType": "primary",
+      "schoolName": "Tir-na-nog Primary",
+      "amount": 145231
+    },
+    {
+      "referenceCode": "501-6141",
+      "schoolType": "primary",
+      "schoolName": "Churchtown Primary",
+      "amount": 145110
+    },
+    {
+      "referenceCode": "201-2087",
+      "schoolType": "primary",
+      "schoolName": "Bellarena Primary",
+      "amount": 143971
+    },
+    {
+      "referenceCode": "501-2611",
+      "schoolType": "primary",
+      "schoolName": "Lisfearty Primary",
+      "amount": 143535
+    },
+    {
+      "referenceCode": "203-2688",
+      "schoolType": "primary",
+      "schoolName": "St Eugene's Primary,  Tyrcur",
+      "amount": 143018
+    },
+    {
+      "referenceCode": "201-2648",
+      "schoolType": "primary",
+      "schoolName": "Gillygooley Primary",
+      "amount": 141445
+    },
+    {
+      "referenceCode": "203-2685",
+      "schoolType": "primary",
+      "schoolName": "St Brigid's Primary,  Cranagh",
+      "amount": 140493
+    },
+    {
+      "referenceCode": "301-2282",
+      "schoolType": "primary",
+      "schoolName": "Culnady Primary",
+      "amount": 134492
+    },
+    {
+      "referenceCode": "203-2300",
+      "schoolType": "primary",
+      "schoolName": "Listress Primary",
+      "amount": 131909
+    },
+    {
+      "referenceCode": "501-1117",
+      "schoolType": "primary",
+      "schoolName": "Drumsallen Primary",
+      "amount": 130882
+    },
+    {
+      "referenceCode": "203-2473",
+      "schoolType": "primary",
+      "schoolName": "Kilskeery No 1 Primary",
+      "amount": 126821
+    },
+    {
+      "referenceCode": "304-2162",
+      "schoolType": "primary",
+      "schoolName": "Desertmartin Primary",
+      "amount": 125046
+    },
+    {
+      "referenceCode": "203-2722",
+      "schoolType": "primary",
+      "schoolName": "Altishane Primary",
+      "amount": 120448
+    },
+    {
+      "referenceCode": "111-6011",
+      "schoolType": "nursery",
+      "schoolName": "Victoria Nursery",
+      "amount": 119902
+    },
+    {
+      "referenceCode": "413-6626",
+      "schoolType": "nursery",
+      "schoolName": "Kircubbin Community Nursery",
+      "amount": 117310
+    },
+    {
+      "referenceCode": "511-6112",
+      "schoolType": "nursery",
+      "schoolName": "Ashgrove Nursery,  Newry",
+      "amount": 113709
+    },
+    {
+      "referenceCode": "303-0588",
+      "schoolType": "primary",
+      "schoolName": "St Mary's Primary,  Rathlin",
+      "amount": 109668
+    },
+    {
+      "referenceCode": "111-0007",
+      "schoolType": "nursery",
+      "schoolName": "Glenbank Nursery",
+      "amount": 108349
+    },
+    {
+      "referenceCode": "511-0017",
+      "schoolType": "nursery",
+      "schoolName": "Railway  Street Nursery",
+      "amount": 107336
+    },
+    {
+      "referenceCode": "411-6176",
+      "schoolType": "nursery",
+      "schoolName": "Downpatrick Nursery",
+      "amount": 103084
+    },
+    {
+      "referenceCode": "511-6198",
+      "schoolType": "nursery",
+      "schoolName": "Fivemiletown Nursery",
+      "amount": 98911
+    },
+    {
+      "referenceCode": "111-6074",
+      "schoolType": "nursery",
+      "schoolName": "Glendhu Nursery",
+      "amount": 91200
+    },
+    {
+      "referenceCode": "111-0028",
+      "schoolType": "nursery",
+      "schoolName": "Brefne Nursery",
+      "amount": 88104
+    }
+  ]
