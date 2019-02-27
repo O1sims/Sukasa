@@ -39,7 +39,7 @@ data.frame(
 
 
 
-spdf <- "/home/owen/Code/Sukasa/research/data/ODNI/maps/parliamentaries/NI-parliamentary-boundaries.shp" %>%
+spdf <- "/home/owen/Code/Sukasa/research/data/map/northern-ireland/parliamentaries/NI-parliamentary-boundaries.shp" %>%
   maptools::readShapePoly()
 
 spdf@data$id <- rownames(spdf@data)
