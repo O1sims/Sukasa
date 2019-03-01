@@ -4,7 +4,7 @@ property.data <- getwd() %>%
   paste0("/research/data/property/ni-property-data-2019-02-28.json") %>%
   jsonlite::read_json()
 
-latitude <- longitude <- address <- price <- estateAgent <- c()
+latitude <- longitude <- address <- price <- estateAgent <- heating <- c()
 for (property in property.data) {
   address %<>% append(property$address)
   if (is.null(property$details$location$lat)) {
@@ -19,6 +19,7 @@ for (property in property.data) {
   }
   price %<>% append(property$priceInfo$price)
   estateAgent %<>% append(property$estateAgent$name)
+  heating %<>% append(property$details$heating)
 }
 
 slim.property.data <- data.frame(
@@ -91,5 +92,4 @@ leaflet(data = slim.property.data) %>%
     lng = ~longitude, 
     lat = ~latitude, 
     popup = ~as.character(price), 
-    label = ~as.character(address),
-    icon = leafIcon)
+    label = ~as.character(address))
