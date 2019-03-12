@@ -5,11 +5,12 @@ library(maptools)
 
 
 clean_school_name <- function(schoolName) {
-  schoolName %<>% tolower()
-  schoolName <- gsub(' ', '', schoolName)
-  schoolName <- gsub('the', '', schoolName)
-  schoolName <- gsub('school', '', schoolName)
-  schoolName <- gsub('[[:punct:] ]+','', schoolName)
+  schoolName %<>% 
+    tolower() %>% 
+    gsub(' ', '', .) %>% 
+    gsub("the", '', .) %>%
+    gsub('school', '', .) %>%
+    gsub('[[:punct:] ]+','', .)
   return(schoolName)
 }
 
