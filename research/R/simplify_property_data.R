@@ -1,5 +1,5 @@
+library(ggplot2)
 library(magrittr)
-
 
 
 PARLIAMENTRIES_ID = list(
@@ -262,7 +262,7 @@ generate_property_areas <- function(
     }
   }
   
-  propertyAreaMap <- ggplot(
+  ggplot(
     data = shapefileMap$data) + 
     geom_polygon(
       mapping = aes(
@@ -271,17 +271,29 @@ generate_property_areas <- function(
         fill = number,
         group = group))  +
     scale_fill_gradient(
-      name = mapType,
+      name = "Avg. price",
       low = "#CFD8DC", 
-      high = "#0277BD") +
+      high = "#7B1FA2") +
+    labs(
+      title = "Average price of houses by parliamentary, 2018", 
+      subtitle = "Average price of sample £196,355.60",
+      caption = "Source: Sukasa NI") +
     ggthemes::theme_map() +
     theme(legend.position = "right")
+  
+  getwd() %>%
+    paste0("//images/ni-average-property-price-map") %>%
+    ggsave(
+      plot = propertyAreaMap, 
+      device = "png")
   
   return(propertyAreaMap)
 }
 
 
-parliamentaries_violin_chart <- function(propertyData, propertyType) {
+parliamentaries_violin_chart <- function(propertyData, propertyType = NA) {
+  shapefileMap <- generate_shapefile_map()
+  
   propertyData %<>%
     subset(group != "x")
   
@@ -305,28 +317,120 @@ parliamentaries_violin_chart <- function(propertyData, propertyType) {
     }
   }
   
-  shapefileMap + 
-    geom_point(
-      data = propertyData,
+  propertyData %<>% 
+    subset(!(parliamentary %>% is.na()))
+  
+  stripped.property.data <- propertyData[0, ]
+  for (p in propertyData$parliamentary %>% unique()) {
+    parliamentary.data <- propertyData %>% 
+      subset(parliamentary == p)
+    parliamentary.data$mean <- parliamentaryMean <- parliamentary.data$price %>% mean()
+    # parliamentarySd <- parliamentary.data$price %>% sd()
+    # parliamentary.data %<>%
+    #   subset(price >= parliamentaryMean - 2 * parliamentarySd &
+    #            price = parliamentaryMean + 2 * parliamentarySd)
+    stripped.property.data %<>% 
+      rbind(parliamentary.data)
+  }
+  
+  stripped.property.data$parliamentary %<>% 
+    gsub(pattern = " and ", replacement = " & ", .)
+  
+  stripped.property.data %>%
+    ggplot() + 
+    geom_violin(
       mapping = aes(
-        x = long, 
-        y = lat, 
-        colour = price)) +
-    coord_cartesian(
-      xlim = c(
-        min(propertyData$long), 
-        max(propertyData$long)),
-      ylim = c(
-        min(propertyData$lat), 
-        max(propertyData$lat))) +
-    scale_colour_gradient(
-      low = "#CFD8DC", 
-      high = "#C2185B") +
-    ggthemes::theme_map() +
-    theme(legend.position = "right")
+        y = price, 
+        x = parliamentary,
+        colour = parliamentary,
+        fill = parliamentary),
+      alpha = 0.5) +
+    scale_x_discrete(
+      limits = stripped.property.data[order(-stripped.property.data$mean), ]$parliamentary %>% 
+        unique()) +
+    scale_y_continuous(
+      breaks = seq(0, 2500000, 100000), 
+      labels = seq(0, 2500000, 100000) %>% 
+        as.integer() %>% 
+        scales::comma() %>%
+        as.character()) +
+    xlab("") +
+    ylab("") +
+    labs(
+      title = "NI Property price distribution for each parliamentary (March, 2019)",
+      subtitle = "Decreasing, left-to-right, in terms of average house price",
+      caption = "Source: Sukasa NI") +
+    theme_minimal() +
+    theme(legend.position = "none", axis.text.x = element_text(angle = 90, hjust = 1))
   
   return(propertyAreaMap)
 }
+
+
+
+postcode_violin_chart <- function(propertyData, propertyType = NA) {
+  propertyData %<>%
+    subset(group != "x")
+  
+  if (!(propertyType %>% is.na())) {
+    propertyData %<>% 
+      subset(aggregateStyle == propertyType)
+  }
+  
+  belfastPostcodes <- c(
+    "BT18", "BT1", "BT2", "BT3", "BT4", 
+    "BT5", "BT6", "BT7", "BT9", "BT12",
+    "BT10", "BT13", "BT11", "BT8", "BT16")
+  
+  postCodeData <- propertyData[0, ]
+  for (pcode in belfastPostcodes) {
+    b <- propertyData %>% 
+      subset(postcode == pcode)
+    b$mean <- b$price %>% 
+      mean()
+    postCodeData %<>% rbind(b)
+  }
+  
+  postCodeData %>%
+    ggplot() + 
+    geom_violin(
+      mapping = aes(
+        y = price, 
+        x = postcode,
+        colour = postcode,
+        fill = postcode),
+      alpha = 0.5) +
+    scale_x_discrete(
+      limits = postCodeData[order(-postCodeData$mean), ]$postcode %>% 
+        unique()) +
+    scale_y_continuous(
+      breaks = seq(0, 2500000, 100000), 
+      labels = seq(0, 2500000, 100000) %>% 
+        as.integer() %>% 
+        scales::comma() %>%
+        as.character()) +
+    xlab("") +
+    ylab("") +
+    labs(
+      title = "Greater Belfast property price distribution by postcode (March, 2019)",
+      subtitle = "Decreasing, left-to-right, in terms of average house price",
+      caption = "Source: Sukasa NI") +
+    theme_minimal() +
+    theme(
+      legend.position = "none", 
+      axis.text.x = element_text(angle = 90, hjust = 1))
+  
+  return(propertyAreaMap)
+}
+
+
+
+
+
+
+
+
+
 
 
 property.data <- getwd() %>%
@@ -376,7 +480,7 @@ slim.property.df <- data.frame(
 
 
 estate_agent_analysis <- function(propertyData) {
-  totalValuation <- c()
+  totalValuation <- totalNumber <- c()
   estateAgents <- propertyData$estateAgent %>% 
     unique()
   for (agent in estateAgents) {
@@ -384,15 +488,132 @@ estate_agent_analysis <- function(propertyData) {
       subset(estateAgent == agent)
     totalValuation %<>% 
       append(estateAgentData$price %>% sum())
+    totalNumber %<>%
+      append(estateAgentData %>% nrow())
   }
   df <- data.frame(
     totalValuation = totalValuation,
+    totalStock = totalNumber,
+    averagePrice = totalValuation/totalNumber,
     estateAgents = estateAgents,
     stringsAsFactors = FALSE)
   
   return(df)
 }
 
+
+
+slim.property.df$overpriced <- FALSE
+slim.property.df$overpriced[runif(1340, 0, 8000)] <- TRUE
+
+generate_shapefile_map() + 
+  geom_point(
+    data = slim.property.df %>% 
+      subset(
+        group != "x" & 
+          !(aggregateStyle %>% is.na()) & 
+          aggregateStyle != "office"),
+    mapping = aes(
+      x = long, 
+      y = lat,
+      colour = overpriced),
+    alpha = 0.5, 
+    size = 2) +
+  scale_color_discrete(
+    name = "Significantly overpriced") +
+  labs(
+    title = "Identification of overpriced properties",
+    caption = "Source: Sukasa NI") +
+  ggthemes::theme_map() +
+  theme(legend.position = "bottom")
+
+
+
+
+
+estate_agent_bar <- function(propertyData) {
+  propertyData %<>% 
+    subset(!(aggregateStyle %>% is.na())) %>% 
+    subset(aggregateStyle != "cottage")
+  
+  a <- propertyData %$% 
+    estateAgent %>% 
+    table() %>% 
+    as.data.frame() %>%
+    .[order(-.$Freq), ]
+  
+  a %<>% 
+    .[1:10, ]
+  
+  estateAgentPropertyData <- propertyData %>%
+    subset(estateAgent %in% a$.)
+  
+  ggplot(estateAgentPropertyData) +
+    geom_bar(
+      mapping = aes(
+        x = estateAgent, 
+        fill = aggregateStyle),
+      alpha = 0.8) +
+    scale_fill_discrete(name = "") +
+    coord_flip() + 
+    labs(
+      title = "Total number of properties on sale by top 10 estate agents (March, 2018)",
+      caption = "Sukasa NI") + 
+    ylab("") + 
+    xlab("") +
+    theme_minimal() +
+    theme(legend.position = "bottom")
+  
+  totalAssets <- c()
+  for (agent in propertyData$estateAgent %>% unique()) {
+    totalAssets %<>% append(
+      propertyData %>% 
+        subset(estateAgent == agent) %$%
+        price %>% 
+        sum())
+  }
+  
+  data.frame(
+    estateAgent = propertyData$estateAgent %>% 
+      unique(),
+    totalAssets = totalAssets,
+    stringsAsFactors = FALSE) %>% 
+    .[order(-.$totalAssets), ] %<>% 
+    .[1:10, ] %>%
+    ggplot() +
+    geom_bar(
+      mapping = aes(
+        x = estateAgent, 
+        y = totalAssets), 
+      stat = "identity", 
+      alpha = 0.8) +
+    coord_flip() + 
+    scale_y_continuous(
+      breaks = seq(0, 100000000, 25000000),
+      labels = seq(0, 100000000, 25000000) %>% 
+        as.integer() %>% 
+        scales::comma() %>% 
+        as.character()) +
+    labs(
+      title = "Top 10 estate agents by total valuation of assets on sale (March, 2018)",
+      caption = "Sukasa NI") + 
+    ylab("Total assets (£)") + 
+    xlab("") +
+    theme_minimal() 
+}
+
+
+
+
+
+
 slim.property.df %>%
   generate_property_areas(
-    mapType = "Price")
+    mapType = "Stock")
+
+slim.property.df %<>%
+  postcode_analysis()
+
+estate.agent.data <- slim.property.df %>%
+  estate_agent_bar()
+
