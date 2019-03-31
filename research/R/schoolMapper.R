@@ -41,7 +41,7 @@ finance_school_mapper <- function(schoolData, financeData) {
 
 generate_shapefile_map <- function() {
   spdf <- getwd() %>% 
-    paste0("/research/data/map/northern-ireland/parliamentaries/NI-parliamentary-boundaries.shp") %>%
+    paste0("/data/map/northern-ireland/parliamentaries/NI-parliamentary-boundaries.shp") %>%
     maptools::readShapePoly()
   
   spdf@data$id <- rownames(spdf@data)
@@ -83,11 +83,11 @@ generate_google_map <- function(longitude = -6, latitude = 54.5) {
 
 
 allSchoolData <- getwd() %>%
-  paste0("/research/data/school/allNISchoolData.json") %>%
+  paste0("/data/school/allNISchoolData.json") %>%
   jsonlite::read_json()
 
 schoolFinanceData <- getwd() %>%
-  paste0("/research/data/school/schoolFinanceData.json") %>%
+  paste0("/data/school/schoolFinanceData.json") %>%
   jsonlite::read_json()
 
 fullSchoolData <- finance_school_mapper(
@@ -115,20 +115,22 @@ generate_shapefile_map() +
   geom_point(
     data = data.frame(
       schoolName = schoolName,
-      schoolType = schoolType,
+      `School type` = schoolType,
       latitude = latitude,
       longitude = longitude,
-      finance = finance,
+      Funding = finance,
       numberOfPupils = numberOfPupils,
       stringsAsFactors = FALSE),
     aes(
       y = latitude, 
       x = longitude, 
-      colour = finance,
-      size = numberOfPupils,
+      colour = `School type`,
+      size = Funding,
       alpha = 0.5)) + 
+  scale_alpha(guide = 'none') +
   ylab("") + 
   xlab("") +
+  labs(title = "Map of NI school by type and funding", caption = "Scource: Department of Education") +
   theme_minimal() + 
   theme(
     panel.border = element_blank(), 
