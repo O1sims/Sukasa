@@ -446,7 +446,7 @@ for (i in 1:(property.data %>% length())) {
   }
 }
 
-lat <- long <- id <- style <- longPostcode <-
+lat <- long <- id <- style <- longPostcode <- bedrooms <-
   price <- aggregateStyle <- postcode <- estateAgent <- c()
 for (property in property.data) {
   if (!(property$details$location$lat %>% is.null()) && 
@@ -607,6 +607,8 @@ estate_agent_bar <- function(propertyData) {
 
 
 
+
+
 slim.property.df %>%
   generate_property_areas(
     mapType = "Stock")
@@ -617,3 +619,25 @@ slim.property.df %<>%
 estate.agent.data <- slim.property.df %>%
   estate_agent_bar()
 
+
+
+
+
+
+### Price distribution
+
+slim.property.df %>%
+  subset(
+    aggregateStyle != "cottage" &
+    aggregateStyle != "office" &
+    !(aggregateStyle %>% is.na()) & price <= 1000000) %>%
+  ggplot() +
+  geom_density(
+    mapping = aes(
+      x = price,
+      fill = aggregateStyle), 
+    alpha = 0.25) +
+  labs(
+    title = "Distribution of NI house prices (March, 2019)",
+    caption = "Sukasa NI") + 
+  theme_minimal() 

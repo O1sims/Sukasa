@@ -18,7 +18,8 @@ numberOfPropertiesHeatmap <- function(property.data) {
       subset(county == c) %>% 
       nrow() %>% 
       as.integer()
-    number %<>% append(numberOfProperties)
+    number %<>% 
+      append(numberOfProperties)
   }
   
   df <- data.frame(
@@ -55,7 +56,7 @@ numberOfPropertiesHeatmap <- function(property.data) {
   df %<>% rbind(extend.df)
   
   spdf <- getwd() %>%
-    paste0("/research/data/map/ireland/ireland-admin-counties.shp") %>%
+    paste0("/data/map/ireland/ireland-admin-counties.shp") %>%
     maptools::readShapePoly()
   
   spdf@data$id <- rownames(spdf@data)
@@ -99,7 +100,7 @@ numberOfPropertiesHeatmap <- function(property.data) {
       fill = "Immigrants")
   
   getwd() %>%
-    paste0("/research/images/ireland-heatmap.png") %>%
+    paste0("/images/ireland-heatmap.png") %>%
     ggsave(width = 13, height = 15, units = "cm")
   
   return(propertyHeatmap)
@@ -175,7 +176,7 @@ propertyPriceHeatmap <- function(property.data) {
   df %<>% rbind(extend.df)
   
   spdf <- getwd() %>%
-    paste0("/research/data/map/ireland/ireland-admin-counties.shp") %>%
+    paste0("/data/map/ireland/ireland-admin-counties.shp") %>%
     maptools::readShapePoly()
   
   spdf@data$id <- rownames(spdf@data)
@@ -196,7 +197,6 @@ propertyPriceHeatmap <- function(property.data) {
   propertyHeatmap <- ggplot(
     data = heatmap.data) + 
     geom_polygon(
-      colour = "black",
       size = 0.5,
       aes(
         x = long, 
@@ -210,16 +210,15 @@ propertyPriceHeatmap <- function(property.data) {
       panel.grid.major = element_blank(),
       panel.grid.minor = element_blank(),
       panel.background = element_blank()) + 
-    scale_fill_gradient2(
-      low = "red", 
-      mid = "white", 
-      high = "blue", 
+    scale_fill_continuous(
+      name = "Avg. price",
+      low = "#CFD8DC", 
+      high = "#7B1FA2", 
       labels = comma) + 
-    labs(
-      fill = "Property price (€)")
+    ggthemes::theme_map()
   
   getwd() %>%
-    paste0("/research/images/ireland-price-heatmap.png") %>%
+    paste0("/images/ireland-price-heatmap.png") %>%
     ggsave(width = 13, height = 15, units = "cm")
   
   return(propertyHeatmap)
@@ -228,7 +227,7 @@ propertyPriceHeatmap <- function(property.data) {
 
 generatePropertyHeatmaps <- function() {
   property.data <- getwd() %>%
-    paste0("/research/data/property/IrishPropertyData.json") %>%
+    paste0("/data/property/IrishPropertyData.json") %>%
     jsonlite::fromJSON()
   
   stockHeatmap <- numberOfPropertiesHeatmap(
