@@ -8,7 +8,7 @@ library(magrittr)
 
 # Load property data
 property.data <- getwd() %>%
-  paste0("/research/data/property/NIPropertyData.json") %>%
+  paste0("/data/property/NIPropertyData.json") %>%
   jsonlite::fromJSON() %>%
   subset(!(priceInfo$price %in% c(NA, "POA")))
 

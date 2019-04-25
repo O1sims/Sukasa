@@ -8,7 +8,7 @@ library(magrittr)
 estateAgentCompetition <- function(topAgents = 5, projectMap = TRUE, 
                                    mapZoom = 12) {
   propertyData <- getwd() %>%
-    paste0("/research/data/propertyData.json") %>%
+    paste0("/data/property/NIPropertyData.json") %>%
     jsonlite::fromJSON() %>%
     subset(!(priceInfo$price %in% c(NA, "POA")))
   
@@ -55,10 +55,10 @@ estateAgentCompetition <- function(topAgents = 5, projectMap = TRUE,
         axis.title.y = element_blank(),
         legend.position = "bottom")
   } else {
-    estateAgentPlot <- ggplot(
+    ggplot(
       data = propertyData,
-      aes(x = propertyData$details$location$lat,
-          y = propertyData$details$location$lon,
+      aes(x = propertyData$details$location$lon,
+          y = propertyData$details$location$lat,
           colour = factor(propertyData$estateAgent$name),
           size = propertyData$priceInfo$price %>% as.integer() / 100000)) +
       geom_point() +

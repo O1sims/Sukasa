@@ -1,7 +1,7 @@
 library(jsonlite)
 
 property.data <- getwd() %>%
-  paste0("/research/data/property/ni-property-data-2019-02-28.json") %>%
+  paste0("/data/property/ni-property-data-2019-03-23.json") %>%
   jsonlite::read_json()
 
 latitude <- longitude <- address <- price <- estateAgent <- heating <- c()
