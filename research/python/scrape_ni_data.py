@@ -9,7 +9,7 @@ from string import punctuation
 
 
 # Enter the area you want to collect property data from, keep blank ("") to search whole of NI
-SEARCH_AREA = "belfast"
+SEARCH_AREA = ""
 
 DIR_PATH = '/home/owen/Code/Sukasa/research/data'
 
@@ -70,8 +70,132 @@ POSTCODE_AREAS = {
     'BT40': 'larne',
     'BT41': 'antrim',
     'BT42': 'ballymena',
-    'BT43': 'north ballymena',
+    'BT43': 'ballymena',
+    'BT44': 'ballymena',
+    'BT45': 'magherafelt',
+    'BT46': 'maghera',
+    'BT47': 'londonderry',
+    'BT48': 'londonderry',
+    'BT49': 'limavady',
+    'BT50': 'limavady',
+    'BT51': 'coleraine',
+    'BT52': 'coleraine',
+    'BT53': 'ballymoney',
+    'BT54': 'ballycastle',
+    'BT55': 'portstewart',
+    'BT56': 'portrush',
+    'BT57': 'bushmills',
+    'BT58': 'newtownabbey',
+    'BT60': 'armagh',
+    'BT61': 'armagh',
+    'BT62': 'craigavon',
+    'BT63': 'craigavon',
+    'BT64': 'craigavon',
+    'BT65': 'craigavon',
+    'BT66': 'craigavon',
+    'BT67': 'craigavon',
+    'BT68': 'caledon',
+    'BT69': 'aughnacloy',
+    'BT70': 'dungannon',
+    'BT71': 'dungannon',
+    'BT74': 'eniskillen',
+    'BT75': 'fivemiletown',
+    'BT76': 'clogher',
+    'BT77': 'augher',
+    'BT78': 'omagh',
+    'BT79': 'omagh',
+    'BT80': 'cookstown',
+    'BT81': 'castlederg',
+    'BT82': 'strabane',
+    'BT92': 'eniskillen',
+    'BT93': 'eniskillen',
+    'BT94': 'eniskillen',
     'Belfast': 'central belfast'
+}
+
+
+POSTCODE_TO_PARLIAMENTARIES = {
+  'bt1': 'east belfast',
+  'bt2': 'south belfast',
+  'bt3': 'east belfast',
+  'bt4': 'east belfast',
+  'bt5': 'east belfast',
+  'bt6': 'east belfast',
+  'bt7': 'south belfast',
+  'bt8': 'south belfast',
+  'bt9': 'south belfast',
+  'bt10': 'south belfast',
+  'bt11': 'west belfast',
+  'bt12': 'west belfast',
+  'bt13': 'west belfast',
+  'bt14': 'north belfast',
+  'bt15': 'north belfast',
+  'bt16': 'east belfast',
+  'bt17': 'west belfast',
+  'bt18': 'north down',
+  'bt19': 'north down',
+  'bt20': 'north down',
+  'bt21': 'north down',
+  'bt22': 'strangford',
+  'bt23': 'strangford',
+  'bt24': 'strangford',
+  'bt25': 'lagan valley',
+  'bt26': 'lagan valley',
+  'bt27': 'lagan valley',
+  'bt28': 'lagan valley',
+  'bt29': 'south antrim',
+  'bt30': 'south down',
+  'bt31': 'south down',
+  'bt32': 'south down',
+  'bt33': 'south down',
+  'bt34': 'south down',
+  'bt35': 'newry and armagh',
+  'bt36': 'south antrim',
+  'bt37': 'north belfast',
+  'bt38': 'east antrim',
+  'bt39': 'south antrim',
+  'bt40': 'east antrim',
+  'bt41': 'south antrim',
+  'bt42': 'south antrim',
+  'bt43': 'north antrim',
+  'bt44': 'north antrim',
+  'bt45': 'mid ulster',
+  'bt46': 'mid ulster',
+  'bt47': 'east londonderry',
+  'bt48': 'foyle',
+  'bt49': 'east londonderry',
+  'bt51': 'east londonderry',
+  'bt52': 'east londonderry',
+  'bt53': 'north antrim',
+  'bt54': 'north antrim',
+  'bt55': 'east londonderry',
+  'bt56': 'east londonderry',
+  'bt57': 'north antrim',
+  'bt58': 'newtownabbey',
+  'bt60': 'newry and armagh',
+  'bt61': 'newry and armagh',
+  'bt62': 'upper bann',
+  'bt63': 'upper bann',
+  'bt64': 'upper bann',
+  'bt65': 'upper bann',
+  'bt66': 'upper bann',
+  'bt67': 'upper bann',
+  'bt68': 'newry and armagh',
+  'bt69': 'fermanagh and south tyrone',
+  'bt70': 'fermanagh and south tyrone',
+  'bt71': 'fermanagh and south tyrone',
+  'bt74': 'fermanagh and south tyrone',
+  'bt75': 'fermanagh and south tyrone',
+  'bt76': 'fermanagh and south tyrone',
+  'bt77': 'fermanagh and south tyrone',
+  'bt78': 'west tyrone',
+  'bt79': 'west tyrone',
+  'bt80': 'mid ulster',
+  'bt81': 'west tyrone',
+  'bt82': 'west tyrone',
+  'bt92': 'fermanagh and south tyrone',
+  'bt93': 'fermanagh and south tyrone',
+  'bt94': 'fermanagh and south tyrone' 
 }
 
 
@@ -210,7 +334,11 @@ def get_hyperlink(page_soup, address, town):
 
 
 def get_address(page_soup):
-    raw_address = page_soup.find("span", {"class": "propbox-addr"}).get_text()
+    raw_address = page_soup.find("span", {"class": "propbox-addr"})
+    if raw_address is not None:
+        raw_address = raw_address.get_text()
+    else:
+        return None
     clean_address = str(raw_address.rstrip(', '))
     return clean_address
 
@@ -359,7 +487,11 @@ def multiple_replace(pattern_dict, text):
 
 
 def key_information(detail_soup):
-    key_info = detail_soup.find("div", {"class": "prop-descr-text"}).get_text()
+    key_info = detail_soup.find("div", {"class": "prop-descr-text"})
+    if key_info is not None:
+        key_info = key_info.get_text()
+    else:
+        return None
     encoded_key_info = key_info.encode('ascii', 'ignore').decode()
     patterns = { "\n": " ", "\t": " " }
     cleaned_key_info = multiple_replace(
@@ -410,54 +542,60 @@ def find_county(postcode):
 def property_dataset(page_soup):
     dataset = []
     property_details = page_soup.findAll("div", {"class": "propbox-details"})
-    property_images = get_all_main_images(page_soup)
     number_of_properties = len(property_details)
-    number_of_images = len(property_images)
-    if number_of_properties != number_of_images:
-        raise ValueError(
-            'Mis-match: We collected {} properties and {} images'.format(
-                number_of_properties,
-                number_of_images))
     for i in range(number_of_properties):
-        address = get_address(property_details[i])
-        postcode_split = get_postcode(property_details[i]).split()
-        if len(postcode_split) > 1:
-            town = postcode_split[0]
-            postcode = postcode_split[1]
-            area = POSTCODE_AREAS[postcode]
-            county = find_county(
-                postcode=postcode)
-            hyperlink = get_hyperlink(
-                page_soup=page_soup,
-                address=address,
-                town=town)
-            property_id = get_property_id(
-                html_string=str(page_soup),
-                clean_address=get_clean_address(
+        try:
+            address = get_address(property_details[i])
+            postcode_split = get_postcode(property_details[i]).split()
+            if len(postcode_split) > 1:
+                town = postcode_split[0]
+                postcode = postcode_split[1]
+                if postcode in POSTCODE_AREAS.keys():
+                    area = POSTCODE_AREAS[postcode]
+                else:
+                    area = None
+                county = find_county(
+                    postcode=postcode)
+                hyperlink = get_hyperlink(
+                    page_soup=page_soup,
                     address=address,
-                    town=town))
-        else:
-            area = county = town = postcode = hyperlink = property_id = None
-        tags = generate_tags(
-            taggables=[address, town, postcode, area])
-        dataset.append({
-            'timeAdded': datetime.datetime.now(),
-            'propertyId': property_id,
-            'tags': tags,
-            'address': address,
-            'town': town,
-            'area': area,
-            'county': county,
-            'postcode': postcode,
-            'priceInfo': get_price(property_details[i]),
-            'brief': get_brief(property_details[i]),
-            'estateAgent': get_estate_agent(property_details[i]),
-            'hyperlink': '{}{}'.format(
-                BASIC_REQUEST['baseURL'],
-                hyperlink),
-            'details': get_property_details(hyperlink),
-            'mainImage': property_images[i]
-        })
+                    town=town)
+                property_id = get_property_id(
+                    html_string=str(page_soup),
+                    clean_address=get_clean_address(
+                        address=address,
+                        town=town))
+            else:
+                area = county = town = postcode = hyperlink = property_id = None
+            tags = generate_tags(
+                taggables=[address, town, postcode, area])
+            print('{}{}'.format(
+                    BASIC_REQUEST['baseURL'],
+                    hyperlink))
+            details = {}
+            try:
+                details = get_property_details(hyperlink)
+            except:
+                print("Failed parsing {}".format(hyperlink))            
+            dataset.append({
+                'timeAdded': datetime.datetime.now(),
+                'propertyId': property_id,
+                'tags': tags,
+                'address': address,
+                'town': town,
+                'area': area,
+                'county': county,
+                'postcode': postcode,
+                'priceInfo': get_price(property_details[i]),
+                'brief': get_brief(property_details[i]),
+                'estateAgent': get_estate_agent(property_details[i]),
+                'hyperlink': '{}{}'.format(
+                    BASIC_REQUEST['baseURL'],
+                    hyperlink),
+                'details': details
+            })
+        except:
+            print("Could not parse property!")
     return dataset
 
 
@@ -495,7 +633,7 @@ def scrape_ni_dataset(area, property_type, sort_by,
 
 def save_to_file(property_data):
     properties_json = json.dumps(property_data, default=json_util.default)
-    json_file = open('{}/property/ni-property-data-{}.json'.format(
+    json_file = open('{}/property/all-ni-property-data-{}.json'.format(
             DIR_PATH, datetime.date.today()), 'w')
     json_file.write(properties_json)
     json_file.close()
@@ -522,3 +660,8 @@ def merge_with_master(master_dataset, all_property_ids, property_dataset):
         'masterDataset': master_dataset,
         'shouldContinue': True
     }
+
+
+
+for property in properties:
+    print(property['priceInfo']['price'])
