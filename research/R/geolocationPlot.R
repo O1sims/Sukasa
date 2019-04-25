@@ -7,18 +7,23 @@ library(magrittr)
 
 geolocationPlot <- function() {
   property.data <- getwd() %>%
-    paste0("/research/data/property/IrishPropertyData-3000.json") %>%
+    paste0("/data/property/IrishPropertyData-3000.json") %>%
     jsonlite::fromJSON()
   
   property.data <- property.data[
     (property.data$details$longitude < -5 & 
        property.data$details$latitude >  40), ]
   
-  irelandMap <- ggmap::get_map(
-    location = c(-7.739754, 53.521773), 
-    zoom = 7,
-    maptype = "roadmap") %>% 
-    ggmap::ggmap()
+  spdf <- getwd() %>%
+    paste0("/data/map/ireland/ireland-admin-counties.shp") %>%
+    maptools::readShapePoly()
+  
+  spdf@data$id <- rownames(spdf@data)
+  spdf.points <- ggplot2::fortify(spdf, region = "id")
+  irelandMap <- dplyr::inner_join(
+    spdf.points, 
+    spdf@data, 
+    by = "id")
   
   subscr <- data.frame(
     lat = property.data$details$latitude,
@@ -28,28 +33,29 @@ geolocationPlot <- function() {
     stringsAsFactors = FALSE)
   subscr <- subscr[complete.cases(subscr), ]
   
-  propertyGeolocationPlot <- irelandMap +
+  ggplot() +
+    geom_polygon(
+      data = irelandMap,
+      fill = "#B0BEC5",
+      colour = "white",
+      aes(
+        x = long, 
+        y = lat, 
+        group = group)) +
     geom_point(
       data = subscr, 
       aes(
-        x = lon, 
-        y = lat,
-        colour = propertyType, 
-        alpha = 0.2)) + 
+        x = lat, 
+        y = lon,
+        colour = propertyType),
+      alpha = 0.8) + 
     scale_color_ptol() +
     theme_minimal() +
     labs(color="Property type") +
-    theme(
-      axis.line = element_blank(), 
-      axis.text.x = element_blank(),
-      axis.text.y = element_blank(),
-      axis.ticks = element_blank(),
-      axis.title.x = element_blank(),
-      axis.title.y = element_blank(),
-      legend.position = "bottom")
+    ggthemes::theme_map()
   
   getwd() %>%
-    paste0("/research/images/ireland-property-geolocation.png") %>%
+    paste0("/images/ireland-property-geolocation.png") %>%
     ggsave()
   
   return(propertyGeolocationPlot)
