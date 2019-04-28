@@ -1,4 +1,4 @@
-version: '3'
+version: '2'
 services:
   nginx:
     restart: unless-stopped
@@ -59,3 +59,10 @@ services:
     container_name: sukasa-redis
     ports:
       - "6379:6379"
+
+  sukasa-plumber:
+    restart: unless-stopped
+    image: sukasa-plumber:latest
+    container_name: sukasa-plumber
+    ports:
+      - "10068:10068"
