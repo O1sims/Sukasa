@@ -5,8 +5,8 @@ from api.services.MongoService import MongoService
 
 
 def insert_default_property_data():
-    json_data = open(BASE_PATH + 'utils/data/belfastPropertyData.json')
-    belfast_properties = json.load(json_data)
+    belfast_property_data = open(BASE_PATH + 'utils/data/belfastPropertyData.json')
+    belfast_properties = json.load(belfast_property_data)
     if MongoService().check_collection(
             collection_name=MONGO_DB_INFO['propertyCollection']):
         MongoService().drop_database(
