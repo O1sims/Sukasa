@@ -1,6 +1,7 @@
 # Using PyCharm and Intellij
 .idea/
 venv/
+XDG_CACHE_HOME/
 
 # Visual studio code
 .vscode/
