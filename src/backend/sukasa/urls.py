@@ -9,6 +9,7 @@ from rest_framework.urlpatterns import format_suffix_patterns
 
 from api.views.reset import ResetDatabase
 from api.views.property_data import PropertyDataView, PropertyDataIdView
+from api.views.estate_agent_recommender import EstateAgentRecommenderView
 from api.views.property_valuation import PropertyValuationEstimationView, PropertyValuationDifferentialView
 
 
@@ -41,6 +42,11 @@ urlpatterns = format_suffix_patterns([
     url(r'^api/v{}/property_valuation/differential/$'.format(
         API_VERSION),
         PropertyValuationDifferentialView.as_view()),
+
+    # Estate agent recommendation
+    url(r'^api/v{}/estate_agent_recommender/$'.format(
+        API_VERSION),
+        EstateAgentRecommenderView.as_view()),
 
     # Reset
     url(r'^api/v{}/reset/all/$'.format(
