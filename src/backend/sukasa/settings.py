@@ -3,6 +3,7 @@ Django settings for the Sukasa project.
 """
 
 import os
+import logging
 
 from sukasa.config import DEVELOPMENT
 from utils.data_loader import insert_default_property_data
@@ -91,6 +92,24 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# Logger options
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler'
+        },
+    },
+    'loggers': {
+        '': {  # 'catch all' loggers by referencing it with the empty string
+            'handlers': ['console'],
+            'level': 'DEBUG',
+        },
+    },
+}
+
+
 # Internationalization
 LANGUAGE_CODE = 'en-gb'
 TIME_ZONE = 'UTC'
@@ -110,5 +129,7 @@ if DEVELOPMENT:
     property_data = insert_default_property_data()
 
     # Generate property valuation model
+    logging.info("Generating property estimation model...")
     create_property_estimation_model(
         property_data=property_data)
+    logging.info("Complete!")
