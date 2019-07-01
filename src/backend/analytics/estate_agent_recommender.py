@@ -16,15 +16,15 @@ GEOLOCATOR = Nominatim(
 
 
 class EstateAgentRecommender():
-    def __init__():
+    def __init__(self):
         pass
 
     def calculate_time_to_agree(self, master_data):
         for property in master_data:
-            if int(property['timeAdded']['$date']/1000) > 1554761377 and property['status'][-1]['status'].lower() == "sale agreed":
+            if int(property['timeAdded'].timestamp()/1000) > 1554761377 and property['status'][-1]['status'].lower() == "sale agreed":
                 time_taken = int(
-                    property['status'][-1]['timestamp']['$date']/1000) - int(
-                        property['timeAdded']['$date']/1000)
+                    property['status'][-1]['timestamp'].timestamp()/1000) - int(
+                        property['timeAdded'].timestamp()/1000)
                 if time_taken > 0:
                     property['timeToAgree'] = time_taken
                 else:
@@ -156,8 +156,8 @@ class EstateAgentRecommender():
                     property['priceInfo']['price'][0]['price']) / 
                     property['priceInfo']['price'][0]['price'])
                 timings.append(
-                    int(property['status'][-1]['timestamp']['$date'] / 1000) - 
-                    int(property['status'][0]['timestamp']['$date'] / 1000))
+                    int(property['status'][-1]['timestamp'].timestamp() / 1000) - 
+                    int(property['status'][0]['timestamp'].timestamp() / 1000))
             price_drop[agent] = sum(price_changes) / len(price_changes)
             time_taken[agent] = (sum(timings) / len(timings)) / (60 * 60 * 24)
             score = 2 + (estate_agents[agent]/sum(estate_agents.values()) -
@@ -169,19 +169,19 @@ class EstateAgentRecommender():
         return sorted(
             recommended_agents, 
             key=lambda k: -k['score'])
-
-
-        def find_recommended_estate_agent(master_data, request_object):
-            """
-            Construct the recommended agents model
-            """
-            related_properties = self.find_related_properties(
-                master_data=master_data,
-                request_object=request_object)
-            recommended_agents = self.recommended_estate_agent(
-                request_object=request_object,
-                related_properties=related_properties)
-            return {
-                "relatedProperties": related_properties,
-                "recommendedAgents": recommended_agents
-            }
+            
+        
+    def find_recommended_estate_agent(self, master_data, request_object):
+        """
+        Construct the recommended agents model
+        """
+        related_properties = self.find_related_properties(
+            master_data=master_data,
+            request_object=request_object)
+        recommended_agents = self.recommended_estate_agent(
+            request_object=request_object,
+            related_properties=related_properties)
+        return {
+            "relatedProperties": related_properties,
+            "recommendedAgents": recommended_agents
+        }
