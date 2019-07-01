@@ -27,13 +27,10 @@ class EstateAgentRecommenderView(CreateAPIView):
             raise_exception=True)
         master_data = MongoService().get_from_collection(
             collection_name=MONGO_DB_INFO["masterCollection"])
-        estateAgentRecommendations = EstateAgentRecommender().find_related_properties(
-            master_data= master_data, 
+        estate_agent_recommendations = EstateAgentRecommender().find_recommended_estate_agent(
+            master_data=master_data, 
             request_object=request.data)
-        # TODO: Re-structure data to price valuation data
-        # estateAgentRecommendations["priceEstimate"] = predict_property_price(
-        #     property_data=request.data)
         return Response(
-            data=estateAgentRecommendations,
+            data=estate_agent_recommendations,
             status=200)
 
