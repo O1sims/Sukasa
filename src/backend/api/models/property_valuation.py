@@ -1,13 +1,15 @@
 from rest_framework import serializers
 
+from api.models.property_data import PropertyAmenitiesModel
+
 
 HOUSE_STYLE_CHOICES = (
     "apartment",
     "bungalow",
-    "detached house",
-    "end-terrace house",
-    "semi-detached house",
-    "terrace house",
+    "detached",
+    "end-terrace",
+    "semi-detached",
+    "terrace",
     "townhouse"
 )
 
@@ -25,13 +27,6 @@ POSTCODE_CHOICES = (
     "BT15", "BT16", "BT17", "BT18",
     "BT28", "BT36", "BT37",
 )
-
-
-class PropertyAmenitiesModel(serializers.Serializer):
-    bayWindow = serializers.BooleanField()
-    garage = serializers.BooleanField()
-    garden = serializers.BooleanField()
-    driveway = serializers.BooleanField()
 
 
 class PropertyDetailsModel(serializers.Serializer):
@@ -53,3 +48,4 @@ class PropertyValuationDifferentialModel(serializers.Serializer):
     givenPrice = serializers.FloatField(
         min_value=1)
     propertyInfo = PropertyValuationEstimationModel()
+

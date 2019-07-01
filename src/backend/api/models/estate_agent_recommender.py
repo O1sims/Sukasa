@@ -1,10 +1,10 @@
 from rest_framework import serializers
 
-from api.models.property_data import HOUSE_STYLE_CHOICES, HEATING_CHOICES, \
-    POSTCODE_CHOICES, EPCChartModel, PropertyAmenitiesModel
+from api.models.property_data import EPCChartModel, PropertyAmenitiesModel
+from api.models.property_valuation import HOUSE_STYLE_CHOICES, HEATING_CHOICES, POSTCODE_CHOICES
 
 
-class PropertyDetailsModel(serializers.Serializer):
+class PropertyDetailsEAModel(serializers.Serializer):
     epcChart = EPCChartModel(required=False)
     amenities = PropertyAmenitiesModel(required=False)
     bedrooms = serializers.IntegerField(required=False)
@@ -15,18 +15,18 @@ class PropertyDetailsModel(serializers.Serializer):
         required=False) 
 
 
-class PropertyDataModel(serializers.Serializer):
+class PropertyDataEAModel(serializers.Serializer):
     address = serializers.CharField(required=False)
     town = serializers.CharField(required=False)
     shortPostcode = serializers.ChoiceField(
         choices=POSTCODE_CHOICES,
         required=False)
     longPostcode = serializers.CharField(required=False)
-    style = serializers.ChoiceField(
+    aggregateStyle = serializers.ChoiceField(
         choices=HOUSE_STYLE_CHOICES,
         required=False)
-    details = PropertyDetailsModel()
+    details = PropertyDetailsEAModel()
 
 
 class EstateAgentRecommenderModel(serializers.Serializer):
-    propertyData = PropertyDataModel()
+    propertyData = PropertyDataEAModel()
