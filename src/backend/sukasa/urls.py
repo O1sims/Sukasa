@@ -5,6 +5,7 @@ from django.conf.urls import url
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 
+from rest_framework import permissions
 from rest_framework.urlpatterns import format_suffix_patterns
 
 from api.views.reset import ResetDatabase
@@ -19,8 +20,8 @@ schema_view = get_schema_view(
         default_version=API_VERSION,
         description="Sukasa API documentation"
     ),
-    validators=['flex', 'ssv'],
-    public=True
+    public=True,
+    permission_classes=(permissions.AllowAny,),
 )
 
 urlpatterns = format_suffix_patterns([
@@ -54,13 +55,12 @@ urlpatterns = format_suffix_patterns([
         ResetDatabase.as_view()),
 
     # Swagger
-    url(r'^api/swagger/$',
+    url(r'^api/swagger/$', 
         schema_view.with_ui(
-            'swagger', cache_timeout=0),
+            'swagger', cache_timeout=0), 
         name='schema-swagger-ui'),
-
-    url(r'^api/redoc/$',
+    url(r'^api/redoc/$', 
         schema_view.with_ui(
-            'redoc', cache_timeout=0),
-        name='schema-redoc')
+            'redoc', cache_timeout=0), 
+        name='schema-redoc'),
 ])
