@@ -1,5 +1,7 @@
 import pymongo as pm
 
+from bson.json_util import dumps, loads
+
 from sukasa.config import MONGO_CONNECTION
 
 
@@ -19,7 +21,8 @@ class MongoService:
 
     def insert_to_collection(self, collection_name, data):
         mongo_collection = self.mongo_connection[MONGO_CONNECTION['db']][collection_name]
-        mongo_collection.insert(data)
+        data = dumps(data)
+        mongo_collection.insert(loads(data))
         print("Successfully added data to the {} collection".format(collection_name))
 
     def get_from_collection(self, collection_name, mongo_id=None, property_id=None):
