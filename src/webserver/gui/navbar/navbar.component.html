@@ -23,6 +23,11 @@
             <strong>Valuation</strong>
           </a>
         </li>
+        <li [ngClass]="{'active': selectedTab=='estate-agent-finder'}" style="border-radius: 4px;">
+          <a routerLink="estate-agent-finder" (click)="assignSelectedTab('estate-agent-finder')">
+            <strong>Estate Agent Finder</strong>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
