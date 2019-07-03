@@ -10,6 +10,36 @@ from analytics.utilities.CollectPropertyData import \
     get_price
 
 
+PROPERTY_DATA = {
+    "propertyData": {
+        "address": "4 Knocknagoney Park",
+        "town": "Holywood",
+        "postcode": "BT4 2PU",
+        "aggregateStyle": "semi-detached",
+        "details": {
+            "bedrooms": 3,
+            "bathrooms": 1,
+            "heating": "oil",
+            "epcRating": {
+                "actual": {
+                    "band": "F", 
+                    "score": 29
+                }, "potential": {
+                    "band": "F", 
+                    "score": 38
+                }
+            }, "amenities": {
+                "garden": True, 
+                "garage": False, 
+                "driveway": True, 
+                "parking": False, 
+                "bayWindow": False
+            }
+        }
+    }
+}
+
+
 class TestingPropertyCollection(unittest.TestCase):
     def __init__(self, *args, **kwargs):
         super(TestingPropertyCollection, self).__init__(*args, **kwargs)
