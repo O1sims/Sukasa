@@ -9,28 +9,10 @@ import { SharedService } from '../shared/shared.service';
   providers: [ValuationService, SharedService]
 })
 
-export class ValuationComponent {
-  towns:string[] = [
-    "belfast",
-    "holywood",
-    "dundonald"
-  ]
-
-  heatingChoices:string[] = [
-    "economy 7",
-    "gas",
-    "oil"
-  ]
-
-  propertyStyleChoices:string[] = [
-    "apartment",
-    "bungalow",
-    "detached house",
-    "end-terrace house",
-    "semi-detached house",
-    "terrace house",
-    "townhouse"
-  ]
+export class ValuationComponent implements OnInit {
+  towns:string[];
+  heatingChoices:string[];
+  aggregateStyleChoices:string[];
 
   bedrooms:number = 1;
   estimatedValue:number;
@@ -41,12 +23,12 @@ export class ValuationComponent {
   garage:boolean = false;
   bayWindow:boolean = false;
 
-  heating:string = this.heatingChoices[0];
-  propertyStyle:string = this.propertyStyleChoices[0];
-
   address:string;
   postcode:string;
-  town:string = this.towns[0];
+  
+  town:string;
+  heating:string;
+  aggregateStyle:string;
 
   propertySubmitted:boolean = false;
   propertyImage:any;
@@ -55,11 +37,23 @@ export class ValuationComponent {
     private sharedService: SharedService,
     private valuationService: ValuationService) {};
 
+  ngOnInit() {
+    // The allocation of shared variables
+    this.towns = this.sharedService.towns;
+    this.heatingChoices = this.sharedService.heatingChoices;
+    this.aggregateStyleChoices = this.sharedService.aggregateStyleChoices;
+
+    this.town = this.towns[0];
+    this.heating = this.heatingChoices[0];
+    this.aggregateStyle = this.aggregateStyleChoices[0];
+
+  };
+
   setFeature(event, feature) {
     if (feature=="heating") {
       this.heating = event['target']['value'];
     } else if (feature=="propertyStyle") {
-      this.propertyStyle = event['target']['value'];
+      this.aggregateStyle = event['target']['value'];
     } else if (feature=="postcode") {
       this.postcode = this.extractPostcode(
         event['target']['value']);
@@ -74,9 +68,9 @@ export class ValuationComponent {
 
   
   extractPostcode(postcode:string) {
-    var clean_postcode = postcode.replace(/ /g, '');
-    if (clean_postcode.length < 7) {
-      var region_code = clean_postcode.substring(0, 2);
+    let clean_postcode = postcode.replace(' ', '');
+    if (clean_postcode.length > 6) {
+      var region_code = clean_postcode.substring(0, 4);
     } else {
       var region_code = clean_postcode.substring(0, 3);
     };
@@ -105,7 +99,7 @@ export class ValuationComponent {
       "propertyImage": this.propertyImage,
       "details": {
         "bedrooms": Number(this.bedrooms),
-        "style": this.propertyStyle,
+        "style": this.aggregateStyle,
         "heating": this.heating,
         "amenities": {
           "garage": this.garage,
@@ -139,7 +133,7 @@ export class ValuationComponent {
         'pound', valuation['estimatedPrice'].toFixed(2));
       this.rawEstimation =  Number(valuation['estimatedPrice'].toFixed(2));
     });
-  }
+  };
 
   submitProperty() {
     var propertyData = this.constructPropertyData(true);
@@ -148,5 +142,4 @@ export class ValuationComponent {
       this.propertySubmitted=true;
     });
   }
-
 }

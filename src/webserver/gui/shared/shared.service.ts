@@ -15,4 +15,24 @@ export class SharedService {
     let cleanPrice = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     return(this.currencyChart[currency] + cleanPrice);
   };
+
+  towns:string[] = [
+    "belfast",
+    "holywood",
+    "dundonald"
+  ];
+
+  heatingChoices:string[] = [
+    "economy 7",
+    "gas",
+    "oil"
+  ];
+
+  aggregateStyleChoices:string[] = [
+    "apartment",
+    "bungalow",
+    "detached",
+    "semi-detached",
+    "terrace"
+  ];
 };
