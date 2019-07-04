@@ -23,4 +23,4 @@ def insert_default_property_data():
     MongoService().insert_to_collection(
         collection_name=MONGO_DB_INFO['masterCollection'],
         data=master_data)
-    return belfast_properties
+    return master_data
