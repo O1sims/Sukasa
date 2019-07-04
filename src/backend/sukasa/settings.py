@@ -44,15 +44,15 @@ MIDDLEWARE = [
 
 CORS_ORIGIN_ALLOW_ALL = False
 
-CORS_ORIGIN_WHITELIST = (
-    '{}:{}'.format(
+CORS_ORIGIN_WHITELIST = [
+    'http://{}:{}'.format(
         os.getenv(
             key='SUKASA_GUI_HOSTNAME',
             default='localhost'),
         os.getenv(
             key='SUKASA_GUI_PORT',
             default=3000))
-)
+]
 
 ROOT_URLCONF = 'sukasa.urls'
 
@@ -93,6 +93,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Logger options
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -130,6 +131,16 @@ if DEVELOPMENT:
 
     # Generate property valuation model
     logging.info("Generating property estimation model...")
+
+    # Flatten property data
+    for property in property_data:
+        if property['priceInfo']['price'][-1]['price'] is not None:
+            property['currentPrice'] = property['priceInfo']['price'][-1]['price']
+        else:
+            property['currentPrice'] = None
+    
+    # Generate property estimation model
     create_property_estimation_model(
         property_data=property_data)
+    
     logging.info("Complete!")
