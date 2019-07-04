@@ -98,7 +98,6 @@ export class EstateAgentFinderComponent implements OnInit {
 
   recommendEstateAgent() {
     let propertyData = this.constructPropertyData();
-    console.log(propertyData);
     this.estateAgentFinderService.estateAgentRecommender(propertyData)
     .subscribe(estateAgentFinder => {
       console.log(estateAgentFinder);
