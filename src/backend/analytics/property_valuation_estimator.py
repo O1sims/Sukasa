@@ -11,11 +11,11 @@ from api.services.RedisService import RedisService
 def generate_stadard_deviation(property_data):
     price_list = []
     for property in property_data:
-        if property['priceInfo']['price'] is not None:
-            price_list.append(property['priceInfo']['price'])
+        if property['currentPrice'] is not None:
+            price_list.append(property['currentPrice'])
     standard_dev = statistics.stdev(price_list)
     return int(standard_dev)
-
+ 
 
 def predict_property_price(property_data):
     property_estimation_model = RedisService().get_skl_model(
@@ -25,9 +25,11 @@ def predict_property_price(property_data):
     flat_property_data = pd.io.json.json_normalize(
         data=[property_data])
     indy_df = indy_df.append(
-        flat_property_data, 
+        flat_property_data,
         sort=True)[indy_df.columns.tolist()]
     indy_dummies = pd.get_dummies(indy_df)
+    print(indy_df.columns)
+    print(indy_dummies.columns)
     data_len = len(indy_dummies)
     price_prediction = property_estimation_model.predict(
         indy_dummies[data_len-1:data_len])

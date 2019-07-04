@@ -42,16 +42,17 @@ ELASTICSEARCH_QUERY_INFO = {
 }
 
 DEPENDENT_VARIABLES = [
-    'priceInfo.price'
+    'currentPrice',
 ]
 
 INDEPENDENT_VARIABLES = [
     'postcode',
     'details.bedrooms',
-    'details.style',
+    'details.aggregateStyle',
     'details.heating',
     'details.amenities.bayWindow',
     'details.amenities.driveway',
     'details.amenities.garage',
-    'details.amenities.garden'
+    'details.amenities.garden',
+    'details.amenities.parking',
 ]
