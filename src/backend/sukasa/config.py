@@ -23,7 +23,8 @@ MONGO_CONNECTION = {
 
 MONGO_DB_INFO = {
     "propertyCollection": "properties",
-    "masterCollection": "master"
+    "masterCollection": "master",
+    "userCollection": "users"
 }
 
 REDIS_CONNECTION = {
