@@ -11,6 +11,19 @@ class RedisService:
             host=REDIS_CONNECTION['host'],
             port=REDIS_CONNECTION['port'])
 
+    def set_token(self, redis_key):
+        setter_output = self.redis_connection.set(
+            name=redis_key, 
+            value="authToken", 
+            ex=1200)
+        if setter_output:
+            print("Successfully set token into the `{}` key".format(
+                redis_key))
+
+    def check_token(self, redis_key):
+        return self.redis_connection.exists(
+            names=redis_key)
+
     def set_dataframe(self, dataframe, redis_key):
         setter_output = self.redis_connection.set(
             name=redis_key,
