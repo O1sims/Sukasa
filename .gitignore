@@ -27,3 +27,6 @@ src/webserver/gui/**/*.js
 # R
 .Rhistory
 .Rproj.user
+
+# Logging
+debug.log
