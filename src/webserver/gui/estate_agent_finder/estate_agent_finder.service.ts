@@ -12,9 +12,9 @@ export class EstateAgentFinderService {
 
   constructor(
     private http: Http) {
-	};
-
-  estateAgentRecommender(propertyData) {
+  };
+  
+  estateAgentRecommender(propertyData:object) {
     var requestoptions = new RequestOptions({
 			method: RequestMethod.Post,
 			url: this.api + '/estate_agent_recommender/',

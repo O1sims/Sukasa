@@ -28,6 +28,8 @@ export class EstateAgentFinderComponent implements OnInit {
   bayWindow:boolean = false;
   parking:boolean = false;
 
+  recommendedEstateAgents:object[] = [];
+
   constructor(
     private sharedService: SharedService,
     private estateAgentFinderService: EstateAgentFinderService) {};
@@ -43,7 +45,7 @@ export class EstateAgentFinderComponent implements OnInit {
     this.aggregateStyle = this.aggregateStyleChoices[0];
   };
   
-  setFeature(event, feature) {
+  setFeature(event, feature:string) {
     if (feature=="heating") {
       this.heating = event['target']['value'];
     } else if (feature=="propertyStyle") {
@@ -59,7 +61,7 @@ export class EstateAgentFinderComponent implements OnInit {
     };
   };
 
-  setAmenityBool(amenity) {
+  setAmenityBool(amenity:string) {
     if (amenity=="garage") {
       this.garage = !this.garage;
     } else if (amenity=="driveway") {
@@ -98,9 +100,17 @@ export class EstateAgentFinderComponent implements OnInit {
 
   recommendEstateAgent() {
     let propertyData = this.constructPropertyData();
+    let estateAgentLogos = this.sharedService.estateAgentLogoLookup;
     this.estateAgentFinderService.estateAgentRecommender(propertyData)
     .subscribe(estateAgentFinder => {
-      console.log(estateAgentFinder);
+      estateAgentFinder['recommendedAgents'].forEach(function(estateAgent:object) {
+        if (Object.keys(estateAgentLogos).includes(estateAgent['name'])) {
+          estateAgent['logo'] = estateAgentLogos[estateAgent['name']];
+        } else {
+          estateAgent['logo'] = "";
+        };
+      });
+      this.recommendedEstateAgents = estateAgentFinder['recommendedAgents'].slice(0, 3);
     });
   };
 }
