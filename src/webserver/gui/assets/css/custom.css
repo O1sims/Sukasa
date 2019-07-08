@@ -45,7 +45,7 @@ body {
 }
 
 .btn-success.outline {
-  background-color: #5cb85c;
+  background-color: #f1595f;
 	border: 2px solid #FFF;
 	color: #FFF;
 }
@@ -57,7 +57,12 @@ body {
 }
 
 .btn-success.outline:active, .btn-success.outline.active {
-	border-color: #5cb85c;
-	color: #5cb85c;
+	border-color: #f1595f;
+	color: #f1595f;
 	box-shadow: none;
+}
+
+._7qp4lh {
+    border-bottom-width: var(--border-rule-border-width, 1px) !important;
+    border-bottom-color: #EBEBEB !important;
 }
