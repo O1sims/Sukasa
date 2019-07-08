@@ -1,3 +1,5 @@
+import json
+
 from drf_yasg import openapi
 from drf_yasg.utils import swagger_auto_schema
 
@@ -8,6 +10,7 @@ from rest_framework.renderers import JSONRenderer
 from rest_framework.generics import CreateAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
 
 from api.services.MongoService import MongoService
+from api.services.RedisService import RedisService
 from api.models.property_data import GeneratePropertyDataModel, PropertyDataModel
 
 from sukasa.config import MONGO_DB_INFO
@@ -24,14 +27,15 @@ SEARCH_Q = openapi.Parameter(
 def generate_brief(property_data):
     return "{} bed {} for sale".format(
         property_data['details']['bedrooms'],
-        property_data['details']['style']
+        property_data['details']['aggregateStyle']
     )
 
 def generate_tags(property_data):
     return [
         property_data['address'].lower(),
         property_data['postcode'].lower(),
-        property_data['town'].lower()
+        property_data['town'].lower(),
+        property_data['details']['longPostcode'].lower()
     ]
 
 class PropertyDataView(ListCreateAPIView):
@@ -71,13 +75,16 @@ class PropertyDataView(ListCreateAPIView):
             property_data=request.data)
         request.data['tags'] = generate_tags(
             property_data=request.data)
+        if RedisService().check_token(
+            redis_key=request.META.get('HTTP_TOKEN')):
+            user_info = json.loads(RedisService().getter(
+                redis_key=request.META.get('HTTP_TOKEN')))
+            request.data['owner'] = user_info['_id']
+        else:
+            return Response(status=500)
         MongoService().insert_to_collection(
-            collection_name=MONGO_DB_INFO['propertyCollection'],
+            collection_name=MONGO_DB_INFO['masterCollection'],
             data=request.data)
-        all_property_data = MongoService().get_from_collection(
-            collection_name=MONGO_DB_INFO['propertyCollection'])
-        create_property_estimation_model(
-            property_data=all_property_data)
         return Response(status=201)
 
 
