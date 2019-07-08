@@ -1,23 +1,6 @@
 from rest_framework import serializers
 
-from api.models.property_data import PropertyAmenitiesModel
-
-
-HOUSE_STYLE_CHOICES = (
-    "apartment",
-    "bungalow",
-    "detached",
-    "end-terrace",
-    "semi-detached",
-    "terrace",
-    "townhouse"
-)
-
-HEATING_CHOICES = (
-    "economy 7",
-    "gas",
-    "oil"
-)
+from api.models.property_data import PropertyAmenitiesModel, HOUSE_STYLE_CHOICES, HEATING_CHOICES
 
 # Postcodes for Belfast and Holywood
 POSTCODE_CHOICES = (

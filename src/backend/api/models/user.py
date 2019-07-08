@@ -23,3 +23,8 @@ class UserModel(serializers.Serializer):
         required=True)
     avatar = serializers.ImageField(
         required=False)
+
+
+class TokenModel(serializers.Serializer):
+    token = serializers.CharField(
+        required=True)
