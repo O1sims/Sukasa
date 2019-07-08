@@ -156,8 +156,8 @@ class EstateAgentRecommender():
                     property['priceInfo']['price'][0]['price']) / 
                     property['priceInfo']['price'][0]['price'])
                 timings.append(
-                    int(property['status'][-1]['timestamp'].timestamp() / 1000) - 
-                    int(property['status'][0]['timestamp'].timestamp() / 1000))
+                    int(property['status'][-1]['timestamp'].timestamp()) - 
+                    int(property['status'][0]['timestamp'].timestamp()))
             price_drop[agent] = sum(price_changes) / len(price_changes)
             time_taken[agent] = (sum(timings) / len(timings)) / (60 * 60 * 24)
             score = 2 + (estate_agents[agent]/sum(estate_agents.values()) -
@@ -165,7 +165,10 @@ class EstateAgentRecommender():
                 time_taken[agent]/(max(sum(time_taken.values()), 1)))
             recommended_agents.append({
                 'name': agent, 
-                'score': score})
+                'score': score,
+                'noOfAgreedProperties': len(agreed_properties_ea),
+                'avgDaysTaken': int(time_taken[agent]),
+                'averagePriceChange': int(price_drop[agent])})
         return sorted(
             recommended_agents, 
             key=lambda k: -k['score'])
