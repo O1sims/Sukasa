@@ -16,6 +16,16 @@ export class SharedService {
     return(this.currencyChart[currency] + cleanPrice);
   };
 
+  shortenPostcode(postcode:string) {
+    let clean_postcode = postcode.replace(' ', '');
+    if (clean_postcode.length > 6) {
+      var region_code = clean_postcode.substring(0, 4);
+    } else {
+      var region_code = clean_postcode.substring(0, 3);
+    };
+    return region_code;
+  };
+
   towns:string[] = [
     "belfast",
     "holywood",
@@ -35,4 +45,6 @@ export class SharedService {
     "semi-detached",
     "terrace"
   ];
+
+  public token:string;
 };
