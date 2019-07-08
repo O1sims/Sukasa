@@ -22,6 +22,7 @@ export class ValuationComponent implements OnInit {
   driveway:boolean = false;
   garage:boolean = false;
   bayWindow:boolean = false;
+  parking:boolean = false;
 
   address:string;
   postcode:string;
@@ -94,7 +95,8 @@ export class ValuationComponent implements OnInit {
           "garage": this.garage,
           "garden": this.garden,
           "driveway": this.driveway,
-          "bayWindow": this.bayWindow
+          "bayWindow": this.bayWindow,
+          "parking": this.parking
         }
       }
     };

@@ -5,50 +5,53 @@
 </div>
 
 <div class="container" style="padding-top:25px;">
-  <h3>Selling a property? Fill out the form to see who you should get to sell it...</h3>
+  <h3>Selling a property? Who should sell it...</h3>
   <div class="jumbotron">
     <form class="form-horizontal">
     
       <div class="form-group">
         <label class="control-label col-sm-2">Address</label>
         <div class="col-sm-10">
-          <input type="text" (input)="setFeature($event, 'address');">
+          <input type="text" class="form-control" (input)="setFeature($event, 'address');">
         </div>
       </div>
 
       <div class="form-group">
-        <label class="control-label col-sm-2">Town</label>
+        <label class="control-label col-sm-2">City / Town</label>
         <div class="col-sm-10">
-          <input type="text" (input)="setFeature($event, 'town');">
+          <select class="form-control" style="text-transform:capitalize;"
+            (input)="setFeature($event, 'town');">
+          <option *ngFor="let town of towns">{{town}}</option>
+          </select>
         </div>
       </div>
       
       <div class="form-group">
         <label class="control-label col-sm-2">Postcode</label>
         <div class="col-sm-10">
-          <input type="text" (input)="setFeature($event, 'postcode');">
+          <input type="text" class="form-control" (input)="setFeature($event, 'postcode');">
         </div>
       </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2">Property style</label>
+      <div class="col-sm-10">
+      <select class="form-control" style="text-transform:capitalize;"
+      (input)="setFeature($event, 'propertyStyle')">
+      <option *ngFor="let style of aggregateStyleChoices">{{style}}</option>
+      </select>
+    </div>
+  </div>
 
     <div class="form-group">
       <label class="control-label col-sm-2">Heating</label>
       <div class="col-sm-10">
         <select class="form-control" style="text-transform:capitalize;"
         (input)="setFeature($event, 'heating')">
-        <option *ngFor="let heating of heatingChoices">{{heating}}</option>
-      </select>
+          <option *ngFor="let heating of heatingChoices">{{heating}}</option>
+        </select>
+      </div>
     </div>
-  </div>
-
-  <div class="form-group">
-    <label class="control-label col-sm-2">Property style</label>
-    <div class="col-sm-10">
-      <select class="form-control" style="text-transform:capitalize;"
-      (input)="setFeature($event, 'propertyStyle')">
-      <option *ngFor="let style of aggregateStyleChoices">{{style}}</option>
-    </select>
-  </div>
-</div>
 
 <div class="form-group">
   <label class="control-label col-sm-2">Bedrooms</label>
@@ -59,7 +62,7 @@
 </div>
 
 <div class="form-group">
-  <label class="control-label col-sm-2">Garden</label>
+  <label class="control-label col-sm-1">Garden</label>
   <div class="col-sm-1">
     <input type="checkbox" (click)="setAmenityBool('garden');">
   </div>
@@ -69,12 +72,12 @@
     <input type="checkbox" (click)="setAmenityBool('garage');">
   </div>
 
-  <label class="control-label col-sm-2">Parking</label>
+  <label class="control-label col-sm-1">Parking</label>
   <div class="col-sm-1">
     <input type="checkbox" (click)="setAmenityBool('parking');">
   </div>
 
-  <label class="control-label col-sm-2">Driveway</label>
+  <label class="control-label col-sm-1">Driveway</label>
   <div class="col-sm-1">
     <input type="checkbox" (click)="setAmenityBool('driveway');">
   </div>
@@ -85,10 +88,34 @@
   </div>
 </div>
 </form>
-<div style="padding-top: 25px; padding-bottom: 10px;">
+</div>
+</div>
+
+<div class="container">
+<div style="padding-top: 10px; padding-bottom: 10px;">
   <button class="btn btn-success outline pull-right" (click)="recommendEstateAgent()">
     <strong>FIND ESTATE AGENTS</strong>
   </button>
 </div>
 </div>
+
+<div class="container" *ngIf="recommendedEstateAgents.length > 0">
+  <h2>Recommended Estate Agents</h2>
+  <div class="row"> 
+    <div class="col-sm-6 col-md-4" *ngFor="let agent of recommendedEstateAgents"> 
+      <div class="thumbnail"> 
+        <img 
+          alt="100%x200" 
+          data-src="holder.js/100%x200" 
+          src={{agent.logo}} 
+          data-holder-rendered="true" 
+          style="height: 200px; width: 100%; display: block;"> 
+          <div class="caption"> 
+            <h3>{{agent.name}}</h3> 
+            <p>Average number of days to agree: {{agent.avgDaysTaken}}.</p>
+            <p>Agreed {{agent.noOfAgreedProperties}} similar properties in this area.</p>
+          </div> 
+      </div> 
+    </div>
+  </div>
 </div>
