@@ -56,7 +56,7 @@ export class ValuationComponent implements OnInit {
     } else if (feature=="propertyStyle") {
       this.aggregateStyle = event['target']['value'];
     } else if (feature=="postcode") {
-      this.postcode = this.extractPostcode(
+      this.postcode = this.sharedService.shortenPostcode(
         event['target']['value']);
     } else if (feature=="bedrooms") {
       this.bedrooms = event['target']['value'];
@@ -65,17 +65,6 @@ export class ValuationComponent implements OnInit {
     } else if (feature=="town") {
       this.town = event['target']['value'];
     };
-  };
-
-  
-  extractPostcode(postcode:string) {
-    let clean_postcode = postcode.replace(' ', '');
-    if (clean_postcode.length > 6) {
-      var region_code = clean_postcode.substring(0, 4);
-    } else {
-      var region_code = clean_postcode.substring(0, 3);
-    };
-    return region_code;
   };
 
   setImage(event) {

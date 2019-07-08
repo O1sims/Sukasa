@@ -8,6 +8,7 @@ from drf_yasg.views import get_schema_view
 from rest_framework import permissions
 from rest_framework.urlpatterns import format_suffix_patterns
 
+from api.views.user import LoginView, LogoutView, UserView, TokenView
 from api.views.reset import ResetDatabase
 from api.views.property_data import PropertyDataView, PropertyDataIdView
 from api.views.estate_agent_recommender import EstateAgentRecommenderView
@@ -54,11 +55,29 @@ urlpatterns = format_suffix_patterns([
         API_VERSION),
         ResetDatabase.as_view()),
 
+    # Login / User
+    url(r'api/v{}/user/login/'.format(
+        API_VERSION), 
+        LoginView.as_view()),
+        
+    url(r'api/v{}/user/logout/'.format(
+        API_VERSION), 
+        LogoutView.as_view()),
+        
+    url(r'api/v{}/user/check/'.format(
+        API_VERSION), 
+        TokenView.as_view()),
+
+    url(r'api/v{}/user/'.format(
+        API_VERSION), 
+        UserView.as_view()),
+
     # Swagger
     url(r'^api/swagger/$', 
         schema_view.with_ui(
             'swagger', cache_timeout=0), 
         name='schema-swagger-ui'),
+        
     url(r'^api/redoc/$', 
         schema_view.with_ui(
             'redoc', cache_timeout=0), 

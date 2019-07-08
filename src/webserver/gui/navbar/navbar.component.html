@@ -18,6 +18,11 @@
             <strong>Property search</strong>
           </a>
         </li>
+        <li [ngClass]="{'active': selectedTab=='analytics'}" style="border-radius: 4px;">
+          <a routerLink="analytics" (click)="assignSelectedTab('analytics')">
+            <strong>Analytics</strong>
+          </a>
+        </li>
         <li [ngClass]="{'active': selectedTab=='valuation'}" style="border-radius: 4px;">
           <a routerLink="valuation" (click)="assignSelectedTab('valuation')">
             <strong>Valuation</strong>
@@ -29,6 +34,155 @@
           </a>
         </li>
       </ul>
+      <ul class="nav navbar-nav navbar-right" *ngIf="!loggedIn">
+        <li class="push-right">
+          <a data-toggle="modal" data-target="#log-in" (click)="moveToLogIn();">
+            <strong>Log in</strong>
+          </a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right" *ngIf="loggedIn">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button"
+            aria-haspopup="true" aria-expanded="false">Hi {{user.first_name}} <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a>Mikasa</a></li>
+            <li><a data-toggle="modal" data-target="#add-property">Add property</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a (click)="logout()">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+
     </div>
   </div>
 </nav>
+
+
+<!-- Log in / Sign up modal -->
+<div id="log-in" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #EEE; border-bottom: 1px solid #ccc; font-size:18px;">
+        <button #closeModal type="button" class="close" data-dismiss="modal">&times;</button>
+        {{modalTitle}}
+      </div>
+
+      <div class="modal-body" *ngIf="section=='login'">
+        <div class = "panel panel-default" style="border-width:0px; box-shadow: 0px 0px 0px 0px;">
+          <div class = "panel-body">
+            <form class="form-horizontal">
+
+              <div class="form-group">
+                <label class="control-label col-sm-2">Username</label>
+                <div class="col-sm-10">
+                  <input
+                  id="username"
+                  class="form-control"
+                  type="text"
+                  (input)="setFeature($event, 'username');">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2">Password</label>
+                <div class="col-sm-10">
+                  <input
+                  id="password"
+                  class="form-control"
+                  type="password"
+                  (input)="setFeature($event, 'password');">
+                </div>
+              </div>
+
+            </form>
+          </div>
+          <p>Don't have an account? <a (click)="moveToSignUp()">Sign up!</a></p>
+        </div>
+        <div class="alert alert-danger" role="alert" *ngIf="loginWarning">
+          Could not find username or password. Please try again!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success outline" (click)="logIn()">
+            LOG IN
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-body" *ngIf="section=='signUp'">
+        <p>Oops, I have an account. <a (click)="moveToLogIn()">Log in!</a></p>
+        <div class = "panel panel-default" style="border-width:0px; box-shadow: 0px 0px 0px 0px;">
+          <div class = "panel-body">
+            <form class="form-horizontal">
+
+              <div class="form-group">
+                <label class="control-label col-sm-2">Username</label>
+                <div class="col-sm-10">
+                  <input
+                  id="username"
+                  class="form-control"
+                  type="text"
+                  (input)="setFeature($event, 'username');">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2">Email</label>
+                <div class="col-sm-10">
+                  <input
+                  id="email"
+                  class="form-control"
+                  type="text"
+                  (input)="setFeature($event, 'email');">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2">First name</label>
+                <div class="col-sm-10">
+                  <input
+                  id="firstName"
+                  class="form-control"
+                  type="text"
+                  (input)="setFeature($event, 'firstName');">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2">Last name</label>
+                <div class="col-sm-10">
+                  <input
+                  id="lastName"
+                  class="form-control"
+                  type="text"
+                  (input)="setFeature($event, 'lastName');">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-sm-2">Password</label>
+                <div class="col-sm-10">
+                  <input
+                  id="setPassword"
+                  class="form-control"
+                  type="password"
+                  (input)="setFeature($event, 'password');">
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success outline" (click)="signUp();">
+            SIGN UP
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add property modal -->
+<add-property></add-property>

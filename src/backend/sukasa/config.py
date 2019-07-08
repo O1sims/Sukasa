@@ -23,7 +23,8 @@ MONGO_CONNECTION = {
 
 MONGO_DB_INFO = {
     "propertyCollection": "properties",
-    "masterCollection": "master"
+    "masterCollection": "master",
+    "userCollection": "users"
 }
 
 REDIS_CONNECTION = {
@@ -34,6 +35,8 @@ REDIS_CONNECTION = {
         key='REDIS_PORT',
         default='6379')
 }
+
+REDIS_TOKEN_EXP = 60
 
 REDIS_KEYS = {
     "independentVariables": "independentVariables",

@@ -15,10 +15,14 @@ export class ValuationService {
 	};
 
   propertyValuation(propertyData) {
+    let headers = new Headers();
+    headers.set("Token", sessionStorage.getItem("token"));
+
     var requestoptions = new RequestOptions({
 			method: RequestMethod.Post,
 			url: this.api + '/property_valuation/estimation/',
-      body: propertyData
+      body: propertyData,
+      headers: headers
 		});
 		return this.http.request(
       new Request(requestoptions))
@@ -26,10 +30,14 @@ export class ValuationService {
   };
 
   addProperty(submitPropertyData) {
+    let headers = new Headers();
+    headers.set("Token", sessionStorage.getItem("token"));
+
     var requestoptions = new RequestOptions({
 			method: RequestMethod.Post,
 			url: this.api + '/properties/',
-      body: submitPropertyData
+      body: submitPropertyData,
+      headers: headers
 		});
 		return this.http.request(
       new Request(requestoptions))

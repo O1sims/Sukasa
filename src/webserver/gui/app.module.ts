@@ -1,6 +1,7 @@
 
 import { NgModule }                      from '@angular/core';
 import { HttpModule }                    from '@angular/http';
+import { FormsModule }                   from '@angular/forms';
 import { BrowserModule }                 from '@angular/platform-browser';
 
 import { AppComponent }                  from './app.component';
@@ -16,14 +17,19 @@ import { NotFoundComponent }             from './not-found/not-found.component';
 import { ValuationComponent }            from './valuation/valuation.component';
 import { EstateAgentFinderComponent }    from './estate_agent_finder/estate_agent_finder.component';
 
-import { routing }                       from './app.routing';
+import { AddPropertyComponent }          from './modals/add-property/add-property.component';
 
+import { UserService }                   from './user/user.service';
+
+import { routing }                       from './app.routing';
+ 
 
 @NgModule({
     imports: [
       routing,
       BrowserModule,
-      HttpModule
+      HttpModule,
+      FormsModule
     ],
     declarations: [
       AppComponent,
@@ -34,7 +40,11 @@ import { routing }                       from './app.routing';
       NotFoundComponent,
       SearchBarComponent,
       ValuationComponent,
+      AddPropertyComponent,
       EstateAgentFinderComponent
+    ],
+    providers: [
+      UserService
     ],
     bootstrap: [
       AppComponent

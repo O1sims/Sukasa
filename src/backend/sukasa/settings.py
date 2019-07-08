@@ -3,11 +3,16 @@ Django settings for the Sukasa project.
 """
 
 import os
+import datetime
 import logging
 
-from sukasa.config import DEVELOPMENT
+from sukasa.config import DEVELOPMENT, MONGO_CONNECTION
 from utils.data_loader import insert_default_property_data
 from analytics.property_valuation_estimator import create_property_estimation_model
+
+
+# Get an instance of a logger
+LOGGER = logging.getLogger(__name__)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -56,6 +61,12 @@ CORS_ORIGIN_WHITELIST = [
 
 ROOT_URLCONF = 'sukasa.urls'
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.dummy'
+    }
+}
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -74,7 +85,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'sukasa.wsgi.application'
 
-
 # Password validation
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -91,25 +101,25 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Logger options
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
     'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler'
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': './debug.log',
         },
     },
     'loggers': {
-        '': {  # 'catch all' loggers by referencing it with the empty string
-            'handlers': ['console'],
+        'django': {
+            'handlers': ['file'],
             'level': 'DEBUG',
+            'propagate': True,
         },
     },
 }
-
 
 # Internationalization
 LANGUAGE_CODE = 'en-gb'
