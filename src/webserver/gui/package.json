@@ -25,6 +25,7 @@
     "@angular/platform-browser-dynamic": "^4.4.7",
     "@angular/router": "^4.4.7",
     "@angular/upgrade": "^4.4.7",
+    "angular-webstorage-service": "^1.0.0",
     "reflect-metadata": "^0.1.12",
     "rxjs": "^5.0.1",
     "systemjs": "^0.21.3",

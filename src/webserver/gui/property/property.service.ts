@@ -1,4 +1,4 @@
-import { Http, Response, Request, Headers, RequestOptions, RequestMethod, URLSearchParams } from "@angular/http";
+import { Http, Request, Headers, RequestOptions, RequestMethod } from "@angular/http";
 import { environment } from '../environment/environment';
 import { Injectable } from '@angular/core';
 
@@ -14,9 +14,29 @@ export class PropertyService {
 	};
 
   getPropertyDetails(propertyId) {
+    let headers = new Headers();
+    headers.set("Token", sessionStorage.getItem("token"));
+
     var requestoptions = new RequestOptions({
 			method: RequestMethod.Get,
-      url: this.api + '/properties/' + propertyId + '/'
+      url: this.api + '/properties/' + propertyId + '/',
+      headers: headers
+		});
+
+    return this.http.request(
+      new Request(requestoptions))
+		.map(res => res.json());
+  };
+
+  postPropertyDetails(propertyData:object) {
+    let headers = new Headers();
+    headers.set("Token", sessionStorage.getItem("token"));
+
+    var requestoptions = new RequestOptions({
+			method: RequestMethod.Post,
+      url: this.api + '/properties/',
+      headers: headers,
+      body: propertyData
 		});
 
     return this.http.request(
@@ -25,10 +45,14 @@ export class PropertyService {
   };
 
   priceImperfection(propertyData) {
+    let headers = new Headers();
+    headers.set("Token", sessionStorage.getItem("token"));
+
     var requestoptions = new RequestOptions({
 			method: RequestMethod.Post,
       url: this.api + '/property_valuation/differential/',
-      body: propertyData
+      body: propertyData,
+      headers: headers
 		});
 
     return this.http.request(
