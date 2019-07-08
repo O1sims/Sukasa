@@ -2,7 +2,7 @@ import redis as rd
 import pandas as pd
 import pickle as pk
 
-from sukasa.config import REDIS_CONNECTION
+from sukasa.config import REDIS_CONNECTION, REDIS_TOKEN_EXP
 
 
 class RedisService:
@@ -11,18 +11,20 @@ class RedisService:
             host=REDIS_CONNECTION['host'],
             port=REDIS_CONNECTION['port'])
 
-    def set_token(self, redis_key):
+    def set_token(self, redis_key, value):
         setter_output = self.redis_connection.set(
-            name=redis_key, 
-            value="authToken", 
-            ex=1200)
+            name=redis_key,
+            value=value, 
+            ex=REDIS_TOKEN_EXP)
         if setter_output:
             print("Successfully set token into the `{}` key".format(
                 redis_key))
 
     def check_token(self, redis_key):
-        return self.redis_connection.exists(
-            names=redis_key)
+        return self.redis_connection.exists(redis_key)
+
+    def delete_token(self, redis_key):
+        return self.redis_connection.delete(redis_key)
 
     def set_dataframe(self, dataframe, redis_key):
         setter_output = self.redis_connection.set(
