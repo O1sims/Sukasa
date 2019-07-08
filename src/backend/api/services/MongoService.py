@@ -42,8 +42,10 @@ class MongoService:
 
     def find_user(self, collection_name, username):
         mongo_collection = self.mongo_connection[MONGO_CONNECTION['db']][collection_name]
-        user_search_results = mongo_collection.find({'username': username}, {'_id': 0})
-        return list(user_search_results)
+        user_search_results = list(mongo_collection.find({'username': username}))
+        for user in user_search_results:
+            user['_id'] = str(user['_id'])
+        return user_search_results
 
     def drop_database(self, collection_name=None):
         if collection_name is None:
