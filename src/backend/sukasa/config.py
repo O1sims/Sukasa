@@ -36,6 +36,8 @@ REDIS_CONNECTION = {
         default='6379')
 }
 
+REDIS_TOKEN_EXP = 60
+
 REDIS_KEYS = {
     "independentVariables": "independentVariables",
     "propertyValuationModel": "propertyValuationModel",
