@@ -22,7 +22,6 @@ def prepare_property_data(property_data):
     property_data['postcode'] = EstateAgentRecommender().shorten_postcode(
         long_postcode=property_data['postcode'])
     property_data['details']['aggregateStyle'] = property_data['aggregateStyle']
-    property_data['details']['heating'] = property_data['details']['heating'].capitalize()
     del(property_data['town'])
     del(property_data['address'])
     del(property_data['aggregateStyle'])
