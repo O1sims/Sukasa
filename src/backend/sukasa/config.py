@@ -36,7 +36,7 @@ REDIS_CONNECTION = {
         default='6379')
 }
 
-REDIS_TOKEN_EXP = 60
+REDIS_TOKEN_EXP = 3600
 
 REDIS_KEYS = {
     "independentVariables": "independentVariables",
