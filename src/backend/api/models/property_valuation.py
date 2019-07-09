@@ -14,7 +14,7 @@ POSTCODE_CHOICES = (
 
 class PropertyDetailsModel(serializers.Serializer):
     bedrooms = serializers.IntegerField(min_value=1)
-    style = serializers.ChoiceField(
+    aggregateStyle = serializers.ChoiceField(
         choices=HOUSE_STYLE_CHOICES)
     heating = serializers.ChoiceField(
         choices=HEATING_CHOICES)
