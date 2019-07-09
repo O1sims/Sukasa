@@ -28,8 +28,6 @@ def predict_property_price(property_data):
         flat_property_data,
         sort=True)[indy_df.columns.tolist()]
     indy_dummies = pd.get_dummies(indy_df)
-    print(indy_df.columns)
-    print(indy_dummies.columns)
     data_len = len(indy_dummies)
     price_prediction = property_estimation_model.predict(
         indy_dummies[data_len-1:data_len])
