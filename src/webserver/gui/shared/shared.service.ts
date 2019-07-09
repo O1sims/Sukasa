@@ -16,11 +16,6 @@ export class SharedService {
     'dollar': '$'
   };
 
-  cleanPropertyPrice(currency, price) {
-    let cleanPrice = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    return(this.currencyChart[currency] + cleanPrice);
-  };
-
   shortenPostcode(postcode:string) {
     let clean_postcode = postcode.replace(' ', '');
     if (clean_postcode.length > 6) {
