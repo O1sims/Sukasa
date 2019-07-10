@@ -66,3 +66,27 @@ body {
     border-bottom-width: var(--border-rule-border-width, 1px) !important;
     border-bottom-color: #EBEBEB !important;
 }
+
+
+.btn {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
+.btn-danger-round {
+	color: rgba(217, 83, 78, 0.75);
+	background: transparent;
+	border: 2px solid rgba(217, 83, 78, 0.75);
+	line-height: 15px;
+	border-radius: 40px;
+}
+
+
+.btn-danger-round-on {
+	color: #FFF;
+	background: rgba(217, 83, 78, 0.75);
+	border: 2px solid rgba(217, 83, 78, 0.75);
+	line-height: 15px;
+	border-radius: 40px;
+}
