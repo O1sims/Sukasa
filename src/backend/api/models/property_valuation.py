@@ -13,22 +13,31 @@ POSTCODE_CHOICES = (
 
 
 class PropertyDetailsModel(serializers.Serializer):
-    bedrooms = serializers.IntegerField(min_value=1)
+    bedrooms = serializers.IntegerField(
+        min_value=1,
+        required=True)
     aggregateStyle = serializers.ChoiceField(
-        choices=HOUSE_STYLE_CHOICES)
+        choices=HOUSE_STYLE_CHOICES,
+        required=True)
     heating = serializers.ChoiceField(
-        choices=HEATING_CHOICES)
-    amenities = PropertyAmenitiesModel()
+        choices=HEATING_CHOICES,
+        required=True)
+    amenities = PropertyAmenitiesModel(
+        required=True)
 
 
 class PropertyValuationEstimationModel(serializers.Serializer):
     postcode = serializers.ChoiceField(
-        choices=POSTCODE_CHOICES)
-    details = PropertyDetailsModel()
+        choices=POSTCODE_CHOICES,
+        required=True)
+    details = PropertyDetailsModel(
+        required=True)
 
 
 class PropertyValuationDifferentialModel(serializers.Serializer):
     givenPrice = serializers.FloatField(
-        min_value=1)
-    propertyInfo = PropertyValuationEstimationModel()
+        min_value=1,
+        required=True)
+    propertyInfo = PropertyValuationEstimationModel(
+        required=True)
 
