@@ -11,16 +11,24 @@ from rest_framework.generics import CreateAPIView, ListCreateAPIView, RetrieveUp
 
 from api.services.MongoService import MongoService
 from api.services.RedisService import RedisService
+from api.views.property_valuation import myopic_differential
 from api.models.property_data import GeneratePropertyDataModel, PropertyDataModel
 
 from sukasa.config import MONGO_DB_INFO
-from analytics.property_valuation_estimator import create_property_estimation_model
+from analytics.property_valuation_estimator import create_property_estimation_model, predict_property_price
 
 
 SEARCH_Q = openapi.Parameter(
     name='q',
     in_=openapi.IN_QUERY,
     description='A string of search keywords',
+    type=openapi.TYPE_STRING,
+    required=True)
+
+PROPERTY_STATUS = openapi.Parameter(
+    name='status',
+    in_=openapi.IN_QUERY,
+    description='A string indicatig the property status being searched',
     type=openapi.TYPE_STRING,
     required=True)
 
@@ -42,15 +50,16 @@ class PropertyDataView(ListCreateAPIView):
     renderer_classes = (JSONRenderer, )
     serializer_class = PropertyDataModel
 
-    @swagger_auto_schema(manual_parameters=[SEARCH_Q])
+    @swagger_auto_schema(manual_parameters=[SEARCH_Q, PROPERTY_STATUS])
     def get(self, request, *args, **kwargs):
         search_query = self.request.GET.get('q', None)
+        search_query = self.request.GET.get('status', None)
         page = self.request.GET.get('page', 1)
         if search_query is None:
             raise ValueError(
                 'Please provide some search query with the `q` query parameter')
         properties = MongoService().search_collection(
-            collection_name=MONGO_DB_INFO['propertyCollection'],
+            collection_name=MONGO_DB_INFO['masterCollection'],
             search_string=search_query.lower())
         paginator = Paginator(properties, 10)
         try:
@@ -59,6 +68,13 @@ class PropertyDataView(ListCreateAPIView):
             paginated_properties = paginator.page(1)
         except EmptyPage:
             paginated_properties = paginator.page(paginator.num_pages)
+        valued_properties = []
+        for property in paginated_properties.object_list:
+            valuation = predict_property_price(
+                property_data=property)
+            property['valuation'] = myopic_differential(
+                given_price=property['priceInfo']['price'][-1]['price'],
+                estimation=valuation)
         return Response(
             data={
                 'propertiesLength': len(properties),
@@ -94,7 +110,7 @@ class PropertyDataIdView(RetrieveUpdateDestroyAPIView):
 
     def get(self, request, *args, **kwargs):
         property = MongoService().get_from_collection(
-            collection_name=MONGO_DB_INFO['propertyCollection'],
+            collection_name=MONGO_DB_INFO['masterCollection'],
             property_id=self.kwargs['propertyId'])
         return Response(
             data=property,
