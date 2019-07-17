@@ -11,12 +11,11 @@ from api.models.property_valuation import PropertyValuationEstimationModel, Prop
 
 
 def myopic_differential(given_price, estimation):
-    standard_deviation = int(RedisService().getter(
-        redis_key=REDIS_KEYS['standardDeviation']))
+    allowance = int(estimation * 0.1)
     difference = int(given_price - estimation)
-    if difference > standard_deviation:
+    if difference > allowance:
         label = "overvalued"
-    elif difference < -standard_deviation:
+    elif difference < -allowance:
         label = "undervalued"
     else:
         label = "correctly valued"
