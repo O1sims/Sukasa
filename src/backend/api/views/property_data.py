@@ -30,7 +30,7 @@ PROPERTY_STATUS = openapi.Parameter(
     in_=openapi.IN_QUERY,
     description='A string indicatig the property status being searched',
     type=openapi.TYPE_STRING,
-    required=True)
+    required=False)
 
 def generate_brief(property_data):
     return "{} bed {} for sale".format(
@@ -53,14 +53,15 @@ class PropertyDataView(ListCreateAPIView):
     @swagger_auto_schema(manual_parameters=[SEARCH_Q, PROPERTY_STATUS])
     def get(self, request, *args, **kwargs):
         search_query = self.request.GET.get('q', None)
-        search_query = self.request.GET.get('status', None)
+        property_status = self.request.GET.get('status', None)
         page = self.request.GET.get('page', 1)
         if search_query is None:
             raise ValueError(
                 'Please provide some search query with the `q` query parameter')
         properties = MongoService().search_collection(
             collection_name=MONGO_DB_INFO['masterCollection'],
-            search_string=search_query.lower())
+            search_string=search_query.lower(),
+            status=property_status)
         paginator = Paginator(properties, 10)
         try:
             paginated_properties = paginator.page(page)

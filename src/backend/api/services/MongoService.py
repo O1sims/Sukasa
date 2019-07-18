@@ -35,9 +35,15 @@ class MongoService:
             mongo_data = mongo_collection.find({}, {'_id': 0})
         return list(mongo_data)
 
-    def search_collection(self, collection_name, search_string):
+    def search_collection(self, collection_name, search_string, status=None):
         mongo_collection = self.mongo_connection[MONGO_CONNECTION['db']][collection_name]
-        search_results = mongo_collection.find({'tags': search_string}, {'_id': 0})
+        search_dict = {'tags': search_string}
+        if status:
+            search_dict["$expr"] = {
+                "$eq": [{ 
+                    "$arrayElemAt": ["$status.status", -1] 
+                    }, status]}
+        search_results = mongo_collection.find(search_dict, {'_id': 0})
         return list(search_results)
 
     def find_user(self, collection_name, username):
